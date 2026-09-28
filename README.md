@@ -21,7 +21,7 @@ Investigamos el transporte aéreo en Chile con entrevistas a pasajeros y operari
 ## La solución
 
 1. El usuario responde qué busca (presupuesto, tipo de experiencia, ritmo, con quién viaja, mes, horas de vuelo, visa).
-2. Un sistema de **matching por atributos** cruza esas respuestas con 107 destinos y elige el que mejor calza.
+2. Un sistema de **matching por atributos** cruza esas respuestas con 178 destinos y elige el que mejor calza.
 3. Muestra **una recomendación** con las razones, pros y contras concretos.
 4. Si el usuario quiere avanzar, lo lleva a Google Flights o Skyscanner con la ruta cargada.
 
@@ -38,7 +38,7 @@ index.html              la página
 css/styles.css          los estilos
 js/matching.js          el motor de recomendación (puntajes y razones)
 js/app.js               la interfaz (preguntas, resultado, compra)
-data/destinos.js        la base de datos de 107 destinos
+data/destinos.js        la base de datos de 178 destinos
 tests/                  pruebas automáticas del motor
 .github/workflows/      publica la app sola en cada cambio
 .devcontainer/          configuración para programar en Codespaces

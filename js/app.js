@@ -118,7 +118,7 @@ function renderInicio() {
       ${muestra.map((d) => `<div class="row"><span class="code">${d.aeropuerto}</span><span>${esc(d.nombre)}</span><span class="status">${esc(d.pais)}</span></div>`).join("")}
       <div class="row"><span class="code">???</span><span>Tu destino</span><span class="status q">Por confirmar</span></div>
     </div>
-    <p class="note-small">${DESTINOS.length} destinos en Chile y en 6 continentes. Horas de vuelo y visas calculadas para quien sale desde Chile.</p>
+    <p class="note-small">${DESTINOS.length} destinos en Chile y en los 7 continentes. Horas de vuelo y visas calculadas para quien sale desde Chile.</p>
   </section>`;
   document.getElementById("start").onclick = empezar;
 }

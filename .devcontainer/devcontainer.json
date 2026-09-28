@@ -1,0 +1,14 @@
+{
+  "name": "Rumbo",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "Rumbo", "onAutoForward": "openPreview" }
+  },
+  "postAttachCommand": "npm start",
+  "customizations": {
+    "vscode": {
+      "extensions": ["GitHub.copilot", "GitHub.copilot-chat", "esbenp.prettier-vscode"]
+    }
+  }
+}

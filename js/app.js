@@ -4,7 +4,7 @@
  */
 
 const TIPOS = [
-  ["Playa", "🏖️", "Vera maricón"],
+  ["Playa", "🏖️", "Vera weko"],
   ["Cultura", "🏛️", "Museos, historia y arquitectura"],
   ["Aventura", "🧗", "Trekking, deportes y adrenalina"],
   ["Naturaleza", "🌿", "Paisajes, parques y fauna"],

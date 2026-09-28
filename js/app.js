@@ -4,15 +4,15 @@
  */
 
 const TIPOS = [
-  ["Playa", "🏖️", "Sol, mar y arena"],
-  ["Cultura", "🏛️", "Museos, historia y arquitectura"],
-  ["Aventura", "🧗", "Trekking, deportes y adrenalina"],
-  ["Naturaleza", "🌿", "Paisajes, parques y fauna"],
-  ["Relax", "🧘", "Descansar sin agenda"],
-  ["Gastronomía", "🍜", "Comer bien y probar la cocina local"],
-  ["Vida nocturna", "🌃", "Bares, fiestas y salidas de noche"],
-  ["Compras", "🛍️", "Tiendas, outlets y mercados"],
-  ["Nieve", "❄️", "Ski, frío y paisajes nevados"],
+  ["Playa", "Sol y arena"],
+  ["Cultura", "Museos, historia y arquitectura"],
+  ["Aventura", "Trekking, deportes y adrenalina"],
+  ["Naturaleza", "Paisajes, parques y fauna"],
+  ["Relax", "Descansar sin agenda"],
+  ["Gastronomía", "Comer bien y probar la cocina local"],
+  ["Vida nocturna", "Bares, fiestas y salidas de noche"],
+  ["Compras", "Tiendas, outlets y mercados"],
+  ["Nieve", "Ski, frío y paisajes nevados"],
 ];
 
 // Ciudades de salida dentro de Chile para la búsqueda de vuelos
@@ -23,32 +23,32 @@ const PREGUNTAS = [
   { clave: "alcance", tipo: "alcance", titulo: "¿Dónde quieres viajar?", ayuda: "Primero cuéntanos en qué país vives." },
   {
     clave: "tags", tipo: "multiple", max: 3, titulo: "¿Qué buscas en este viaje?", ayuda: "Elige hasta 3. Es lo que más pesa en la recomendación.",
-    opciones: TIPOS.map(([v, e, desc]) => ({ v, label: v, e, desc })),
+    opciones: TIPOS.map(([v, desc]) => ({ v, label: v, desc })),
   },
   {
     clave: "presupuesto", tipo: "unica", titulo: "¿Cómo es tu presupuesto?", ayuda: "Pensando en pasajes, alojamiento y gastos en el destino.",
     opciones: [
-      { v: 1.5, label: "Ajustado", desc: "Quiero que rinda al máximo", e: "🪙" },
-      { v: 3, label: "Moderado", desc: "Ni muy barato ni de lujo", e: "💳" },
-      { v: 4, label: "Cómodo", desc: "Puedo darme algunos gustos", e: "✨" },
-      { v: 5, label: "Sin límite", desc: "Busco la mejor experiencia", e: "💎" },
+      { v: 1.5, label: "Ajustado", desc: "Quiero que rinda al máximo" },
+      { v: 3, label: "Moderado", desc: "Ni muy barato ni de lujo" },
+      { v: 4, label: "Cómodo", desc: "Puedo darme algunos gustos" },
+      { v: 5, label: "Sin límite", desc: "Busco la mejor experiencia" },
     ],
   },
   {
     clave: "ritmo", tipo: "unica", titulo: "¿Qué ritmo quieres?",
     opciones: [
-      { v: 1, label: "Tranquilo", desc: "Descansar y pasear sin apuro", e: "🐢" },
-      { v: 3, label: "Equilibrado", desc: "Un poco de todo", e: "⚖️" },
-      { v: 5, label: "Intenso", desc: "Caminatas largas y actividad física", e: "⛰️" },
+      { v: 1, label: "Tranquilo", desc: "Descansar y pasear sin apuro" },
+      { v: 3, label: "Equilibrado", desc: "Un poco de todo" },
+      { v: 5, label: "Intenso", desc: "Caminatas largas y actividad física" },
     ],
   },
   {
     clave: "conQuien", tipo: "unica", titulo: "¿Con quién viajas?", layout: "two",
     opciones: [
-      { v: "S", label: "Solo", e: "🎒" },
-      { v: "P", label: "En pareja", e: "💞" },
-      { v: "F", label: "En familia", e: "👨‍👩‍👧" },
-      { v: "A", label: "Con amigos", e: "🍻" },
+      { v: "S", label: "Solo" },
+      { v: "P", label: "En pareja" },
+      { v: "F", label: "En familia" },
+      { v: "A", label: "Con amigos" },
     ],
   },
   { clave: "mes", tipo: "meses", titulo: "¿En qué mes viajarías?", ayuda: "Algunos destinos cambian mucho según la temporada." },
@@ -56,26 +56,26 @@ const PREGUNTAS = [
     clave: "horas", tipo: "unica", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
     titulo: "¿Cuántas horas de vuelo aguantas?", ayuda: "Aproximado desde Santiago, contando escalas.",
     opciones: [
-      { v: 5, label: "Hasta 5 horas", desc: "Chile y países vecinos", e: "🛫" },
-      { v: 12, label: "Hasta 12 horas", desc: "Sudamérica, Caribe y Norteamérica", e: "🌎" },
-      { v: 99, label: "Lo que sea", desc: "Al otro lado del mundo si vale la pena", e: "🌏" },
+      { v: 5, label: "Hasta 5 horas", desc: "Chile y países vecinos" },
+      { v: 12, label: "Hasta 12 horas", desc: "Sudamérica, Caribe y Norteamérica" },
+      { v: 99, label: "Lo que sea", desc: "Al otro lado del mundo si vale la pena" },
     ],
   },
   {
     clave: "visa", tipo: "unica", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
     titulo: "¿Te complica tramitar una visa?",
     opciones: [
-      { v: "ninguna", label: "Prefiero sin trámites", desc: "Solo con carnet o pasaporte", e: "🛂" },
-      { v: "online", label: "Un trámite online está bien", desc: "Tipo ESTA, eTA o e-Visa", e: "💻" },
-      { v: "da_igual", label: "No me importa", desc: "Hago lo que haga falta", e: "📄" },
+      { v: "ninguna", label: "Prefiero sin trámites", desc: "Solo con carnet o pasaporte" },
+      { v: "online", label: "Un trámite online está bien", desc: "Tipo ESTA, eTA o e-Visa" },
+      { v: "da_igual", label: "No me importa", desc: "Hago lo que haga falta" },
     ],
   },
   {
     clave: "estilo", tipo: "unica", titulo: "¿Algo clásico o algo distinto?",
     opciones: [
-      { v: "clasico", label: "Clásico y probado", desc: "Lugares que todos recomiendan", e: "⭐" },
-      { v: "da_igual", label: "Me da lo mismo", desc: "Lo que mejor me calce", e: "🤷" },
-      { v: "sorpresa", label: "Sorpréndeme", desc: "Algo menos conocido", e: "🧭" },
+      { v: "clasico", label: "Clásico y probado", desc: "Lugares que todos recomiendan" },
+      { v: "da_igual", label: "Me da lo mismo", desc: "Lo que mejor me calce" },
+      { v: "sorpresa", label: "Sorpréndeme", desc: "Algo menos conocido" },
     ],
   },
 ];
@@ -86,7 +86,6 @@ const app = document.getElementById("app");
 const preguntasActivas = () => PREGUNTAS.filter((p) => !p.mostrar || p.mostrar(estado.r));
 const paisActual = () => paisDe(estado.r.pais);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const bandera = (cc) => String.fromCodePoint(...[...cc].map((ch) => 0x1f1e6 + ch.charCodeAt(0) - 65));
 const avion = (size, extra = "") =>
   `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor" ${extra}><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>`;
 
@@ -126,7 +125,6 @@ function renderInicio() {
 /* ---------- Preguntas ---------- */
 function boton(o, presionado, extra = "") {
   return `<button class="opt ${extra}" aria-pressed="${presionado}" data-v="${esc(o.v)}">
-    ${o.e ? `<span class="emo" aria-hidden="true">${o.e}</span>` : ""}
     <span><span class="lbl">${esc(o.label)}</span>${o.desc ? `<span class="desc">${esc(o.desc)}</span>` : ""}</span>
   </button>`;
 }
@@ -142,13 +140,13 @@ function renderPregunta() {
     const pais = paisActual();
     const opciones = r.pais === "XX"
       ? [
-          { v: "fuera", label: "Al extranjero", desc: "Fuera del país donde vivo", e: "🌍" },
-          { v: "da_igual", label: "Me da lo mismo", desc: "Lo que mejor me calce", e: "🤷" },
+          { v: "fuera", label: "Al extranjero", desc: "Fuera del país donde vivo" },
+          { v: "da_igual", label: "Me da lo mismo", desc: "Lo que mejor me calce" },
         ]
       : [
-          { v: "dentro", label: `Dentro de ${pais[1]}`, desc: "Conocer lo que tengo más cerca", e: "🏠" },
-          { v: "fuera", label: `Fuera de ${pais[1]}`, desc: "Salir al extranjero", e: "🌍" },
-          { v: "da_igual", label: "Me da lo mismo", desc: "Lo que mejor me calce", e: "🤷" },
+          { v: "dentro", label: `Dentro de ${pais[1]}`, desc: "Conocer lo que tengo más cerca" },
+          { v: "fuera", label: `Fuera de ${pais[1]}`, desc: "Salir al extranjero" },
+          { v: "da_igual", label: "Me da lo mismo", desc: "Lo que mejor me calce" },
         ];
     cuerpo = `<label class="homesel" for="homeSel">Vivo en</label>
       <select id="homeSel" class="select">${PAISES.map((c) => `<option value="${c[0]}" ${c[0] === r.pais ? "selected" : ""}>${esc(c[1])}</option>`).join("")}</select>
@@ -273,7 +271,7 @@ function renderResultado() {
         <div style="text-align:right"><div class="iata to">${d.aeropuerto}</div><div class="city">${esc(d.pais)}</div></div>
       </div>
       <h2 class="dest-name" tabindex="-1" id="qtitle">${esc(d.nombre)}</h2>
-      <div class="dest-country"><span aria-hidden="true">${bandera(d.codigoPais)}</span> ${esc(d.pais)}</div>
+      <div class="dest-country">${esc(d.pais)}</div>
       <div class="fields">
         <div class="field"><div class="k">Mejor época</div><div class="v">${mesesTxt(d.meses)}</div></div>
         ${r.pais === "CL"
@@ -297,7 +295,7 @@ function renderResultado() {
 
   <div class="section">
     <h3>Por qué te lo recomendamos</h3>
-    <ul class="why">${razones(d, r, x.coincidencias).map((t) => `<li><span class="ic" aria-hidden="true">✓</span><span>${esc(t)}</span></li>`).join("")}</ul>
+    <ul class="why">${razones(d, r, x.coincidencias).map((t) => `<li><span class="ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>${esc(t)}</span></li>`).join("")}</ul>
   </div>
 
   <div class="section">

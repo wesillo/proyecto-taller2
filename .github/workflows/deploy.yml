@@ -26,6 +26,10 @@ jobs:
         with:
           node-version: 22
       - run: npm test
+      - name: Revisar que el catálogo esté regenerado
+        run: |
+          npm run catalogo
+          git diff --exit-code data/destinos.js || (echo "Corre 'npm run catalogo' y sube data/destinos.js" && exit 1)
 
   publicar:
     needs: pruebas

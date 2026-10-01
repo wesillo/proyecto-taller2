@@ -40,7 +40,11 @@ css/styles.css          los estilos
 js/matching.js          el motor de recomendación (puntajes y razones)
 js/datos.js             registro de datos para el Machine Learning (CSV)
 js/app.js               la interfaz (preguntas, resultado, compra)
-data/destinos.js        la base de datos de 178 destinos
+data/destinos.js        catálogo de 178 destinos (GENERADO, no editar a mano)
+data/base/              datos editoriales de cada destino
+data/fuentes/           datos con fuente y fecha: visas, clima, aeropuertos, Banco Mundial
+data/FUENTES.md         metodología del corte de datos y qué falta revisar
+scripts/                script que construye el catálogo
 tests/                  pruebas automáticas del motor
 .github/workflows/      publica la app sola en cada cambio
 .devcontainer/          configuración para programar en Codespaces
@@ -87,8 +91,16 @@ npm test       # corre las pruebas
 4. Otro integrante lo revisa y lo aprueba
 5. Al unirlo a `main`, la app en línea se actualiza sola en 1 a 2 minutos
 
-### Para agregar un destino
-Abre `data/destinos.js`. Arriba del archivo está explicado qué significa cada campo. Copia un destino parecido, cambia los datos y corre `npm test`: si falta algún campo o un valor está fuera de rango, la prueba te dice cuál. Si prefieres no tocar código, abre un **Issue** con la plantilla "Nuevo destino".
+### Para agregar o cambiar un destino
+1. Edita `data/base/destinos-base.json` (datos editoriales).
+2. Agrega su clima en `data/fuentes/clima.json` y, si es un país nuevo, su requisito de ingreso en `data/fuentes/requisitos-ingreso.json`, siempre con URL de la fuente y fecha.
+3. Corre `npm run catalogo` para regenerar `data/destinos.js` y luego `npm test`.
+
+Si prefieres no tocar código, abre un **Issue** con la plantilla "Nuevo destino".
+
+## El catálogo y su corte de datos
+
+El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato con su fuente (corte actual: 1 de octubre de 2026). Las visas están verificadas en sitios oficiales país por país, el clima mensual viene de servicios meteorológicos nacionales y las distancias se calculan con las coordenadas reales de cada aeropuerto. La app muestra la fuente y la fecha de cada dato, y avisa cuando un dato supera su vigencia. Lo que sigue siendo criterio del equipo (costo, ritmo, popularidad, pros y contras) está marcado como editorial. Todo el detalle está en [`data/FUENTES.md`](data/FUENTES.md).
 
 ---
 
@@ -96,14 +108,15 @@ Abre `data/destinos.js`. Arriba del archivo está explicado qué significa cada 
 
 - [x] Pregunta "¿irías a este destino?" para medir si las recomendaciones funcionan
 - [ ] Enviar los datos a una base de datos compartida (hoy se guardan en el navegador)
-- [ ] Más destinos y datos verificados de visas y temporadas
+- [x] Visas verificadas en fuentes oficiales y clima mensual con fuente (corte 1 oct 2026)
+- [ ] Revisar los datos de confianza media o baja listados en `data/FUENTES.md`
 - [ ] Horas de vuelo y visas para usuarios de otros países
 - [ ] Precios reales vía API de Amadeus (requiere un servidor)
 - [ ] Fase 2: Machine Learning entrenado con los datos de uso reales
 
 ## Advertencia
 
-Los datos de los destinos son referenciales y fueron curados a mano para el prototipo. Los requisitos de visa cambian: verificar siempre en [Cancillería](https://www.chile.gob.cl/) antes de viajar. Los enlaces de compra todavía no son enlaces de afiliado.
+Los requisitos de ingreso, el clima y las distancias tienen fuente y fecha de corte (ver `data/FUENTES.md`); el costo, el ritmo, la popularidad y los pros y contras son estimaciones del equipo. Los requisitos de visa cambian: verificar siempre en la fuente oficial antes de viajar. Los enlaces de compra todavía no son enlaces de afiliado.
 
 ## Datos para el Machine Learning
 

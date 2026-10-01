@@ -1,0 +1,1383 @@
+{
+ "fuente": "OurAirports, vía github.com/datasets/airport-codes",
+ "fuenteUrl": "https://github.com/datasets/airport-codes",
+ "fechaCaptura": "2026-10-01",
+ "aeropuertos": {
+  "ADZ": {
+   "nombre": "Gustavo Rojas Pinilla International Airport",
+   "ciudad": "San Andrés",
+   "paisISO": "CO",
+   "lat": 12.5836,
+   "lon": -81.7112,
+   "icao": "SKSP"
+  },
+  "AMM": {
+   "nombre": "Queen Alia International Airport",
+   "ciudad": "Amman",
+   "paisISO": "JO",
+   "lat": 31.7226,
+   "lon": 35.9932,
+   "icao": "OJAI"
+  },
+  "AMS": {
+   "nombre": "Amsterdam Airport Schiphol",
+   "ciudad": "Amsterdam",
+   "paisISO": "NL",
+   "lat": 52.3086,
+   "lon": 4.7639,
+   "icao": "EHAM"
+  },
+  "ANC": {
+   "nombre": "Ted Stevens Anchorage International Airport",
+   "ciudad": "Anchorage",
+   "paisISO": "US",
+   "lat": 61.179,
+   "lon": -149.9926,
+   "icao": "PANC"
+  },
+  "AQP": {
+   "nombre": "Rodríguez Ballón International Airport",
+   "ciudad": "Arequipa",
+   "paisISO": "PE",
+   "lat": -16.3408,
+   "lon": -71.5695,
+   "icao": "SPQU"
+  },
+  "ARI": {
+   "nombre": "Chacalluta International Airport",
+   "ciudad": "Arica",
+   "paisISO": "CL",
+   "lat": -18.3485,
+   "lon": -70.3387,
+   "icao": "SCAR"
+  },
+  "ARN": {
+   "nombre": "Stockholm-Arlanda Airport",
+   "ciudad": "Stockholm",
+   "paisISO": "SE",
+   "lat": 59.6485,
+   "lon": 17.9288,
+   "icao": "ESSA"
+  },
+  "AUA": {
+   "nombre": "Queen Beatrix International Airport",
+   "ciudad": "Oranjestad",
+   "paisISO": "AW",
+   "lat": 12.5011,
+   "lon": -70.0143,
+   "icao": "TNCA"
+  },
+  "BBA": {
+   "nombre": "Balmaceda Airport",
+   "ciudad": "Balmaceda",
+   "paisISO": "CL",
+   "lat": -45.916,
+   "lon": -71.6895,
+   "icao": "SCBA"
+  },
+  "BCN": {
+   "nombre": "Josep Tarradellas Barcelona-El Prat Airport",
+   "ciudad": "Barcelona",
+   "paisISO": "ES",
+   "lat": 41.2971,
+   "lon": 2.0785,
+   "icao": "LEBL"
+  },
+  "BER": {
+   "nombre": "Berlin Brandenburg Airport",
+   "ciudad": "Berlin",
+   "paisISO": "DE",
+   "lat": 52.3617,
+   "lon": 13.5023,
+   "icao": "EDDB"
+  },
+  "BGO": {
+   "nombre": "Bergen Airport, Flesland",
+   "ciudad": "Bergen",
+   "paisISO": "NO",
+   "lat": 60.2934,
+   "lon": 5.2181,
+   "icao": "ENBR"
+  },
+  "BIO": {
+   "nombre": "Bilbao Airport",
+   "ciudad": "Bilbao",
+   "paisISO": "ES",
+   "lat": 43.3011,
+   "lon": -2.9106,
+   "icao": "LEBB"
+  },
+  "BKK": {
+   "nombre": "Suvarnabhumi Airport",
+   "ciudad": "Bangkok",
+   "paisISO": "TH",
+   "lat": 13.6811,
+   "lon": 100.747,
+   "icao": "VTBS"
+  },
+  "BOG": {
+   "nombre": "El Dorado International Airport",
+   "ciudad": "Bogota",
+   "paisISO": "CO",
+   "lat": 4.7016,
+   "lon": -74.1469,
+   "icao": "SKBO"
+  },
+  "BRC": {
+   "nombre": "Teniente Luis Candelaria International Airport",
+   "ciudad": "San Carlos de Bariloche",
+   "paisISO": "AR",
+   "lat": -41.1512,
+   "lon": -71.1575,
+   "icao": "SAZS"
+  },
+  "BRU": {
+   "nombre": "Brussels Airport",
+   "ciudad": "Zaventem",
+   "paisISO": "BE",
+   "lat": 50.9014,
+   "lon": 4.4844,
+   "icao": "EBBR"
+  },
+  "BUD": {
+   "nombre": "Budapest Liszt Ferenc International Airport",
+   "ciudad": "Budapest",
+   "paisISO": "HU",
+   "lat": 47.4302,
+   "lon": 19.2624,
+   "icao": "LHBP"
+  },
+  "BYO": {
+   "nombre": "Bonito Airport",
+   "ciudad": "Bonito",
+   "paisISO": "BR",
+   "lat": -21.2473,
+   "lon": -56.4524,
+   "icao": "SBDB"
+  },
+  "BZE": {
+   "nombre": "Philip S. W. Goldson International Airport",
+   "ciudad": "Belize City",
+   "paisISO": "BZ",
+   "lat": 17.54,
+   "lon": -88.3036,
+   "icao": "MZBZ"
+  },
+  "CAI": {
+   "nombre": "Cairo International Airport",
+   "ciudad": "Cairo",
+   "paisISO": "EG",
+   "lat": 30.1115,
+   "lon": 31.3967,
+   "icao": "HECA"
+  },
+  "CDG": {
+   "nombre": "Charles de Gaulle International Airport",
+   "ciudad": "Paris (Roissy-en-France, Val-d'Oise)",
+   "paisISO": "FR",
+   "lat": 49.009,
+   "lon": 2.5541,
+   "icao": "LFPG"
+  },
+  "CJC": {
+   "nombre": "El Loa Airport",
+   "ciudad": "Calama",
+   "paisISO": "CL",
+   "lat": -22.4982,
+   "lon": -68.9036,
+   "icao": "SCCF"
+  },
+  "CMB": {
+   "nombre": "Bandaranaike International Colombo Airport",
+   "ciudad": "Colombo",
+   "paisISO": "LK",
+   "lat": 7.1808,
+   "lon": 79.8841,
+   "icao": "VCBI"
+  },
+  "CNS": {
+   "nombre": "Cairns International Airport",
+   "ciudad": "Cairns",
+   "paisISO": "AU",
+   "lat": -16.8789,
+   "lon": 145.7495,
+   "icao": "YBCS"
+  },
+  "COK": {
+   "nombre": "Cochin International Airport",
+   "ciudad": "Kochi",
+   "paisISO": "IN",
+   "lat": 10.151,
+   "lon": 76.4008,
+   "icao": "VOCI"
+  },
+  "COR": {
+   "nombre": "Ingeniero Aeronáutico Ambrosio L.V. Taravella International Airport",
+   "ciudad": "Cordoba",
+   "paisISO": "AR",
+   "lat": -31.3123,
+   "lon": -64.2083,
+   "icao": "SACO"
+  },
+  "CPC": {
+   "nombre": "Aviador C. Campos Airport",
+   "ciudad": "Chapelco/San Martin de los Andes",
+   "paisISO": "AR",
+   "lat": -40.0754,
+   "lon": -71.1373,
+   "icao": "SAZY"
+  },
+  "CPH": {
+   "nombre": "Copenhagen Kastrup Airport",
+   "ciudad": "Copenhagen",
+   "paisISO": "DK",
+   "lat": 55.6179,
+   "lon": 12.656,
+   "icao": "EKCH"
+  },
+  "CPO": {
+   "nombre": "Desierto de Atacama Airport",
+   "ciudad": "Copiapo",
+   "paisISO": "CL",
+   "lat": -27.2612,
+   "lon": -70.7792,
+   "icao": "SCAT"
+  },
+  "CPT": {
+   "nombre": "Cape Town International Airport",
+   "ciudad": "Cape Town",
+   "paisISO": "ZA",
+   "lat": -33.974,
+   "lon": 18.6043,
+   "icao": "FACT"
+  },
+  "CTA": {
+   "nombre": "Catania-Fontanarossa Airport",
+   "ciudad": "Catania",
+   "paisISO": "IT",
+   "lat": 37.4668,
+   "lon": 15.0664,
+   "icao": "LICC"
+  },
+  "CTG": {
+   "nombre": "Rafael Nuñez International Airport",
+   "ciudad": "Cartagena",
+   "paisISO": "CO",
+   "lat": 10.4424,
+   "lon": -75.513,
+   "icao": "SKCG"
+  },
+  "CTS": {
+   "nombre": "New Chitose Airport",
+   "ciudad": "Sapporo",
+   "paisISO": "JP",
+   "lat": 42.7748,
+   "lon": 141.6904,
+   "icao": "RJCC"
+  },
+  "CUN": {
+   "nombre": "Cancún International Airport",
+   "ciudad": "Cancún",
+   "paisISO": "MX",
+   "lat": 21.0408,
+   "lon": -86.8735,
+   "icao": "MMUN"
+  },
+  "CUR": {
+   "nombre": "Hato International Airport",
+   "ciudad": "Willemstad",
+   "paisISO": "CW",
+   "lat": 12.1889,
+   "lon": -68.9598,
+   "icao": "TNCC"
+  },
+  "CUZ": {
+   "nombre": "Alejandro Velasco Astete International Airport",
+   "ciudad": "Cusco",
+   "paisISO": "PE",
+   "lat": -13.5357,
+   "lon": -71.9388,
+   "icao": "SPZO"
+  },
+  "DBV": {
+   "nombre": "Dubrovnik Ruđer Bošković Airport",
+   "ciudad": "Dubrovnik",
+   "paisISO": "HR",
+   "lat": 42.5622,
+   "lon": 18.2655,
+   "icao": "LDDU"
+  },
+  "DEL": {
+   "nombre": "Indira Gandhi International Airport",
+   "ciudad": "New Delhi",
+   "paisISO": "IN",
+   "lat": 28.5556,
+   "lon": 77.0952,
+   "icao": "VIDP"
+  },
+  "DPS": {
+   "nombre": "Denpasar I Gusti Ngurah Rai International Airport",
+   "ciudad": "Kuta, Badung",
+   "paisISO": "ID",
+   "lat": -8.7484,
+   "lon": 115.1671,
+   "icao": "WADD"
+  },
+  "DUB": {
+   "nombre": "Dublin Airport",
+   "ciudad": "Dublin",
+   "paisISO": "IE",
+   "lat": 53.4287,
+   "lon": -6.2621,
+   "icao": "EIDW"
+  },
+  "DXB": {
+   "nombre": "Dubai International Airport",
+   "ciudad": "Dubai",
+   "paisISO": "AE",
+   "lat": 25.2498,
+   "lon": 55.371,
+   "icao": "OMDB"
+  },
+  "EDI": {
+   "nombre": "Edinburgh Airport",
+   "ciudad": "Ingliston, Edinburgh",
+   "paisISO": "GB",
+   "lat": 55.9501,
+   "lon": -3.3723,
+   "icao": "EGPH"
+  },
+  "EZE": {
+   "nombre": "Ezeiza International Airport - Ministro Pistarini",
+   "ciudad": "Buenos Aires (Ezeiza)",
+   "paisISO": "AR",
+   "lat": -34.8222,
+   "lon": -58.5358,
+   "icao": "SAEZ"
+  },
+  "FAE": {
+   "nombre": "Vágar Airport",
+   "ciudad": "Vágar",
+   "paisISO": "FO",
+   "lat": 62.0633,
+   "lon": -7.2758,
+   "icao": "EKVG"
+  },
+  "FCO": {
+   "nombre": "Rome–Fiumicino Leonardo da Vinci International Airport",
+   "ciudad": "Rome",
+   "paisISO": "IT",
+   "lat": 41.8045,
+   "lon": 12.252,
+   "icao": "LIRF"
+  },
+  "FEN": {
+   "nombre": "Fernando de Noronha Airport",
+   "ciudad": "Fernando de Noronha",
+   "paisISO": "BR",
+   "lat": -3.8545,
+   "lon": -32.423,
+   "icao": "SBFN"
+  },
+  "FLN": {
+   "nombre": "Hercílio Luz International Airport",
+   "ciudad": "Florianópolis",
+   "paisISO": "BR",
+   "lat": -27.6703,
+   "lon": -48.5525,
+   "icao": "SBFL"
+  },
+  "FLR": {
+   "nombre": "Florence Airport, Peretola",
+   "ciudad": "Firenze (FI)",
+   "paisISO": "IT",
+   "lat": 43.8086,
+   "lon": 11.2028,
+   "icao": "LIRQ"
+  },
+  "FNC": {
+   "nombre": "Cristiano Ronaldo International Airport",
+   "ciudad": "Funchal",
+   "paisISO": "PT",
+   "lat": 32.6978,
+   "lon": -16.7746,
+   "icao": "LPMA"
+  },
+  "FTE": {
+   "nombre": "El Calafate - Commander Armando Tola International Airport",
+   "ciudad": "El Calafate",
+   "paisISO": "AR",
+   "lat": -50.2803,
+   "lon": -72.0534,
+   "icao": "SAWC"
+  },
+  "GIG": {
+   "nombre": "Rio de Janeiro Galeão – Tom Jobim International Airport",
+   "ciudad": "Rio De Janeiro",
+   "paisISO": "BR",
+   "lat": -22.81,
+   "lon": -43.2506,
+   "icao": "SBGL"
+  },
+  "GPS": {
+   "nombre": "Seymour Galapagos Ecological Airport",
+   "ciudad": "Isla Baltra",
+   "paisISO": "EC",
+   "lat": -0.4538,
+   "lon": -90.2659,
+   "icao": "SEGS"
+  },
+  "GRU": {
+   "nombre": "São Paulo/Guarulhos–Governor André Franco Montoro International Airport",
+   "ciudad": "São Paulo",
+   "paisISO": "BR",
+   "lat": -23.4313,
+   "lon": -46.47,
+   "icao": "SBGR"
+  },
+  "GUA": {
+   "nombre": "La Aurora International Airport",
+   "ciudad": "Guatemala City",
+   "paisISO": "GT",
+   "lat": 14.5829,
+   "lon": -90.5275,
+   "icao": "MGGT"
+  },
+  "GYE": {
+   "nombre": "José Joaquín de Olmedo International Airport",
+   "ciudad": "Guayaquil",
+   "paisISO": "EC",
+   "lat": -2.1574,
+   "lon": -79.8836,
+   "icao": "SEGU"
+  },
+  "HAN": {
+   "nombre": "Noi Bai International Airport",
+   "ciudad": "Hanoi (Soc Son)",
+   "paisISO": "VN",
+   "lat": 21.2212,
+   "lon": 105.807,
+   "icao": "VVNB"
+  },
+  "HAV": {
+   "nombre": "José Martí International Airport",
+   "ciudad": "Havana",
+   "paisISO": "CU",
+   "lat": 22.9892,
+   "lon": -82.4091,
+   "icao": "MUHA"
+  },
+  "HKG": {
+   "nombre": "Hong Kong International Airport",
+   "ciudad": "Hong Kong",
+   "paisISO": "HK",
+   "lat": 22.3118,
+   "lon": 113.9149,
+   "icao": "VHHH"
+  },
+  "HKT": {
+   "nombre": "Phuket International Airport",
+   "ciudad": "Phuket",
+   "paisISO": "TH",
+   "lat": 8.1133,
+   "lon": 98.3174,
+   "icao": "VTSP"
+  },
+  "HND": {
+   "nombre": "Tokyo Haneda International Airport",
+   "ciudad": "Tokyo",
+   "paisISO": "JP",
+   "lat": 35.5497,
+   "lon": 139.787,
+   "icao": "RJTT"
+  },
+  "HNL": {
+   "nombre": "Daniel K. Inouye International Airport",
+   "ciudad": "Honolulu, Oahu",
+   "paisISO": "US",
+   "lat": 21.3184,
+   "lon": -157.9257,
+   "icao": "PHNL"
+  },
+  "ICN": {
+   "nombre": "Incheon International Airport",
+   "ciudad": "Seoul",
+   "paisISO": "KR",
+   "lat": 37.4691,
+   "lon": 126.451,
+   "icao": "RKSI"
+  },
+  "IGR": {
+   "nombre": "Cataratas Del Iguazú International Airport",
+   "ciudad": "Puerto Iguazu",
+   "paisISO": "AR",
+   "lat": -25.7373,
+   "lon": -54.4734,
+   "icao": "SARI"
+  },
+  "IPC": {
+   "nombre": "Mataveri International Airport",
+   "ciudad": "Isla De Pascua",
+   "paisISO": "CL",
+   "lat": -27.1654,
+   "lon": -109.421,
+   "icao": "SCIP"
+  },
+  "IQQ": {
+   "nombre": "Diego Aracena International Airport",
+   "ciudad": "Iquique",
+   "paisISO": "CL",
+   "lat": -20.5363,
+   "lon": -70.1814,
+   "icao": "SCDA"
+  },
+  "IQT": {
+   "nombre": "Coronel FAP Francisco Secada Vignetta International Airport",
+   "ciudad": "Iquitos",
+   "paisISO": "PE",
+   "lat": -3.7847,
+   "lon": -73.3088,
+   "icao": "SPQT"
+  },
+  "IST": {
+   "nombre": "İstanbul Airport",
+   "ciudad": "Istanbul",
+   "paisISO": "TR",
+   "lat": 41.2749,
+   "lon": 28.7321,
+   "icao": "LTFM"
+  },
+  "JFK": {
+   "nombre": "John F. Kennedy International Airport",
+   "ciudad": "New York",
+   "paisISO": "US",
+   "lat": 40.6394,
+   "lon": -73.7793,
+   "icao": "KJFK"
+  },
+  "JJD": {
+   "nombre": "Comandante Ariston Pessoa Airport",
+   "ciudad": "Cruz",
+   "paisISO": "BR",
+   "lat": -2.9064,
+   "lon": -40.3573,
+   "icao": "SBJE"
+  },
+  "JRO": {
+   "nombre": "Kilimanjaro International Airport",
+   "ciudad": "Arusha",
+   "paisISO": "TZ",
+   "lat": -3.427,
+   "lon": 37.0735,
+   "icao": "HTKJ"
+  },
+  "JTR": {
+   "nombre": "Santorini International Airport",
+   "ciudad": "Santorini Island",
+   "paisISO": "GR",
+   "lat": 36.4,
+   "lon": 25.4786,
+   "icao": "LGSR"
+  },
+  "KEF": {
+   "nombre": "Keflavik International Airport",
+   "ciudad": "Reykjavík",
+   "paisISO": "IS",
+   "lat": 63.985,
+   "lon": -22.6056,
+   "icao": "BIKF"
+  },
+  "KGL": {
+   "nombre": "Kigali International Airport",
+   "ciudad": "Kigali",
+   "paisISO": "RW",
+   "lat": -1.9686,
+   "lon": 30.1395,
+   "icao": "HRYR"
+  },
+  "KIX": {
+   "nombre": "Kansai International Airport",
+   "ciudad": "Osaka",
+   "paisISO": "JP",
+   "lat": 34.4273,
+   "lon": 135.244,
+   "icao": "RJBB"
+  },
+  "KRK": {
+   "nombre": "Kraków John Paul II International Airport",
+   "ciudad": "Balice",
+   "paisISO": "PL",
+   "lat": 50.0777,
+   "lon": 19.7848,
+   "icao": "EPKK"
+  },
+  "KTM": {
+   "nombre": "Tribhuvan International Airport",
+   "ciudad": "Kathmandu",
+   "paisISO": "NP",
+   "lat": 27.6966,
+   "lon": 85.3591,
+   "icao": "VNKT"
+  },
+  "LAS": {
+   "nombre": "Harry Reid International Airport",
+   "ciudad": "Las Vegas",
+   "paisISO": "US",
+   "lat": 36.0834,
+   "lon": -115.1518,
+   "icao": "KLAS"
+  },
+  "LAX": {
+   "nombre": "Los Angeles International Airport",
+   "ciudad": "Los Angeles",
+   "paisISO": "US",
+   "lat": 33.9425,
+   "lon": -118.408,
+   "icao": "KLAX"
+  },
+  "LHR": {
+   "nombre": "London Heathrow Airport",
+   "ciudad": "London",
+   "paisISO": "GB",
+   "lat": 51.4707,
+   "lon": -0.4599,
+   "icao": "EGLL"
+  },
+  "LIM": {
+   "nombre": "Jorge Chávez International Airport",
+   "ciudad": "Lima",
+   "paisISO": "PE",
+   "lat": -12.0219,
+   "lon": -77.1143,
+   "icao": "SPJC"
+  },
+  "LIS": {
+   "nombre": "Lisbon Humberto Delgado Airport",
+   "ciudad": "Lisbon",
+   "paisISO": "PT",
+   "lat": 38.7813,
+   "lon": -9.1359,
+   "icao": "LPPT"
+  },
+  "LJU": {
+   "nombre": "Ljubljana Jože Pučnik Airport",
+   "ciudad": "Zgornji Brnik",
+   "paisISO": "SI",
+   "lat": 46.2237,
+   "lon": 14.4576,
+   "icao": "LJLJ"
+  },
+  "LPB": {
+   "nombre": "El Alto International Airport",
+   "ciudad": "La Paz / El Alto",
+   "paisISO": "BO",
+   "lat": -16.5103,
+   "lon": -68.1894,
+   "icao": "SLLP"
+  },
+  "LPQ": {
+   "nombre": "Luang Phabang International Airport",
+   "ciudad": "Luang Phabang",
+   "paisISO": "LA",
+   "lat": 19.9043,
+   "lon": 102.1672,
+   "icao": "VLLB"
+  },
+  "LSC": {
+   "nombre": "La Florida Airport",
+   "ciudad": "La Serena-Coquimbo",
+   "paisISO": "CL",
+   "lat": -29.9162,
+   "lon": -71.1995,
+   "icao": "SCSE"
+  },
+  "MAD": {
+   "nombre": "Adolfo Suárez Madrid–Barajas Airport",
+   "ciudad": "Madrid",
+   "paisISO": "ES",
+   "lat": 40.4934,
+   "lon": -3.5722,
+   "icao": "LEMD"
+  },
+  "MAO": {
+   "nombre": "Eduardo Gomes International Airport",
+   "ciudad": "Manaus",
+   "paisISO": "BR",
+   "lat": -3.0386,
+   "lon": -60.0497,
+   "icao": "SBEG"
+  },
+  "MBJ": {
+   "nombre": "Sangster International Airport",
+   "ciudad": "Montego Bay",
+   "paisISO": "JM",
+   "lat": 18.5034,
+   "lon": -77.9132,
+   "icao": "MKJS"
+  },
+  "MCO": {
+   "nombre": "Orlando International Airport",
+   "ciudad": "Orlando",
+   "paisISO": "US",
+   "lat": 28.4294,
+   "lon": -81.309,
+   "icao": "KMCO"
+  },
+  "MCT": {
+   "nombre": "Muscat International Airport",
+   "ciudad": "Muscat/Seeb",
+   "paisISO": "OM",
+   "lat": 23.6002,
+   "lon": 58.2853,
+   "icao": "OOMS"
+  },
+  "MDE": {
+   "nombre": "Jose Maria Córdova International Airport",
+   "ciudad": "Medellín",
+   "paisISO": "CO",
+   "lat": 6.1645,
+   "lon": -75.4231,
+   "icao": "SKRG"
+  },
+  "MDQ": {
+   "nombre": "Ástor Piazzola International Airport",
+   "ciudad": "Mar del Plata",
+   "paisISO": "AR",
+   "lat": -37.9342,
+   "lon": -57.5733,
+   "icao": "SAZM"
+  },
+  "MDZ": {
+   "nombre": "Governor Francisco Gabrielli International Airport",
+   "ciudad": "Mendoza",
+   "paisISO": "AR",
+   "lat": -32.8317,
+   "lon": -68.7929,
+   "icao": "SAME"
+  },
+  "MEL": {
+   "nombre": "Melbourne Airport",
+   "ciudad": "Melbourne",
+   "paisISO": "AU",
+   "lat": -37.6707,
+   "lon": 144.8379,
+   "icao": "YMML"
+  },
+  "MEX": {
+   "nombre": "Mexico City Benito Juárez International Airport",
+   "ciudad": "Mexico City",
+   "paisISO": "MX",
+   "lat": 19.4358,
+   "lon": -99.0703,
+   "icao": "MMMX"
+  },
+  "MHC": {
+   "nombre": "Mocopulli Airport",
+   "ciudad": "Dalcahue",
+   "paisISO": "CL",
+   "lat": -42.3404,
+   "lon": -73.7157,
+   "icao": "SCPQ"
+  },
+  "MIA": {
+   "nombre": "Miami International Airport",
+   "ciudad": "Miami",
+   "paisISO": "US",
+   "lat": 25.796,
+   "lon": -80.2898,
+   "icao": "KMIA"
+  },
+  "MID": {
+   "nombre": "Manuel Crescencio Rejón International Airport",
+   "ciudad": "Mérida",
+   "paisISO": "MX",
+   "lat": 20.9305,
+   "lon": -89.6455,
+   "icao": "MMMD"
+  },
+  "MLA": {
+   "nombre": "Malta International Airport",
+   "ciudad": "Valletta",
+   "paisISO": "MT",
+   "lat": 35.8459,
+   "lon": 14.4915,
+   "icao": "LMML"
+  },
+  "MLE": {
+   "nombre": "Velana International Airport",
+   "ciudad": "Malé",
+   "paisISO": "MV",
+   "lat": 4.1918,
+   "lon": 73.5291,
+   "icao": "VRMM"
+  },
+  "MRU": {
+   "nombre": "Sir Seewoosagur Ramgoolam International Airport",
+   "ciudad": "Plaine Magnien",
+   "paisISO": "MU",
+   "lat": -20.4302,
+   "lon": 57.6836,
+   "icao": "FIMP"
+  },
+  "MSY": {
+   "nombre": "Louis Armstrong New Orleans International Airport",
+   "ciudad": "New Orleans",
+   "paisISO": "US",
+   "lat": 29.9934,
+   "lon": -90.2647,
+   "icao": "KMSY"
+  },
+  "MUB": {
+   "nombre": "Maun International Airport",
+   "ciudad": "Maun",
+   "paisISO": "BW",
+   "lat": -19.9705,
+   "lon": 23.4314,
+   "icao": "FBMN"
+  },
+  "MVD": {
+   "nombre": "Carrasco General Cesáreo L. Berisso International Airport",
+   "ciudad": "Ciudad de la Costa",
+   "paisISO": "UY",
+   "lat": -34.8356,
+   "lon": -56.0265,
+   "icao": "SUMU"
+  },
+  "NAN": {
+   "nombre": "Nadi International Airport",
+   "ciudad": "Nadi",
+   "paisISO": "FJ",
+   "lat": -17.7618,
+   "lon": 177.4378,
+   "icao": "NFFN"
+  },
+  "NAP": {
+   "nombre": "Naples International Airport",
+   "ciudad": "Napoli",
+   "paisISO": "IT",
+   "lat": 40.886,
+   "lon": 14.2908,
+   "icao": "LIRN"
+  },
+  "NAV": {
+   "nombre": "Nevşehir Kapadokya Airport",
+   "ciudad": "Nevşehir",
+   "paisISO": "TR",
+   "lat": 38.7719,
+   "lon": 34.5345,
+   "icao": "LTAZ"
+  },
+  "NBO": {
+   "nombre": "Jomo Kenyatta International Airport",
+   "ciudad": "Nairobi",
+   "paisISO": "KE",
+   "lat": -1.3189,
+   "lon": 36.9282,
+   "icao": "HKJK"
+  },
+  "NCE": {
+   "nombre": "Nice-Côte d'Azur Airport",
+   "ciudad": "Nice, Alpes-Maritimes",
+   "paisISO": "FR",
+   "lat": 43.6584,
+   "lon": 7.2159,
+   "icao": "LFMN"
+  },
+  "OAX": {
+   "nombre": "Xoxocotlán International Airport",
+   "ciudad": "Oaxaca",
+   "paisISO": "MX",
+   "lat": 16.9988,
+   "lon": -96.7261,
+   "icao": "MMOX"
+  },
+  "OPO": {
+   "nombre": "Francisco de Sá Carneiro Airport",
+   "ciudad": "Porto",
+   "paisISO": "PT",
+   "lat": 41.2481,
+   "lon": -8.6814,
+   "icao": "LPPR"
+  },
+  "PBH": {
+   "nombre": "Paro International Airport",
+   "ciudad": "Paro",
+   "paisISO": "BT",
+   "lat": 27.4032,
+   "lon": 89.4246,
+   "icao": "VQPR"
+  },
+  "PDL": {
+   "nombre": "João Paulo II Airport",
+   "ciudad": "Ponta Delgada",
+   "paisISO": "PT",
+   "lat": 37.7412,
+   "lon": -25.6979,
+   "icao": "LPPD"
+  },
+  "PDP": {
+   "nombre": "Capitan Corbeta CA Curbelo International Airport",
+   "ciudad": "Punta del Este",
+   "paisISO": "UY",
+   "lat": -34.8551,
+   "lon": -55.0943,
+   "icao": "SULS"
+  },
+  "PEI": {
+   "nombre": "Matecaña International Airport",
+   "ciudad": "Pereira",
+   "paisISO": "CO",
+   "lat": 4.8127,
+   "lon": -75.7395,
+   "icao": "SKPE"
+  },
+  "PEK": {
+   "nombre": "Beijing Capital International Airport",
+   "ciudad": "Beijing",
+   "paisISO": "CN",
+   "lat": 40.0773,
+   "lon": 116.5967,
+   "icao": "ZBAA"
+  },
+  "PMC": {
+   "nombre": "El Tepual International Airport",
+   "ciudad": "Puerto Montt",
+   "paisISO": "CL",
+   "lat": -41.4431,
+   "lon": -73.0941,
+   "icao": "SCTE"
+  },
+  "PMI": {
+   "nombre": "Palma de Mallorca Airport",
+   "ciudad": "Palma de Mallorca",
+   "paisISO": "ES",
+   "lat": 39.5517,
+   "lon": 2.7388,
+   "icao": "LEPA"
+  },
+  "PMY": {
+   "nombre": "El Tehuelche Airport",
+   "ciudad": "Puerto Madryn",
+   "paisISO": "AR",
+   "lat": -42.7592,
+   "lon": -65.1027,
+   "icao": "SAVY"
+  },
+  "PNT": {
+   "nombre": "Lieutenant Julio Gallardo Airport",
+   "ciudad": "Puerto Natales",
+   "paisISO": "CL",
+   "lat": -51.6707,
+   "lon": -72.5291,
+   "icao": "SCNT"
+  },
+  "PPS": {
+   "nombre": "Puerto Princesa International Airport / PAF Antonio Bautista Air Base",
+   "ciudad": "Puerto Princesa",
+   "paisISO": "PH",
+   "lat": 9.742,
+   "lon": 118.7591,
+   "icao": "RPVP"
+  },
+  "PPT": {
+   "nombre": "Fa'a'ā International Airport",
+   "ciudad": "Papeete",
+   "paisISO": "PF",
+   "lat": -17.5535,
+   "lon": -149.6069,
+   "icao": "NTAA"
+  },
+  "PRG": {
+   "nombre": "Václav Havel Airport Prague",
+   "ciudad": "Prague",
+   "paisISO": "CZ",
+   "lat": 50.1009,
+   "lon": 14.2599,
+   "icao": "LKPR"
+  },
+  "PTY": {
+   "nombre": "Tocumen International Airport",
+   "ciudad": "Tocumen",
+   "paisISO": "PA",
+   "lat": 9.0714,
+   "lon": -79.3835,
+   "icao": "MPTO"
+  },
+  "PUJ": {
+   "nombre": "Punta Cana International Airport",
+   "ciudad": "Punta Cana",
+   "paisISO": "DO",
+   "lat": 18.5671,
+   "lon": -68.3646,
+   "icao": "MDPC"
+  },
+  "PUQ": {
+   "nombre": "President Carlos Ibáñez International Airport",
+   "ciudad": "Punta Arenas",
+   "paisISO": "CL",
+   "lat": -53.0026,
+   "lon": -70.8546,
+   "icao": "SCCI"
+  },
+  "PVA": {
+   "nombre": "El Embrujo Airport",
+   "ciudad": "Providencia",
+   "paisISO": "CO",
+   "lat": 13.3575,
+   "lon": -81.358,
+   "icao": "SKPV"
+  },
+  "RAK": {
+   "nombre": "Marrakesh Menara Airport",
+   "ciudad": "Marrakesh",
+   "paisISO": "MA",
+   "lat": 31.6048,
+   "lon": -8.0358,
+   "icao": "GMMX"
+  },
+  "REC": {
+   "nombre": "Recife/Guararapes - Gilberto Freyre International Airport",
+   "ciudad": "Recife",
+   "paisISO": "BR",
+   "lat": -8.1275,
+   "lon": -34.923,
+   "icao": "SBRF"
+  },
+  "RTB": {
+   "nombre": "Juan Manuel Gálvez International Airport",
+   "ciudad": "Coxen Hole",
+   "paisISO": "HN",
+   "lat": 16.3168,
+   "lon": -86.523,
+   "icao": "MHRO"
+  },
+  "RVN": {
+   "nombre": "Rovaniemi Airport",
+   "ciudad": "Rovaniemi",
+   "paisISO": "FI",
+   "lat": 66.5633,
+   "lon": 25.8298,
+   "icao": "EFRO"
+  },
+  "SAI": {
+   "nombre": "Siem Reap-Angkor International Airport",
+   "ciudad": "Siem Reap",
+   "paisISO": "KH",
+   "lat": 13.3697,
+   "lon": 104.2238,
+   "icao": "VDSA"
+  },
+  "SCL": {
+   "nombre": "Comodoro Arturo Merino Benítez International Airport",
+   "ciudad": "Santiago",
+   "paisISO": "CL",
+   "lat": -33.393,
+   "lon": -70.7858,
+   "icao": "SCEL"
+  },
+  "SEZ": {
+   "nombre": "Seychelles International Airport",
+   "ciudad": "Victoria",
+   "paisISO": "SC",
+   "lat": -4.6743,
+   "lon": 55.5218,
+   "icao": "FSIA"
+  },
+  "SFO": {
+   "nombre": "San Francisco International Airport",
+   "ciudad": "San Francisco",
+   "paisISO": "US",
+   "lat": 37.6198,
+   "lon": -122.3748,
+   "icao": "KSFO"
+  },
+  "SID": {
+   "nombre": "Amílcar Cabral International Airport",
+   "ciudad": "Espargos",
+   "paisISO": "CV",
+   "lat": 16.7414,
+   "lon": -22.9494,
+   "icao": "GVAC"
+  },
+  "SIN": {
+   "nombre": "Singapore Changi Airport",
+   "ciudad": "Singapore",
+   "paisISO": "SG",
+   "lat": 1.3502,
+   "lon": 103.994,
+   "icao": "WSSS"
+  },
+  "SJD": {
+   "nombre": "Los Cabos International Airport",
+   "ciudad": "San José del Cabo",
+   "paisISO": "MX",
+   "lat": 23.1519,
+   "lon": -109.7207,
+   "icao": "MMSD"
+  },
+  "SJO": {
+   "nombre": "Juan Santamaría International Airport",
+   "ciudad": "San José (Alajuela)",
+   "paisISO": "CR",
+   "lat": 9.9939,
+   "lon": -84.2088,
+   "icao": "MROC"
+  },
+  "SJU": {
+   "nombre": "Luis Munoz Marin International Airport",
+   "ciudad": "San Juan",
+   "paisISO": "PR",
+   "lat": 18.4394,
+   "lon": -66.0018,
+   "icao": "TJSJ"
+  },
+  "SLA": {
+   "nombre": "Martín Miguel de Güemes International Airport",
+   "ciudad": "Salta",
+   "paisISO": "AR",
+   "lat": -24.856,
+   "lon": -65.4862,
+   "icao": "SASA"
+  },
+  "SLZ": {
+   "nombre": "Marechal Cunha Machado International Airport",
+   "ciudad": "São Luís",
+   "paisISO": "BR",
+   "lat": -2.5864,
+   "lon": -44.235,
+   "icao": "SBSL"
+  },
+  "SMR": {
+   "nombre": "Simón Bolívar International Airport",
+   "ciudad": "Santa Marta",
+   "paisISO": "CO",
+   "lat": 11.1196,
+   "lon": -74.2306,
+   "icao": "SKSM"
+  },
+  "SRE": {
+   "nombre": "Alcantarí International Airport",
+   "ciudad": "Sucre",
+   "paisISO": "BO",
+   "lat": -19.2468,
+   "lon": -65.1496,
+   "icao": "SLAL"
+  },
+  "SSA": {
+   "nombre": "Deputado Luiz Eduardo Magalhães International Airport",
+   "ciudad": "Salvador",
+   "paisISO": "BR",
+   "lat": -12.9086,
+   "lon": -38.3225,
+   "icao": "SBSV"
+  },
+  "SVQ": {
+   "nombre": "Seville Airport",
+   "ciudad": "Seville",
+   "paisISO": "ES",
+   "lat": 37.418,
+   "lon": -5.8931,
+   "icao": "LEZL"
+  },
+  "SYD": {
+   "nombre": "Sydney Kingsford Smith International Airport",
+   "ciudad": "Sydney (Mascot)",
+   "paisISO": "AU",
+   "lat": -33.9461,
+   "lon": 151.177,
+   "icao": "YSSY"
+  },
+  "TAS": {
+   "nombre": "Tashkent International Airport",
+   "ciudad": "Tashkent",
+   "paisISO": "UZ",
+   "lat": 41.2579,
+   "lon": 69.2812,
+   "icao": "UZTT"
+  },
+  "TBS": {
+   "nombre": "Tbilisi International Airport",
+   "ciudad": "Tbilisi",
+   "paisISO": "GE",
+   "lat": 41.6692,
+   "lon": 44.9547,
+   "icao": "UGTB"
+  },
+  "TFS": {
+   "nombre": "Tenerife Sur Airport",
+   "ciudad": "Tenerife",
+   "paisISO": "ES",
+   "lat": 28.0445,
+   "lon": -16.5725,
+   "icao": "GCTS"
+  },
+  "TIA": {
+   "nombre": "Tirana International Airport Mother Teresa",
+   "ciudad": "Rinas",
+   "paisISO": "AL",
+   "lat": 41.4147,
+   "lon": 19.7206,
+   "icao": "LATI"
+  },
+  "TIV": {
+   "nombre": "Tivat Airport",
+   "ciudad": "Tivat",
+   "paisISO": "ME",
+   "lat": 42.4047,
+   "lon": 18.7233,
+   "icao": "LYTV"
+  },
+  "TLL": {
+   "nombre": "Lennart Meri Tallinn Airport",
+   "ciudad": "Tallinn",
+   "paisISO": "EE",
+   "lat": 59.4132,
+   "lon": 24.8326,
+   "icao": "EETN"
+  },
+  "TNR": {
+   "nombre": "Ivato International Airport",
+   "ciudad": "Antananarivo",
+   "paisISO": "MG",
+   "lat": -18.7969,
+   "lon": 47.4788,
+   "icao": "FMMI"
+  },
+  "TPE": {
+   "nombre": "Taiwan Taoyuan International Airport",
+   "ciudad": "Taoyuan",
+   "paisISO": "TW",
+   "lat": 25.0777,
+   "lon": 121.233,
+   "icao": "RCTP"
+  },
+  "TYL": {
+   "nombre": "Captain Victor Montes Arias International Airport",
+   "ciudad": "Talara",
+   "paisISO": "PE",
+   "lat": -4.5766,
+   "lon": -81.2541,
+   "icao": "SPYL"
+  },
+  "UBN": {
+   "nombre": "Ulaanbaatar Chinggis Khaan International Airport",
+   "ciudad": "Ulaanbaatar (Sergelen)",
+   "paisISO": "MN",
+   "lat": 47.6469,
+   "lon": 106.8198,
+   "icao": "ZMCK"
+  },
+  "UIO": {
+   "nombre": "Mariscal Sucre International Airport",
+   "ciudad": "Quito",
+   "paisISO": "EC",
+   "lat": -0.1254,
+   "lon": -78.3543,
+   "icao": "SEQM"
+  },
+  "USH": {
+   "nombre": "Ushuaia - Malvinas Argentinas International Airport",
+   "ciudad": "Ushuaia",
+   "paisISO": "AR",
+   "lat": -54.8433,
+   "lon": -68.2958,
+   "icao": "SAWH"
+  },
+  "UYU": {
+   "nombre": "Joya Andina International Airport",
+   "ciudad": "Quijarro",
+   "paisISO": "BO",
+   "lat": -20.4413,
+   "lon": -66.8576,
+   "icao": "SLUY"
+  },
+  "VCE": {
+   "nombre": "Venice Marco Polo Airport",
+   "ciudad": "Venezia (VE)",
+   "paisISO": "IT",
+   "lat": 45.5053,
+   "lon": 12.3519,
+   "icao": "LIPZ"
+  },
+  "VIE": {
+   "nombre": "Vienna International Airport",
+   "ciudad": "Vienna",
+   "paisISO": "AT",
+   "lat": 48.1103,
+   "lon": 16.5697,
+   "icao": "LOWW"
+  },
+  "WDH": {
+   "nombre": "Hosea Kutako International Airport",
+   "ciudad": "Windhoek",
+   "paisISO": "NA",
+   "lat": -22.4799,
+   "lon": 17.4709,
+   "icao": "FYWH"
+  },
+  "YUL": {
+   "nombre": "Montreal / Pierre Elliott Trudeau International Airport",
+   "ciudad": "Montréal",
+   "paisISO": "CA",
+   "lat": 45.4678,
+   "lon": -73.7423,
+   "icao": "CYUL"
+  },
+  "YVR": {
+   "nombre": "Vancouver International Airport",
+   "ciudad": "Vancouver",
+   "paisISO": "CA",
+   "lat": 49.1939,
+   "lon": -123.184,
+   "icao": "CYVR"
+  },
+  "YYZ": {
+   "nombre": "Toronto Pearson International Airport",
+   "ciudad": "Toronto",
+   "paisISO": "CA",
+   "lat": 43.6759,
+   "lon": -79.6294,
+   "icao": "CYYZ"
+  },
+  "ZAL": {
+   "nombre": "Pichoy Airport",
+   "ciudad": "Valdivia",
+   "paisISO": "CL",
+   "lat": -39.65,
+   "lon": -73.0861,
+   "icao": "SCVD"
+  },
+  "ZCO": {
+   "nombre": "La Araucanía International Airport",
+   "ciudad": "Temuco",
+   "paisISO": "CL",
+   "lat": -38.9259,
+   "lon": -72.6515,
+   "icao": "SCQP"
+  },
+  "ZNZ": {
+   "nombre": "Abeid Amani Karume International Airport",
+   "ciudad": "Zanzibar",
+   "paisISO": "TZ",
+   "lat": -6.222,
+   "lon": 39.2249,
+   "icao": "HTZA"
+  },
+  "ZQN": {
+   "nombre": "Queenstown Airport",
+   "ciudad": "Queenstown",
+   "paisISO": "NZ",
+   "lat": -45.0192,
+   "lon": 168.7464,
+   "icao": "NZQN"
+  },
+  "ZRH": {
+   "nombre": "Zürich Airport",
+   "ciudad": "Zurich",
+   "paisISO": "CH",
+   "lat": 47.4581,
+   "lon": 8.5481,
+   "icao": "LSZH"
+  }
+ }
+}

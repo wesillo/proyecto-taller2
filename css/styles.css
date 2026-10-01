@@ -167,3 +167,15 @@ button,select{font:inherit;color:inherit}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
 .feedback .fb-motivos{display:flex;flex-wrap:wrap;gap:8px}
 .feedback .fb-motivos .opt{min-height:0;padding:8px 14px;border-radius:999px;border-width:1.5px;font-size:15px}
+
+/* Requisitos de entrada y fuentes */
+.req{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.req-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.req-top b{font-size:17px}
+.req-top span{font-size:14px;color:var(--muted)}
+.req p{margin:10px 0 0;font-size:15px}
+.src{font-size:13px;color:var(--muted)}
+.src a,.fuentes a{color:var(--sky)}
+.fuentes{margin-top:14px;font-size:14px;color:var(--muted)}
+.fuentes summary{cursor:pointer;font-weight:600;color:var(--ink)}
+.fuentes ul{margin:10px 0 0;padding-left:18px;display:grid;gap:6px}

@@ -91,3 +91,43 @@ test("la edad no cambia el puntaje", () => {
   const r = { pais: "CL", alcance: "da_igual", tags: d.tags.slice(0, 1), presupuesto: 3, ritmo: 3, conQuien: "S", mes: 0, estilo: "da_igual", docs: [] };
   assert.equal(puntaje(d, { ...r, edad: "18-24" }).puntaje, puntaje(d, { ...r, edad: "65+" }).puntaje);
 });
+
+/* ---------- Catálogo con corte de datos ---------- */
+const { CORTE_DATOS } = require("../data/destinos.js");
+const fechaValida = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s) && !isNaN(new Date(s));
+
+test("el catálogo tiene fecha de corte y vigencias", () => {
+  assert.ok(fechaValida(CORTE_DATOS.fechaCorte));
+  for (const tipo of ["visa", "clima", "horasVuelo"]) assert.ok(CORTE_DATOS.vigenciaDias[tipo] > 0, tipo);
+});
+
+test("cada destino tiene requisito de ingreso con fuente, fecha y confianza", () => {
+  for (const d of DESTINOS) {
+    const i = d.ingreso;
+    assert.ok(i, `sin ingreso: ${d.nombre}`);
+    assert.ok(["alta", "media", "baja"].includes(i.confianza), d.nombre);
+    assert.ok(fechaValida(i.fecha), d.nombre);
+    if (d.codigoPais !== "CL") assert.match(i.fuenteUrl, /^https?:\/\//, `sin fuente: ${d.nombre}`);
+    assert.equal(d.visa, i.tramitePrevio && d.codigoPais !== "CL" ? "E" : "N", d.nombre);
+  }
+});
+
+test("cada destino tiene clima mensual completo y coherente, con fuente", () => {
+  for (const d of DESTINOS) {
+    const c = d.climaMensual;
+    for (const k of ["tmax", "tmin", "lluviaMm"]) {
+      assert.equal(c[k].length, 12, `${k} ${d.nombre}`);
+      assert.ok(c[k].every((v) => typeof v === "number"), `${k} ${d.nombre}`);
+    }
+    c.tmax.forEach((t, m) => assert.ok(t > c.tmin[m], `máx <= mín en ${d.nombre}, mes ${m + 1}`));
+    assert.match(c.fuenteUrl, /^https?:\/\//, d.nombre);
+  }
+});
+
+test("las horas de vuelo nunca son menores que el mínimo físico de un vuelo directo", () => {
+  for (const d of DESTINOS) assert.ok(d.horasVuelo >= d.ubicacion.horasMinimasDirecto, d.nombre);
+});
+
+test("los países donde se entra con carnet están en la lista del motor", () => {
+  for (const d of DESTINOS) if (d.ingreso.soloCarnet && d.codigoPais !== "CL") assert.ok(PAISES_CON_CARNET.includes(d.codigoPais), d.nombre);
+});

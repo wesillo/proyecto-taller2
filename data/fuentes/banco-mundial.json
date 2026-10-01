@@ -1,0 +1,369 @@
+{
+ "fechaCaptura": "2026-10-01",
+ "indicadores": {
+  "llegadasTuristas2019": {
+   "codigo": "ST.INT.ARVL",
+   "descripcion": "Llegadas de turistas internacionales, 2019 (último año previo a la pandemia)",
+   "fuenteUrl": "https://data.worldbank.org/indicator/ST.INT.ARVL"
+  },
+  "nivelPrecios2023": {
+   "codigo": "PA.NUS.PPP / PA.NUS.FCRF",
+   "descripcion": "Nivel de precios relativo a EE.UU. (=1): factor PPP dividido por tipo de cambio oficial, 2023",
+   "fuenteUrl": "https://data.worldbank.org/indicator/PA.NUS.PPP"
+  }
+ },
+ "paises": {
+  "AE": {
+   "llegadasTuristas2019": 25282000,
+   "nivelPrecios2023": 0.639
+  },
+  "AL": {
+   "llegadasTuristas2019": 6406000,
+   "nivelPrecios2023": 0.392
+  },
+  "AR": {
+   "llegadasTuristas2019": 7399000,
+   "nivelPrecios2023": 0.472
+  },
+  "AT": {
+   "llegadasTuristas2019": 31884000,
+   "nivelPrecios2023": 0.762
+  },
+  "AU": {
+   "llegadasTuristas2019": 9466000,
+   "nivelPrecios2023": 0.889
+  },
+  "AW": {
+   "llegadasTuristas2019": 1951000,
+   "nivelPrecios2023": 0.734
+  },
+  "BE": {
+   "llegadasTuristas2019": 9343000,
+   "nivelPrecios2023": 0.761
+  },
+  "BO": {
+   "llegadasTuristas2019": 1239000,
+   "nivelPrecios2023": 0.331
+  },
+  "BR": {
+   "llegadasTuristas2019": 6353000,
+   "nivelPrecios2023": 0.49
+  },
+  "BT": {
+   "llegadasTuristas2019": 316000,
+   "nivelPrecios2023": 0.236
+  },
+  "BW": {
+   "llegadasTuristas2019": null,
+   "nivelPrecios2023": 0.372
+  },
+  "BZ": {
+   "llegadasTuristas2019": 1674000,
+   "nivelPrecios2023": 0.54
+  },
+  "CA": {
+   "llegadasTuristas2019": 32430000,
+   "nivelPrecios2023": 0.844
+  },
+  "CH": {
+   "llegadasTuristas2019": 11818000,
+   "nivelPrecios2023": 1.112
+  },
+  "CL": {
+   "llegadasTuristas2019": 5431000,
+   "nivelPrecios2023": 0.515
+  },
+  "CN": {
+   "llegadasTuristas2019": 162538000,
+   "nivelPrecios2023": 0.514
+  },
+  "CO": {
+   "llegadasTuristas2019": 4531000,
+   "nivelPrecios2023": 0.33
+  },
+  "CR": {
+   "llegadasTuristas2019": 3366000,
+   "nivelPrecios2023": 0.586
+  },
+  "CU": {
+   "llegadasTuristas2019": 4276000,
+   "nivelPrecios2023": null
+  },
+  "CV": {
+   "llegadasTuristas2019": 758000,
+   "nivelPrecios2023": 0.468
+  },
+  "CW": {
+   "llegadasTuristas2019": 1293000,
+   "nivelPrecios2023": 0.692
+  },
+  "CZ": {
+   "llegadasTuristas2019": 37202000,
+   "nivelPrecios2023": 0.567
+  },
+  "DE": {
+   "llegadasTuristas2019": 39563000,
+   "nivelPrecios2023": 0.758
+  },
+  "DK": {
+   "llegadasTuristas2019": 33093000,
+   "nivelPrecios2023": 0.879
+  },
+  "DO": {
+   "llegadasTuristas2019": 7550000,
+   "nivelPrecios2023": 0.411
+  },
+  "EC": {
+   "llegadasTuristas2019": 2108000,
+   "nivelPrecios2023": 0.422
+  },
+  "EE": {
+   "llegadasTuristas2019": 6103000,
+   "nivelPrecios2023": 0.62
+  },
+  "EG": {
+   "llegadasTuristas2019": 13026000,
+   "nivelPrecios2023": 0.156
+  },
+  "ES": {
+   "llegadasTuristas2019": 126170000,
+   "nivelPrecios2023": 0.602
+  },
+  "FI": {
+   "llegadasTuristas2019": 3290000,
+   "nivelPrecios2023": 0.833
+  },
+  "FJ": {
+   "llegadasTuristas2019": 969000,
+   "nivelPrecios2023": 0.404
+  },
+  "FO": {
+   "llegadasTuristas2019": null,
+   "nivelPrecios2023": 0.909
+  },
+  "FR": {
+   "llegadasTuristas2019": 217877000,
+   "nivelPrecios2023": 0.734
+  },
+  "GB": {
+   "llegadasTuristas2019": 40857000,
+   "nivelPrecios2023": 0.821
+  },
+  "GE": {
+   "llegadasTuristas2019": 7726000,
+   "nivelPrecios2023": 0.33
+  },
+  "GR": {
+   "llegadasTuristas2019": 34005000,
+   "nivelPrecios2023": 0.548
+  },
+  "GT": {
+   "llegadasTuristas2019": 2560000,
+   "nivelPrecios2023": 0.418
+  },
+  "HK": {
+   "llegadasTuristas2019": 55913000,
+   "nivelPrecios2023": 0.706
+  },
+  "HN": {
+   "llegadasTuristas2019": 2315000,
+   "nivelPrecios2023": 0.449
+  },
+  "HR": {
+   "llegadasTuristas2019": 60021000,
+   "nivelPrecios2023": 0.464
+  },
+  "HU": {
+   "llegadasTuristas2019": 61397000,
+   "nivelPrecios2023": 0.479
+  },
+  "ID": {
+   "llegadasTuristas2019": 16107000,
+   "nivelPrecios2023": 0.316
+  },
+  "IE": {
+   "llegadasTuristas2019": 10951000,
+   "nivelPrecios2023": 0.8
+  },
+  "IN": {
+   "llegadasTuristas2019": 17914000,
+   "nivelPrecios2023": 0.248
+  },
+  "IS": {
+   "llegadasTuristas2019": 2202000,
+   "nivelPrecios2023": 0.999
+  },
+  "IT": {
+   "llegadasTuristas2019": 95399000,
+   "nivelPrecios2023": 0.651
+  },
+  "JM": {
+   "llegadasTuristas2019": 4233000,
+   "nivelPrecios2023": 0.596
+  },
+  "JO": {
+   "llegadasTuristas2019": 5361000,
+   "nivelPrecios2023": 0.428
+  },
+  "JP": {
+   "llegadasTuristas2019": 31881000,
+   "nivelPrecios2023": 0.668
+  },
+  "KE": {
+   "llegadasTuristas2019": 2049000,
+   "nivelPrecios2023": 0.307
+  },
+  "KH": {
+   "llegadasTuristas2019": 6611000,
+   "nivelPrecios2023": 0.327
+  },
+  "KR": {
+   "llegadasTuristas2019": 17503000,
+   "nivelPrecios2023": 0.621
+  },
+  "LA": {
+   "llegadasTuristas2019": 4791000,
+   "nivelPrecios2023": 0.222
+  },
+  "LK": {
+   "llegadasTuristas2019": 2027000,
+   "nivelPrecios2023": 0.263
+  },
+  "MA": {
+   "llegadasTuristas2019": 13109000,
+   "nivelPrecios2023": 0.385
+  },
+  "ME": {
+   "llegadasTuristas2019": 2510000,
+   "nivelPrecios2023": 0.385
+  },
+  "MG": {
+   "llegadasTuristas2019": 486000,
+   "nivelPrecios2023": 0.284
+  },
+  "MN": {
+   "llegadasTuristas2019": 637000,
+   "nivelPrecios2023": 0.324
+  },
+  "MT": {
+   "llegadasTuristas2019": 3519000,
+   "nivelPrecios2023": 0.61
+  },
+  "MU": {
+   "llegadasTuristas2019": 1418000,
+   "nivelPrecios2023": 0.383
+  },
+  "MV": {
+   "llegadasTuristas2019": 1703000,
+   "nivelPrecios2023": 0.507
+  },
+  "MX": {
+   "llegadasTuristas2019": 97406000,
+   "nivelPrecios2023": 0.549
+  },
+  "NA": {
+   "llegadasTuristas2019": 1651000,
+   "nivelPrecios2023": 0.376
+  },
+  "NL": {
+   "llegadasTuristas2019": 20129000,
+   "nivelPrecios2023": 0.79
+  },
+  "NO": {
+   "llegadasTuristas2019": 5879000,
+   "nivelPrecios2023": 0.844
+  },
+  "NP": {
+   "llegadasTuristas2019": 1197000,
+   "nivelPrecios2023": 0.253
+  },
+  "NZ": {
+   "llegadasTuristas2019": 3888000,
+   "nivelPrecios2023": 0.897
+  },
+  "OM": {
+   "llegadasTuristas2019": 3506000,
+   "nivelPrecios2023": 0.501
+  },
+  "PA": {
+   "llegadasTuristas2019": 2494000,
+   "nivelPrecios2023": 0.472
+  },
+  "PE": {
+   "llegadasTuristas2019": 5275000,
+   "nivelPrecios2023": 0.465
+  },
+  "PF": {
+   "llegadasTuristas2019": 300000,
+   "nivelPrecios2023": null
+  },
+  "PH": {
+   "llegadasTuristas2019": 8261000,
+   "nivelPrecios2023": 0.346
+  },
+  "PL": {
+   "llegadasTuristas2019": 88515000,
+   "nivelPrecios2023": 0.457
+  },
+  "PR": {
+   "llegadasTuristas2019": 4931000,
+   "nivelPrecios2023": 0.777
+  },
+  "PT": {
+   "llegadasTuristas2019": 17283000,
+   "nivelPrecios2023": 0.555
+  },
+  "RW": {
+   "llegadasTuristas2019": 1634000,
+   "nivelPrecios2023": 0.302
+  },
+  "SC": {
+   "llegadasTuristas2019": 428000,
+   "nivelPrecios2023": 0.568
+  },
+  "SE": {
+   "llegadasTuristas2019": 7616000,
+   "nivelPrecios2023": 0.803
+  },
+  "SG": {
+   "llegadasTuristas2019": 19116000,
+   "nivelPrecios2023": 0.597
+  },
+  "SI": {
+   "llegadasTuristas2019": 4702000,
+   "nivelPrecios2023": 0.582
+  },
+  "TH": {
+   "llegadasTuristas2019": 39916000,
+   "nivelPrecios2023": 0.306
+  },
+  "TR": {
+   "llegadasTuristas2019": 51747000,
+   "nivelPrecios2023": 0.31
+  },
+  "TZ": {
+   "llegadasTuristas2019": 1527000,
+   "nivelPrecios2023": 0.304
+  },
+  "US": {
+   "llegadasTuristas2019": 165478000,
+   "nivelPrecios2023": 1.0
+  },
+  "UY": {
+   "llegadasTuristas2019": 3480000,
+   "nivelPrecios2023": 0.677
+  },
+  "UZ": {
+   "llegadasTuristas2019": 6749000,
+   "nivelPrecios2023": 0.258
+  },
+  "VN": {
+   "llegadasTuristas2019": 18009000,
+   "nivelPrecios2023": 0.288
+  },
+  "ZA": {
+   "llegadasTuristas2019": 14797000,
+   "nivelPrecios2023": 0.397
+  }
+ }
+}

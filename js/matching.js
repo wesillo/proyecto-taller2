@@ -30,8 +30,10 @@ const PAISES = [
   ["XX", "Otro país", "", ""],
 ];
 
-// Países a los que un chileno puede entrar solo con su cédula de identidad
+// Países a los que un chileno puede entrar solo con su cédula de identidad.
+// El catálogo trae el dato verificado por destino (d.ingreso.soloCarnet); esta lista es el respaldo.
 const PAISES_CON_CARNET = ["AR", "BR", "UY", "PY", "BO", "PE", "CO", "EC", "VE"];
+const entraConCarnet = (d) => (d.ingreso ? d.ingreso.soloCarnet : PAISES_CON_CARNET.includes(d.codigoPais));
 
 // Documento que el usuario puede marcar como "ya lo tengo" y los países que habilita
 const DOCUMENTOS = {
@@ -46,7 +48,7 @@ const yaTienePermiso = (d, r) =>
 
 // ¿Le falta pasaporte para ir a este destino? (solo aplica a quien vive en Chile)
 const faltaPasaporte = (d, r) =>
-  (r.docs || []).includes("carnet") && d.codigoPais !== r.pais && !PAISES_CON_CARNET.includes(d.codigoPais);
+  (r.docs || []).includes("carnet") && d.codigoPais !== r.pais && !entraConCarnet(d);
 
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const listaTxt = (arr) => (arr.length <= 1 ? arr.join("") : arr.slice(0, -1).join(", ") + " y " + arr[arr.length - 1]);
@@ -117,7 +119,7 @@ function razones(d, r, coincidencias) {
   if (r.alcance === "dentro") out.push(`Está dentro de ${pais[1]}, como pediste.`);
   if (r.alcance === "fuera" && r.pais !== "XX") out.push(`Es fuera de ${pais[1]}, como pediste.`);
   if (yaTienePermiso(d, r)) out.push(`Ya tienes ${DOCUMENTOS[r.docs.find((k) => DOCUMENTOS[k] && DOCUMENTOS[k].paises.includes(d.codigoPais))].nombre}, no necesitas trámites.`);
-  else if ((r.docs || []).includes("carnet") && PAISES_CON_CARNET.includes(d.codigoPais)) out.push("Puedes entrar solo con tu carnet, sin pasaporte.");
+  else if ((r.docs || []).includes("carnet") && d.codigoPais !== r.pais && entraConCarnet(d)) out.push("Puedes entrar solo con tu carnet, sin pasaporte.");
   else if (r.visa && r.visa !== "da_igual" && d.visa === "N" && d.codigoPais !== r.pais) out.push("No necesitas visa con pasaporte chileno.");
   if (d.costo <= r.presupuesto) out.push(`Calza con un presupuesto ${PRESUPUESTO_TXT[r.presupuesto]}.`);
   if (r.mes && d.meses.includes(r.mes)) out.push(`${cap(MESES[r.mes - 1])} está entre sus mejores meses.`);
@@ -159,5 +161,5 @@ function recomendar(destinos, r) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PAISES, PAISES_CON_CARNET, DOCUMENTOS, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
+  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
 }

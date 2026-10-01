@@ -141,7 +141,7 @@ function renderInicio() {
       ${muestra.map((d) => `<div class="row"><span class="code">${d.aeropuerto}</span><span>${esc(d.nombre)}</span><span class="status">${esc(d.pais)}</span></div>`).join("")}
       <div class="row"><span class="code">???</span><span>Tu destino</span><span class="status q">Por confirmar</span></div>
     </div>
-    <p class="note-small">${DESTINOS.length} destinos en Chile y en los 7 continentes. Horas de vuelo y visas calculadas para quien sale desde Chile.</p>
+    <p class="note-small">${DESTINOS.length} destinos en Chile y en los 7 continentes. Horas de vuelo y visas calculadas para quien sale desde Chile${corte.fechaCorte ? `, con datos verificados al ${fechaTxt(corte.fechaCorte)}` : ""}.</p>
     <button class="btn-link team-link" id="teamData">Datos del prototipo (equipo)</button>
   </section>`;
   document.getElementById("start").onclick = empezar;
@@ -284,7 +284,61 @@ function renderCargando() {
   </section>`;
 }
 
+/* ---------- Corte de datos: fechas y vigencia ---------- */
+const MESES_FECHA = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+const corte = typeof CORTE_DATOS !== "undefined" ? CORTE_DATOS : { fechaCorte: null, vigenciaDias: {} };
+function fechaTxt(iso) {
+  if (!iso) return "";
+  const [a, m, d] = iso.split("-").map(Number);
+  return `${d} ${MESES_FECHA[m - 1]} ${a}`;
+}
+// ¿El dato superó su vigencia? (por ejemplo, una visa verificada hace más de 180 días)
+function vencido(iso, tipo) {
+  const dias = corte.vigenciaDias[tipo];
+  if (!iso || !dias) return false;
+  return (Date.now() - new Date(iso + "T12:00:00").getTime()) / 86400000 > dias;
+}
+const enlace = (url, texto) => (url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(texto)}</a>` : esc(texto));
+const redondear = (n) => (Math.abs(n) >= 10 ? Math.round(n) : Math.round(n * 10) / 10);
+
 /* ---------- Resultado ---------- */
+function bloqueIngreso(d, r) {
+  const ing = d.ingreso;
+  if (!ing || d.codigoPais === r.pais) return "";
+  const datos = [
+    ing.estadiaMaxDias ? `hasta ${ing.estadiaMaxDias} días` : "",
+    ing.costoUSD ? `trámite ~US$ ${redondear(ing.costoUSD)}` : ing.costoUSD === 0 ? "sin costo" : "",
+    ing.soloCarnet ? "entras con carnet" : "requiere pasaporte",
+  ].filter(Boolean).join(" · ");
+  return `
+  <div class="section">
+    <h3>Requisitos de entrada</h3>
+    <div class="req">
+      <div class="req-top"><b>${yaTienePermiso(d, r) ? "Ya tienes el permiso que se pide" : esc(ing.texto)}</b>${datos ? `<span>${datos}</span>` : ""}</div>
+      ${r.pais !== "CL" ? `<p class="warnbox" style="margin-top:6px">Esta información es para pasaporte chileno. Revisa los requisitos para tu nacionalidad.</p>` : ""}
+      <p>${esc(ing.notas)}</p>
+      <p class="src">Fuente: ${enlace(ing.fuenteUrl, ing.fuenteNombre || "Cancillería")} · verificado el ${fechaTxt(ing.fecha)}${ing.confianza !== "alta" ? " · <strong>confírmalo antes de comprar</strong>" : ""}</p>
+      ${vencido(ing.fecha, "visa") ? `<p class="warnbox">Este dato tiene más de ${corte.vigenciaDias.visa} días: puede estar desactualizado.</p>` : ""}
+    </div>
+  </div>`;
+}
+
+function bloqueFuentes(d) {
+  const c = d.climaMensual;
+  const u = d.ubicacion;
+  return `
+  <details class="fuentes">
+    <summary>Fuentes de esta recomendación</summary>
+    <ul>
+      ${c ? `<li><b>Clima:</b> ${esc(c.lugar)}. ${enlace(c.fuenteUrl, c.fuenteNombre)}${c.periodo ? `, ${esc(c.periodo)}` : ""}. Capturado el ${fechaTxt(c.fecha)}.</li>` : ""}
+      ${u ? `<li><b>Distancia:</b> ${u.distanciaKmDesdeSantiago.toLocaleString("es-CL")} km desde Santiago, calculada con las coordenadas del aeropuerto ${esc(d.aeropuerto)} (OurAirports).</li>` : ""}
+      ${d.ingreso && d.ingreso.fuenteUrl ? `<li><b>Requisitos de entrada:</b> ${enlace(d.ingreso.fuenteUrl, d.ingreso.fuenteNombre)}, verificado el ${fechaTxt(d.ingreso.fecha)}.</li>` : ""}
+      <li><b>Costo, ritmo, popularidad, tipo de experiencia y pros/contras:</b> estimación editorial del equipo.</li>
+    </ul>
+    ${corte.fechaCorte ? `<p class="src">Corte de datos del catálogo: ${fechaTxt(corte.fechaCorte)}.</p>` : ""}
+  </details>`;
+}
+
 function renderResultado() {
   const x = estado.resultado[estado.elegido];
   const d = x.destino;
@@ -319,6 +373,7 @@ function renderResultado() {
           ? `<div class="field"><div class="k">Vuelo desde Santiago</div><div class="v">${horasTxt(d.horasVuelo)}</div></div>`
           : `<div class="field"><div class="k">Región</div><div class="v">${esc(d.region)}</div></div>`}
         <div class="field"><div class="k">Clima</div><div class="v">${esc(d.clima)}</div></div>
+        ${r.mes && d.climaMensual ? `<div class="field"><div class="k">En ${MESES[r.mes - 1]}</div><div class="v">${redondear(d.climaMensual.tmin[r.mes - 1])} a ${redondear(d.climaMensual.tmax[r.mes - 1])} °C · ${redondear(d.climaMensual.lluviaMm[r.mes - 1])} mm de lluvia</div></div>` : ""}
         <div class="field"><div class="k">${r.pais === "CL" ? "Visa para chilenos" : "Visa"}</div><div class="v">${visaTexto}</div></div>
         <div class="field"><div class="k">Costo relativo</div><div class="v cost" aria-label="${d.costo} de 5">${costo}</div></div>
         <div class="field"><div class="k">Ideal para</div><div class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</div></div>
@@ -341,13 +396,15 @@ function renderResultado() {
     <ul class="why">${razones(d, r, x.coincidencias).map((t) => `<li><span class="ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>${esc(t)}</span></li>`).join("")}</ul>
   </div>
 
+  ${bloqueIngreso(d, r)}
+
   <div class="section">
     <h3>Antes de decidir</h3>
     <div class="pc">
       <div class="col good"><h4>Lo bueno</h4><ul>${d.pros.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>
       <div class="col bad"><h4>A considerar</h4><ul>${d.contras.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>
     </div>
-    <p class="disclaimer">Los requisitos de ingreso cambian. Verifica la información vigente en el sitio de Cancillería o del país antes de comprar.</p>
+    ${bloqueFuentes(d)}
   </div>
 
   <div class="section feedback" id="fb"></div>

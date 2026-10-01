@@ -3,3 +3,8 @@ _site/
 .DS_Store
 *.log
 .env
+
+# Archivos de prueba locales
+*.png
+!docs/capturas/*.png
+datos.csv

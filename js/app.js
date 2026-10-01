@@ -51,6 +51,18 @@ const PREGUNTAS = [
       { v: "A", label: "Con amigos" },
     ],
   },
+  {
+    // No cambia la recomendación: se guarda para el Machine Learning y para avisar a menores de edad
+    clave: "edad", tipo: "unica", titulo: "¿Cuántos años tienes?", ayuda: "No cambia tu recomendación. Nos ayuda a mejorar las sugerencias con el tiempo.", layout: "two",
+    opciones: [
+      { v: "menor", label: "Menos de 18" },
+      { v: "18-24", label: "18 a 24" },
+      { v: "25-34", label: "25 a 34" },
+      { v: "35-49", label: "35 a 49" },
+      { v: "50-64", label: "50 a 64" },
+      { v: "65+", label: "65 o más" },
+    ],
+  },
   { clave: "mes", tipo: "meses", titulo: "¿En qué mes viajarías?", ayuda: "Algunos destinos cambian mucho según la temporada." },
   {
     clave: "horas", tipo: "unica", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
@@ -62,10 +74,22 @@ const PREGUNTAS = [
     ],
   },
   {
-    clave: "visa", tipo: "unica", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
-    titulo: "¿Te complica tramitar una visa?",
+    clave: "docs", tipo: "multiple", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
+    titulo: "¿Qué documentos de viaje ya tienes?", ayuda: "Marca todos los que tengas vigentes.",
+    exclusiva: "carnet",
     opciones: [
-      { v: "ninguna", label: "Prefiero sin trámites", desc: "Solo con carnet o pasaporte" },
+      { v: "pasaporte", label: "Pasaporte", desc: "Necesario fuera de Sudamérica" },
+      { v: "esta", label: "ESTA o visa de EE.UU.", desc: "También sirve para Puerto Rico" },
+      { v: "eta_ca", label: "eTA o visa de Canadá", desc: "" },
+      { v: "eta_uk", label: "ETA del Reino Unido", desc: "" },
+      { v: "carnet", label: "Solo carnet", desc: "No tengo pasaporte vigente" },
+    ],
+  },
+  {
+    clave: "visa", tipo: "unica", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
+    titulo: "¿Te complica hacer un trámite nuevo?", ayuda: "Por ejemplo sacar pasaporte o pedir una visa que no tienes.",
+    opciones: [
+      { v: "ninguna", label: "Prefiero sin trámites", desc: "Solo con lo que ya tengo" },
       { v: "online", label: "Un trámite online está bien", desc: "Tipo ESTA, eTA o e-Visa" },
       { v: "da_igual", label: "No me importa", desc: "Hago lo que haga falta" },
     ],
@@ -80,7 +104,7 @@ const PREGUNTAS = [
   },
 ];
 
-const estado = { pantalla: "inicio", paso: 0, r: { tags: [], pais: "CL" }, resultado: [], sinCandidatos: false, elegido: 0 };
+const estado = { pantalla: "inicio", paso: 0, r: { tags: [], pais: "CL" }, resultado: [], sinCandidatos: false, elegido: 0, feedback: {}, registro: "" };
 const app = document.getElementById("app");
 
 const preguntasActivas = () => PREGUNTAS.filter((p) => !p.mostrar || p.mostrar(estado.r));
@@ -99,7 +123,7 @@ function render() {
 function empezar() {
   estado.pantalla = "preguntas";
   estado.paso = 0;
-  estado.r = { tags: [], pais: estado.r.pais || "CL" };
+  estado.r = { tags: [], docs: [], pais: estado.r.pais || "CL" };
   render();
   enfocarTitulo();
 }
@@ -118,8 +142,10 @@ function renderInicio() {
       <div class="row"><span class="code">???</span><span>Tu destino</span><span class="status q">Por confirmar</span></div>
     </div>
     <p class="note-small">${DESTINOS.length} destinos en Chile y en los 7 continentes. Horas de vuelo y visas calculadas para quien sale desde Chile.</p>
+    <button class="btn-link team-link" id="teamData">Datos del prototipo (equipo)</button>
   </section>`;
   document.getElementById("start").onclick = empezar;
+  document.getElementById("teamData").onclick = abrirPanelDatos;
 }
 
 /* ---------- Preguntas ---------- */
@@ -153,7 +179,8 @@ function renderPregunta() {
       ${r.pais !== "CL" ? `<p class="q-hint" style="margin:10px 0 0">En este prototipo las horas de vuelo y las visas están calculadas desde Chile, así que esas preguntas no aparecerán.</p>` : ""}
       <div class="opts" style="margin-top:18px">${opciones.map((o) => boton(o, r.alcance === o.v)).join("")}</div>`;
   } else if (p.tipo === "multiple") {
-    cuerpo = `<div class="opts three chips">${p.opciones.map((o) => boton(o, r.tags.includes(o.v))).join("")}</div>`;
+    const marcadas = r[p.clave] || [];
+    cuerpo = `<div class="opts ${p.opciones.length > 5 ? "three" : "two"} chips">${p.opciones.map((o) => boton(o, marcadas.includes(o.v))).join("")}</div>`;
   } else if (p.tipo === "meses") {
     cuerpo = `<div class="opts three">${MESES.map((m, i) => `<button class="opt month" aria-pressed="${r.mes === i + 1}" data-v="${i + 1}">${cap(m)}</button>`).join("")}
       <button class="opt month wide" aria-pressed="${r.mes === 0}" data-v="0">Aún no lo sé</button></div>`;
@@ -162,6 +189,8 @@ function renderPregunta() {
   }
 
   const conContinuar = p.tipo === "multiple";
+  const elegidas = conContinuar ? (r[p.clave] || []).length : 0;
+  const contador = p.max ? `${elegidas} de ${p.max} elegidas` : `${elegidas} ${elegidas === 1 ? "elegido" : "elegidos"}`;
   app.innerHTML = `
     <div class="stepline"><span>Pregunta ${estado.paso + 1} de ${total}</span></div>
     <div class="progress" aria-hidden="true"><i style="width:${(estado.paso / total) * 100}%"></i></div>
@@ -170,7 +199,7 @@ function renderPregunta() {
     ${cuerpo}
     <div class="q-actions">
       <button class="btn-link" id="back">${estado.paso === 0 ? "Volver al inicio" : "Atrás"}</button>
-      ${conContinuar ? `<span class="counter">${r.tags.length} de 3 elegidas</span><button class="btn btn-primary" id="next" ${r.tags.length ? "" : "disabled"}>Continuar</button>` : ""}
+      ${conContinuar ? `<span class="counter">${contador}</span><button class="btn btn-primary" id="next" ${elegidas ? "" : "disabled"}>Continuar</button>` : ""}
     </div>`;
 
   app.querySelectorAll(".opt").forEach((b) => (b.onclick = () => elegir(p, b.dataset.v)));
@@ -196,10 +225,15 @@ function renderPregunta() {
 function elegir(p, valor) {
   const r = estado.r;
   if (p.tipo === "multiple") {
-    const i = r.tags.indexOf(valor);
-    if (i >= 0) r.tags.splice(i, 1);
-    else if (r.tags.length < p.max) r.tags.push(valor);
-    else { r.tags.shift(); r.tags.push(valor); }
+    let lista = r[p.clave] || (r[p.clave] = []);
+    const i = lista.indexOf(valor);
+    if (i >= 0) lista.splice(i, 1);
+    else {
+      // Una opción "exclusiva" (como "Solo carnet") no se puede combinar con las demás
+      if (p.exclusiva) lista = r[p.clave] = valor === p.exclusiva ? [] : lista.filter((v) => v !== p.exclusiva);
+      if (p.max && lista.length >= p.max) lista.shift();
+      lista.push(valor);
+    }
     renderPregunta();
     return;
   }
@@ -225,6 +259,8 @@ function avanzar() {
   estado.resultado = resultado;
   estado.sinCandidatos = sinCandidatos;
   estado.elegido = 0;
+  estado.feedback = {};
+  nuevaSesion();
   const espera = matchMedia("(prefers-reduced-motion: reduce)").matches ? 300 : 1600;
   setTimeout(() => {
     estado.pantalla = "resultado";
@@ -258,7 +294,12 @@ function renderResultado() {
   const total = estado.resultado.length;
   const excedeHoras = !!r.horas && d.horasVuelo > r.horas;
   const costo = [1, 2, 3, 4, 5].map((k) => `<span class="${k <= d.costo ? "" : "off"}">$</span>`).join("");
-  const visaTexto = nacional ? "No aplica, es nacional" : r.pais === "CL" ? esc(d.visaTexto) : "Revisa según tu pasaporte";
+  const visaTexto = nacional ? "No aplica, es nacional"
+    : r.pais !== "CL" ? "Revisa según tu pasaporte"
+    : yaTienePermiso(d, r) ? "Ya la tienes"
+    : esc(d.visaTexto) + (faltaPasaporte(d, r) ? " · requiere pasaporte" : "");
+  const sinPasaporte = faltaPasaporte(d, r);
+  estado.registro = registrarRecomendacion(r, x, estado.elegido + 1);
 
   app.innerHTML = `
   <p class="result-intro">${estado.elegido === 0 ? "Según lo que nos contaste, tu destino es:" : `Opción ${estado.elegido + 1} de ${total}, por si la primera no te convence:`}</p>
@@ -292,6 +333,8 @@ function renderResultado() {
 
   ${estado.sinCandidatos ? `<p class="warnbox">Todavía no tenemos destinos cargados para esa opción, así que te mostramos el mejor match en todo el catálogo.</p>` : ""}
   ${excedeHoras ? `<p class="warnbox">Este destino supera las horas de vuelo que marcaste. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
+  ${sinPasaporte ? `<p class="warnbox">Para este destino necesitas pasaporte. En Chile se tramita en el Registro Civil; considera el tiempo de espera antes de comprar.</p>` : ""}
+  ${r.edad === "menor" && !nacional ? `<p class="warnbox">Si eres menor de edad y no viajas con ambos padres, necesitas una autorización notarial para salir de Chile.</p>` : ""}
 
   <div class="section">
     <h3>Por qué te lo recomendamos</h3>
@@ -307,6 +350,8 @@ function renderResultado() {
     <p class="disclaimer">Los requisitos de ingreso cambian. Verifica la información vigente en el sitio de Cancillería o del país antes de comprar.</p>
   </div>
 
+  <div class="section feedback" id="fb"></div>
+
   <div class="actions">
     <button class="btn btn-runway btn-block" id="buy">Buscar pasajes a ${esc(d.nombre)}</button>
     ${total > 1 ? `<button class="btn btn-ghost btn-block" id="other">${estado.elegido < total - 1 ? "Ver otra opción" : "Volver a la recomendación principal"}</button>` : ""}
@@ -315,7 +360,11 @@ function renderResultado() {
 
   <p class="why-one">Te mostramos un destino a la vez a propósito: comparar muchas opciones cansa y no ayuda a decidir. Ninguna aerolínea paga por aparecer aquí.</p>`;
 
-  document.getElementById("buy").onclick = () => abrirCompra(d);
+  pintarFeedback();
+  document.getElementById("buy").onclick = () => {
+    actualizarRegistro(estado.registro, { abrio_compra: 1 });
+    abrirCompra(d);
+  };
   const otra = document.getElementById("other");
   if (otra) {
     otra.onclick = () => {
@@ -326,6 +375,84 @@ function renderResultado() {
     };
   }
   document.getElementById("restart").onclick = empezar;
+}
+
+/* ---------- Feedback: la etiqueta que aprenderá el Machine Learning ---------- */
+const RESPUESTAS_IRIA = [
+  { v: "si", label: "Sí, iría" },
+  { v: "tal_vez", label: "Tal vez" },
+  { v: "no", label: "No" },
+];
+const MOTIVOS = [
+  { v: "caro", label: "Muy caro" },
+  { v: "lejos", label: "Muy lejos" },
+  { v: "estilo", label: "No es mi estilo" },
+  { v: "ya_fui", label: "Ya lo conozco" },
+  { v: "fechas", label: "No calza con mis fechas" },
+  { v: "tramites", label: "Muchos trámites" },
+  { v: "otro", label: "Otra razón" },
+];
+
+function pintarFeedback() {
+  const caja = document.getElementById("fb");
+  if (!caja) return;
+  const f = (estado.feedback[estado.elegido] ||= {});
+  const pideMotivo = f.iria && f.iria !== "si" && !f.motivo;
+  const listo = f.iria === "si" || f.motivo;
+
+  caja.innerHTML = `
+    <h3>¿Irías a este destino?</h3>
+    <p class="q-hint">Tu respuesta nos ayuda a que las próximas recomendaciones sean mejores.</p>
+    <div class="opts three fb-opts">${RESPUESTAS_IRIA.map((o) => boton(o, f.iria === o.v)).join("")}</div>
+    ${pideMotivo ? `<h4 class="fb-sub">¿Qué no te convenció?</h4>
+      <div class="opts two fb-motivos">${MOTIVOS.map((o) => boton(o, false)).join("")}</div>` : ""}
+    ${listo ? `<p class="fb-thanks" role="status">Gracias, lo anotamos.${f.iria === "no" && estado.resultado.length > 1 && estado.elegido < estado.resultado.length - 1 ? " Mira otra opción más abajo." : ""}</p>` : ""}`;
+
+  caja.querySelectorAll(".fb-opts .opt").forEach((b) => (b.onclick = () => {
+    f.iria = b.dataset.v;
+    if (f.iria === "si") delete f.motivo;
+    actualizarRegistro(estado.registro, { iria: f.iria, motivo: f.motivo || "" });
+    pintarFeedback();
+  }));
+  caja.querySelectorAll(".fb-motivos .opt").forEach((b) => (b.onclick = () => {
+    f.motivo = b.dataset.v;
+    actualizarRegistro(estado.registro, { motivo: f.motivo });
+    pintarFeedback();
+  }));
+}
+
+/* ---------- Datos para el equipo ---------- */
+function abrirPanelDatos() {
+  const raiz = document.getElementById("sheetRoot");
+  let confirmarBorrado = false;
+  const dibujar = () => {
+    const filas = leerDatos();
+    const conRespuesta = filas.filter((f) => f.iria).length;
+    raiz.innerHTML = `
+    <div class="overlay" id="ov">
+      <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="dataTitle">
+        <h2 id="dataTitle" tabindex="-1">Datos del prototipo</h2>
+        <p style="margin:0;color:var(--muted)">Recomendaciones mostradas en este navegador: <b>${filas.length}</b>. Con respuesta a "¿Irías?": <b>${conRespuesta}</b>.</p>
+        <p class="fine">Cada fila guarda las respuestas del cuestionario, el destino recomendado y lo que la persona hizo después. Son los datos con los que se entrenaría el modelo de Machine Learning. Por ahora quedan solo en este dispositivo.</p>
+        <div class="links">
+          <button class="btn btn-primary btn-block" id="dl" ${filas.length ? "" : "disabled"}>Descargar CSV</button>
+          <button class="btn btn-ghost btn-block" id="del" ${filas.length ? "" : "disabled"}>${confirmarBorrado ? "Toca de nuevo para borrar todo" : "Borrar datos"}</button>
+        </div>
+        <button class="btn-link" id="closeSheet">Cerrar</button>
+      </div>
+    </div>`;
+    document.getElementById("dl").onclick = descargarCSV;
+    document.getElementById("del").onclick = () => {
+      if (confirmarBorrado) { borrarDatos(); confirmarBorrado = false; } else confirmarBorrado = true;
+      dibujar();
+    };
+    document.getElementById("closeSheet").onclick = cerrar;
+    document.getElementById("ov").onclick = (e) => { if (e.target.id === "ov") cerrar(); };
+    document.getElementById("dataTitle").focus();
+  };
+  const cerrar = () => { raiz.innerHTML = ""; };
+  document.onkeydown = (e) => { if (e.key === "Escape" && raiz.innerHTML) cerrar(); };
+  dibujar();
 }
 
 /* ---------- Redirección a la compra ---------- */

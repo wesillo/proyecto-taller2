@@ -20,10 +20,11 @@ Investigamos el transporte aéreo en Chile con entrevistas a pasajeros y operari
 
 ## La solución
 
-1. El usuario responde qué busca (presupuesto, tipo de experiencia, ritmo, con quién viaja, mes, horas de vuelo, visa).
+1. El usuario responde qué busca (presupuesto, tipo de experiencia, ritmo, con quién viaja, edad, mes, horas de vuelo, documentos que ya tiene y tolerancia a trámites).
 2. Un sistema de **matching por atributos** cruza esas respuestas con 178 destinos y elige el que mejor calza.
 3. Muestra **una recomendación** con las razones, pros y contras concretos.
-4. Si el usuario quiere avanzar, lo lleva a Google Flights o Skyscanner con la ruta cargada.
+4. Le pregunta **"¿Irías a este destino?"** y, si no, por qué. Esa respuesta es la etiqueta con la que se entrenará el Machine Learning.
+5. Si el usuario quiere avanzar, lo lleva a Google Flights o Skyscanner con la ruta cargada.
 
 **¿Por qué no Machine Learning todavía?** Sin datos reales de uso, un modelo no tiene de qué aprender. Partimos con reglas ponderadas y evolucionamos a ML cuando tengamos volumen de decisiones reales.
 
@@ -37,6 +38,7 @@ Investigamos el transporte aéreo en Chile con entrevistas a pasajeros y operari
 index.html              la página
 css/styles.css          los estilos
 js/matching.js          el motor de recomendación (puntajes y razones)
+js/datos.js             registro de datos para el Machine Learning (CSV)
 js/app.js               la interfaz (preguntas, resultado, compra)
 data/destinos.js        la base de datos de 178 destinos
 tests/                  pruebas automáticas del motor
@@ -54,7 +56,9 @@ tests/                  pruebas automáticas del motor
 | Compañía de viaje | 10 |
 | Temporada | 10 |
 | Clásico o poco conocido | 8 |
-| Horas de vuelo y visa | Restan si no calzan |
+| Horas de vuelo, visa y pasaporte | Restan si no calzan |
+
+La edad **no** cambia el puntaje: se guarda como dato para el modelo y para avisar a menores de edad que necesitan autorización notarial. Si el usuario ya tiene la ESTA, la eTA de Canadá o la ETA del Reino Unido, esos destinos no se castigan por visa. Si solo tiene carnet, se priorizan los países a los que se entra sin pasaporte.
 
 Los pesos están en `js/matching.js`. Si los cambian, corran `npm test` para verificar que todo sigue funcionando.
 
@@ -90,8 +94,8 @@ Abre `data/destinos.js`. Arriba del archivo está explicado qué significa cada 
 
 ## Próximos pasos
 
-- [ ] Botón "¿irías a este destino?" para medir si las recomendaciones funcionan
-- [ ] Guardar respuestas y resultados en una base de datos (Appwrite o MongoDB Atlas)
+- [x] Pregunta "¿irías a este destino?" para medir si las recomendaciones funcionan
+- [ ] Enviar los datos a una base de datos compartida (hoy se guardan en el navegador)
 - [ ] Más destinos y datos verificados de visas y temporadas
 - [ ] Horas de vuelo y visas para usuarios de otros países
 - [ ] Precios reales vía API de Amadeus (requiere un servidor)
@@ -100,3 +104,9 @@ Abre `data/destinos.js`. Arriba del archivo está explicado qué significa cada 
 ## Advertencia
 
 Los datos de los destinos son referenciales y fueron curados a mano para el prototipo. Los requisitos de visa cambian: verificar siempre en [Cancillería](https://www.chile.gob.cl/) antes de viajar. Los enlaces de compra todavía no son enlaces de afiliado.
+
+## Datos para el Machine Learning
+
+Cada destino mostrado guarda una fila con las respuestas del cuestionario, el destino y su puntaje, y lo que hizo la persona: si iría (`si`, `tal_vez`, `no`), el motivo si no, y si abrió la búsqueda de pasajes. Desde el inicio, el enlace **Datos del prototipo (equipo)** descarga todo como CSV.
+
+Por ahora los datos quedan solo en el navegador donde se usó la app. Para juntar datos de muchas personas, el siguiente paso es enviar estas filas a una base de datos compartida.

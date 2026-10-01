@@ -154,3 +154,16 @@ button,select{font:inherit;color:inherit}
 .homesel{display:block;font-weight:700;margin:0 0 8px}
 .select{width:100%;padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--card);font-size:17px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Feedback "¿Irías?" y panel de datos */
+.feedback{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.feedback h3{margin-top:0}
+.feedback .q-hint{margin-bottom:14px}
+.feedback .opt{min-height:52px;justify-content:center;text-align:center}
+.feedback .opt[aria-pressed="true"]::after{display:none}
+.fb-sub{margin:18px 0 10px;font-size:16px}
+.fb-thanks{margin:14px 0 0;color:var(--good);font-weight:600}
+.team-link{display:block;margin:18px auto 0;font-size:13px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.feedback .fb-motivos{display:flex;flex-wrap:wrap;gap:8px}
+.feedback .fb-motivos .opt{min-height:0;padding:8px 14px;border-radius:999px;border-width:1.5px;font-size:15px}

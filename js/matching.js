@@ -30,6 +30,24 @@ const PAISES = [
   ["XX", "Otro país", "", ""],
 ];
 
+// Países a los que un chileno puede entrar solo con su cédula de identidad
+const PAISES_CON_CARNET = ["AR", "BR", "UY", "PY", "BO", "PE", "CO", "EC", "VE"];
+
+// Documento que el usuario puede marcar como "ya lo tengo" y los países que habilita
+const DOCUMENTOS = {
+  esta: { paises: ["US", "PR"], nombre: "la ESTA o visa de Estados Unidos" },
+  eta_ca: { paises: ["CA"], nombre: "la eTA o visa de Canadá" },
+  eta_uk: { paises: ["GB"], nombre: "la ETA del Reino Unido" },
+};
+
+// ¿El usuario ya tiene el permiso de ingreso que pide este destino?
+const yaTienePermiso = (d, r) =>
+  (r.docs || []).some((k) => DOCUMENTOS[k] && DOCUMENTOS[k].paises.includes(d.codigoPais));
+
+// ¿Le falta pasaporte para ir a este destino? (solo aplica a quien vive en Chile)
+const faltaPasaporte = (d, r) =>
+  (r.docs || []).includes("carnet") && d.codigoPais !== r.pais && !PAISES_CON_CARNET.includes(d.codigoPais);
+
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const listaTxt = (arr) => (arr.length <= 1 ? arr.join("") : arr.slice(0, -1).join(", ") + " y " + arr[arr.length - 1]);
 const horasTxt = (h) => (h < 1.5 ? "~1 h" : `~${Math.round(h)} h`);
@@ -85,7 +103,9 @@ function puntaje(d, r) {
   else s += 4;
 
   if (r.horas && d.horasVuelo > r.horas) s -= 30 + (d.horasVuelo - r.horas);
-  if (r.visa === "ninguna" && d.visa !== "N" && d.codigoPais !== r.pais) s -= 15;
+  if (r.visa === "ninguna" && d.visa !== "N" && d.codigoPais !== r.pais && !yaTienePermiso(d, r)) s -= 15;
+  // Sin pasaporte: sacarlo toma tiempo, así que se prefieren destinos a los que se entra con carnet
+  if (faltaPasaporte(d, r)) s -= r.visa === "ninguna" ? 25 : 12;
 
   return { puntaje: s, coincidencias };
 }
@@ -96,6 +116,9 @@ function razones(d, r, coincidencias) {
   if (coincidencias.length) out.push(`Tiene lo que buscas: ${listaTxt(coincidencias.map((c) => c.toLowerCase()))}.`);
   if (r.alcance === "dentro") out.push(`Está dentro de ${pais[1]}, como pediste.`);
   if (r.alcance === "fuera" && r.pais !== "XX") out.push(`Es fuera de ${pais[1]}, como pediste.`);
+  if (yaTienePermiso(d, r)) out.push(`Ya tienes ${DOCUMENTOS[r.docs.find((k) => DOCUMENTOS[k] && DOCUMENTOS[k].paises.includes(d.codigoPais))].nombre}, no necesitas trámites.`);
+  else if ((r.docs || []).includes("carnet") && PAISES_CON_CARNET.includes(d.codigoPais)) out.push("Puedes entrar solo con tu carnet, sin pasaporte.");
+  else if (r.visa && r.visa !== "da_igual" && d.visa === "N" && d.codigoPais !== r.pais) out.push("No necesitas visa con pasaporte chileno.");
   if (d.costo <= r.presupuesto) out.push(`Calza con un presupuesto ${PRESUPUESTO_TXT[r.presupuesto]}.`);
   if (r.mes && d.meses.includes(r.mes)) out.push(`${cap(MESES[r.mes - 1])} está entre sus mejores meses.`);
   if (d.idealPara.includes(r.conQuien)) out.push(`Funciona muy bien para viajar ${CON_QUIEN[r.conQuien]}.`);
@@ -103,7 +126,6 @@ function razones(d, r, coincidencias) {
     out.push(r.ritmo >= 4 ? "Tiene la actividad física que pediste." : r.ritmo <= 2 ? "Se disfruta sin apuro, a tu ritmo." : "Mezcla actividad y descanso.");
   }
   if (r.estilo === "sorpresa" && d.popularidad <= 2) out.push("Es un destino poco masificado.");
-  if (r.visa && r.visa !== "da_igual" && d.visa === "N" && d.codigoPais !== r.pais) out.push("No necesitas visa con pasaporte chileno.");
   if (r.horas && d.horasVuelo <= r.horas && r.horas < 99) out.push(`${horasTxt(d.horasVuelo)} de vuelo, dentro de lo que aguantas.`);
   return out.slice(0, 5);
 }
@@ -137,5 +159,5 @@ function recomendar(destinos, r) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PAISES, PUNTAJE_MAXIMO, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
+  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PAISES, PAISES_CON_CARNET, DOCUMENTOS, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
 }

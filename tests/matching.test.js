@@ -2,7 +2,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const DESTINOS = require("../data/destinos.js");
-const { recomendar, mesesTxt, razones } = require("../js/matching.js");
+const { recomendar, mesesTxt, razones, puntaje, PAISES_CON_CARNET } = require("../js/matching.js");
 
 const TAGS_VALIDOS = ["Playa", "Cultura", "Aventura", "Naturaleza", "Relax", "Gastronomía", "Vida nocturna", "Compras", "Nieve"];
 
@@ -69,4 +69,25 @@ test("las razones mencionan lo que el usuario pidió", () => {
 test("mesesTxt agrupa rangos que cruzan el año", () => {
   assert.equal(mesesTxt([11, 12, 1, 2, 3]), "Nov a mar");
   assert.equal(mesesTxt([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]), "Todo el año");
+});
+
+test("sin pasaporte: prioriza países a los que se entra con carnet", () => {
+  const base = { pais: "CL", alcance: "fuera", tags: ["Cultura", "Gastronomía"], presupuesto: 3, ritmo: 3, conQuien: "P", mes: 0, horas: 99, visa: "ninguna", estilo: "da_igual" };
+  const { resultado } = recomendar(DESTINOS, { ...base, docs: ["carnet"] });
+  for (const x of resultado) assert.ok(PAISES_CON_CARNET.includes(x.destino.codigoPais), `${x.destino.nombre} pide pasaporte`);
+});
+
+test("si ya tiene la ESTA, Estados Unidos no se castiga por visa", () => {
+  const ny = DESTINOS.find((d) => d.codigoPais === "US");
+  const r = { pais: "CL", alcance: "fuera", tags: ny.tags.slice(0, 2), presupuesto: 5, ritmo: 3, conQuien: "A", mes: 0, horas: 99, visa: "ninguna", estilo: "da_igual" };
+  const sin = puntaje(ny, { ...r, docs: ["pasaporte"] }).puntaje;
+  const con = puntaje(ny, { ...r, docs: ["pasaporte", "esta"] }).puntaje;
+  assert.equal(con - sin, 15);
+  assert.ok(razones(ny, { ...r, docs: ["pasaporte", "esta"] }, []).some((t) => t.includes("ESTA")));
+});
+
+test("la edad no cambia el puntaje", () => {
+  const d = DESTINOS[0];
+  const r = { pais: "CL", alcance: "da_igual", tags: d.tags.slice(0, 1), presupuesto: 3, ritmo: 3, conQuien: "S", mes: 0, estilo: "da_igual", docs: [] };
+  assert.equal(puntaje(d, { ...r, edad: "18-24" }).puntaje, puntaje(d, { ...r, edad: "65+" }).puntaje);
 });

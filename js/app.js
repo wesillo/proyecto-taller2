@@ -1,5 +1,5 @@
 /*
- * Interfaz de Rumbo: preguntas, resultado y redirección a la compra.
+ * Interfaz de 4WARD: preguntas, resultado y redirección a la compra.
  * Usa DESTINOS (data/destinos.js) y el motor de js/matching.js.
  */
 
@@ -537,7 +537,7 @@ function abrirCompra(d) {
           <a class="btn btn-primary btn-block" ${mismo ? deshabilitado : ""} href="${googleFlights}" target="_blank" rel="noopener">Abrir en Google Flights</a>
           ${skyscanner ? `<a class="btn btn-ghost btn-block" ${mismo ? deshabilitado : ""} href="${skyscanner}" target="_blank" rel="noopener">Abrir en Skyscanner</a>` : ""}
         </div>
-        <p class="fine">Prototipo: en la versión final, Rumbo recibiría una comisión solo si compras por este enlace. Eso ocurre después de recomendarte el destino y nunca cambia qué destino te sugerimos.</p>
+        <p class="fine">Prototipo: en la versión final, 4WARD recibiría una comisión solo si compras por este enlace. Eso ocurre después de recomendarte el destino y nunca cambia qué destino te sugerimos.</p>
         <button class="btn-link" id="closeSheet">Cerrar</button>
       </div>
     </div>`;

@@ -1,5 +1,5 @@
 /*
- * Motor de recomendación de Rumbo (fase 1: matching por atributos, sin ML).
+ * Motor de recomendación de 4WARD (fase 1: matching por atributos, sin ML).
  *
  * Cruza las respuestas del usuario con los atributos de cada destino y le
  * asigna un puntaje. No depende de la interfaz, así que se puede probar solo

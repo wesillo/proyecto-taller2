@@ -1,9 +1,9 @@
 {
-  "name": "Rumbo",
+  "name": "4WARD",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
   "forwardPorts": [3000],
   "portsAttributes": {
-    "3000": { "label": "Rumbo", "onAutoForward": "openPreview" }
+    "3000": { "label": "4WARD", "onAutoForward": "openPreview" }
   },
   "postAttachCommand": "npm start",
   "customizations": {

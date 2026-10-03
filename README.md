@@ -1,6 +1,6 @@
-# 4WARD
+# Fly4ward
 
-**¿No sabes a dónde viajar?** 4WARD te hace unas preguntas cortas sobre tu viaje perfecto y te recomienda **un solo destino**, con lo bueno y lo que debes considerar. Sin listas eternas para comparar.
+**¿No sabes a dónde viajar?** Fly4ward te hace unas preguntas cortas sobre tu viaje perfecto y te recomienda **un solo destino**, con lo bueno y lo que debes considerar. Sin listas eternas para comparar.
 
 Proyecto de Ingeniería Civil Industrial · FCFM, Universidad de Chile.
 

@@ -1,8 +1,8 @@
 {
-  "name": "4ward",
+  "name": "fly4ward",
   "version": "0.1.0",
   "private": true,
-  "description": "4WARD: te recomienda un solo destino de viaje según tu viaje perfecto.",
+  "description": "Fly4ward: te recomienda un solo destino de viaje según tu viaje perfecto.",
   "scripts": {
     "test": "node --test tests/*.test.js",
     "start": "npx --yes serve -l 3000 .",

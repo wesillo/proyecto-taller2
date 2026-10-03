@@ -67,7 +67,7 @@ function datosCSV() {
 }
 
 async function descargarCSV() {
-  const nombre = `4ward-datos-${new Date().toISOString().slice(0, 10)}.csv`;
+  const nombre = `fly4ward-datos-${new Date().toISOString().slice(0, 10)}.csv`;
   const contenido = "﻿" + datosCSV();
   // Dentro de Claude la descarga pasa por el visor; en GitHub Pages se usa un enlace normal
   if (window.claude && window.claude.use) {

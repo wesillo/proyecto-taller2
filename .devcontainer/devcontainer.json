@@ -1,9 +1,9 @@
 {
-  "name": "4WARD",
+  "name": "Fly4ward",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
   "forwardPorts": [3000],
   "portsAttributes": {
-    "3000": { "label": "4WARD", "onAutoForward": "openPreview" }
+    "3000": { "label": "Fly4ward", "onAutoForward": "openPreview" }
   },
   "postAttachCommand": "npm start",
   "customizations": {

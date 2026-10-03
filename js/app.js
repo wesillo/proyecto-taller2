@@ -134,10 +134,11 @@ function renderInicio() {
   app.innerHTML = `
   <section class="hero">
     <h1>¿No sabes a dónde viajar?</h1>
-    <p class="lead">Cuéntanos cómo sería tu viaje perfecto. Te damos un solo destino que calce contigo, con lo bueno y lo que debes considerar. Sin listas eternas para comparar.</p>
-    <button class="btn btn-primary btn-block" id="start">Encontrar mi destino</button>
-    <p class="note-small">Preguntas cortas, menos de un minuto.</p>
+    <p class="lead">Responde unas preguntas sobre tu viaje ideal y te indicamos un solo destino, con sus razones, lo bueno y lo que debes considerar.</p>
+    <button class="btn btn-primary btn-go btn-block" id="start">Encontrar mi destino</button>
+    <p class="note-small">Preguntas cortas, sin registrarte.</p>
     <div class="board" aria-label="Algunos de los ${DESTINOS.length} destinos posibles">
+      <div class="row head" aria-hidden="true"><span>Código</span><span>Destino</span><span>País</span></div>
       ${muestra.map((d) => `<div class="row"><span class="code">${d.aeropuerto}</span><span>${esc(d.nombre)}</span><span class="status">${esc(d.pais)}</span></div>`).join("")}
       <div class="row"><span class="code">???</span><span>Tu destino</span><span class="status q">Por confirmar</span></div>
     </div>
@@ -199,7 +200,7 @@ function renderPregunta() {
     ${cuerpo}
     <div class="q-actions">
       <button class="btn-link" id="back">${estado.paso === 0 ? "Volver al inicio" : "Atrás"}</button>
-      ${conContinuar ? `<span class="counter">${contador}</span><button class="btn btn-primary" id="next" ${elegidas ? "" : "disabled"}>Continuar</button>` : ""}
+      ${conContinuar ? `<span class="counter">${contador}</span><button class="btn btn-primary btn-go" id="next" ${elegidas ? "" : "disabled"}>Continuar</button>` : ""}
     </div>`;
 
   app.querySelectorAll(".opt").forEach((b) => (b.onclick = () => elegir(p, b.dataset.v)));
@@ -309,7 +310,7 @@ function bloqueIngreso(d, r) {
     ing.estadiaMaxDias ? `hasta ${ing.estadiaMaxDias} días` : "",
     ing.costoUSD ? `trámite ~US$ ${redondear(ing.costoUSD)}` : ing.costoUSD === 0 ? "sin costo" : "",
     ing.soloCarnet ? "entras con carnet" : "requiere pasaporte",
-  ].filter(Boolean).join(" · ");
+  ].filter(Boolean).join(", ");
   return `
   <div class="section">
     <h3>Requisitos de entrada</h3>
@@ -317,7 +318,7 @@ function bloqueIngreso(d, r) {
       <div class="req-top"><b>${yaTienePermiso(d, r) ? "Ya tienes el permiso que se pide" : esc(ing.texto)}</b>${datos ? `<span>${datos}</span>` : ""}</div>
       ${r.pais !== "CL" ? `<p class="warnbox" style="margin-top:6px">Esta información es para pasaporte chileno. Revisa los requisitos para tu nacionalidad.</p>` : ""}
       <p>${esc(ing.notas)}</p>
-      <p class="src">Fuente: ${enlace(ing.fuenteUrl, ing.fuenteNombre || "Cancillería")} · verificado el ${fechaTxt(ing.fecha)}${ing.confianza !== "alta" ? " · <strong>confírmalo antes de comprar</strong>" : ""}</p>
+      <p class="src">Fuente: ${enlace(ing.fuenteUrl, ing.fuenteNombre || "Cancillería")}, verificado el ${fechaTxt(ing.fecha)}.${ing.confianza !== "alta" ? " <strong>Confírmalo antes de comprar.</strong>" : ""}</p>
       ${vencido(ing.fecha, "visa") ? `<p class="warnbox">Este dato tiene más de ${corte.vigenciaDias.visa} días: puede estar desactualizado.</p>` : ""}
     </div>
   </div>`;
@@ -351,40 +352,32 @@ function renderResultado() {
   const visaTexto = nacional ? "No aplica, es nacional"
     : r.pais !== "CL" ? "Revisa según tu pasaporte"
     : yaTienePermiso(d, r) ? "Ya la tienes"
-    : esc(d.visaTexto) + (faltaPasaporte(d, r) ? " · requiere pasaporte" : "");
+    : esc(d.visaTexto) + (faltaPasaporte(d, r) ? ", requiere pasaporte" : "");
   const sinPasaporte = faltaPasaporte(d, r);
   estado.registro = registrarRecomendacion(r, x, estado.elegido + 1);
 
   app.innerHTML = `
-  <p class="result-intro">${estado.elegido === 0 ? "Según lo que nos contaste, tu destino es:" : `Opción ${estado.elegido + 1} de ${total}, por si la primera no te convence:`}</p>
-  <article class="ticket" aria-label="Destino recomendado: ${esc(d.nombre)}, ${esc(d.pais)}">
-    <div class="band"><span>Tarjeta de embarque</span><span>${estado.elegido === 0 ? "Tu destino" : "Alternativa"}</span></div>
-    <div class="main">
-      <div class="route">
-        <div><div class="iata">${pais[2] || "···"}</div><div class="city">${esc(pais[3] || "Tu ciudad")}</div></div>
-        <div class="mid" aria-hidden="true">${avion(22, 'style="transform:rotate(90deg)"')}</div>
-        <div style="text-align:right"><div class="iata to">${d.aeropuerto}</div><div class="city">${esc(d.pais)}</div></div>
-      </div>
-      <h2 class="dest-name" tabindex="-1" id="qtitle">${esc(d.nombre)}</h2>
-      <div class="dest-country">${esc(d.pais)}</div>
-      <div class="fields">
-        <div class="field"><div class="k">Mejor época</div><div class="v">${mesesTxt(d.meses)}</div></div>
-        ${r.pais === "CL"
-          ? `<div class="field"><div class="k">Vuelo desde Santiago</div><div class="v">${horasTxt(d.horasVuelo)}</div></div>`
-          : `<div class="field"><div class="k">Región</div><div class="v">${esc(d.region)}</div></div>`}
-        <div class="field"><div class="k">Clima</div><div class="v">${esc(d.clima)}</div></div>
-        ${r.mes && d.climaMensual ? `<div class="field"><div class="k">En ${MESES[r.mes - 1]}</div><div class="v">${redondear(d.climaMensual.tmin[r.mes - 1])} a ${redondear(d.climaMensual.tmax[r.mes - 1])} °C · ${redondear(d.climaMensual.lluviaMm[r.mes - 1])} mm de lluvia</div></div>` : ""}
-        <div class="field"><div class="k">${r.pais === "CL" ? "Visa para chilenos" : "Visa"}</div><div class="v">${visaTexto}</div></div>
-        <div class="field"><div class="k">Costo relativo</div><div class="v cost" aria-label="${d.costo} de 5">${costo}</div></div>
-        <div class="field"><div class="k">Ideal para</div><div class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</div></div>
-      </div>
+    <article class="gate" aria-label="Destino recomendado: ${esc(d.nombre)}, ${esc(d.pais)}">
+    <div class="gate-head">
+      <span class="pict" aria-hidden="true">${avion(20)}</span>
+      <span>${estado.elegido === 0 ? "Tu destino" : `Alternativa ${estado.elegido + 1} de ${total}`}</span>
+      <span class="gate-match">${x.porcentaje}% de coincidencia</span>
     </div>
-    <div class="perf" aria-hidden="true"></div>
-    <div class="stub">
-      <div class="match"><b>${x.porcentaje}%</b><span>de coincidencia con tu viaje perfecto</span></div>
-      <div class="barcode" aria-hidden="true"></div>
-    </div>
+    <div class="gate-code" aria-hidden="true">${d.aeropuerto}</div>
+    <h2 class="dest-name" tabindex="-1" id="qtitle">${esc(d.nombre)}</h2>
+    <div class="dest-country">${esc(d.pais)}${pais[2] ? `, saliendo desde ${esc(pais[3])} (${pais[2]})` : ""}</div>
   </article>
+  <dl class="fields">
+    <div class="field"><dt class="k">Mejor época</dt><dd class="v">${mesesTxt(d.meses)}</dd></div>
+    ${r.pais === "CL"
+      ? `<div class="field"><dt class="k">Vuelo desde Santiago</dt><dd class="v">${horasTxt(d.horasVuelo)}</dd></div>`
+      : `<div class="field"><dt class="k">Región</dt><dd class="v">${esc(d.region)}</dd></div>`}
+    <div class="field"><dt class="k">Clima</dt><dd class="v">${esc(d.clima)}</dd></div>
+    ${r.mes && d.climaMensual ? `<div class="field"><dt class="k">En ${MESES[r.mes - 1]}</dt><dd class="v">${redondear(d.climaMensual.tmin[r.mes - 1])} a ${redondear(d.climaMensual.tmax[r.mes - 1])} °C, ${redondear(d.climaMensual.lluviaMm[r.mes - 1])} mm de lluvia</dd></div>` : ""}
+    <div class="field"><dt class="k">${r.pais === "CL" ? "Visa para chilenos" : "Visa"}</dt><dd class="v">${visaTexto}</dd></div>
+    <div class="field"><dt class="k">Costo relativo</dt><dd class="v cost" aria-label="${d.costo} de 5">${costo}</dd></div>
+    <div class="field"><dt class="k">Ideal para</dt><dd class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</dd></div>
+  </dl>
 
   ${estado.sinCandidatos ? `<p class="warnbox">Todavía no tenemos destinos cargados para esa opción, así que te mostramos el mejor match en todo el catálogo.</p>` : ""}
   ${excedeHoras ? `<p class="warnbox">Este destino supera las horas de vuelo que marcaste. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
@@ -410,7 +403,7 @@ function renderResultado() {
   <div class="section feedback" id="fb"></div>
 
   <div class="actions">
-    <button class="btn btn-runway btn-block" id="buy">Buscar pasajes a ${esc(d.nombre)}</button>
+    <button class="btn btn-primary btn-go btn-block" id="buy">Buscar pasajes a ${esc(d.nombre)}</button>
     ${total > 1 ? `<button class="btn btn-ghost btn-block" id="other">${estado.elegido < total - 1 ? "Ver otra opción" : "Volver a la recomendación principal"}</button>` : ""}
     <button class="btn-link" id="restart">Responder de nuevo</button>
   </div>

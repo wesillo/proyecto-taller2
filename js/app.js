@@ -124,6 +124,7 @@ function empezar() {
   estado.pantalla = "preguntas";
   estado.paso = 0;
   estado.r = { tags: [], docs: [], meses: [], pais: estado.r.pais || "CL" };
+  estado.inicio = Date.now(); // para medir cuánto tarda en decidir
   render();
   enfocarTitulo();
 }
@@ -137,6 +138,10 @@ function renderInicio() {
     <p class="lead">Responde unas preguntas sobre tu viaje ideal y te indicamos un destino que calce contigo, con sus razones, lo bueno y lo que debes considerar.</p>
     <button class="btn btn-primary btn-go btn-block" id="start">Encontrar mi destino</button>
     <p class="note-small">Preguntas cortas, sin registrarte.</p>
+    <details class="privacy">
+      <summary>Guardamos tus respuestas de forma anónima para mejorar las recomendaciones.</summary>
+      <p>No pedimos nombre, correo ni teléfono. Guardamos lo que respondes, el destino que te mostramos, si irías o no y cuánto tardaste en decidir. Lo usa solo el equipo de Fly4ward (proyecto universitario, FCFM, Universidad de Chile) para mejorar el sistema de recomendación.</p>
+    </details>
     <div class="board" aria-label="Algunos de los ${DESTINOS.length} destinos posibles">
       <div class="row head" aria-hidden="true"><span>Código</span><span>Destino</span><span>País</span></div>
       ${muestra.map((d) => `<div class="row"><span class="code">${d.aeropuerto}</span><span>${esc(d.nombre)}</span><span class="status">${esc(d.pais)}</span></div>`).join("")}
@@ -268,6 +273,9 @@ function avanzar() {
   estado.sinCandidatos = sinCandidatos;
   estado.elegido = 0;
   estado.feedback = {};
+  estado.vistoEn = {};
+  // Segundos desde que empezó el cuestionario hasta que pidió su destino
+  estado.segundos = estado.inicio ? Math.round((Date.now() - estado.inicio) / 1000) : "";
   nuevaSesion();
   const espera = matchMedia("(prefers-reduced-motion: reduce)").matches ? 300 : 1600;
   setTimeout(() => {
@@ -409,7 +417,8 @@ function renderResultado(animar = true) {
     : yaTienePermiso(d, r) ? "Ya la tienes"
     : esc(d.visaTexto) + (faltaPasaporte(d, r) ? ", requiere pasaporte" : "");
   const sinPasaporte = faltaPasaporte(d, r);
-  estado.registro = registrarRecomendacion(r, x, estado.elegido + 1);
+  estado.registro = registrarRecomendacion(r, x, estado.elegido + 1, estado.segundos);
+  estado.vistoEn[estado.elegido] ||= Date.now();
 
   app.innerHTML = `
     <article class="gate" aria-label="Destino recomendado: ${esc(d.nombre)}, ${esc(d.pais)}">
@@ -523,7 +532,7 @@ function pintarFeedback() {
 
   caja.innerHTML = `
     <h3>¿Irías a este destino?</h3>
-    <p class="q-hint">${f.iria ? "Tu respuesta quedó registrada." : "Responde una vez: tu respuesta nos ayuda a mejorar las próximas recomendaciones."}</p>
+    <p class="q-hint">${f.iria ? "Tu respuesta quedó registrada." : "Responde una vez: tu respuesta, anónima, nos ayuda a mejorar las próximas recomendaciones."}</p>
     <div class="opts three fb-opts">${botones(RESPUESTAS_IRIA, f.iria, !!f.iria)}</div>
     ${pideMotivo ? `<h4 class="fb-sub">¿Qué no te convenció?</h4>
       ${motivo ? `<div class="fb-motivos">${fijo(motivo, true)}</div>` : `<div class="opts two fb-motivos">${botones(MOTIVOS, null, false)}</div>`}` : ""}
@@ -532,7 +541,8 @@ function pintarFeedback() {
   caja.querySelectorAll(".fb-opts .opt:not([disabled])").forEach((b) => (b.onclick = () => {
     if (f.iria) return;
     f.iria = b.dataset.v;
-    actualizarRegistro(estado.registro, { iria: f.iria });
+    const visto = estado.vistoEn && estado.vistoEn[estado.elegido];
+    actualizarRegistro(estado.registro, { iria: f.iria, segundos_respuesta: visto ? Math.round((Date.now() - visto) / 1000) : "" });
     pintarFeedback();
   }));
   caja.querySelectorAll(".fb-motivos .opt:not([disabled])").forEach((b) => (b.onclick = () => {
@@ -550,12 +560,14 @@ function abrirPanelDatos() {
   const dibujar = () => {
     const filas = leerDatos();
     const conRespuesta = filas.filter((f) => f.iria).length;
+    const tiempos = tiemposDecision(filas);
     raiz.innerHTML = `
     <div class="overlay" id="ov">
       <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="dataTitle">
         <h2 id="dataTitle" tabindex="-1">Datos del prototipo</h2>
-        <p style="margin:0;color:var(--muted)">Recomendaciones mostradas en este navegador: <b>${filas.length}</b>. Con respuesta a "¿Irías?": <b>${conRespuesta}</b>.</p>
-        <p class="fine">Cada fila guarda las respuestas del cuestionario, el destino recomendado y lo que la persona hizo después. Son los datos con los que se entrenaría el modelo de Machine Learning. Por ahora quedan solo en este dispositivo.</p>
+        <p style="margin:0;color:var(--suave)">Recomendaciones mostradas en este navegador: <b>${filas.length}</b>. Con respuesta a "¿Irías?": <b>${conRespuesta}</b>.</p>
+        <p style="margin:8px 0 0;color:var(--suave)">Tiempo para decidir: ${tiempos ? `promedio <b>${duracionTxt(tiempos.promedio)}</b>, mediana <b>${duracionTxt(tiempos.mediana)}</b> (${tiempos.n} ${tiempos.n === 1 ? "persona" : "personas"})` : "sin datos todavía"}.</p>
+        <p class="fine">Cada fila guarda las respuestas del cuestionario, el destino recomendado, lo que la persona hizo después y los segundos que tardó. Son los datos con los que se entrenaría el modelo de Machine Learning. ${URL_HOJA ? "Además de este navegador, cada fila se envía a la Google Sheet del equipo, donde se juntan las respuestas de todos." : "Hoja compartida sin configurar: por ahora los datos quedan solo en este dispositivo (ver docs/google-sheets.md)."}</p>
         <div class="links">
           <button class="btn btn-primary btn-block" id="dl" ${filas.length ? "" : "disabled"}>Descargar CSV</button>
           <button class="btn btn-ghost btn-block" id="del" ${filas.length ? "" : "disabled"}>${confirmarBorrado ? "Toca de nuevo para borrar todo" : "Borrar datos"}</button>
@@ -594,7 +606,7 @@ function abrirCompra(d) {
     <div class="overlay" id="ov">
       <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
         <h2 id="sheetTitle" tabindex="-1">Pasajes a ${esc(d.nombre)}</h2>
-        <p style="margin:0;color:var(--muted)">Te llevamos a un buscador de vuelos con la ruta ya cargada${mesesDe(r).length ? ` para ${MESES[mesesDe(r)[0] - 1]}${mesesDe(r).length > 1 ? " (puedes cambiar la fecha ahí)" : ""}` : ""}. La compra la haces directo con la aerolínea o agencia. Aeropuerto de llegada: ${d.aeropuerto}.</p>
+        <p style="margin:0;color:var(--suave)">Te llevamos a un buscador de vuelos con la ruta ya cargada${mesesDe(r).length ? ` para ${MESES[mesesDe(r)[0] - 1]}${mesesDe(r).length > 1 ? " (puedes cambiar la fecha ahí)" : ""}` : ""}. La compra la haces directo con la aerolínea o agencia. Aeropuerto de llegada: ${d.aeropuerto}.</p>
         ${origenes.length ? `<label for="orig">¿Desde dónde sales?</label>
         <select id="orig">${origenes.map(([c, nombre]) => `<option value="${c}" ${c === origen ? "selected" : ""}>${nombre} (${c})</option>`).join("")}</select>` : ""}
         ${mismo ? `<p class="warnbox">Ya estás en ${esc(d.nombre)}. Elige otra ciudad de origen.</p>` : ""}

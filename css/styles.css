@@ -65,6 +65,10 @@ a{color:inherit}
 .board .status{font-size:15px;color:#BDBDBD;font-weight:600}
 .board .status.q{color:var(--amarillo)}
 .team-link{display:block;margin:20px 0 0;font-size:13px}
+.privacy{margin:6px 0 0;font-size:14px;color:var(--suave);max-width:34em}
+.privacy summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--linea)}
+.privacy summary:focus-visible{outline:3px solid var(--foco);outline-offset:2px}
+.privacy p{margin:8px 0 0;padding-left:12px;border-left:3px solid var(--amarillo);line-height:1.45}
 
 /* Botones: letreros de dirección */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:2px solid transparent;border-radius:3px;padding:15px 20px;font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:.01em;cursor:pointer;text-decoration:none;line-height:1.1}

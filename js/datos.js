@@ -7,9 +7,15 @@
  *   - qué hizo después: si iría o no, por qué no, y si abrió la búsqueda de pasajes
  *     (estas son las "etiquetas" que el modelo aprende a predecir)
  *
- * Por ahora se guarda en el navegador (localStorage) y se descarga como CSV.
- * El siguiente paso es mandar estas mismas filas a una base de datos compartida.
+ * Cada fila se guarda en el navegador (localStorage, de respaldo) y, si URL_HOJA
+ * está configurada, también se envía a una Google Sheet compartida por el equipo.
+ * Cómo crear la hoja y obtener la URL: docs/google-sheets.md
+ *
+ * No se guarda nombre, correo ni ningún dato que identifique a la persona.
  */
+
+// URL de la aplicación web de Google Apps Script (termina en /exec). Vacía = solo se guarda en este navegador.
+const URL_HOJA = "";
 
 const CLAVE_DATOS = "rumbo-datos-ml";
 const COLUMNAS = [
@@ -17,7 +23,9 @@ const COLUMNAS = [
   "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo",
   "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje",
   "iria", "motivo", "abrio_compra",
+  "segundos_decidir", "segundos_respuesta", "dispositivo", "version",
 ];
+const VERSION_APP = "fly4ward-2026-10";
 
 let SESION = "";
 // Cada vez que alguien responde el cuestionario completo es una sesión nueva
@@ -33,11 +41,12 @@ function escribirDatos(filas) {
 }
 
 // Crea (o actualiza) la fila de un destino mostrado y devuelve su id
-function registrarRecomendacion(r, x, opcion) {
+// segundos: lo que tardó en responder el cuestionario hasta ver su destino
+function registrarRecomendacion(r, x, opcion, segundos) {
   const id = `${SESION}-${opcion}`;
   const filas = leerDatos();
   if (filas.some((f) => f.id === id)) return id;
-  filas.push({
+  const fila = {
     id, sesion: SESION, fecha: new Date().toISOString(), opcion,
     pais: r.pais, alcance: r.alcance, tags: (r.tags || []).join("|"), presupuesto: r.presupuesto, ritmo: r.ritmo,
     con_quien: r.conQuien, edad: r.edad || "", meses: (r.meses || []).join("|"), horas: r.horas || "", docs: (r.docs || []).join("|"),
@@ -45,8 +54,13 @@ function registrarRecomendacion(r, x, opcion) {
     destino: x.destino.nombre, pais_destino: x.destino.codigoPais, aeropuerto: x.destino.aeropuerto,
     puntaje: Math.round(x.puntaje * 10) / 10, porcentaje: x.porcentaje,
     iria: "", motivo: "", abrio_compra: 0,
-  });
+    segundos_decidir: segundos ?? "", segundos_respuesta: "",
+    dispositivo: matchMedia("(max-width: 700px)").matches ? "movil" : "escritorio",
+    version: VERSION_APP,
+  };
+  filas.push(fila);
   escribirDatos(filas);
+  enviarAHoja(fila);
   return id;
 }
 
@@ -56,6 +70,42 @@ function actualizarRegistro(id, cambios) {
   if (!f) return;
   Object.assign(f, cambios);
   escribirDatos(filas);
+  enviarAHoja(f);
+}
+
+/*
+ * Envía la fila completa a la hoja compartida. La hoja busca la fila por "id":
+ * si existe la actualiza y si no la agrega, así que mandar la misma fila varias
+ * veces no duplica datos. "text/plain" + no-cors evita el bloqueo entre dominios;
+ * keepalive deja terminar el envío aunque la persona se vaya a comprar pasajes.
+ */
+function enviarAHoja(fila) {
+  if (!URL_HOJA || typeof fetch !== "function") return;
+  try {
+    fetch(URL_HOJA, {
+      method: "POST", mode: "no-cors", keepalive: true,
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(fila),
+    }).catch(() => {});
+  } catch (e) {}
+}
+
+// Promedio y mediana (en segundos) del tiempo hasta ver el destino, una vez por sesión
+function tiemposDecision(filas = leerDatos()) {
+  const t = filas.filter((f) => f.opcion === 1 && Number(f.segundos_decidir) > 0).map((f) => Number(f.segundos_decidir)).sort((a, b) => a - b);
+  if (!t.length) return null;
+  const mitad = Math.floor(t.length / 2);
+  return {
+    n: t.length,
+    promedio: Math.round(t.reduce((a, b) => a + b, 0) / t.length),
+    mediana: t.length % 2 ? t[mitad] : Math.round((t[mitad - 1] + t[mitad]) / 2),
+  };
+}
+
+function duracionTxt(seg) {
+  if (seg < 60) return `${seg} s`;
+  const m = Math.floor(seg / 60), s = seg % 60;
+  return s ? `${m} min ${s} s` : `${m} min`;
 }
 
 function datosCSV() {
@@ -89,3 +139,5 @@ async function descargarCSV() {
 function borrarDatos() {
   try { localStorage.removeItem(CLAVE_DATOS); } catch (e) {}
 }
+
+if (typeof module !== "undefined") module.exports = { COLUMNAS, tiemposDecision, duracionTxt };

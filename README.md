@@ -38,13 +38,14 @@ Investigamos el transporte aéreo en Chile con entrevistas a pasajeros y operari
 index.html              la página
 css/styles.css          los estilos
 js/matching.js          el motor de recomendación (puntajes y razones)
-js/datos.js             registro de datos para el Machine Learning (CSV)
+js/datos.js             registro de datos (CSV y envío a Google Sheet)
 js/app.js               la interfaz (preguntas, resultado, compra)
 data/destinos.js        catálogo de 178 destinos (GENERADO, no editar a mano)
 data/base/              datos editoriales de cada destino
 data/fuentes/           datos con fuente y fecha: visas, clima, aeropuertos, Banco Mundial
 data/FUENTES.md         metodología del corte de datos y qué falta revisar
-scripts/                script que construye el catálogo
+scripts/                construye el catálogo; script de la Google Sheet
+docs/google-sheets.md   cómo conectar la hoja compartida (5 min)
 tests/                  pruebas automáticas del motor
 .github/workflows/      publica la app sola en cada cambio
 .devcontainer/          configuración para programar en Codespaces
@@ -107,7 +108,8 @@ El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato
 ## Próximos pasos
 
 - [x] Pregunta "¿irías a este destino?" para medir si las recomendaciones funcionan
-- [ ] Enviar los datos a una base de datos compartida (hoy se guardan en el navegador)
+- [x] Enviar los datos a una hoja compartida (Google Sheet, ver `docs/google-sheets.md`)
+- [x] Medir el tiempo para decidir y avisar qué datos se guardan
 - [x] Visas verificadas en fuentes oficiales y clima mensual con fuente (corte 1 oct 2026)
 - [ ] Revisar los datos de confianza media o baja listados en `data/FUENTES.md`
 - [ ] Horas de vuelo y visas para usuarios de otros países
@@ -120,6 +122,6 @@ Los requisitos de ingreso, el clima y las distancias tienen fuente y fecha de co
 
 ## Datos para el Machine Learning
 
-Cada destino mostrado guarda una fila con las respuestas del cuestionario, el destino y su puntaje, y lo que hizo la persona: si iría (`si`, `tal_vez`, `no`), el motivo si no, y si abrió la búsqueda de pasajes. Desde el inicio, el enlace **Datos del prototipo (equipo)** descarga todo como CSV.
+Cada destino mostrado guarda una fila con las respuestas del cuestionario, el destino y su puntaje, y lo que hizo la persona: si iría (`si`, `tal_vez`, `no`), el motivo si no, si abrió la búsqueda de pasajes, los segundos que tardó en llegar a su destino (`segundos_decidir`) y en responder "¿Irías?" (`segundos_respuesta`). No se guarda nombre, correo ni teléfono, y la pantalla de inicio lo avisa.
 
-Por ahora los datos quedan solo en el navegador donde se usó la app. Para juntar datos de muchas personas, el siguiente paso es enviar estas filas a una base de datos compartida.
+Las filas quedan en el navegador como respaldo y, si `URL_HOJA` está configurada en `js/datos.js`, se envían a una Google Sheet del equipo donde se juntan las de todos. Cómo crearla: [`docs/google-sheets.md`](docs/google-sheets.md). Desde el inicio, el enlace **Datos del prototipo (equipo)** muestra el tiempo promedio en decidir y descarga el CSV.

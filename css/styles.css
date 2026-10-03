@@ -55,7 +55,7 @@ a{color:inherit}
 
 /* Inicio */
 .hero{padding:20px 0 8px}
-.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,11vw,72px);line-height:.95;letter-spacing:-.01em;margin:0 0 18px;max-width:9em}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,11vw,72px);line-height:.95;letter-spacing:-.01em;margin:0 0 18px;max-width:10em}
 .hero p.lead{font-size:19px;line-height:1.45;color:var(--suave);max-width:30em;margin:0 0 26px}
 .note-small{font-size:14px;color:var(--suave);margin-top:12px}
 .board{margin:36px 0 0;border-radius:3px;background:var(--senal);color:#F2F2F2;padding:6px 16px 10px;font-family:var(--display);font-weight:600}

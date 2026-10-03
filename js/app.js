@@ -133,8 +133,8 @@ function renderInicio() {
   const muestra = ["CUZ", "LSC", "KEF", "PDL", "TBS"].map((i) => DESTINOS.find((d) => d.aeropuerto === i)).filter(Boolean);
   app.innerHTML = `
   <section class="hero">
-    <h1>¿No sabes a dónde viajar?</h1>
-    <p class="lead">Responde unas preguntas sobre tu viaje ideal y te indicamos un solo destino, con sus razones, lo bueno y lo que debes considerar.</p>
+    <h1>Tu próximo destino, sin dar vueltas.</h1>
+    <p class="lead">Responde unas preguntas sobre tu viaje ideal y te indicamos un destino que calce contigo, con sus razones, lo bueno y lo que debes considerar.</p>
     <button class="btn btn-primary btn-go btn-block" id="start">Encontrar mi destino</button>
     <p class="note-small">Preguntas cortas, sin registrarte.</p>
     <div class="board" aria-label="Algunos de los ${DESTINOS.length} destinos posibles">

@@ -514,24 +514,29 @@ function pintarFeedback() {
   const caja = document.getElementById("fb");
   if (!caja) return;
   const f = (estado.feedback[estado.elegido] ||= {});
-  const pideMotivo = f.iria && f.iria !== "si" && !f.motivo;
+  const pideMotivo = f.iria && f.iria !== "si";
   const listo = f.iria === "si" || f.motivo;
+  // Una vez respondida, la pregunta queda fija: no se puede cambiar la respuesta ni el motivo
+  const fijo = (o, elegido) => boton(o, elegido).replace("<button ", `<button disabled aria-disabled="true" `);
+  const botones = (lista, valor, bloqueado) => lista.map((o) => (bloqueado ? fijo(o, valor === o.v) : boton(o, false))).join("");
+  const motivo = MOTIVOS.find((m) => m.v === f.motivo);
 
   caja.innerHTML = `
     <h3>¿Irías a este destino?</h3>
-    <p class="q-hint">Tu respuesta nos ayuda a que las próximas recomendaciones sean mejores.</p>
-    <div class="opts three fb-opts">${RESPUESTAS_IRIA.map((o) => boton(o, f.iria === o.v)).join("")}</div>
+    <p class="q-hint">${f.iria ? "Tu respuesta quedó registrada." : "Responde una vez: tu respuesta nos ayuda a mejorar las próximas recomendaciones."}</p>
+    <div class="opts three fb-opts">${botones(RESPUESTAS_IRIA, f.iria, !!f.iria)}</div>
     ${pideMotivo ? `<h4 class="fb-sub">¿Qué no te convenció?</h4>
-      <div class="opts two fb-motivos">${MOTIVOS.map((o) => boton(o, false)).join("")}</div>` : ""}
-    ${listo ? `<p class="fb-thanks" role="status">Gracias, lo anotamos.${f.iria === "no" && estado.resultado.length > 1 && estado.elegido < estado.resultado.length - 1 ? " Mira otra opción más abajo." : ""}</p>` : ""}`;
+      ${motivo ? `<div class="fb-motivos">${fijo(motivo, true)}</div>` : `<div class="opts two fb-motivos">${botones(MOTIVOS, null, false)}</div>`}` : ""}
+    ${listo ? `<p class="fb-thanks" role="status">Gracias, lo anotamos.${f.iria === "no" && estado.resultado.length > 1 ? " Revisa tus otras opciones más arriba." : ""}</p>` : ""}`;
 
-  caja.querySelectorAll(".fb-opts .opt").forEach((b) => (b.onclick = () => {
+  caja.querySelectorAll(".fb-opts .opt:not([disabled])").forEach((b) => (b.onclick = () => {
+    if (f.iria) return;
     f.iria = b.dataset.v;
-    if (f.iria === "si") delete f.motivo;
-    actualizarRegistro(estado.registro, { iria: f.iria, motivo: f.motivo || "" });
+    actualizarRegistro(estado.registro, { iria: f.iria });
     pintarFeedback();
   }));
-  caja.querySelectorAll(".fb-motivos .opt").forEach((b) => (b.onclick = () => {
+  caja.querySelectorAll(".fb-motivos .opt:not([disabled])").forEach((b) => (b.onclick = () => {
+    if (f.motivo) return;
     f.motivo = b.dataset.v;
     actualizarRegistro(estado.registro, { motivo: f.motivo });
     pintarFeedback();

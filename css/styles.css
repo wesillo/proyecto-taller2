@@ -1,14 +1,13 @@
 /*
  * Fly4ward: lenguaje visual de la señalética de aeropuerto.
  * Negro sobre amarillo para indicar hacia dónde ir; amarillo sobre negro para indicar dónde estás.
- * Tipografía Barlow (inspirada en letreros de carretera), incluida en /fonts.
+ * Tipografía Overpass (basada en Highway Gothic, la señalética vial de EE.UU.), incluida en /fonts.
  */
 
-@font-face{font-family:"Barlow";src:url("../fonts/barlow-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Barlow";src:url("../fonts/barlow-latin-500-normal.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Barlow";src:url("../fonts/barlow-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"Barlow Semi Condensed";src:url("../fonts/barlow-semi-condensed-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"Barlow Semi Condensed";src:url("../fonts/barlow-semi-condensed-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Overpass";src:url("../fonts/overpass-latin-400-normal.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Overpass";src:url("../fonts/overpass-latin-600-normal.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Overpass";src:url("../fonts/overpass-latin-700-normal.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Overpass";src:url("../fonts/overpass-latin-800-normal.woff2") format("woff2");font-weight:800;font-display:swap}
 
 :root{
   --piso:#E9EBEA;        /* fondo: piso de terminal */
@@ -22,8 +21,8 @@
   --verde:#00703A;       /* verde salida */
   --rojo:#B3261E;        /* rojo prohibición */
   --foco:#1D5BD8;
-  --display:"Barlow Semi Condensed","Barlow","Arial Narrow",system-ui,sans-serif;
-  --cuerpo:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Overpass",system-ui,sans-serif;
+  --cuerpo:"Overpass",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -48,18 +47,18 @@ a{color:inherit}
 
 /* Barra superior */
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:8px 0 20px}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:.01em;background:none;border:0;padding:4px 0;cursor:pointer}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.01em;background:none;border:0;padding:4px 0;cursor:pointer}
 .brand .mark{width:32px;height:32px;border-radius:3px;background:var(--amarillo);color:var(--sobre-amarillo);display:grid;place-items:center}
 .theme-btn{border:2px solid var(--linea);background:transparent;border-radius:2px;padding:5px 10px;font-size:14px;font-weight:500;cursor:pointer}
 .theme-btn:hover{border-color:var(--texto)}
 
 /* Inicio */
 .hero{padding:20px 0 8px}
-.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,11vw,72px);line-height:.95;letter-spacing:-.01em;margin:0 0 18px;max-width:10em}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,10vw,64px);line-height:1;letter-spacing:-.01em;margin:0 0 18px;max-width:10em}
 .hero p.lead{font-size:19px;line-height:1.45;color:var(--suave);max-width:30em;margin:0 0 26px}
 .note-small{font-size:14px;color:var(--suave);margin-top:12px}
 .board{margin:36px 0 0;border-radius:3px;background:var(--senal);color:#F2F2F2;padding:6px 16px 10px;font-family:var(--display);font-weight:600}
-.board .row{display:grid;grid-template-columns:58px 1fr auto;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid #2A2A2A;font-size:18px}
+.board .row{display:grid;grid-template-columns:58px 1fr auto;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid #2A2A2A;font-size:16px}
 .board .row:last-child{border-bottom:0}
 .board .row.head{font-size:13px;font-weight:600;color:#9A9A9A;padding:8px 0 6px;letter-spacing:.02em}
 .board .code{color:var(--amarillo);font-weight:700;letter-spacing:.06em}
@@ -123,7 +122,7 @@ a{color:inherit}
 .gate-head .pict{width:30px;height:30px;border-radius:2px;background:var(--amarillo);color:#000;display:grid;place-items:center;flex:none}
 .gate-head .pict svg{transform:rotate(45deg)}
 .gate-match{margin-left:auto;color:var(--amarillo)}
-.gate-code{font-family:var(--display);font-weight:700;font-size:clamp(96px,30vw,168px);line-height:.85;letter-spacing:.02em;color:var(--amarillo);margin:18px 0 8px}
+.gate-code{font-family:var(--display);font-weight:800;font-size:clamp(96px,30vw,168px);line-height:.85;letter-spacing:.02em;color:var(--amarillo);margin:18px 0 8px}
 .dest-name{font-family:var(--display);font-weight:700;font-size:clamp(32px,8vw,44px);line-height:1;margin:0;color:#FFFFFF}
 .dest-name:focus{outline:none}
 .dest-country{font-size:17px;color:#BDBDBD;margin-top:6px}

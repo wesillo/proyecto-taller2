@@ -307,7 +307,7 @@ function vencido(iso, tipo) {
   return (Date.now() - new Date(iso + "T12:00:00").getTime()) / 86400000 > dias;
 }
 const enlace = (url, texto) => (url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(texto)}</a>` : esc(texto));
-const redondear = (n) => (Math.abs(n) >= 10 ? Math.round(n) : Math.round(n * 10) / 10);
+const redondear = (n) => String(Math.abs(n) >= 10 ? Math.round(n) : Math.round(n * 10) / 10).replace(".", ",");
 
 /* ---------- Resultado ---------- */
 function bloqueIngreso(d, r) {

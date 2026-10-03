@@ -50,6 +50,9 @@ const yaTienePermiso = (d, r) =>
 const faltaPasaporte = (d, r) =>
   (r.docs || []).includes("carnet") && d.codigoPais !== r.pais && !entraConCarnet(d);
 
+// Meses elegidos por el usuario (1 = enero ... 12 = diciembre). Vacío = "aún no lo sé".
+const mesesDe = (r) => (Array.isArray(r.meses) ? r.meses.filter((m) => m > 0).sort((a, b) => a - b) : r.mes ? [r.mes] : []);
+
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const listaTxt = (arr) => (arr.length <= 1 ? arr.join("") : arr.slice(0, -1).join(", ") + " y " + arr[arr.length - 1]);
 const horasTxt = (h) => (h < 1.5 ? "~1 h" : `~${Math.round(h)} h`);
@@ -97,8 +100,10 @@ function puntaje(d, r) {
 
   if (d.idealPara.includes(r.conQuien)) s += 10;
 
-  if (r.mes === 0) s += 6;
-  else s += d.meses.includes(r.mes) ? 10 : 1;
+  // Temporada: proporción de los meses elegidos que son buenos para el destino
+  const meses = mesesDe(r);
+  if (!meses.length) s += 6;
+  else s += 1 + (9 * meses.filter((m) => d.meses.includes(m)).length) / meses.length;
 
   if (r.estilo === "clasico") s += (8 * (d.popularidad - 1)) / 4;
   else if (r.estilo === "sorpresa") s += (8 * (5 - d.popularidad)) / 4;
@@ -122,7 +127,9 @@ function razones(d, r, coincidencias) {
   else if ((r.docs || []).includes("carnet") && d.codigoPais !== r.pais && entraConCarnet(d)) out.push("Puedes entrar solo con tu carnet, sin pasaporte.");
   else if (r.visa && r.visa !== "da_igual" && d.visa === "N" && d.codigoPais !== r.pais) out.push("No necesitas visa con pasaporte chileno.");
   if (d.costo <= r.presupuesto) out.push(`Calza con un presupuesto ${PRESUPUESTO_TXT[r.presupuesto]}.`);
-  if (r.mes && d.meses.includes(r.mes)) out.push(`${cap(MESES[r.mes - 1])} está entre sus mejores meses.`);
+  const buenos = mesesDe(r).filter((m) => d.meses.includes(m)).map((m) => MESES[m - 1]);
+  if (buenos.length === 1) out.push(`${cap(buenos[0])} está entre sus mejores meses.`);
+  else if (buenos.length > 1) out.push(`${cap(listaTxt(buenos))} están entre sus mejores meses.`);
   if (d.idealPara.includes(r.conQuien)) out.push(`Funciona muy bien para viajar ${CON_QUIEN[r.conQuien]}.`);
   if (Math.abs(d.actividad - r.ritmo) <= 1) {
     out.push(r.ritmo >= 4 ? "Tiene la actividad física que pediste." : r.ritmo <= 2 ? "Se disfruta sin apuro, a tu ritmo." : "Mezcla actividad y descanso.");
@@ -161,5 +168,5 @@ function recomendar(destinos, r) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
+  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
 }

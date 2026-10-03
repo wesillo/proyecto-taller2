@@ -63,7 +63,7 @@ const PREGUNTAS = [
       { v: "65+", label: "65 o más" },
     ],
   },
-  { clave: "mes", tipo: "meses", titulo: "¿En qué mes viajarías?", ayuda: "Algunos destinos cambian mucho según la temporada." },
+  { clave: "meses", tipo: "meses", exclusiva: 0, titulo: "¿En qué meses podrías viajar?", ayuda: "Elige uno o varios. Algunos destinos cambian mucho según la temporada." },
   {
     clave: "horas", tipo: "unica", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
     titulo: "¿Cuántas horas de vuelo aguantas?", ayuda: "Aproximado desde Santiago, contando escalas.",
@@ -123,7 +123,7 @@ function render() {
 function empezar() {
   estado.pantalla = "preguntas";
   estado.paso = 0;
-  estado.r = { tags: [], docs: [], pais: estado.r.pais || "CL" };
+  estado.r = { tags: [], docs: [], meses: [], pais: estado.r.pais || "CL" };
   render();
   enfocarTitulo();
 }
@@ -183,16 +183,17 @@ function renderPregunta() {
     const marcadas = r[p.clave] || [];
     cuerpo = `<div class="opts ${p.opciones.length > 5 ? "three" : "two"} chips">${p.opciones.map((o) => boton(o, marcadas.includes(o.v))).join("")}</div>`;
   } else if (p.tipo === "meses") {
-    cuerpo = `<div class="opts three">${MESES.map((m, i) => `<button class="opt month" aria-pressed="${r.mes === i + 1}" data-v="${i + 1}">${cap(m)}</button>`).join("")}
-      <button class="opt month wide" aria-pressed="${r.mes === 0}" data-v="0">Aún no lo sé</button></div>`;
+    const marcados = r.meses || [];
+    cuerpo = `<div class="opts three">${MESES.map((m, i) => `<button class="opt month" aria-pressed="${marcados.includes(i + 1)}" data-v="${i + 1}">${cap(m)}</button>`).join("")}
+      <button class="opt month wide" aria-pressed="${marcados.includes(0)}" data-v="0">Aún no lo sé</button></div>`;
   } else {
     cuerpo = `<div class="opts ${p.layout === "two" ? "two" : ""}">${p.opciones.map((o) => boton(o, String(r[p.clave]) === String(o.v))).join("")}</div>`;
   }
 
   // Siempre se avanza con "Continuar": elegir una opción solo la marca
-  const multiple = p.tipo === "multiple";
+  const multiple = p.tipo === "multiple" || p.tipo === "meses";
   const elegidas = multiple ? (r[p.clave] || []).length : 0;
-  const contador = p.max ? `${elegidas} de ${p.max} elegidas` : `${elegidas} ${elegidas === 1 ? "elegido" : "elegidos"}`;
+  const contador = p.tipo === "meses" ? ((r.meses || []).includes(0) ? "Sin fecha definida" : `${elegidas} ${elegidas === 1 ? "mes" : "meses"}`) : p.max ? `${elegidas} de ${p.max} elegidas` : `${elegidas} ${elegidas === 1 ? "elegido" : "elegidos"}`;
   const respondida = multiple ? elegidas > 0 : r[p.clave] !== undefined;
   const ultima = estado.paso === total - 1;
   app.innerHTML = `
@@ -229,13 +230,14 @@ function renderPregunta() {
 
 function elegir(p, valor) {
   const r = estado.r;
-  if (p.tipo === "multiple") {
+  if (p.tipo === "multiple" || p.tipo === "meses") {
+    if (p.tipo === "meses") valor = Number(valor);
     let lista = r[p.clave] || (r[p.clave] = []);
     const i = lista.indexOf(valor);
     if (i >= 0) lista.splice(i, 1);
     else {
       // Una opción "exclusiva" (como "Solo carnet") no se puede combinar con las demás
-      if (p.exclusiva) lista = r[p.clave] = valor === p.exclusiva ? [] : lista.filter((v) => v !== p.exclusiva);
+      if (p.exclusiva !== undefined) lista = r[p.clave] = valor === p.exclusiva ? [] : lista.filter((v) => v !== p.exclusiva);
       if (p.max && lista.length >= p.max) lista.shift();
       lista.push(valor);
     }
@@ -243,8 +245,7 @@ function elegir(p, valor) {
     app.querySelector(`.opt[data-v="${CSS.escape(String(valor))}"]`)?.focus({ preventScroll: true });
     return;
   }
-  if (p.tipo === "meses") r[p.clave] = Number(valor);
-  else if (p.tipo === "alcance") r[p.clave] = valor;
+  if (p.tipo === "alcance") r[p.clave] = valor;
   else r[p.clave] = p.opciones.find((o) => String(o.v) === valor).v;
   renderPregunta();
   // Mantiene el foco en la opción recién elegida (útil al navegar con teclado)
@@ -330,6 +331,18 @@ function bloqueIngreso(d, r) {
   </div>`;
 }
 
+// Clima en los meses elegidos: rango de temperaturas y lluvia (promedio mensual si son varios meses)
+function campoClima(d, r) {
+  const meses = mesesDe(r);
+  const c = d.climaMensual;
+  if (!meses.length || !c) return "";
+  const min = Math.min(...meses.map((m) => c.tmin[m - 1]));
+  const max = Math.max(...meses.map((m) => c.tmax[m - 1]));
+  const lluvia = meses.reduce((t, m) => t + c.lluviaMm[m - 1], 0) / meses.length;
+  const etiqueta = meses.length === 1 ? `En ${MESES[meses[0] - 1]}` : "En tus meses";
+  return `<div class="field"><dt class="k">${etiqueta}</dt><dd class="v">${redondear(min)} a ${redondear(max)} °C, ${redondear(lluvia)} mm de lluvia${meses.length > 1 ? " al mes" : ""}</dd></div>`;
+}
+
 function bloqueFuentes(d) {
   const c = d.climaMensual;
   const u = d.ubicacion;
@@ -379,7 +392,7 @@ function renderResultado() {
       ? `<div class="field"><dt class="k">Vuelo desde Santiago</dt><dd class="v">${horasTxt(d.horasVuelo)}</dd></div>`
       : `<div class="field"><dt class="k">Región</dt><dd class="v">${esc(d.region)}</dd></div>`}
     <div class="field"><dt class="k">Clima</dt><dd class="v">${esc(d.clima)}</dd></div>
-    ${r.mes && d.climaMensual ? `<div class="field"><dt class="k">En ${MESES[r.mes - 1]}</dt><dd class="v">${redondear(d.climaMensual.tmin[r.mes - 1])} a ${redondear(d.climaMensual.tmax[r.mes - 1])} °C, ${redondear(d.climaMensual.lluviaMm[r.mes - 1])} mm de lluvia</dd></div>` : ""}
+    ${campoClima(d, r)}
     <div class="field"><dt class="k">${r.pais === "CL" ? "Visa para chilenos" : "Visa"}</dt><dd class="v">${visaTexto}</dd></div>
     <div class="field"><dt class="k">Costo relativo</dt><dd class="v cost" aria-label="${d.costo} de 5">${costo}</dd></div>
     <div class="field"><dt class="k">Ideal para</dt><dd class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</dd></div>
@@ -521,14 +534,14 @@ function abrirCompra(d) {
 
   const dibujar = (origen) => {
     const mismo = !!origen && origen === d.aeropuerto;
-    const consulta = (origen ? `Vuelos de ${origen} a ${d.aeropuerto}` : `Vuelos a ${d.aeropuerto}`) + (r.mes ? ` en ${MESES[r.mes - 1]}` : "");
+    const consulta = (origen ? `Vuelos de ${origen} a ${d.aeropuerto}` : `Vuelos a ${d.aeropuerto}`) + (mesesDe(r).length ? ` en ${MESES[mesesDe(r)[0] - 1]}` : "");
     const googleFlights = "https://www.google.com/travel/flights?q=" + encodeURIComponent(consulta);
     const skyscanner = origen ? `https://www.skyscanner.cl/transporte/vuelos/${origen.toLowerCase()}/${d.aeropuerto.toLowerCase()}/` : "";
     raiz.innerHTML = `
     <div class="overlay" id="ov">
       <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
         <h2 id="sheetTitle" tabindex="-1">Pasajes a ${esc(d.nombre)}</h2>
-        <p style="margin:0;color:var(--muted)">Te llevamos a un buscador de vuelos con la ruta ya cargada${r.mes ? ` para ${MESES[r.mes - 1]}` : ""}. La compra la haces directo con la aerolínea o agencia. Aeropuerto de llegada: ${d.aeropuerto}.</p>
+        <p style="margin:0;color:var(--muted)">Te llevamos a un buscador de vuelos con la ruta ya cargada${mesesDe(r).length ? ` para ${MESES[mesesDe(r)[0] - 1]}${mesesDe(r).length > 1 ? " (puedes cambiar la fecha ahí)" : ""}` : ""}. La compra la haces directo con la aerolínea o agencia. Aeropuerto de llegada: ${d.aeropuerto}.</p>
         ${origenes.length ? `<label for="orig">¿Desde dónde sales?</label>
         <select id="orig">${origenes.map(([c, nombre]) => `<option value="${c}" ${c === origen ? "selected" : ""}>${nombre} (${c})</option>`).join("")}</select>` : ""}
         ${mismo ? `<p class="warnbox">Ya estás en ${esc(d.nombre)}. Elige otra ciudad de origen.</p>` : ""}

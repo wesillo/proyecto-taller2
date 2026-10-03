@@ -14,7 +14,7 @@
 const CLAVE_DATOS = "rumbo-datos-ml";
 const COLUMNAS = [
   "id", "sesion", "fecha", "opcion",
-  "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "mes", "horas", "docs", "visa", "estilo",
+  "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo",
   "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje",
   "iria", "motivo", "abrio_compra",
 ];
@@ -40,7 +40,7 @@ function registrarRecomendacion(r, x, opcion) {
   filas.push({
     id, sesion: SESION, fecha: new Date().toISOString(), opcion,
     pais: r.pais, alcance: r.alcance, tags: (r.tags || []).join("|"), presupuesto: r.presupuesto, ritmo: r.ritmo,
-    con_quien: r.conQuien, edad: r.edad || "", mes: r.mes, horas: r.horas || "", docs: (r.docs || []).join("|"),
+    con_quien: r.conQuien, edad: r.edad || "", meses: (r.meses || []).join("|"), horas: r.horas || "", docs: (r.docs || []).join("|"),
     visa: r.visa || "", estilo: r.estilo,
     destino: x.destino.nombre, pais_destino: x.destino.codigoPais, aeropuerto: x.destino.aeropuerto,
     puntaje: Math.round(x.puntaje * 10) / 10, porcentaje: x.porcentaje,

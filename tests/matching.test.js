@@ -131,3 +131,16 @@ test("las horas de vuelo nunca son menores que el mínimo físico de un vuelo di
 test("los países donde se entra con carnet están en la lista del motor", () => {
   for (const d of DESTINOS) if (d.ingreso.soloCarnet && d.codigoPais !== "CL") assert.ok(PAISES_CON_CARNET.includes(d.codigoPais), d.nombre);
 });
+
+test("varios meses: el puntaje sube con la proporción de meses buenos y 'no sé' es neutro", () => {
+  const d = DESTINOS.find((x) => x.meses.length >= 2 && x.meses.length <= 6);
+  const malo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].find((m) => !d.meses.includes(m));
+  const r = { pais: "CL", alcance: "da_igual", tags: d.tags.slice(0, 1), presupuesto: 3, ritmo: 3, conQuien: "S", estilo: "da_igual", docs: [] };
+  const todos = puntaje(d, { ...r, meses: d.meses.slice(0, 2) }).puntaje;
+  const mitad = puntaje(d, { ...r, meses: [d.meses[0], malo] }).puntaje;
+  const ninguno = puntaje(d, { ...r, meses: [malo] }).puntaje;
+  const noSe = puntaje(d, { ...r, meses: [0] }).puntaje;
+  assert.ok(todos > mitad && mitad > ninguno);
+  assert.ok(noSe > ninguno && noSe < todos);
+  assert.ok(razones(d, { ...r, meses: d.meses.slice(0, 2) }, []).some((t) => t.includes("están entre sus mejores meses")));
+});

@@ -189,9 +189,12 @@ function renderPregunta() {
     cuerpo = `<div class="opts ${p.layout === "two" ? "two" : ""}">${p.opciones.map((o) => boton(o, String(r[p.clave]) === String(o.v))).join("")}</div>`;
   }
 
-  const conContinuar = p.tipo === "multiple";
-  const elegidas = conContinuar ? (r[p.clave] || []).length : 0;
+  // Siempre se avanza con "Continuar": elegir una opción solo la marca
+  const multiple = p.tipo === "multiple";
+  const elegidas = multiple ? (r[p.clave] || []).length : 0;
   const contador = p.max ? `${elegidas} de ${p.max} elegidas` : `${elegidas} ${elegidas === 1 ? "elegido" : "elegidos"}`;
+  const respondida = multiple ? elegidas > 0 : r[p.clave] !== undefined;
+  const ultima = estado.paso === total - 1;
   app.innerHTML = `
     <div class="stepline"><span>Pregunta ${estado.paso + 1} de ${total}</span></div>
     <div class="progress" aria-hidden="true"><i style="width:${(estado.paso / total) * 100}%"></i></div>
@@ -200,7 +203,8 @@ function renderPregunta() {
     ${cuerpo}
     <div class="q-actions">
       <button class="btn-link" id="back">${estado.paso === 0 ? "Volver al inicio" : "Atrás"}</button>
-      ${conContinuar ? `<span class="counter">${contador}</span><button class="btn btn-primary btn-go" id="next" ${elegidas ? "" : "disabled"}>Continuar</button>` : ""}
+      ${multiple ? `<span class="counter">${contador}</span>` : ""}
+      <button class="btn btn-primary btn-go" id="next" ${respondida ? "" : "disabled"}>${ultima ? "Ver mi destino" : "Continuar"}</button>
     </div>`;
 
   app.querySelectorAll(".opt").forEach((b) => (b.onclick = () => elegir(p, b.dataset.v)));
@@ -236,13 +240,15 @@ function elegir(p, valor) {
       lista.push(valor);
     }
     renderPregunta();
+    app.querySelector(`.opt[data-v="${CSS.escape(String(valor))}"]`)?.focus({ preventScroll: true });
     return;
   }
   if (p.tipo === "meses") r[p.clave] = Number(valor);
   else if (p.tipo === "alcance") r[p.clave] = valor;
   else r[p.clave] = p.opciones.find((o) => String(o.v) === valor).v;
   renderPregunta();
-  setTimeout(avanzar, 180);
+  // Mantiene el foco en la opción recién elegida (útil al navegar con teclado)
+  app.querySelector(`.opt[data-v="${CSS.escape(String(valor))}"]`)?.focus({ preventScroll: true });
 }
 
 function avanzar() {

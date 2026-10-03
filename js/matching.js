@@ -162,7 +162,8 @@ function recomendar(destinos, r) {
     const clave = r.alcance === "dentro" ? x.destino.nombre : x.destino.pais;
     if (vistos.has(clave)) continue;
     vistos.add(clave);
-    resultado.push({ ...x, porcentaje: Math.max(0, Math.min(99, Math.round((x.puntaje / PUNTAJE_MAXIMO) * 100))) });
+    const exacto = Math.max(0, Math.min(99.4, (x.puntaje / PUNTAJE_MAXIMO) * 100));
+    resultado.push({ ...x, porcentaje: Math.min(99, Math.round(exacto)), porcentajeExacto: Math.round(exacto * 10) / 10 });
   }
   return { resultado, sinCandidatos };
 }

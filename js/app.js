@@ -359,7 +359,43 @@ function bloqueFuentes(d) {
   </details>`;
 }
 
-function renderResultado() {
+// Porcentaje de coincidencia: si dos opciones empatan al redondear, se muestra un decimal en todas
+function pctTxt(y) {
+  const enteros = estado.resultado.map((z) => Math.round(z.porcentajeExacto ?? z.porcentaje));
+  const empate = new Set(enteros).size < enteros.length;
+  const v = y.porcentajeExacto ?? y.porcentaje;
+  return empate ? `${v.toFixed(1).replace(".", ",")}%` : `${Math.round(v)}%`;
+}
+
+/* ---------- Animación de tablero de vuelos (split-flap) ---------- */
+const LETRAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+function tiles(texto) {
+  return [...texto].map((c) => `<span class="flap" data-c="${esc(c)}">${esc(c)}</span>`).join("");
+}
+function letrasNombre(texto) {
+  return [...texto].map((c) => (c === " " ? " " : `<span class="ch" data-c="${esc(c)}">${esc(c)}</span>`)).join("");
+}
+// Cada letra gira por letras al azar hasta detenerse en la correcta, de izquierda a derecha
+function girar(selector, { base = 350, paso = 160, ritmo = 55 } = {}) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  app.querySelectorAll(selector).forEach((el, i) => {
+    const final = el.dataset.c;
+    const fin = performance.now() + base + i * paso;
+    el.classList.add("girando");
+    const t = setInterval(() => {
+      if (performance.now() >= fin) {
+        clearInterval(t);
+        el.textContent = final;
+        el.classList.remove("girando");
+      } else {
+        const l = LETRAS[Math.floor(Math.random() * LETRAS.length)];
+        el.textContent = final === final.toLowerCase() ? l.toLowerCase() : l;
+      }
+    }, ritmo);
+  });
+}
+
+function renderResultado(animar = true) {
   const x = estado.resultado[estado.elegido];
   const d = x.destino;
   const r = estado.r;
@@ -379,11 +415,11 @@ function renderResultado() {
     <article class="gate" aria-label="Destino recomendado: ${esc(d.nombre)}, ${esc(d.pais)}">
     <div class="gate-head">
       <span class="pict" aria-hidden="true">${avion(20)}</span>
-      <span>${estado.elegido === 0 ? "Tu destino" : `Alternativa ${estado.elegido + 1} de ${total}`}</span>
-      <span class="gate-match">${x.porcentaje}% de coincidencia</span>
+      <span>${estado.elegido === 0 ? "Tu destino" : "Alternativa"}</span>
+      <span class="gate-match">${pctTxt(x)} de coincidencia</span>
     </div>
-    <div class="gate-code" aria-hidden="true">${d.aeropuerto}</div>
-    <h2 class="dest-name" tabindex="-1" id="qtitle">${esc(d.nombre)}</h2>
+    <div class="gate-code" aria-hidden="true">${tiles(d.aeropuerto)}</div>
+    <h2 class="dest-name" tabindex="-1" id="qtitle" aria-label="${esc(d.nombre)}"><span aria-hidden="true">${letrasNombre(d.nombre)}</span></h2>
     <div class="dest-country">${esc(d.pais)}${pais[2] ? `, saliendo desde ${esc(pais[3])} (${pais[2]})` : ""}</div>
   </article>
   <dl class="fields">
@@ -398,6 +434,17 @@ function renderResultado() {
     <div class="field"><dt class="k">Ideal para</dt><dd class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</dd></div>
   </dl>
 
+  ${total > 1 ? `<div class="section alts">
+    <h3>${estado.elegido === 0 ? "También podría gustarte" : "Tus otras opciones"}</h3>
+    <div class="alt-board">
+      ${estado.resultado.map((y, i) => i === estado.elegido ? "" : `<button class="alt-row" data-i="${i}">
+        <span class="alt-code">${y.destino.aeropuerto}</span>
+        <span class="alt-name">${esc(y.destino.nombre)}<small>${i === 0 ? "Tu destino recomendado" : esc(y.destino.pais) + (estado.elegido === 0 && y.porcentajeExacto === estado.resultado[0].porcentajeExacto ? ", empata con tu destino (elegimos el vuelo más corto)" : "")}</small></span>
+        <span class="alt-pct">${pctTxt(y)}</span>
+      </button>`).join("")}
+    </div>
+  </div>` : ""}
+
   ${estado.sinCandidatos ? `<p class="warnbox">Todavía no tenemos destinos cargados para esa opción, así que te mostramos el mejor match en todo el catálogo.</p>` : ""}
   ${excedeHoras ? `<p class="warnbox">Este destino supera las horas de vuelo que marcaste. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
   ${sinPasaporte ? `<p class="warnbox">Para este destino necesitas pasaporte. En Chile se tramita en el Registro Civil; considera el tiempo de espera antes de comprar.</p>` : ""}
@@ -408,40 +455,41 @@ function renderResultado() {
     <ul class="why">${razones(d, r, x.coincidencias).map((t) => `<li><span class="ic" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>${esc(t)}</span></li>`).join("")}</ul>
   </div>
 
-  ${bloqueIngreso(d, r)}
-
   <div class="section">
     <h3>Antes de decidir</h3>
     <div class="pc">
       <div class="col good"><h4>Lo bueno</h4><ul>${d.pros.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>
       <div class="col bad"><h4>A considerar</h4><ul>${d.contras.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>
     </div>
-    ${bloqueFuentes(d)}
   </div>
+
+  ${bloqueIngreso(d, r)}
+
+  ${bloqueFuentes(d)}
 
   <div class="section feedback" id="fb"></div>
 
   <div class="actions">
     <button class="btn btn-primary btn-go btn-block" id="buy">Buscar pasajes a ${esc(d.nombre)}</button>
-    ${total > 1 ? `<button class="btn btn-ghost btn-block" id="other">${estado.elegido < total - 1 ? "Ver otra opción" : "Volver a la recomendación principal"}</button>` : ""}
     <button class="btn-link" id="restart">Responder de nuevo</button>
   </div>
 
-  <p class="why-one">Te mostramos un destino a la vez a propósito: comparar muchas opciones cansa y no ayuda a decidir. Ninguna aerolínea paga por aparecer aquí.</p>`;
+  <p class="why-one">Te recomendamos un destino y solo dos alternativas a propósito: comparar muchas opciones cansa y no ayuda a decidir. Ninguna aerolínea paga por aparecer aquí.</p>`;
 
   pintarFeedback();
   document.getElementById("buy").onclick = () => {
     actualizarRegistro(estado.registro, { abrio_compra: 1 });
     abrirCompra(d);
   };
-  const otra = document.getElementById("other");
-  if (otra) {
-    otra.onclick = () => {
-      estado.elegido = (estado.elegido + 1) % total;
-      renderResultado();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      enfocarTitulo();
-    };
+  app.querySelectorAll(".alt-row").forEach((b) => (b.onclick = () => {
+    estado.elegido = Number(b.dataset.i);
+    window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    renderResultado(true);
+    enfocarTitulo();
+  }));
+  if (animar) {
+    girar(".gate-code .flap", { base: 450, paso: 260 });
+    girar(".dest-name .ch", { base: 250, paso: 35, ritmo: 45 });
   }
   document.getElementById("restart").onclick = empezar;
 }

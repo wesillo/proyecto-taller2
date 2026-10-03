@@ -160,7 +160,7 @@ a{color:inherit}
 .req .warnbox{border-left-color:var(--rojo)}
 .src{font-size:14px;color:var(--suave)}
 .src a,.fuentes a{color:var(--foco)}
-.fuentes{margin-top:16px;font-size:15px;color:var(--suave)}
+.fuentes{margin-top:22px;font-size:15px;color:var(--suave)}
 .fuentes summary{cursor:pointer;font-weight:600;color:var(--texto)}
 .fuentes ul{margin:10px 0 0;padding-left:18px;display:grid;gap:6px}
 
@@ -196,3 +196,19 @@ a{color:inherit}
 .field:last-child:nth-child(odd){grid-column:1/-1;border-right:0}
 .fields .field:last-child,.fields .field:nth-last-child(2):nth-child(odd){border-bottom:0}
 .btn-go{text-align:left}
+
+/* Tablero split-flap y alternativas */
+.gate-code{display:flex;gap:6px}
+.flap{position:relative;display:inline-block;min-width:.7em;text-align:center;background:#161616;border-radius:3px;padding:.02em .06em 0}
+.flap::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#000}
+.flap.girando{color:#F2F2F2}
+.dest-name .ch.girando{color:var(--amarillo)}
+.alt-board{background:var(--senal);border-radius:3px;padding:2px 14px}
+.alt-row{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;width:100%;padding:13px 0;background:none;border:0;border-bottom:1px solid #2A2A2A;color:#F2F2F2;text-align:left;cursor:pointer;font-family:var(--display)}
+.alt-row:last-child{border-bottom:0}
+.alt-row:hover .alt-name{text-decoration:underline;text-underline-offset:3px}
+.alt-code{font-weight:700;font-size:24px;color:var(--amarillo);letter-spacing:.05em}
+.alt-name{font-weight:600;font-size:19px;line-height:1.15}
+.alt-name small{display:block;font-family:var(--cuerpo);font-weight:400;font-size:14px;color:#A8A8A8;margin-top:2px}
+.alt-pct{font-weight:700;font-size:19px;color:var(--amarillo)}
+.alts h3{margin-bottom:10px}

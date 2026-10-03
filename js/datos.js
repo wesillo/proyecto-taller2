@@ -15,7 +15,7 @@
  */
 
 // URL de la aplicación web de Google Apps Script (termina en /exec). Vacía = solo se guarda en este navegador.
-const URL_HOJA = "";
+const URL_HOJA = "https://script.google.com/macros/s/AKfycbzbzwgZ06Wckd2LvVMq4cvx-c7X-0fiZDp5jfDy9pmIU637o6M6QZHb9NBQB7x5mzU4/exec";
 
 const CLAVE_DATOS = "rumbo-datos-ml";
 const COLUMNAS = [

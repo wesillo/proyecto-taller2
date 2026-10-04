@@ -20,7 +20,7 @@ Investigamos el transporte aéreo en Chile con entrevistas a pasajeros y operari
 
 ## La solución
 
-1. El usuario responde qué busca (presupuesto en pesos con una barra, tipo de experiencia, ritmo, con quién viaja, edad, mes, horas de vuelo, documentos que ya tiene y tolerancia a trámites).
+1. El usuario responde qué busca (presupuesto para el pasaje con una barra en pesos, tipo de experiencia, ritmo, con quién viaja, edad, mes, horas de vuelo, documentos que ya tiene y tolerancia a trámites).
 2. Un sistema de **matching por atributos** cruza esas respuestas con 178 destinos y elige el que mejor calza.
 3. Muestra **una recomendación** con las razones, pros y contras concretos.
 4. Le pregunta **"¿Irías a este destino?"** y, si no, por qué. Esa respuesta es la etiqueta con la que se entrenará el Machine Learning.
@@ -101,7 +101,7 @@ Si prefieres no tocar código, abre un **Issue** con la plantilla "Nuevo destino
 
 ## El catálogo y su corte de datos
 
-El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato con su fuente (corte actual: 1 de octubre de 2026). Las visas están verificadas en sitios oficiales país por país, el clima mensual viene de servicios meteorológicos nacionales las distancias se calculan con las coordenadas reales de cada aeropuerto y los pasajes vienen de una foto de Google Flights (4 de octubre de 2026, temporada baja y alta), con la que se calcula el costo estimado de una semana por persona. La app muestra la fuente y la fecha de cada dato, y avisa cuando un dato supera su vigencia. Lo que sigue siendo criterio del equipo (gasto diario, ritmo, popularidad, pros y contras) está marcado como editorial. Todo el detalle está en [`data/FUENTES.md`](data/FUENTES.md).
+El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato con su fuente (corte actual: 1 de octubre de 2026). Las visas están verificadas en sitios oficiales país por país, el clima mensual viene de servicios meteorológicos nacionales las distancias se calculan con las coordenadas reales de cada aeropuerto y los pasajes vienen de una foto de Google Flights (4 de octubre de 2026, temporada baja y alta), que es con lo que se compara el presupuesto. La app muestra la fuente y la fecha de cada dato, y avisa cuando un dato supera su vigencia. Lo que sigue siendo criterio del equipo (ritmo, popularidad, pros y contras) está marcado como editorial. Todo el detalle está en [`data/FUENTES.md`](data/FUENTES.md).
 
 ---
 

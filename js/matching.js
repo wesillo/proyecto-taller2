@@ -15,30 +15,28 @@ const CON_QUIEN = { S: "solo", P: "en pareja", F: "en familia", A: "con amigos" 
 const PRESUPUESTO_TXT = { 1.5: "ajustado", 3: "moderado", 4: "cómodo", 5: "sin límite" };
 
 /*
- * Presupuesto en pesos: por persona, para una semana, con pasajes.
- * Costo estimado de cada destino = pasaje ida y vuelta + 7 días de gasto allá.
- * El catálogo trae costoEstimadoCLP con el pasaje real (foto de Google Flights,
- * ver data/FUENTES.md); si falta, se estima el pasaje según las horas de vuelo.
+ * Presupuesto para el pasaje: ida y vuelta por persona desde Santiago, en pesos.
+ * El precio de cada destino es la tarifa típica de la foto de Google Flights
+ * (promedio de temporada baja y alta, ver data/FUENTES.md). Si un destino no tiene
+ * precio publicado, se estima según las horas de vuelo.
+ * Alojamiento y gastos en el destino quedan fuera por ahora: la app se enfoca en el viaje aéreo.
  */
-const PASOS_MONTO = [600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2500, 3000, 4000, 5000].map((x) => x * 1000);
-const DIAS_VIAJE = 7;
-function pasajeEstimado(h) {
+const PASOS_MONTO = [100, 150, 200, 300, 400, 500, 600, 800, 1000, 1200, 1500, 1800, 2000, 2500, 3000].map((x) => x * 1000);
+const MONTO_SIN_TOPE = PASOS_MONTO[PASOS_MONTO.length - 1];
+function pasajePorHoras(h) {
   return h <= 2.5 ? 150000 : h <= 5 ? 350000 : h <= 9 ? 700000 : h <= 13 ? 1000000 : 1400000;
 }
-function gastoDiarioEstimado(d) {
-  const nivel = d.indicadoresPais && d.indicadoresPais.nivelPrecios2023 != null ? d.indicadoresPais.nivelPrecios2023 : 0.3 + d.costo * 0.2;
-  return 20000 + 100000 * nivel;
-}
-function costoEstimado(d) {
-  // El catálogo trae el costo calculado con precios reales (foto de Google Flights); esto es el respaldo
-  if (d.costoEstimadoCLP) return d.costoEstimadoCLP;
-  return Math.round((pasajeEstimado(d.horasVuelo) + DIAS_VIAJE * gastoDiarioEstimado(d)) / 10000) * 10000;
+function precioPasaje(d) {
+  return d.pasaje && d.pasaje.tipicoCLP ? d.pasaje.tipicoCLP : pasajePorHoras(d.horasVuelo);
 }
 function montoTxt(m) {
-  if (m >= 5000000) return "$5 millones o más";
-  if (m >= 1000000) { const x = String(Math.round(m / 100000) / 10).replace(".", ","); return `$${x} ${x === "1" ? "millón" : "millones"}`; }
+  const millones = (x) => { const t = String(Math.round(x / 100000) / 10).replace(".", ","); return `$${t} ${t === "1" ? "millón" : "millones"}`; };
+  if (m === MONTO_SIN_TOPE) return `${millones(m)} o más`;
+  if (m >= 1000000) return millones(m);
   return `$${Math.round(m / 1000)} mil`;
 }
+// Un pasaje "calza" si no supera el presupuesto en más de 5% (los precios son de una foto, cambian a diario)
+const pasajeCalza = (d, r) => r.monto >= MONTO_SIN_TOPE || precioPasaje(d) <= r.monto * 1.05;
 
 // [código, nombre, aeropuerto de salida, ciudad de salida]
 const PAISES = [
@@ -122,7 +120,7 @@ function puntaje(d, r) {
   let castigo;
   if (r.monto) {
     // Pasarse del presupuesto castiga fuerte; quedar bajo, apenas
-    const razon = r.monto >= 5000000 ? Math.min(1, costoEstimado(d) / r.monto) : costoEstimado(d) / r.monto;
+    const razon = r.monto >= MONTO_SIN_TOPE ? Math.min(1, precioPasaje(d) / r.monto) : precioPasaje(d) / r.monto;
     castigo = razon > 1 ? (razon - 1) * 50 : (1 - razon) * 6;
   } else castigo = d.costo > r.presupuesto ? (d.costo - r.presupuesto) * 8 : (r.presupuesto - d.costo) * 3;
   s += Math.max(0, 20 - castigo);
@@ -157,7 +155,7 @@ function razones(d, r, coincidencias) {
   if (yaTienePermiso(d, r)) out.push(`Ya tienes ${DOCUMENTOS[r.docs.find((k) => DOCUMENTOS[k] && DOCUMENTOS[k].paises.includes(d.codigoPais))].nombre}, no necesitas trámites.`);
   else if ((r.docs || []).includes("carnet") && d.codigoPais !== r.pais && entraConCarnet(d)) out.push("Puedes entrar solo con tu carnet, sin pasaporte.");
   else if (r.visa && r.visa !== "da_igual" && d.visa === "N" && d.codigoPais !== r.pais) out.push("No necesitas visa con pasaporte chileno.");
-  if (r.monto ? costoEstimado(d) <= r.monto * 1.05 : d.costo <= r.presupuesto) out.push(r.monto ? `Estimamos ~${montoTxt(costoEstimado(d))} por persona la semana: calza con tu presupuesto.` : `Calza con un presupuesto ${PRESUPUESTO_TXT[r.presupuesto]}.`);
+  if (r.monto ? pasajeCalza(d, r) : d.costo <= r.presupuesto) out.push(r.monto ? `El pasaje sale ~${montoTxt(precioPasaje(d))} ida y vuelta: calza con tu presupuesto.` : `Calza con un presupuesto ${PRESUPUESTO_TXT[r.presupuesto]}.`);
   const buenos = mesesDe(r).filter((m) => d.meses.includes(m)).map((m) => MESES[m - 1]);
   if (buenos.length === 1) out.push(`${cap(buenos[0])} está entre sus mejores meses.`);
   else if (buenos.length > 1) out.push(`${cap(listaTxt(buenos))} están entre sus mejores meses.`);
@@ -200,5 +198,5 @@ function recomendar(destinos, r) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PASOS_MONTO, costoEstimado, montoTxt, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
+  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PASOS_MONTO, MONTO_SIN_TOPE, precioPasaje, pasajeCalza, montoTxt, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
 }

@@ -26,7 +26,7 @@ const PREGUNTAS = [
     opciones: TIPOS.map(([v, desc]) => ({ v, label: v, desc })),
   },
   {
-    clave: "presupuesto", tipo: "monto", titulo: "¿Cuánto quieres gastar?", ayuda: "Por persona, para un viaje de una semana: pasajes, alojamiento y gastos allá.",
+    clave: "presupuesto", tipo: "monto", titulo: "¿Cuánto quieres gastar en el pasaje?", ayuda: "Ida y vuelta por persona, saliendo desde Santiago.",
   },
   {
     clave: "ritmo", tipo: "unica", titulo: "¿Qué ritmo quieres?",
@@ -182,13 +182,13 @@ function renderPregunta() {
     const marcadas = r[p.clave] || [];
     cuerpo = `<div class="opts ${p.opciones.length > 5 ? "three" : "two"} chips">${p.opciones.map((o) => boton(o, marcadas.includes(o.v))).join("")}</div>`;
   } else if (p.tipo === "monto") {
-    if (r.monto === undefined) { r.monto = 1000000; r.presupuesto = r.monto; }
+    if (r.monto === undefined) { r.monto = 800000; r.presupuesto = r.monto; }
     const i = Math.max(0, PASOS_MONTO.indexOf(r.monto));
     cuerpo = `<div class="monto">
       <output class="monto-num" id="montoNum" for="montoSel">${montoTxt(r.monto)}</output>
-      <span class="monto-pp">por persona</span>
+      <span class="monto-pp">ida y vuelta, por persona</span>
       <input type="range" id="montoSel" class="monto-range" min="0" max="${PASOS_MONTO.length - 1}" step="1" value="${i}"
-        aria-label="Presupuesto por persona" aria-valuetext="${montoTxt(r.monto)}" style="--p:${(i / (PASOS_MONTO.length - 1)) * 100}%">
+        aria-label="Presupuesto para el pasaje, ida y vuelta por persona" aria-valuetext="${montoTxt(r.monto)}" style="--p:${(i / (PASOS_MONTO.length - 1)) * 100}%">
       <div class="monto-ends" aria-hidden="true"><span>${montoTxt(PASOS_MONTO[0])}</span><span>${montoTxt(PASOS_MONTO[PASOS_MONTO.length - 1])}</span></div>
       <div class="monto-hint" id="montoHint" aria-live="polite">${alcanceMonto(r)}</div>
     </div>`;
@@ -256,15 +256,15 @@ function alcanceMonto(r) {
   let lista = DESTINOS.filter((d) => d.aeropuerto !== pais[2]);
   if (r.alcance === "dentro") lista = lista.filter((d) => d.codigoPais === r.pais);
   if (r.alcance === "fuera") lista = lista.filter((d) => d.codigoPais !== r.pais);
-  const alcanza = lista.filter((d) => r.monto >= 5000000 || costoEstimado(d) <= r.monto * 1.05); // 5% de holgura: son estimaciones
-  // Ejemplos: lo más lejos que alcanza (los de costo más cercano al monto), priorizando los conocidos
-  const ejemplos = [...alcanza].sort((a, b) => costoEstimado(b) - costoEstimado(a)).slice(0, 12)
+  const alcanza = lista.filter((d) => pasajeCalza(d, r));
+  // Ejemplos: lo más lejos que alcanza (los pasajes más cercanos al monto), priorizando los conocidos
+  const ejemplos = [...alcanza].sort((a, b) => precioPasaje(b) - precioPasaje(a)).slice(0, 12)
     .sort((a, b) => b.popularidad - a.popularidad).slice(0, 3).map((d) => d.nombre);
   if (!alcanza.length) {
-    const minimo = Math.min(...lista.map(costoEstimado));
-    return `<b>No alcanza para una semana en ningún destino</b><span>El más económico parte en ~${montoTxt(minimo)} por persona.</span>`;
+    const minimo = Math.min(...lista.map(precioPasaje));
+    return `<b>No alcanza para ningún pasaje</b><span>El más económico parte en ~${montoTxt(minimo)} ida y vuelta.</span>`;
   }
-  return `<b>Te alcanza para ${alcanza.length === lista.length ? "todos los" : `${alcanza.length} de ${lista.length}`} destinos</b>${ejemplos.length ? `<span>Por ejemplo: ${ejemplos.map(esc).join(" · ")}</span>` : ""}`;
+  return `<b>Te alcanza el pasaje a ${alcanza.length === lista.length ? "todos los" : `${alcanza.length} de ${lista.length}`} destinos</b>${ejemplos.length ? `<span>Por ejemplo: ${ejemplos.map(esc).join(" · ")}</span>` : ""}`;
 }
 
 function elegir(p, valor) {
@@ -396,7 +396,6 @@ function bloqueFuentes(d) {
       ${u ? `<li><b>Distancia:</b> ${u.distanciaKmDesdeSantiago.toLocaleString("es-CL")} km desde Santiago, calculada con las coordenadas del aeropuerto ${esc(d.aeropuerto)} (OurAirports).</li>` : ""}
       ${d.ingreso && d.ingreso.fuenteUrl ? `<li><b>Requisitos de entrada:</b> ${enlace(d.ingreso.fuenteUrl, d.ingreso.fuenteNombre)}, verificado el ${fechaTxt(d.ingreso.fecha)}.</li>` : ""}
       ${d.pasaje ? `<li><b>Pasaje:</b> tarifa típica ida y vuelta desde Santiago ~${montoTxt(d.pasaje.tipicoCLP)} (temporada baja ~${montoTxt(d.pasaje.bajaCLP || d.pasaje.tipicoCLP)}, alta ~${montoTxt(d.pasaje.altaCLP || d.pasaje.tipicoCLP)}), según ${enlace("https://www.google.com/travel/flights", "Google Flights")} el ${fechaTxt(d.pasaje.fecha)}. Precios para 1 adulto en clase económica; cambian a diario.</li>` : `<li><b>Pasaje:</b> estimado según las horas de vuelo (no encontramos precio publicado).</li>`}
-      <li><b>Costo estimado de la semana:</b> pasaje + 7 días de gasto allá (~${montoTxt(d.gastoDiarioCLP || 0)} al día${d.gastoDiarioMotivo ? `, incluye ${esc(d.gastoDiarioMotivo)}` : " según el nivel de precios del país, Banco Mundial"}). Es una estimación del equipo.</li>
       <li><b>Ritmo, popularidad, tipo de experiencia y pros/contras:</b> estimación editorial del equipo.</li>
     </ul>
     ${corte.fechaCorte ? `<p class="src">Corte de datos del catálogo: ${fechaTxt(corte.fechaCorte)}.</p>` : ""}
@@ -475,7 +474,7 @@ function renderResultado(animar = true) {
     <div class="field"><dt class="k">Clima</dt><dd class="v">${esc(d.clima)}</dd></div>
     ${campoClima(d, r)}
     <div class="field"><dt class="k">${r.pais === "CL" ? "Visa para chilenos" : "Visa"}</dt><dd class="v">${visaTexto}</dd></div>
-    <div class="field"><dt class="k">Costo estimado</dt><dd class="v">~${montoTxt(costoEstimado(d))}<small class="v-sub">por persona, 1 semana con pasajes</small></dd></div>
+    <div class="field"><dt class="k">Pasaje ida y vuelta</dt><dd class="v">~${montoTxt(precioPasaje(d))}<small class="v-sub">${d.pasaje ? `precio típico, Google Flights` : "estimado"}</small></dd></div>
     <div class="field"><dt class="k">Ideal para</dt><dd class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</dd></div>
   </dl>
 
@@ -491,7 +490,7 @@ function renderResultado(animar = true) {
   </div>` : ""}
 
   ${estado.sinCandidatos ? `<p class="warnbox">Todavía no tenemos destinos cargados para esa opción, así que te mostramos el mejor match en todo el catálogo.</p>` : ""}
-  ${r.monto && r.monto < 5000000 && costoEstimado(d) > r.monto * 1.05 ? `<p class="warnbox">Estimamos ~${montoTxt(costoEstimado(d))} por persona la semana, sobre tu presupuesto de ${montoTxt(r.monto)}. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
+  ${r.monto && !pasajeCalza(d, r) ? `<p class="warnbox">El pasaje sale ~${montoTxt(precioPasaje(d))} ida y vuelta, sobre tu presupuesto de ${montoTxt(r.monto)}. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
   ${excedeHoras ? `<p class="warnbox">Este destino supera las horas de vuelo que marcaste. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
   ${sinPasaporte ? `<p class="warnbox">Para este destino necesitas pasaporte. En Chile se tramita en el Registro Civil; considera el tiempo de espera antes de comprar.</p>` : ""}
   ${r.edad === "menor" && !nacional ? `<p class="warnbox">Si eres menor de edad y no viajas con ambos padres, necesitas una autorización notarial para salir de Chile.</p>` : ""}

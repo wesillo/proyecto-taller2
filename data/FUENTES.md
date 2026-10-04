@@ -22,7 +22,7 @@ En vez de consultar visas, clima o precios en vivo (lo que requiere APIs pagadas
 | Clima mensual (máx., mín., lluvia) | **Fuente citada** | Servicios meteorológicos nacionales (DMC, SMN, INMET, SENAMHI, NOAA, AEMET, JMA, BOM...) directamente o a través de tablas climáticas que los citan. Una URL por destino. | `data/fuentes/clima.json` |
 | Coordenadas y distancia desde Santiago | **Calculado** | Coordenadas de OurAirports; distancia ortodrómica (haversine) desde SCL. | `data/fuentes/aeropuertos.json` |
 | Horas de vuelo | **Fuente** o estimado | Duración del itinerario más rápido en Google Flights (ver abajo); si no, estimación editorial. Nunca menor al mínimo físico de un vuelo directo: distancia / 880 km/h + 0,5 h. | `data/fuentes/precios-vuelos.json`, `data/base/destinos-base.json` |
-| Pasaje ida y vuelta y costo estimado de la semana | **Fuente** + calculado | Foto de Google Flights (2 temporadas) + gasto diario según nivel de precios del país. | `data/fuentes/precios-vuelos.json` |
+| Pasaje ida y vuelta | **Fuente** | Foto de Google Flights (2 temporadas). Es lo que usa la barra de presupuesto. | `data/fuentes/precios-vuelos.json` |
 | Nivel de precios y llegadas de turistas (por país) | **Fuente** | Banco Mundial: PA.NUS.PPP / PA.NUS.FCRF (2023) y ST.INT.ARVL (2019, último año previo a la pandemia). | `data/fuentes/banco-mundial.json` |
 | Costo, actividad, popularidad, tipos de experiencia, ideal para, pros y contras | **Editorial** | Criterio del equipo. El costo se contrasta con un costo calculado (ver abajo). | `data/base/destinos-base.json` |
 
@@ -147,7 +147,9 @@ La verificación encontró errores en la base anterior, ya corregidos:
 - **Cobertura:** 112 aeropuertos con ambas temporadas, 56 con una sola (la otra se estimó con la razón mediana alta/baja, 1,30) y 3 sin resultados (Bonito, Providencia, Paro/Bután), que usan un pasaje estimado según las horas de vuelo.
 - **Vigencia:** 90 días. Los precios de pasajes cambian todos los días; la foto sirve para comparar destinos entre sí, no como cotización.
 
-**Costo estimado de la semana** (lo que usa la barra de presupuesto) = pasaje típico (promedio de temporada baja y alta) + 7 días × gasto diario.
+**Barra de presupuesto:** compara el monto que elige la persona con el **pasaje típico** de cada destino (promedio de temporada baja y alta). Alojamiento y gastos en el destino no se consideran por ahora, porque la app se enfoca en el viaje aéreo.
+
+**Para más adelante (no se usa en la app):** el catálogo también guarda un costo estimado de la semana (`costoEstimadoCLP`) = pasaje típico + 7 días × gasto diario.
 El gasto diario es una estimación del equipo: $20.000 + $100.000 × nivel de precios del país (Banco Mundial, PPA / tipo de cambio). Para destinos donde lo caro es una experiencia que se paga aparte (Antártica, Bután, Galápagos, safaris, Ruanda, Maldivas, Seychelles) se usa un piso diario más alto, con el motivo indicado en `scripts/construir-catalogo.js`.
 
 **Horas de vuelo:** cuando la duración del itinerario más rápido de Google Flights está entre 0,6 y 1,6 veces la estimación editorial, se usa la de Google Flights. Si difiere más (itinerarios raros esa semana o destinos cuya estimación incluía un tramo por tierra), se mantiene la editorial; `npm run catalogo` lista esos 17 casos para revisarlos.

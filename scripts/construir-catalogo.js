@@ -31,6 +31,7 @@ const corte = leer("data/fuentes/corte.json");
 const precios = leer("data/fuentes/precios-vuelos.json");
 
 /*
+ * PARA MÁS ADELANTE (la app no lo usa todavía: el presupuesto compara solo el pasaje).
  * Costo estimado de una semana por persona = pasaje ida y vuelta + 7 días de gasto en el destino.
  *   Pasaje: promedio de la tarifa típica en temporada baja y alta (foto de Google Flights).
  *           Si no hay precio, se estima según las horas de vuelo (marcado como "estimado").

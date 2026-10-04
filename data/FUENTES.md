@@ -164,3 +164,12 @@ El gasto diario es una estimación del equipo: $20.000 + $100.000 × nivel de pr
 - **En la app:** 56 destinos del catálogo tienen ruta directa regular (6 solo en temporada, como Bariloche, El Calafate, Ushuaia, Toronto y Montreal). El resultado muestra si el vuelo es directo todo el año o en qué meses, cuántos pasajeros vuelan la ruta y si el mes elegido es temporada alta; avisa cuando en los meses elegidos no hay vuelo directo.
 - **Ciudades con más de un aeropuerto:** Buenos Aires suma Aeroparque (AEP) y Ezeiza (EZE); São Paulo suma Guarulhos (GRU) y Viracopos (VCP); para las Cataratas del Iguazú se usa el aeropuerto brasileño (IGU), que es el que tiene vuelo directo desde Santiago.
 - **Vigencia:** 365 días. La JAC publica el archivo cada mes, así que se puede actualizar repitiendo el cálculo.
+
+## Cómo llegar (del aeropuerto al destino)
+
+Muchos destinos no son la ciudad del aeropuerto: a Torres del Paine se vuela a Puerto Natales, a la Costa Amalfitana a Nápoles, a Machu Picchu a Cusco. Para esos casos, `data/base/como-llegar.json` guarda los tramos que siguen después del vuelo (bus, tren, traslado, barco u otro vuelo interno), con tiempos aproximados.
+
+- **El vuelo desde Santiago** sale de los datos con fuente: duración (Google Flights o estimación validada), si es directo y en qué meses (JAC) y las aerolíneas.
+- **Los tramos por tierra o mar son editoriales** (confianza baja: estimación del equipo). La app lo dice y pide confirmar horarios antes de viajar. Son 92 destinos con tramos.
+- **Destinos en dos etapas:** cuando se llega primero a una ciudad base y el lugar se visita otro día (Cusco y Machu Picchu, La Paz y el Titicaca, Las Vegas y el Gran Cañón...), el campo `base` marca la ciudad de llegada y los tramos después de un `grupo` son "otro día".
+- **Destinos que eran un país completo** ahora nombran el lugar concreto (por ejemplo, "Eslovenia" pasó a ser "Liubliana y lago Bled" y "Vietnam" a "Hanói y Ha Long"), para que la recomendación diga a qué ciudad ir; el país se sigue mostrando debajo.

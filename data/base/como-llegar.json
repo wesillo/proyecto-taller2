@@ -1,0 +1,1265 @@
+{
+ "descripcion": "Cómo llegar desde el aeropuerto de llegada hasta el destino, para los destinos donde no son el mismo lugar. Tiempos aproximados en movimiento (sin esperas), estimación editorial del equipo: verificar horarios y operadores antes de viajar. 'base' indica dónde se llega primero cuando el destino tiene dos etapas; los tramos después de un 'grupo' son otro día.",
+ "fecha": "2026-10-04",
+ "confianza": "editorial",
+ "destinos": {
+  "san-pedro-de-atacama": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Calama",
+     "hasta": "San Pedro de Atacama",
+     "horas": 1.5,
+     "nota": "Transfer compartido desde el aeropuerto, ~100 km"
+    }
+   ]
+  },
+  "torres-del-paine": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto",
+     "hasta": "Puerto Natales",
+     "horas": 0.25,
+     "nota": "Taxi o transfer, ~7 km"
+    },
+    {
+     "modo": "bus",
+     "desde": "Puerto Natales",
+     "hasta": "Torres del Paine",
+     "horas": 2,
+     "nota": "Buses diarios en temporada (oct a abr), salida temprano"
+    }
+   ],
+   "otra": "Si no hay vuelo conveniente a Puerto Natales, se vuela a Punta Arenas (PUQ) y se suma un bus de ~3 h hasta Puerto Natales."
+  },
+  "puerto-varas": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Puerto Montt",
+     "hasta": "Puerto Varas",
+     "horas": 0.5,
+     "nota": "Transfer o taxi, ~25 km"
+    }
+   ]
+  },
+  "pucon": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Temuco",
+     "hasta": "Pucón",
+     "horas": 1.75,
+     "nota": "Transfer o bus, ~110 km"
+    }
+   ]
+  },
+  "la-serena-y-valle-de-elqui": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "La Serena",
+     "hasta": "Vicuña",
+     "horas": 1,
+     "nota": "Buses y colectivos frecuentes desde el terminal"
+    },
+    {
+     "modo": "bus",
+     "desde": "Vicuña",
+     "hasta": "Pisco Elqui",
+     "horas": 0.75,
+     "nota": "Interior del valle",
+     "opcional": true
+    }
+   ]
+  },
+  "carretera-austral": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Balmaceda",
+     "hasta": "Coyhaique",
+     "horas": 1,
+     "nota": "Transfer desde el aeropuerto; la ruta se recorre en auto arrendado"
+    }
+   ]
+  },
+  "bahia-inglesa": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto Desierto de Atacama",
+     "hasta": "Bahía Inglesa",
+     "horas": 0.4,
+     "nota": "Taxi o transfer, ~30 km"
+    }
+   ]
+  },
+  "futaleufu": {
+   "tramos": [
+    {
+     "modo": "vuelo",
+     "desde": "Puerto Montt",
+     "hasta": "Chaitén",
+     "horas": 0.75,
+     "nota": "Avionetas regionales; también hay ferry de ~9 h"
+    },
+    {
+     "modo": "bus",
+     "desde": "Chaitén",
+     "hasta": "Futaleufú",
+     "horas": 3,
+     "nota": "Por la Carretera Austral"
+    }
+   ]
+  },
+  "antartica": {
+   "tramos": [
+    {
+     "modo": "vuelo",
+     "desde": "Punta Arenas",
+     "hasta": "Isla Rey Jorge",
+     "horas": 2,
+     "nota": "Solo con operador autorizado; el clima puede atrasar el vuelo"
+    }
+   ],
+   "otra": "También hay cruceros de expedición de 10 a 12 días desde Ushuaia."
+  },
+  "el-calafate": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "El Calafate",
+     "hasta": "Glaciar Perito Moreno",
+     "horas": 1.5,
+     "nota": "Excursión de día completo",
+     "opcional": true
+    }
+   ]
+  },
+  "salta-y-jujuy": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Salta",
+     "hasta": "Purmamarca",
+     "horas": 3,
+     "nota": "Quebrada de Humahuaca; conviene auto arrendado o tour"
+    }
+   ]
+  },
+  "cataratas-del-iguazu": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto",
+     "hasta": "Parque Nacional Iguazú",
+     "horas": 0.5,
+     "nota": "Taxi o bus; el lado argentino y el brasileño se visitan en días distintos"
+    }
+   ],
+   "otra": "El vuelo directo desde Santiago llega al lado brasileño (Foz do Iguaçu, IGU); el lado argentino queda a ~40 min cruzando la frontera."
+  },
+  "peninsula-valdes": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Puerto Madryn",
+     "hasta": "Puerto Pirámides",
+     "horas": 1.5,
+     "nota": "Auto arrendado o excursión; ballenas de jun a dic"
+    }
+   ]
+  },
+  "jericoacoara": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Cruz",
+     "hasta": "Jericoacoara",
+     "horas": 0.75,
+     "nota": "Transfer en 4x4 por dunas"
+    }
+   ]
+  },
+  "lencois-maranhenses": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "São Luís",
+     "hasta": "Barreirinhas",
+     "horas": 4.5,
+     "nota": "Van o bus"
+    },
+    {
+     "modo": "auto",
+     "desde": "Barreirinhas",
+     "hasta": "Lagunas de los Lençóis",
+     "horas": 1,
+     "nota": "Tour en 4x4"
+    }
+   ]
+  },
+  "buzios": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Río de Janeiro",
+     "hasta": "Búzios",
+     "horas": 2.75,
+     "nota": "Bus o transfer desde el aeropuerto, ~170 km"
+    }
+   ]
+  },
+  "porto-de-galinhas": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Recife",
+     "hasta": "Porto de Galinhas",
+     "horas": 1.25,
+     "nota": "Transfer o bus, ~60 km"
+    }
+   ]
+  },
+  "cusco-y-machu-picchu": {
+   "base": "Cusco",
+   "tramos": [
+    {
+     "grupo": "Otro día: de Cusco a Machu Picchu"
+    },
+    {
+     "modo": "auto",
+     "desde": "Cusco",
+     "hasta": "Ollantaytambo",
+     "horas": 1.75,
+     "nota": "Van o colectivo"
+    },
+    {
+     "modo": "tren",
+     "desde": "Ollantaytambo",
+     "hasta": "Aguas Calientes",
+     "horas": 1.6,
+     "nota": "PeruRail o Inca Rail; reserva con anticipación"
+    },
+    {
+     "modo": "bus",
+     "desde": "Aguas Calientes",
+     "hasta": "Machu Picchu",
+     "horas": 0.4,
+     "nota": "La entrada al santuario se compra aparte y tiene cupos"
+    }
+   ]
+  },
+  "arequipa-y-colca": {
+   "base": "Arequipa",
+   "tramos": [
+    {
+     "grupo": "Otro día: al Cañón del Colca"
+    },
+    {
+     "modo": "bus",
+     "desde": "Arequipa",
+     "hasta": "Chivay",
+     "horas": 3.5,
+     "nota": "Bus o tour; se sube a más de 4.800 m"
+    }
+   ]
+  },
+  "amazonia-peruana": {
+   "tramos": [
+    {
+     "modo": "barco",
+     "desde": "Iquitos",
+     "hasta": "Lodges en el río",
+     "horas": 1.5,
+     "nota": "Lancha del lodge"
+    }
+   ]
+  },
+  "mancora": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Talara",
+     "hasta": "Máncora",
+     "horas": 1.25,
+     "nota": "Taxi o transfer, ~75 km"
+    }
+   ]
+  },
+  "paracas-y-huacachina": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Lima",
+     "hasta": "Paracas",
+     "horas": 3.5,
+     "nota": "Buses directos desde Lima"
+    },
+    {
+     "modo": "bus",
+     "desde": "Paracas",
+     "hasta": "Huacachina",
+     "horas": 1.25,
+     "nota": "Por Ica"
+    }
+   ]
+  },
+  "huaraz": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Lima",
+     "hasta": "Huaraz",
+     "horas": 8,
+     "nota": "Bus diurno o nocturno"
+    }
+   ]
+  },
+  "salar-de-uyuni": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Uyuni",
+     "hasta": "Salar de Uyuni",
+     "horas": 0.5,
+     "nota": "Tours en 4x4 de 1 a 3 días"
+    }
+   ],
+   "otra": "Desde San Pedro de Atacama hay tours en 4x4 de 3 días que terminan en Uyuni: es la forma más común de llegar desde Chile."
+  },
+  "la-paz-y-titicaca": {
+   "base": "La Paz",
+   "tramos": [
+    {
+     "grupo": "Otro día: al lago Titicaca"
+    },
+    {
+     "modo": "bus",
+     "desde": "La Paz",
+     "hasta": "Copacabana",
+     "horas": 3.5,
+     "nota": "Incluye un cruce corto en lancha por el estrecho de Tiquina"
+    }
+   ]
+  },
+  "sucre-y-potosi": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Sucre",
+     "hasta": "Potosí",
+     "horas": 3,
+     "nota": "Buses y autos compartidos",
+     "opcional": true
+    }
+   ]
+  },
+  "eje-cafetero": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Pereira",
+     "hasta": "Salento",
+     "horas": 1,
+     "nota": "Bus o taxi; desde Salento se va al valle de Cocora"
+    }
+   ]
+  },
+  "parque-tayrona": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Santa Marta",
+     "hasta": "Parque Tayrona",
+     "horas": 1,
+     "nota": "Bus hasta la entrada El Zaino"
+    }
+   ]
+  },
+  "islas-galapagos": {
+   "tramos": [
+    {
+     "modo": "barco",
+     "desde": "Aeropuerto de Baltra",
+     "hasta": "Puerto Ayora",
+     "horas": 1,
+     "nota": "Bus, ferry corto por el canal de Itabaca y taxi"
+    }
+   ]
+  },
+  "quito-y-mitad-del-mundo": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Quito",
+     "hasta": "Mitad del Mundo",
+     "horas": 1,
+     "nota": "Bus o taxi",
+     "opcional": true
+    }
+   ]
+  },
+  "montanita": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Guayaquil",
+     "hasta": "Montañita",
+     "horas": 3,
+     "nota": "Buses desde el terminal"
+    }
+   ]
+  },
+  "montevideo-y-colonia": {
+   "base": "Montevideo",
+   "tramos": [
+    {
+     "grupo": "Otro día: a Colonia del Sacramento"
+    },
+    {
+     "modo": "bus",
+     "desde": "Montevideo",
+     "hasta": "Colonia del Sacramento",
+     "horas": 2.75,
+     "nota": "Buses frecuentes"
+    }
+   ]
+  },
+  "cabo-polonio": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Montevideo",
+     "hasta": "Entrada a Cabo Polonio",
+     "horas": 4,
+     "nota": "Buses hacia Rocha"
+    },
+    {
+     "modo": "auto",
+     "desde": "Entrada",
+     "hasta": "Cabo Polonio",
+     "horas": 0.5,
+     "nota": "Camión 4x4 por las dunas: no entran autos particulares"
+    }
+   ]
+  },
+  "cancun-y-riviera-maya": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Cancún",
+     "hasta": "Playa del Carmen",
+     "horas": 0.75,
+     "nota": "Bus o transfer"
+    }
+   ]
+  },
+  "tulum": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Cancún",
+     "hasta": "Tulum",
+     "horas": 1.75,
+     "nota": "Bus o transfer; también hay Tren Maya"
+    }
+   ]
+  },
+  "los-cabos": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "San José del Cabo",
+     "hasta": "Cabo San Lucas",
+     "horas": 0.6,
+     "nota": "Transfer o bus"
+    }
+   ]
+  },
+  "costa-rica": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "San José",
+     "hasta": "La Fortuna",
+     "horas": 3.5,
+     "nota": "Bus o shuttle; volcán Arenal"
+    },
+    {
+     "modo": "auto",
+     "desde": "La Fortuna",
+     "hasta": "Monteverde",
+     "horas": 3.5,
+     "nota": "Shuttle con cruce en lancha por el lago Arenal",
+     "opcional": true
+    }
+   ]
+  },
+  "panama-y-san-blas": {
+   "base": "Ciudad de Panamá",
+   "tramos": [
+    {
+     "grupo": "Otro día: a las islas de San Blas"
+    },
+    {
+     "modo": "auto",
+     "desde": "Ciudad de Panamá",
+     "hasta": "Puerto de Cartí",
+     "horas": 2.5,
+     "nota": "Transfer en 4x4"
+    },
+    {
+     "modo": "barco",
+     "desde": "Cartí",
+     "hasta": "Islas de San Blas",
+     "horas": 0.5,
+     "nota": "Lancha de la comunidad guna"
+    }
+   ]
+  },
+  "antigua-guatemala": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Ciudad de Guatemala",
+     "hasta": "Antigua",
+     "horas": 1,
+     "nota": "Shuttle desde el aeropuerto"
+    }
+   ]
+  },
+  "jamaica": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Montego Bay",
+     "hasta": "Negril",
+     "horas": 1.5,
+     "nota": "Transfer o bus"
+    }
+   ]
+  },
+  "belice": {
+   "tramos": [
+    {
+     "modo": "barco",
+     "desde": "Ciudad de Belice",
+     "hasta": "Cayo Caulker",
+     "horas": 0.75,
+     "nota": "Lancha rápida desde el muelle"
+    }
+   ]
+  },
+  "parques-de-california": {
+   "base": "San Francisco",
+   "tramos": [
+    {
+     "grupo": "Otro día: al Parque Nacional Yosemite"
+    },
+    {
+     "modo": "auto",
+     "desde": "San Francisco",
+     "hasta": "Yosemite",
+     "horas": 4,
+     "nota": "Auto arrendado o tour"
+    }
+   ]
+  },
+  "las-vegas-y-gran-canon": {
+   "base": "Las Vegas",
+   "tramos": [
+    {
+     "grupo": "Otro día: al Gran Cañón"
+    },
+    {
+     "modo": "auto",
+     "desde": "Las Vegas",
+     "hasta": "Gran Cañón (borde sur)",
+     "horas": 4.5,
+     "nota": "Auto o tour; el borde oeste queda a ~2 h"
+    }
+   ]
+  },
+  "alaska": {
+   "tramos": [
+    {
+     "modo": "tren",
+     "desde": "Anchorage",
+     "hasta": "Seward",
+     "horas": 4.25,
+     "nota": "Tren panorámico, de mayo a septiembre; península de Kenai"
+    }
+   ]
+  },
+  "vancouver-y-banff": {
+   "base": "Vancouver",
+   "tramos": [
+    {
+     "grupo": "Para ir a Banff"
+    },
+    {
+     "modo": "vuelo",
+     "desde": "Vancouver",
+     "hasta": "Calgary",
+     "horas": 1.4,
+     "nota": "Vuelo interno"
+    },
+    {
+     "modo": "auto",
+     "desde": "Calgary",
+     "hasta": "Banff",
+     "horas": 1.5,
+     "nota": "Bus o auto arrendado"
+    }
+   ]
+  },
+  "toronto-y-niagara": {
+   "base": "Toronto",
+   "tramos": [
+    {
+     "grupo": "Otro día: a las cataratas del Niágara"
+    },
+    {
+     "modo": "auto",
+     "desde": "Toronto",
+     "hasta": "Cataratas del Niágara",
+     "horas": 1.5,
+     "nota": "Bus o tren GO"
+    }
+   ]
+  },
+  "montreal-y-quebec": {
+   "base": "Montreal",
+   "tramos": [
+    {
+     "grupo": "Otro día: a Quebec"
+    },
+    {
+     "modo": "tren",
+     "desde": "Montreal",
+     "hasta": "Quebec",
+     "horas": 3.25,
+     "nota": "Tren VIA Rail"
+    }
+   ]
+  },
+  "sevilla-y-andalucia": {
+   "base": "Sevilla",
+   "tramos": [
+    {
+     "grupo": "Para seguir por Andalucía"
+    },
+    {
+     "modo": "tren",
+     "desde": "Sevilla",
+     "hasta": "Granada",
+     "horas": 2.5,
+     "nota": "Tren o bus; Córdoba queda a 45 min en tren rápido",
+     "opcional": true
+    }
+   ]
+  },
+  "costa-amalfitana": {
+   "tramos": [
+    {
+     "modo": "tren",
+     "desde": "Nápoles",
+     "hasta": "Sorrento",
+     "horas": 1.1,
+     "nota": "Tren Circumvesuviana"
+    },
+    {
+     "modo": "bus",
+     "desde": "Sorrento",
+     "hasta": "Positano",
+     "horas": 0.75,
+     "nota": "Bus SITA por la costa; en verano también hay ferries"
+    }
+   ]
+  },
+  "toscana-y-florencia": {
+   "base": "Florencia",
+   "tramos": [
+    {
+     "grupo": "Para recorrer la Toscana"
+    },
+    {
+     "modo": "bus",
+     "desde": "Florencia",
+     "hasta": "Siena",
+     "horas": 1.25,
+     "nota": "Bus directo; para pueblos chicos conviene auto",
+     "opcional": true
+    }
+   ]
+  },
+  "escocia": {
+   "base": "Edimburgo",
+   "tramos": [
+    {
+     "grupo": "Para ir a las Tierras Altas"
+    },
+    {
+     "modo": "tren",
+     "desde": "Edimburgo",
+     "hasta": "Inverness",
+     "horas": 3.5,
+     "nota": "Tren directo"
+    }
+   ]
+  },
+  "alpes-suizos": {
+   "tramos": [
+    {
+     "modo": "tren",
+     "desde": "Aeropuerto de Zúrich",
+     "hasta": "Interlaken",
+     "horas": 2.25,
+     "nota": "Tren directo o con un cambio en Berna"
+    },
+    {
+     "modo": "tren",
+     "desde": "Interlaken",
+     "hasta": "Lauterbrunnen",
+     "horas": 0.3,
+     "nota": "Valle de cascadas; desde ahí trenes de montaña",
+     "opcional": true
+    }
+   ]
+  },
+  "islandia": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Aeropuerto de Keflavík",
+     "hasta": "Reikiavik",
+     "horas": 0.75,
+     "nota": "Bus Flybus"
+    },
+    {
+     "modo": "auto",
+     "desde": "Reikiavik",
+     "hasta": "Costa sur (Vík)",
+     "horas": 2.5,
+     "nota": "Auto arrendado o tour; cascadas Seljalandsfoss y Skógafoss",
+     "opcional": true
+    }
+   ]
+  },
+  "fiordos-de-noruega": {
+   "tramos": [
+    {
+     "modo": "tren",
+     "desde": "Bergen",
+     "hasta": "Flåm",
+     "horas": 3,
+     "nota": "Tren con cambio en Myrdal; desde Flåm salen barcos por el fiordo"
+    }
+   ]
+  },
+  "capadocia": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Nevşehir",
+     "hasta": "Göreme",
+     "horas": 0.75,
+     "nota": "Shuttle desde el aeropuerto"
+    }
+   ]
+  },
+  "georgia": {
+   "base": "Tiflis",
+   "tramos": [
+    {
+     "grupo": "Otro día: al Cáucaso"
+    },
+    {
+     "modo": "auto",
+     "desde": "Tiflis",
+     "hasta": "Kazbegi",
+     "horas": 3,
+     "nota": "Van compartida o tour por la Ruta Militar"
+    }
+   ]
+  },
+  "eslovenia": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Liubliana",
+     "hasta": "Lago Bled",
+     "horas": 1.25,
+     "nota": "Buses cada hora"
+    }
+   ]
+  },
+  "egipto": {
+   "base": "El Cairo",
+   "tramos": [
+    {
+     "grupo": "Para ir a Luxor"
+    },
+    {
+     "modo": "vuelo",
+     "desde": "El Cairo",
+     "hasta": "Luxor",
+     "horas": 1.1,
+     "nota": "Vuelo interno; también hay tren nocturno de ~10 h"
+    }
+   ]
+  },
+  "safari-en-kenia": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Nairobi",
+     "hasta": "Masái Mara",
+     "horas": 5.5,
+     "nota": "Por tierra con el operador del safari; también hay avionetas de ~1 h"
+    }
+   ]
+  },
+  "jordania-y-petra": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Amán",
+     "hasta": "Petra",
+     "horas": 3,
+     "nota": "Bus JETT o auto"
+    }
+   ]
+  },
+  "kioto": {
+   "tramos": [
+    {
+     "modo": "tren",
+     "desde": "Aeropuerto de Kansai",
+     "hasta": "Kioto",
+     "horas": 1.25,
+     "nota": "Tren expreso Haruka"
+    }
+   ]
+  },
+  "bali": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Denpasar",
+     "hasta": "Ubud",
+     "horas": 1.25,
+     "nota": "Taxi o transfer"
+    }
+   ]
+  },
+  "vietnam": {
+   "base": "Hanói",
+   "tramos": [
+    {
+     "grupo": "Para ir a la bahía de Ha Long"
+    },
+    {
+     "modo": "auto",
+     "desde": "Hanói",
+     "hasta": "Bahía de Ha Long",
+     "horas": 2.5,
+     "nota": "Bus o transfer del crucero"
+    }
+   ]
+  },
+  "palawan": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Puerto Princesa",
+     "hasta": "El Nido",
+     "horas": 6,
+     "nota": "Van compartida; también hay vuelos directos a El Nido desde Manila"
+    }
+   ]
+  },
+  "maldivas": {
+   "tramos": [
+    {
+     "modo": "barco",
+     "desde": "Malé",
+     "hasta": "Resort en el atolón",
+     "horas": 0.75,
+     "nota": "Lancha rápida o hidroavión, según el atolón"
+    }
+   ]
+  },
+  "sri-lanka": {
+   "tramos": [
+    {
+     "modo": "tren",
+     "desde": "Colombo",
+     "hasta": "Kandy",
+     "horas": 2.75,
+     "nota": "Tren o auto con chofer"
+    },
+    {
+     "modo": "tren",
+     "desde": "Kandy",
+     "hasta": "Ella",
+     "horas": 6.5,
+     "nota": "El tramo panorámico entre plantaciones de té"
+    }
+   ]
+  },
+  "nepal": {
+   "base": "Katmandú",
+   "tramos": [
+    {
+     "grupo": "Para ir a Pokhara"
+    },
+    {
+     "modo": "vuelo",
+     "desde": "Katmandú",
+     "hasta": "Pokhara",
+     "horas": 0.5,
+     "nota": "Vuelo interno; en bus son ~7 h"
+    }
+   ]
+  },
+  "india-rajastan": {
+   "base": "Delhi",
+   "tramos": [
+    {
+     "grupo": "Para ir a Rajastán"
+    },
+    {
+     "modo": "tren",
+     "desde": "Delhi",
+     "hasta": "Jaipur",
+     "horas": 4.5,
+     "nota": "Tren rápido; Agra queda a ~2 h de Delhi en tren"
+    }
+   ]
+  },
+  "china-pekin": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Pekín",
+     "hasta": "Gran Muralla (Mutianyu)",
+     "horas": 1.5,
+     "nota": "Bus o tour",
+     "opcional": true
+    }
+   ]
+  },
+  "tahiti-y-bora-bora": {
+   "base": "Tahití",
+   "tramos": [
+    {
+     "grupo": "Para ir a Bora Bora"
+    },
+    {
+     "modo": "vuelo",
+     "desde": "Tahití",
+     "hasta": "Bora Bora",
+     "horas": 0.8,
+     "nota": "Vuelo interno de Air Tahiti"
+    },
+    {
+     "modo": "barco",
+     "desde": "Aeropuerto de Bora Bora",
+     "hasta": "Isla principal o resort",
+     "horas": 0.3,
+     "nota": "Lancha: el aeropuerto está en un islote"
+    }
+   ]
+  },
+  "angkor": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Siem Riep",
+     "hasta": "Templos de Angkor",
+     "horas": 0.3,
+     "nota": "Tuk-tuk o bicicleta"
+    }
+   ]
+  },
+  "oman": {
+   "base": "Mascate",
+   "tramos": [
+    {
+     "grupo": "Para ir al interior"
+    },
+    {
+     "modo": "auto",
+     "desde": "Mascate",
+     "hasta": "Nizwa",
+     "horas": 1.75,
+     "nota": "Auto arrendado; el desierto de Wahiba queda a ~2 h más"
+    }
+   ]
+  },
+  "samarcanda": {
+   "tramos": [
+    {
+     "modo": "tren",
+     "desde": "Taskent",
+     "hasta": "Samarcanda",
+     "horas": 2.25,
+     "nota": "Tren rápido Afrosiyob"
+    }
+   ]
+  },
+  "mongolia": {
+   "base": "Ulán Bator",
+   "tramos": [
+    {
+     "grupo": "Para ir al desierto de Gobi"
+    },
+    {
+     "modo": "vuelo",
+     "desde": "Ulán Bator",
+     "hasta": "Dalanzadgad",
+     "horas": 1.5,
+     "nota": "Vuelo interno; por tierra son 1 a 2 días"
+    }
+   ]
+  },
+  "butan": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Paro",
+     "hasta": "Timbu",
+     "horas": 1.25,
+     "nota": "Con el guía obligatorio"
+    }
+   ]
+  },
+  "kerala": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Kochi",
+     "hasta": "Alleppey",
+     "horas": 1.5,
+     "nota": "Taxi o bus; desde ahí, casas flote por los canales"
+    }
+   ]
+  },
+  "namibia": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Windhoek",
+     "hasta": "Sossusvlei",
+     "horas": 5,
+     "nota": "Auto 4x4 arrendado o tour"
+    }
+   ]
+  },
+  "kilimanjaro-y-serengeti": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Kilimanjaro",
+     "hasta": "Arusha",
+     "horas": 1,
+     "nota": "Transfer"
+    },
+    {
+     "modo": "auto",
+     "desde": "Arusha",
+     "hasta": "Serengeti",
+     "horas": 8,
+     "nota": "Con el operador del safari; también hay avionetas de ~1 h"
+    }
+   ]
+  },
+  "seychelles": {
+   "tramos": [
+    {
+     "modo": "barco",
+     "desde": "Mahé",
+     "hasta": "Praslin",
+     "horas": 1,
+     "nota": "Ferry rápido; también hay vuelos de 15 min"
+    }
+   ]
+  },
+  "madagascar": {
+   "base": "Antananarivo",
+   "tramos": [
+    {
+     "grupo": "Para ir a la avenida de los baobabs"
+    },
+    {
+     "modo": "vuelo",
+     "desde": "Antananarivo",
+     "hasta": "Morondava",
+     "horas": 1.25,
+     "nota": "Vuelo interno; por tierra son ~12 h"
+    }
+   ]
+  },
+  "cabo-verde": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Sal",
+     "hasta": "Santa Maria",
+     "horas": 0.3,
+     "nota": "Taxi"
+    }
+   ]
+  },
+  "ruanda": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Kigali",
+     "hasta": "Parque Nacional de los Volcanes",
+     "horas": 2.5,
+     "nota": "Con el operador; el permiso para gorilas se compra antes"
+    }
+   ]
+  },
+  "delta-del-okavango": {
+   "tramos": [
+    {
+     "modo": "vuelo",
+     "desde": "Maun",
+     "hasta": "Campamento en el delta",
+     "horas": 0.5,
+     "nota": "Avioneta del lodge"
+    }
+   ]
+  },
+  "gran-barrera-de-coral": {
+   "tramos": [
+    {
+     "modo": "barco",
+     "desde": "Cairns",
+     "hasta": "Arrecife",
+     "horas": 1.5,
+     "nota": "Catamarán de excursión diaria"
+    }
+   ]
+  },
+  "fiyi": {
+   "tramos": [
+    {
+     "modo": "barco",
+     "desde": "Nadi (Port Denarau)",
+     "hasta": "Islas Mamanuca",
+     "horas": 1,
+     "nota": "Ferry o lancha"
+    }
+   ]
+  },
+  "pais-vasco": {
+   "base": "Bilbao",
+   "tramos": [
+    {
+     "grupo": "Para ir a San Sebastián"
+    },
+    {
+     "modo": "bus",
+     "desde": "Bilbao",
+     "hasta": "San Sebastián",
+     "horas": 1.25,
+     "nota": "Buses cada media hora"
+    }
+   ]
+  },
+  "venecia": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Aeropuerto Marco Polo",
+     "hasta": "Venecia (Piazzale Roma)",
+     "horas": 0.4,
+     "nota": "Bus; o lancha Alilaguna directo a San Marcos (~1 h 15)"
+    }
+   ]
+  },
+  "costa-azul": {
+   "base": "Niza",
+   "tramos": [
+    {
+     "grupo": "Para recorrer la costa"
+    },
+    {
+     "modo": "tren",
+     "desde": "Niza",
+     "hasta": "Mónaco",
+     "horas": 0.4,
+     "nota": "Tren regional; Cannes queda a ~30 min hacia el otro lado",
+     "opcional": true
+    }
+   ]
+  },
+  "brujas-y-bruselas": {
+   "base": "Bruselas",
+   "tramos": [
+    {
+     "grupo": "Otro día: a Brujas"
+    },
+    {
+     "modo": "tren",
+     "desde": "Bruselas",
+     "hasta": "Brujas",
+     "horas": 1,
+     "nota": "Trenes cada media hora"
+    }
+   ]
+  },
+  "irlanda": {
+   "base": "Dublín",
+   "tramos": [
+    {
+     "grupo": "Para ir al oeste"
+    },
+    {
+     "modo": "tren",
+     "desde": "Dublín",
+     "hasta": "Galway",
+     "horas": 2.5,
+     "nota": "Tren o bus"
+    },
+    {
+     "modo": "bus",
+     "desde": "Galway",
+     "hasta": "Acantilados de Moher",
+     "horas": 1.5,
+     "nota": "Bus o tour",
+     "opcional": true
+    }
+   ]
+  },
+  "kotor-y-montenegro": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Tivat",
+     "hasta": "Kotor",
+     "horas": 0.3,
+     "nota": "Taxi, ~10 km"
+    }
+   ]
+  },
+  "riviera-albanesa": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Tirana",
+     "hasta": "Himara",
+     "horas": 4.5,
+     "nota": "Bus o auto por la costa; Ksamil queda ~2 h más al sur"
+    }
+   ]
+  }
+ }
+}

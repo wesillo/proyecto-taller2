@@ -7,6 +7,7 @@
  *   data/fuentes/aeropuertos.json        coordenadas de aeropuertos (OurAirports)
  *   data/fuentes/banco-mundial.json      indicadores por país (nivel de precios, llegadas de turistas)
  *   data/fuentes/precios-vuelos.json     foto de precios de pasajes desde Santiago (Google Flights)
+ *   data/base/como-llegar.json           tramos por tierra/mar desde el aeropuerto hasta el destino (editorial)
  *   data/fuentes/jac-rutas.json          pasajeros por ruta directa desde Santiago (JAC, últimos 12 meses)
  *   data/fuentes/corte.json              fecha del corte de datos y vigencia de cada tipo de dato
  *
@@ -31,6 +32,9 @@ const bancoMundial = leer("data/fuentes/banco-mundial.json");
 const corte = leer("data/fuentes/corte.json");
 const precios = leer("data/fuentes/precios-vuelos.json");
 const jac = leer("data/fuentes/jac-rutas.json");
+const comoLlegar = leer("data/base/como-llegar.json");
+// Nombres más claros que los de Google Flights para algunos aeropuertos
+const NOMBRE_AEROPUERTO = { DEL: "Delhi", MBJ: "Montego Bay", COK: "Kochi", PDL: "Ponta Delgada", BRU: "Bruselas", JJD: "Cruz", GPS: "Isla Baltra", RTB: "Roatán", DBV: "Dubrovnik", PPS: "Puerto Princesa", SAI: "Siem Riep", COR: "Córdoba", BRC: "Bariloche", OAX: "Oaxaca", PPT: "Tahití (Papeete)", SEZ: "Mahé", SID: "Isla de Sal", MRU: "Mauricio", FAE: "Islas Feroe (Vágar)", NAN: "Nadi" };
 
 /*
  * Ruta directa desde Santiago según la JAC (pasajeros reales de los últimos 12 meses).
@@ -238,6 +242,12 @@ const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
     costoCalculado: mezcla == null ? null : Math.min(5, 1 + Math.floor(mezcla * 5)),
     pasaje: pasaje && directoJac ? { ...pasaje, directo: true, escalas: 0 } : pasaje,
     directoJac,
+    llegada: {
+      ciudadAeropuerto: NOMBRE_AEROPUERTO[d.aeropuerto] || (precios.aeropuertos[d.aeropuerto] && precios.aeropuertos[d.aeropuerto].ciudadGoogle) || ap.ciudad,
+      base: (comoLlegar.destinos[d.id] || {}).base || null,
+      tramos: (comoLlegar.destinos[d.id] || {}).tramos || [],
+      otra: (comoLlegar.destinos[d.id] || {}).otra || null,
+    },
     gastoDiarioCLP: Math.round(diario / 1000) * 1000,
     gastoDiarioMotivo: piso ? piso.motivo : null,
     costoEstimadoCLP,
@@ -303,6 +313,7 @@ console.log(`Horas ajustadas al mínimo físico: ${filas.filter((f) => f.d.horas
 console.log(`Horas de vuelo que no se reemplazaron por la duración de Google Flights (revisar): ${horasRevisar.length}`);
 for (const x of horasRevisar) console.log(`  ${x}`);
 const conJac = DESTINOS.filter((x) => x.directoJac);
+console.log(`Destinos con tramos por tierra o mar después del vuelo (como-llegar.json): ${DESTINOS.filter((x) => x.llegada.tramos.length).length}`);
 console.log(`Destinos con vuelo directo regular desde Santiago según la JAC: ${conJac.length} (${conJac.filter((x) => !x.directoJac.todoElAnio).length} solo en temporada)`);
 const sinPrecio = DESTINOS.filter((x) => !x.pasaje);
 console.log(`Destinos con precio de pasaje (Google Flights): ${DESTINOS.length - sinPrecio.length}; sin precio: ${sinPrecio.map((x) => x.nombre).join(", ") || "ninguno"}`);

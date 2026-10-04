@@ -41,7 +41,7 @@ js/matching.js          el motor de recomendación (puntajes y razones)
 js/datos.js             registro de datos (CSV y envío a Google Sheet)
 js/app.js               la interfaz (preguntas, resultado, compra)
 data/destinos.js        catálogo de 178 destinos (GENERADO, no editar a mano)
-data/base/              datos editoriales de cada destino
+data/base/              datos editoriales de cada destino y cómo llegar desde el aeropuerto
 data/fuentes/           datos con fuente y fecha: visas, clima, aeropuertos, Banco Mundial
 data/FUENTES.md         metodología del corte de datos y qué falta revisar
 scripts/                construye el catálogo; script de la Google Sheet
@@ -115,6 +115,8 @@ El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato
 - [ ] Horas de vuelo y visas para usuarios de otros países
 - [x] Foto de precios de pasajes desde Santiago en Google Flights (171 aeropuertos, temporada baja y alta, 4 oct 2026)
 - [x] Rutas directas y temporada alta con datos de la JAC (sep 2025 a ago 2026)
+- [x] "Cómo llegar": vuelo desde Santiago más los tramos por tierra o mar hasta el destino (92 destinos)
+- [ ] Verificar con fuentes los tramos por tierra o mar de `data/base/como-llegar.json`
 - [ ] Precios en vivo vía API de vuelos (requiere un servidor)
 - [ ] Fase 2: Machine Learning entrenado con los datos de uso reales
 

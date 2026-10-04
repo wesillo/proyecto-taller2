@@ -269,7 +269,7 @@ function alcanceMonto(r) {
     const minimo = Math.min(...lista.map(precioPasaje));
     return `<b>No alcanza para ningún pasaje</b><span>El más económico parte en ~${montoTxt(minimo)} ida y vuelta.</span>`;
   }
-  return `<b>Te alcanza el pasaje a ${alcanza.length === lista.length ? "todos los" : `${alcanza.length} de ${lista.length}`} destinos</b>${ejemplos.length ? `<span>Por ejemplo: ${ejemplos.map(esc).join(" · ")}</span>` : ""}`;
+  return `<b>Te alcanza el pasaje a ${alcanza.length === lista.length ? "todos los" : `${alcanza.length} de ${lista.length}`} destinos</b>${ejemplos.length ? `<span>Por ejemplo: ${ejemplos.map(esc).join(" / ")}</span>` : ""}`;
 }
 
 function elegir(p, valor) {
@@ -356,6 +356,90 @@ function vencido(iso, tipo) {
 }
 const enlace = (url, texto) => (url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(texto)}</a>` : esc(texto));
 const redondear = (n) => String(Math.abs(n) >= 10 ? Math.round(n) : Math.round(n * 10) / 10).replace(".", ",");
+
+
+/* ---------- Cómo llegar: vuelo desde Santiago + tramos por tierra o mar ---------- */
+const PICTO = {
+  vuelo: '<path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/>',
+  bus: '<path fill-rule="evenodd" d="M6 2.5h12a2 2 0 0 1 2 2V16a2 2 0 0 1-1 1.7V20a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1.5H8V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-2.3A2 2 0 0 1 4 16V4.5a2 2 0 0 1 2-2zM6 6v5h12V6zm1.5 7.3a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8zm9 0a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>',
+  tren: '<path fill-rule="evenodd" d="M7 2h10a3 3 0 0 1 3 3v10a3 3 0 0 1-2.2 2.9L19.5 21h-2.2l-1.4-3H8.1l-1.4 3H4.5l1.7-3.1A3 3 0 0 1 4 15V5a3 3 0 0 1 3-3zM6 6v4h12V6zm2 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm8 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>',
+  auto: '<path fill-rule="evenodd" d="M5 11l1.6-4.5A2 2 0 0 1 8.5 5h7a2 2 0 0 1 1.9 1.5L19 11a2 2 0 0 1 2 2v4a1 1 0 0 1-1 1h-1v1.5a1.5 1.5 0 0 1-3 0V18H8v1.5a1.5 1.5 0 0 1-3 0V18H4a1 1 0 0 1-1-1v-4a2 2 0 0 1 2-2zm2.2 0h9.6l-1.1-3.3a1 1 0 0 0-.9-.7H9.2a1 1 0 0 0-.9.7zM6.5 13a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>',
+  barco: '<path fill-rule="evenodd" d="M11 2h2v3h4l1.5 6.5L21 12.5 18.8 18H5.2L3 12.5l2.5-1L7 5h4zM8.6 7l-1 4.2L12 9.8l4.4 1.4-1-4.2zM2 20c1.5 0 2.2-1 4-1s2.5 1 4 1 2.2-1 4-1 2.5 1 4 1 2.2-1 4-1v2c-1.5 0-2.2 1-4 1s-2.5-1-4-1-2.2 1-4 1-2.5-1-4-1-2.2 1-4 1z"/>',
+  llegada: '<path fill-rule="evenodd" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>',
+};
+const MODO_TXT = { vuelo: "Vuelo", bus: "Bus", tren: "Tren", auto: "Traslado", barco: "Barco" };
+const picto = (m) => `<span class="leg-pict" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">${PICTO[m]}</svg></span>`;
+const duracion = (h) => { const t = Math.round((h * 60) / 5) * 5; const hh = Math.floor(t / 60), mm = t % 60; return hh ? `${hh} h${mm ? " " + String(mm).padStart(2, "0") : ""}` : `${mm} min`; };
+
+// Tramos del viaje: primero el vuelo desde Santiago (datos de JAC y Google Flights), después los editoriales
+function tramosViaje(d, r) {
+  const ll = d.llegada || { tramos: [] };
+  const vuelo = [];
+  if (r.pais === "CL" && d.codigoPais !== "XX") {
+    const j = d.directoJac;
+    const escalas = j ? "Directo" + (j.todoElAnio ? "" : `, de ${mesesTxt(j.mesesConVuelo).toLowerCase()}`) : d.pasaje ? (d.pasaje.directo ? "Directo" : d.pasaje.escalas === 1 ? "Con 1 escala" : d.pasaje.escalas && d.pasaje.escalas < 9 ? `Con ${d.pasaje.escalas} escalas` : "Con escalas") : "";
+    const aerolineas = j ? j.operadores.slice(0, 3) : d.pasaje && d.pasaje.aerolinea ? [d.pasaje.aerolinea] : [];
+    vuelo.push({ modo: "vuelo", desde: "SCL", hasta: d.aeropuerto, codigo: true, detalle: `Santiago a ${ll.ciudadAeropuerto || d.nombre}`, horas: d.horasVuelo, nota: [escalas, aerolineas.length ? `con ${listaTxt(aerolineas)}` : ""].filter(Boolean).join(", ") });
+  }
+  return [...vuelo, ...ll.tramos];
+}
+
+// ¿El aeropuerto de llegada está en otra ciudad? (ej. Torres del Paine se vuela a Puerto Natales)
+function llegaPorOtraCiudad(d) {
+  const c = d.llegada && d.llegada.ciudadAeropuerto;
+  if (!c || !d.llegada.tramos.length) return false;
+  const norm = (x) => x.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  return !norm(d.nombre).includes(norm(c).split(" (")[0]) && !norm(c).includes(norm(d.nombre));
+}
+
+function bloqueComoLlegar(d, r) {
+  const ll = d.llegada || { tramos: [] };
+  const tramos = tramosViaje(d, r);
+  // Solo cuando hay que seguir por tierra, mar u otro vuelo: si el aeropuerto ES el destino, la ficha ya lo dice
+  if (!ll.tramos.length) return "";
+  // Marca de llegada al final de cada etapa ("grupo" = otro día)
+  const marca = (nombre, etapa) => {
+    const obligatorios = etapa.filter((t) => !t.opcional);
+    const aire = obligatorios.filter((t) => t.modo === "vuelo").reduce((a, t) => a + t.horas, 0);
+    const total = obligatorios.reduce((a, t) => a + t.horas, 0);
+    const txt = !total ? "" : !aire ? `${duracion(total)} por tierra o mar.` : aire === total ? "Todo el trayecto en avión." : `${duracion(aire)} en el aire y ${duracion(total - aire)} por tierra o mar.`;
+    return `<li class="leg llegada">${picto("llegada")}<div class="leg-main"><div class="leg-top"><span class="leg-route">${esc(nombre)}</span></div>${txt ? `<div class="leg-sub">Llegaste. ${txt}</div>` : ""}</div></li>`;
+  };
+  let etapa = [];
+  let primera = true;
+  let horasPrimera = 0;
+  const filas = tramos.map((t) => {
+    if (t.grupo) {
+      const m = marca(primera ? ll.base || d.nombre : etapa[etapa.length - 1].hasta, etapa);
+      if (primera) horasPrimera = etapa.filter((x) => !x.opcional).reduce((a, x) => a + x.horas, 0);
+      etapa = [];
+      primera = false;
+      return m + `<li class="leg-group">${esc(t.grupo)}</li>`;
+    }
+    etapa.push(t);
+    const ruta = `${esc(t.desde)}<span class="arrow" aria-label="a">→</span>${esc(t.hasta)}`;
+    return `<li class="leg ${t.modo}${t.opcional ? " opcional" : ""}">
+        ${picto(t.modo)}
+        <div class="leg-main">
+          <div class="leg-top"><span class="leg-route${t.codigo ? " code" : ""}">${ruta}</span><span class="leg-time">${duracion(t.horas)}</span></div>
+          <div class="leg-sub"><b>${MODO_TXT[t.modo]}${t.opcional ? " (opcional)" : ""}:</b> ${esc(t.detalle || "")}${t.detalle && t.nota ? ". " : ""}${esc(t.nota || "")}</div>
+        </div>
+      </li>`;
+  }).join("");
+  const final = marca(primera ? ll.base || d.nombre : etapa[etapa.length - 1].hasta, etapa);
+  if (primera) horasPrimera = etapa.filter((x) => !x.opcional).reduce((a, x) => a + x.horas, 0);
+  const desde = r.pais === "CL" ? "Desde Santiago" : `Desde el aeropuerto de ${ll.ciudadAeropuerto}`;
+  return `
+  <div class="section">
+    <h3>Cómo llegar</h3>
+    <div class="route">
+      <div class="route-head"><span>${desde} hasta ${esc(ll.base || d.nombre)}</span><b>~${duracion(horasPrimera)}</b></div>
+      <ol class="legs">${filas}${final}</ol>
+      ${ll.otra ? `<p class="route-alt"><b>Otra opción:</b> ${esc(ll.otra)}</p>` : ""}
+      <p class="src">Tiempos aproximados, en movimiento y sin contar esperas ni conexiones. El vuelo sale de la JAC y Google Flights; los tramos por tierra o mar son una estimación del equipo: confirma horarios antes de viajar.</p>
+    </div>
+  </div>`;
+}
 
 /* ---------- Resultado ---------- */
 // Directo o con escalas: la JAC dice si hay ruta directa regular; si no, la foto de Google Flights
@@ -494,7 +578,7 @@ function renderResultado(animar = true) {
     </div>
     <div class="gate-code" aria-hidden="true">${tiles(d.aeropuerto)}</div>
     <h2 class="dest-name" tabindex="-1" id="qtitle" aria-label="${esc(d.nombre)}"><span aria-hidden="true">${letrasNombre(d.nombre)}</span></h2>
-    <div class="dest-country">${esc(d.pais)}${pais[2] ? `, saliendo desde ${esc(pais[3])} (${pais[2]})` : ""}</div>
+    <div class="dest-country">${esc(d.pais)}${pais[2] ? `, saliendo desde ${esc(pais[3])} (${pais[2]})` : ""}${llegaPorOtraCiudad(d) ? `<br>Vuelas a ${esc(d.llegada.ciudadAeropuerto)} y sigues desde ahí` : ""}</div>
   </article>
   <dl class="fields">
     <div class="field"><dt class="k">Mejor época</dt><dd class="v">${mesesTxt(d.meses)}</dd></div>
@@ -540,6 +624,8 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</d
       <div class="col bad"><h4>A considerar</h4><ul>${d.contras.map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>
     </div>
   </div>
+
+  ${bloqueComoLlegar(d, r)}
 
   ${bloqueIngreso(d, r)}
 

@@ -177,3 +177,19 @@ test("rutas directas según la JAC: temporada y meses sin vuelo directo", () => 
   assert.deepEqual(mesesSinDirecto(estacional, { meses: [mesSin] }), [mesSin]);
   assert.deepEqual(mesesSinDirecto(estacional, { meses: [0] }), []);
 });
+
+test("cómo llegar: tramos válidos y destinos con nombre de lugar, no de país", () => {
+  const MODOS = ["vuelo", "bus", "tren", "auto", "barco"];
+  for (const d of DESTINOS) {
+    assert.ok(d.llegada && d.llegada.ciudadAeropuerto, `${d.nombre}: falta la ciudad del aeropuerto`);
+    for (const t of d.llegada.tramos) {
+      if (t.grupo) continue;
+      assert.ok(MODOS.includes(t.modo), `${d.nombre}: modo ${t.modo}`);
+      assert.ok(t.desde && t.hasta && t.horas > 0 && t.horas < 15, `${d.nombre}: tramo incompleto`);
+    }
+  }
+  // Los destinos que eran un país completo ahora nombran ciudades o lugares concretos
+  for (const pais of ["Eslovenia", "Georgia", "Islandia", "Vietnam", "Nepal", "Egipto"]) {
+    assert.ok(!DESTINOS.some((d) => d.nombre === pais), `${pais} sigue como nombre de destino`);
+  }
+});

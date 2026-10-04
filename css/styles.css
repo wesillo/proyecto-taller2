@@ -247,3 +247,29 @@ a{color:inherit}
 .ruta-nota{margin:12px 0 0;font-size:15px;line-height:1.45;color:var(--suave)}
 .ruta-nota b{color:var(--texto)}
 .ruta-nota .src{font-size:13px}
+
+/* Cómo llegar */
+.route{background:var(--panel);border:2px solid var(--linea);border-radius:3px;overflow:hidden}
+.route-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--senal);color:#F2F2F2;padding:12px 16px;font-family:var(--display);font-weight:600;font-size:15px}
+.route-head b{color:var(--amarillo);font-size:22px;font-weight:800;white-space:nowrap}
+.legs{list-style:none;margin:0;padding:14px 16px 4px}
+.leg{position:relative;display:grid;grid-template-columns:40px 1fr;gap:14px;padding-bottom:18px}
+.leg:not(:last-child):not(.llegada)::before{content:"";position:absolute;left:19px;top:42px;bottom:2px;border-left:2px dashed var(--linea)}
+.leg-pict{width:40px;height:40px;border-radius:3px;background:var(--senal);color:#fff;display:flex;align-items:center;justify-content:center}
+.leg.vuelo .leg-pict{color:var(--amarillo)}
+.leg.llegada .leg-pict{background:var(--amarillo);color:#000}
+.leg-main{min-width:0;padding-top:2px}
+.leg-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.leg-route{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.2}
+.leg-route .arrow{margin:0 6px;color:var(--suave);font-weight:600}
+.leg-time{font-family:var(--display);font-weight:700;font-size:17px;white-space:nowrap}
+.leg-sub{font-size:15px;color:var(--suave);margin-top:3px;line-height:1.4}
+.leg-sub b{color:var(--texto);font-weight:600}
+.leg-group{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--suave);padding:2px 0 14px 54px;position:relative}
+.leg-group{border-top:2px solid var(--linea);padding-top:14px;margin-top:-4px}
+.route-alt{margin:0 16px 12px;padding:10px 12px;border-left:4px solid var(--amarillo);background:var(--piso);font-size:15px}
+.route .src{margin:0 16px 14px;font-size:14px}
+
+.leg-route.code{letter-spacing:.05em}
+.leg.opcional .leg-pict{background:transparent;color:var(--texto);border:2px solid var(--texto)}
+.leg.barco .leg-pict{color:#9BD3FF}

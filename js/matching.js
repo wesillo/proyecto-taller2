@@ -122,7 +122,8 @@ function puntaje(d, r) {
     // Pasarse del presupuesto castiga fuerte; quedar bajo, apenas
     const razon = r.monto >= MONTO_SIN_TOPE ? Math.min(1, precioPasaje(d) / r.monto) : precioPasaje(d) / r.monto;
     castigo = razon > 1 ? (razon - 1) * 50 : (1 - razon) * 6;
-  } else castigo = d.costo > r.presupuesto ? (d.costo - r.presupuesto) * 8 : (r.presupuesto - d.costo) * 3;
+  } else if (r.presupuesto === undefined) castigo = 10; // sin pregunta de presupuesto (fuera de Chile): neutro
+  else castigo = d.costo > r.presupuesto ? (d.costo - r.presupuesto) * 8 : (r.presupuesto - d.costo) * 3;
   s += Math.max(0, 20 - castigo);
 
   s += 15 * (1 - Math.abs(d.actividad - r.ritmo) / 4);

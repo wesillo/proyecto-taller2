@@ -237,3 +237,8 @@ a{color:inherit}
 .monto-hint span{display:block;font-size:15px;color:var(--suave);margin-top:4px;line-height:1.4}
 
 .v-sub{display:block;font-size:13px;font-weight:600;color:var(--suave);margin-top:2px}
+
+/* Origen en el inicio */
+.origen{margin:0 0 18px}
+.nota-origen{font-size:14px;color:var(--suave);margin:8px 0 0;line-height:1.45}
+.nota-origen.aviso{color:var(--texto);padding:10px 12px;border-left:4px solid var(--amarillo);background:var(--panel)}

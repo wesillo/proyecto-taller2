@@ -20,13 +20,13 @@ const ORIGENES_CHILE = [["SCL", "Santiago"], ["CCP", "Concepción"], ["ANF", "An
 
 // Las preguntas con `mostrar` solo aparecen si se cumple la condición
 const PREGUNTAS = [
-  { clave: "alcance", tipo: "alcance", titulo: "¿Dónde quieres viajar?", ayuda: "Primero cuéntanos en qué país vives." },
+  { clave: "alcance", tipo: "alcance", titulo: "¿Dónde quieres viajar?" },
   {
     clave: "tags", tipo: "multiple", max: 3, titulo: "¿Qué buscas en este viaje?", ayuda: "Elige hasta 3. Es lo que más pesa en la recomendación.",
     opciones: TIPOS.map(([v, desc]) => ({ v, label: v, desc })),
   },
   {
-    clave: "presupuesto", tipo: "monto", titulo: "¿Cuánto quieres gastar en el pasaje?", ayuda: "Ida y vuelta por persona, saliendo desde Santiago.",
+    clave: "presupuesto", tipo: "monto", mostrar: (r) => r.pais === "CL", titulo: "¿Cuánto quieres gastar en el pasaje?", ayuda: "Ida y vuelta por persona, saliendo desde Santiago.",
   },
   {
     clave: "ritmo", tipo: "unica", titulo: "¿Qué ritmo quieres?",
@@ -124,12 +124,24 @@ function empezar() {
 }
 
 /* ---------- Inicio ---------- */
+// Aviso de alcance del prototipo: vuelos, precios y visas están calculados para quien sale desde Chile
+function notaOrigen() {
+  const pais = paisDe(estado.r.pais || "CL");
+  if (pais[0] === "CL") return `<p class="nota-origen" id="notaOrigen">Fly4ward está afinado para quienes viajan desde Chile: horas de vuelo, precios de pasajes y visas calculados desde Santiago.</p>`;
+  return `<p class="nota-origen aviso" id="notaOrigen"><b>Desde ${esc(pais[0] === "XX" ? "otros países" : pais[1])} los resultados son referenciales.</b> En este prototipo los vuelos, precios y visas están calculados para quien sale desde Chile: armar la red completa de todos los países es el siguiente paso. Por eso no te preguntaremos horas de vuelo, presupuesto del pasaje ni trámites.</p>`;
+}
+
 function renderInicio() {
   const muestra = ["CUZ", "LSC", "KEF", "PDL", "TBS"].map((i) => DESTINOS.find((d) => d.aeropuerto === i)).filter(Boolean);
   app.innerHTML = `
   <section class="hero">
     <h1>Tu próximo destino, sin dar vueltas.</h1>
     <p class="lead">Responde unas preguntas sobre tu viaje ideal y te indicamos un destino que calce contigo, con sus razones, lo bueno y lo que debes considerar.</p>
+    <div class="origen">
+      <label class="homesel" for="homeSel">¿Desde qué país viajas?</label>
+      <select id="homeSel" class="select">${PAISES.map((c) => `<option value="${c[0]}" ${c[0] === (estado.r.pais || "CL") ? "selected" : ""}>${esc(c[1])}</option>`).join("")}</select>
+      ${notaOrigen()}
+    </div>
     <button class="btn btn-primary btn-go btn-block" id="start">Encontrar mi destino</button>
     <p class="note-small">Preguntas cortas, sin registrarte.</p>
     <details class="privacy">
@@ -146,6 +158,11 @@ function renderInicio() {
   </section>`;
   document.getElementById("start").onclick = empezar;
   document.getElementById("teamData").onclick = abrirPanelDatos;
+  document.getElementById("homeSel").onchange = (e) => {
+    estado.r.pais = e.target.value;
+    if (estado.r.pais === "XX" && estado.r.alcance === "dentro") delete estado.r.alcance;
+    document.getElementById("notaOrigen").outerHTML = notaOrigen();
+  };
 }
 
 /* ---------- Preguntas ---------- */
@@ -174,10 +191,7 @@ function renderPregunta() {
           { v: "fuera", label: `Fuera de ${pais[1]}`, desc: "Salir al extranjero" },
           { v: "da_igual", label: "Me da lo mismo", desc: "Lo que mejor me calce" },
         ];
-    cuerpo = `<label class="homesel" for="homeSel">Vivo en</label>
-      <select id="homeSel" class="select">${PAISES.map((c) => `<option value="${c[0]}" ${c[0] === r.pais ? "selected" : ""}>${esc(c[1])}</option>`).join("")}</select>
-      ${r.pais !== "CL" ? `<p class="q-hint" style="margin:10px 0 0">En este prototipo las horas de vuelo y las visas están calculadas desde Chile, así que esas preguntas no aparecerán.</p>` : ""}
-      <div class="opts" style="margin-top:18px">${opciones.map((o) => boton(o, r.alcance === o.v)).join("")}</div>`;
+    cuerpo = `<div class="opts">${opciones.map((o) => boton(o, r.alcance === o.v)).join("")}</div>`;
   } else if (p.tipo === "multiple") {
     const marcadas = r[p.clave] || [];
     cuerpo = `<div class="opts ${p.opciones.length > 5 ? "three" : "two"} chips">${p.opciones.map((o) => boton(o, marcadas.includes(o.v))).join("")}</div>`;
@@ -219,15 +233,6 @@ function renderPregunta() {
     </div>`;
 
   app.querySelectorAll(".opt").forEach((b) => (b.onclick = () => elegir(p, b.dataset.v)));
-  const selector = document.getElementById("homeSel");
-  if (selector) {
-    selector.onchange = (e) => {
-      r.pais = e.target.value;
-      if (r.pais === "XX" && r.alcance === "dentro") delete r.alcance;
-      renderPregunta();
-      document.getElementById("homeSel").focus();
-    };
-  }
   document.getElementById("back").onclick = () => {
     if (estado.paso === 0) estado.pantalla = "inicio";
     else estado.paso--;
@@ -300,6 +305,7 @@ function avanzar() {
   }
   // Borra respuestas de preguntas que quedaron ocultas (por ejemplo, si cambió de país)
   for (const p of PREGUNTAS) if (p.mostrar && !p.mostrar(estado.r)) delete estado.r[p.clave];
+  if (estado.r.presupuesto === undefined) delete estado.r.monto;
   estado.pantalla = "cargando";
   render();
   const { resultado, sinCandidatos } = recomendar(DESTINOS, estado.r);
@@ -474,7 +480,7 @@ function renderResultado(animar = true) {
     <div class="field"><dt class="k">Clima</dt><dd class="v">${esc(d.clima)}</dd></div>
     ${campoClima(d, r)}
     <div class="field"><dt class="k">${r.pais === "CL" ? "Visa para chilenos" : "Visa"}</dt><dd class="v">${visaTexto}</dd></div>
-    <div class="field"><dt class="k">Pasaje ida y vuelta</dt><dd class="v">~${montoTxt(precioPasaje(d))}<small class="v-sub">${d.pasaje ? `precio típico, Google Flights` : "estimado"}</small></dd></div>
+${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</dt><dd class="v">~${montoTxt(precioPasaje(d))}<small class="v-sub">${d.pasaje ? `precio típico, Google Flights` : "estimado"}</small></dd></div>` : ""}
     <div class="field"><dt class="k">Ideal para</dt><dd class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</dd></div>
   </dl>
 
@@ -489,6 +495,7 @@ function renderResultado(animar = true) {
     </div>
   </div>` : ""}
 
+  ${r.pais !== "CL" ? `<p class="warnbox">Resultado referencial: en este prototipo los vuelos, precios y visas están calculados para quien sale desde Chile.</p>` : ""}
   ${estado.sinCandidatos ? `<p class="warnbox">Todavía no tenemos destinos cargados para esa opción, así que te mostramos el mejor match en todo el catálogo.</p>` : ""}
   ${r.monto && !pasajeCalza(d, r) ? `<p class="warnbox">El pasaje sale ~${montoTxt(precioPasaje(d))} ida y vuelta, sobre tu presupuesto de ${montoTxt(r.monto)}. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
   ${excedeHoras ? `<p class="warnbox">Este destino supera las horas de vuelo que marcaste. Aparece porque calza muy bien en todo lo demás.</p>` : ""}

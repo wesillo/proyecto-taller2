@@ -1,0 +1,3173 @@
+{
+ "fuente": "Vuelos de Google (Google Flights)",
+ "fuenteUrl": "https://www.google.com/travel/flights",
+ "fechaCaptura": "2026-10-04",
+ "descripcion": "ida y vuelta desde Santiago (SCL), 1 adulto, clase económica, en pesos chilenos",
+ "metodo": "Para cada aeropuerto se consultaron dos semanas: temporada baja (16 al 23 de noviembre de 2026) y alta (11 al 18 de enero de 2027). Se guardó la tarifa más baja publicada, la 'típica' (mediana de las 5 tarifas más bajas, con tope de 1,5 veces la mínima), si hay vuelo directo, el mínimo de escalas y la duración del itinerario más rápido (solo ida, en minutos). Cuando una temporada no tuvo resultados se estimó con la razón mediana alta/baja de los aeropuertos que sí tienen ambas.",
+ "razonAltaBaja": 1.301,
+ "origen": "SCL",
+ "moneda": "CLP",
+ "temporadas": {
+  "baja": {
+   "ida": "2026-11-16",
+   "vuelta": "2026-11-23"
+  },
+  "alta": {
+   "ida": "2027-01-11",
+   "vuelta": "2027-01-18"
+  }
+ },
+ "aeropuertos": {
+  "ADZ": {
+   "ciudadGoogle": "San Andrés",
+   "baja": {
+    "min": 488636,
+    "tipico": 502995,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 612,
+    "aerolinea": "JetSMART",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 568588,
+    "tipico": 609544,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 612,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   }
+  },
+  "AMM": {
+   "ciudadGoogle": "Amán",
+   "baja": {
+    "min": 1593501,
+    "tipico": 1856588,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1295,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 10
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2415000.0
+  },
+  "AMS": {
+   "ciudadGoogle": "Ámsterdam",
+   "baja": {
+    "min": 831693,
+    "tipico": 878877,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 975,
+    "aerolinea": "LATAM y Iberia",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1302178,
+    "tipico": 1642352,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 975,
+    "aerolinea": "Iberia",
+    "resultados": 10
+   }
+  },
+  "ANC": {
+   "ciudadGoogle": "Anchorage",
+   "baja": {
+    "min": 1233632,
+    "tipico": 1247614,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1350,
+    "aerolinea": "American",
+    "resultados": 6
+   },
+   "alta": {
+    "min": 1427812,
+    "tipico": 1519891,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1297,
+    "aerolinea": "Delta",
+    "resultados": 8
+   }
+  },
+  "AQP": {
+   "ciudadGoogle": "Arequipa",
+   "baja": {
+    "min": 351746,
+    "tipico": 358394,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 415,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 353834,
+    "tipico": 383241,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 450,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   }
+  },
+  "ARI": {
+   "ciudadGoogle": "Arica",
+   "baja": {
+    "min": 153133,
+    "tipico": 167959,
+    "minDirecto": 153133,
+    "escalasMin": 0,
+    "duracionMin": 157,
+    "aerolinea": "LATAM",
+    "resultados": 3
+   },
+   "alta": {
+    "min": 166258,
+    "tipico": 167128,
+    "minDirecto": 166258,
+    "escalasMin": 0,
+    "duracionMin": 157,
+    "aerolinea": "LATAM",
+    "resultados": 3
+   }
+  },
+  "ARN": {
+   "ciudadGoogle": "Estocolmo",
+   "baja": {
+    "min": 1106138,
+    "tipico": 1164471,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1190,
+    "aerolinea": "Air France",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1737956,
+    "tipico": 1791323,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1190,
+    "aerolinea": "Air France y KLM",
+    "resultados": 14
+   }
+  },
+  "AUA": {
+   "ciudadGoogle": "Aruba",
+   "baja": {
+    "min": 519605,
+    "tipico": 526485,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 570,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 573450,
+    "tipico": 647772,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 570,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   }
+  },
+  "BBA": {
+   "ciudadGoogle": "Balmaceda",
+   "baja": {
+    "min": 209172,
+    "tipico": 244172,
+    "minDirecto": 244172,
+    "escalasMin": 0,
+    "duracionMin": 138,
+    "aerolinea": "LATAM",
+    "resultados": 4
+   },
+   "alta": {
+    "min": 261199,
+    "tipico": 296172,
+    "minDirecto": 296172,
+    "escalasMin": 0,
+    "duracionMin": 138,
+    "aerolinea": "LATAM",
+    "resultados": 5
+   }
+  },
+  "BCN": {
+   "ciudadGoogle": "Barcelona",
+   "baja": {
+    "min": 892376,
+    "tipico": 959017,
+    "minDirecto": 1008549,
+    "escalasMin": 0,
+    "duracionMin": 805,
+    "aerolinea": "Iberia",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 1400594,
+    "tipico": 1493250,
+    "minDirecto": 1459659,
+    "escalasMin": 0,
+    "duracionMin": 805,
+    "aerolinea": "Air Canada",
+    "resultados": 10
+   }
+  },
+  "BER": {
+   "ciudadGoogle": "Berlín",
+   "baja": {
+    "min": 994752,
+    "tipico": 1268605,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1020,
+    "aerolinea": "Iberia",
+    "resultados": 13
+   },
+   "alta": {
+    "min": 1732922,
+    "tipico": 1879102,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1020,
+    "aerolinea": "Iberia",
+    "resultados": 11
+   }
+  },
+  "BGO": {
+   "ciudadGoogle": "Bergen",
+   "baja": {
+    "min": 1308020,
+    "tipico": 1345854,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1215,
+    "aerolinea": "Air Canada y Lufthansa",
+    "resultados": 10
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1751000.0
+  },
+  "BIO": {
+   "ciudadGoogle": "Bilbao",
+   "baja": {
+    "min": 939109,
+    "tipico": 958427,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 940,
+    "aerolinea": "Iberia",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1406339,
+    "tipico": 1691939,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 940,
+    "aerolinea": "Iberia y Vueling",
+    "resultados": 10
+   }
+  },
+  "BKK": {
+   "ciudadGoogle": "Bangkok",
+   "baja": {
+    "min": 1793851,
+    "tipico": 1804436,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1685,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 15
+   },
+   "alta": {
+    "min": 2300198,
+    "tipico": 2474165,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1685,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 12
+   }
+  },
+  "BOG": {
+   "ciudadGoogle": "Bogotá",
+   "baja": {
+    "min": 386376,
+    "tipico": 399103,
+    "minDirecto": 515116,
+    "escalasMin": 0,
+    "duracionMin": 347,
+    "aerolinea": "JetSMART",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 473019,
+    "tipico": 497003,
+    "minDirecto": 513158,
+    "escalasMin": 0,
+    "duracionMin": 347,
+    "aerolinea": "JetSMART",
+    "resultados": 12
+   }
+  },
+  "BRC": {
+   "ciudadGoogle": "San Carlos de Bariloche",
+   "baja": {
+    "min": 401031,
+    "tipico": 415716,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 364,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 314053,
+    "tipico": 454876,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 361,
+    "aerolinea": "JetSMART",
+    "resultados": 9
+   }
+  },
+  "BRU": {
+   "ciudadGoogle": "Región de Bruselas-Capital",
+   "baja": {
+    "min": 998218,
+    "tipico": 1177312,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1065,
+    "aerolinea": "Air Canada y Brussels Airlines",
+    "resultados": 13
+   },
+   "alta": {
+    "min": 1441584,
+    "tipico": 1648464,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1020,
+    "aerolinea": "LATAM",
+    "resultados": 14
+   }
+  },
+  "BUD": {
+   "ciudadGoogle": "Budapest",
+   "baja": {
+    "min": 1195644,
+    "tipico": 1251796,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1060,
+    "aerolinea": "LATAM y Lufthansa",
+    "resultados": 11
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1629000.0
+  },
+  "BYO": {
+   "ciudadGoogle": "Bonito",
+   "baja": null,
+   "alta": null
+  },
+  "BZE": {
+   "ciudadGoogle": "Ciudad de Belice",
+   "baja": {
+    "min": 725495,
+    "tipico": 1088242,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 597,
+    "aerolinea": "COPA",
+    "resultados": 5
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1416000.0
+  },
+  "CAI": {
+   "ciudadGoogle": "El Cairo",
+   "baja": {
+    "min": 1455098,
+    "tipico": 1472987,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1310,
+    "aerolinea": "Iberia y British Airways",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 1919980,
+    "tipico": 2016717,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1310,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 12
+   }
+  },
+  "CDG": {
+   "ciudadGoogle": "París",
+   "baja": {
+    "min": 822220,
+    "tipico": 851485,
+    "minDirecto": 1105940,
+    "escalasMin": 0,
+    "duracionMin": 830,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 1248317,
+    "tipico": 1431980,
+    "minDirecto": 1768331,
+    "escalasMin": 0,
+    "duracionMin": 830,
+    "aerolinea": "Avianca",
+    "resultados": 9
+   }
+  },
+  "CJC": {
+   "ciudadGoogle": "Calama",
+   "baja": {
+    "min": 97868,
+    "tipico": 104014,
+    "minDirecto": 97868,
+    "escalasMin": 0,
+    "duracionMin": 128,
+    "aerolinea": "LATAM",
+    "resultados": 21
+   },
+   "alta": {
+    "min": 62868,
+    "tipico": 83014,
+    "minDirecto": 62868,
+    "escalasMin": 0,
+    "duracionMin": 128,
+    "aerolinea": "LATAM",
+    "resultados": 21
+   }
+  },
+  "CMB": {
+   "ciudadGoogle": "Colombo",
+   "baja": {
+    "min": 1788425,
+    "tipico": 1891407,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1630,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 10
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2461000.0
+  },
+  "CNS": {
+   "ciudadGoogle": "Cairns",
+   "baja": {
+    "min": 1953010,
+    "tipico": 2031494,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1240,
+    "aerolinea": "LATAM y Qantas",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2643000.0
+  },
+  "COK": {
+   "ciudadGoogle": "Cochín",
+   "baja": {
+    "min": 1923545,
+    "tipico": 1984925,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1620,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 11
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2582000.0
+  },
+  "COR": {
+   "ciudadGoogle": "Ciudad de Córdoba",
+   "baja": {
+    "min": 260055,
+    "tipico": 291696,
+    "minDirecto": 486955,
+    "escalasMin": 0,
+    "duracionMin": 94,
+    "aerolinea": "JetSMART",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 285509,
+    "tipico": 353060,
+    "minDirecto": 427236,
+    "escalasMin": 0,
+    "duracionMin": 94,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 8
+   }
+  },
+  "CPC": {
+   "ciudadGoogle": "San Martín de los Andes",
+   "baja": {
+    "min": 485196,
+    "tipico": 570369,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 886,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 5
+   },
+   "alta": null,
+   "altaEstimadaCLP": 742000.0
+  },
+  "CPH": {
+   "ciudadGoogle": "Copenhague",
+   "baja": {
+    "min": 1180908,
+    "tipico": 1205685,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1145,
+    "aerolinea": "Air France",
+    "resultados": 13
+   },
+   "alta": {
+    "min": 1433861,
+    "tipico": 1640411,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1025,
+    "aerolinea": "LATAM y Tap Air Portugal",
+    "resultados": 11
+   }
+  },
+  "CPO": {
+   "ciudadGoogle": "Copiapó",
+   "baja": {
+    "min": 112911,
+    "tipico": 123771,
+    "minDirecto": 112911,
+    "escalasMin": 0,
+    "duracionMin": 90,
+    "aerolinea": "LATAM",
+    "resultados": 6
+   },
+   "alta": {
+    "min": 98048,
+    "tipico": 110048,
+    "minDirecto": 98048,
+    "escalasMin": 0,
+    "duracionMin": 90,
+    "aerolinea": "LATAM",
+    "resultados": 6
+   }
+  },
+  "CPT": {
+   "ciudadGoogle": "Ciudad del Cabo",
+   "baja": {
+    "min": 1488220,
+    "tipico": 1773431,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1140,
+    "aerolinea": "LATAM y South African",
+    "resultados": 4
+   },
+   "alta": {
+    "min": 2636587,
+    "tipico": 3062774,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1150,
+    "aerolinea": "LATAM y South African",
+    "resultados": 2
+   }
+  },
+  "CTA": {
+   "ciudadGoogle": "Catania",
+   "baja": {
+    "min": 1420438,
+    "tipico": 1423608,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1130,
+    "aerolinea": "LATAM y ITA",
+    "resultados": 13
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1852000.0
+  },
+  "CTG": {
+   "ciudadGoogle": "Cartagena",
+   "baja": {
+    "min": 371529,
+    "tipico": 380340,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 533,
+    "aerolinea": "JetSMART",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 526669,
+    "tipico": 528627,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 542,
+    "aerolinea": "JetSMART",
+    "resultados": 11
+   }
+  },
+  "CTS": {
+   "ciudadGoogle": "Sapporo",
+   "baja": {
+    "min": 1597781,
+    "tipico": 2235900,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1850,
+    "aerolinea": "LATAM y JAL",
+    "resultados": 12
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2909000.0
+  },
+  "CUN": {
+   "ciudadGoogle": "Cancún",
+   "baja": {
+    "min": 661207,
+    "tipico": 705725,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 638,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 779868,
+    "tipico": 802183,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 640,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   }
+  },
+  "CUR": {
+   "ciudadGoogle": "Curazao",
+   "baja": {
+    "min": 504257,
+    "tipico": 505949,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 560,
+    "aerolinea": "COPA",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 564653,
+    "tipico": 680456,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 560,
+    "aerolinea": "COPA",
+    "resultados": 11
+   }
+  },
+  "CUZ": {
+   "ciudadGoogle": "Cusco",
+   "baja": {
+    "min": 278673,
+    "tipico": 314896,
+    "minDirecto": 313398,
+    "escalasMin": 0,
+    "duracionMin": 220,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 333957,
+    "tipico": 346293,
+    "minDirecto": 333957,
+    "escalasMin": 0,
+    "duracionMin": 220,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   }
+  },
+  "DBV": {
+   "ciudadGoogle": "Dubrovnik (Ragusa)",
+   "baja": {
+    "min": 1324641,
+    "tipico": 1393162,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1255,
+    "aerolinea": "LATAM, Lufthansa y Croatia",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1813000.0
+  },
+  "DEL": {
+   "ciudadGoogle": "Nueva Delhi",
+   "baja": {
+    "min": 1707269,
+    "tipico": 1805169,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1535,
+    "aerolinea": "LATAM, Qatar Airways y IndiGo",
+    "resultados": 16
+   },
+   "alta": {
+    "min": 2550152,
+    "tipico": 2624204,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1535,
+    "aerolinea": "Iberia, Qatar Airways y IndiGo",
+    "resultados": 13
+   }
+  },
+  "DPS": {
+   "ciudadGoogle": "Denpasar",
+   "baja": {
+    "min": 1971021,
+    "tipico": 2216740,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1315,
+    "aerolinea": "Turkish Airlines",
+    "resultados": 14
+   },
+   "alta": {
+    "min": 2122766,
+    "tipico": 2739307,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1315,
+    "aerolinea": "Turkish Airlines",
+    "resultados": 8
+   }
+  },
+  "DUB": {
+   "ciudadGoogle": "Dublín",
+   "baja": {
+    "min": 1041059,
+    "tipico": 1070614,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1050,
+    "aerolinea": "Air France",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1781069,
+    "tipico": 1824940,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1050,
+    "aerolinea": "United",
+    "resultados": 11
+   }
+  },
+  "DXB": {
+   "ciudadGoogle": "Dubái",
+   "baja": {
+    "min": 1344658,
+    "tipico": 1416038,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1140,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1864822,
+    "tipico": 2009340,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1140,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 13
+   }
+  },
+  "EDI": {
+   "ciudadGoogle": "Edimburgo",
+   "baja": {
+    "min": 1204742,
+    "tipico": 1407225,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1165,
+    "aerolinea": "Air France",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1856958,
+    "tipico": 1947351,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1145,
+    "aerolinea": "Iberia y British Airways",
+    "resultados": 10
+   }
+  },
+  "EZE": {
+   "ciudadGoogle": "Buenos Aires",
+   "baja": {
+    "min": 256890,
+    "tipico": 271575,
+    "minDirecto": 256890,
+    "escalasMin": 0,
+    "duracionMin": 120,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 256890,
+    "tipico": 280386,
+    "minDirecto": 256890,
+    "escalasMin": 0,
+    "duracionMin": 120,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   }
+  },
+  "FAE": {
+   "ciudadGoogle": "Islas Feroe",
+   "baja": {
+    "min": 1454720,
+    "tipico": 1881873,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1660,
+    "aerolinea": "Air France y Atlantic Airways",
+    "resultados": 4
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2448000.0
+  },
+  "FCO": {
+   "ciudadGoogle": "Roma",
+   "baja": {
+    "min": 973319,
+    "tipico": 1047646,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1035,
+    "aerolinea": "LATAM",
+    "resultados": 13
+   },
+   "alta": {
+    "min": 1437327,
+    "tipico": 1596420,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1030,
+    "aerolinea": "Iberia",
+    "resultados": 9
+   }
+  },
+  "FEN": {
+   "ciudadGoogle": "Fernando de Noronha",
+   "baja": null,
+   "alta": {
+    "min": 1245142,
+    "tipico": 1280563,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 625,
+    "aerolinea": "LATAM",
+    "resultados": 5
+   },
+   "bajaEstimadaCLP": 984000.0
+  },
+  "FLN": {
+   "ciudadGoogle": "Florianópolis",
+   "baja": {
+    "min": 269980,
+    "tipico": 276701,
+    "minDirecto": 269980,
+    "escalasMin": 0,
+    "duracionMin": 195,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 174038,
+    "tipico": 194597,
+    "minDirecto": 174038,
+    "escalasMin": 0,
+    "duracionMin": 195,
+    "aerolinea": "JetSMART",
+    "resultados": 9
+   }
+  },
+  "FLR": {
+   "ciudadGoogle": "Florencia",
+   "baja": {
+    "min": 974727,
+    "tipico": 1183799,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1015,
+    "aerolinea": "Air France",
+    "resultados": 13
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1540000.0
+  },
+  "FNC": {
+   "ciudadGoogle": "Madeira",
+   "baja": {
+    "min": 1394008,
+    "tipico": 1395693,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1210,
+    "aerolinea": "LATAM y Tap Air Portugal",
+    "resultados": 12
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1816000.0
+  },
+  "FTE": {
+   "ciudadGoogle": "El Calafate",
+   "baja": {
+    "min": 530259,
+    "tipico": 699023,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 445,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 445086,
+    "tipico": 667629,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 580,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 2
+   }
+  },
+  "GIG": {
+   "ciudadGoogle": "Río de Janeiro",
+   "baja": {
+    "min": 240061,
+    "tipico": 304088,
+    "minDirecto": 240061,
+    "escalasMin": 0,
+    "duracionMin": 254,
+    "aerolinea": "JetSMART",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 353625,
+    "tipico": 400617,
+    "minDirecto": 353625,
+    "escalasMin": 0,
+    "duracionMin": 254,
+    "aerolinea": "JetSMART",
+    "resultados": 11
+   }
+  },
+  "GPS": {
+   "ciudadGoogle": "Isla Baltra",
+   "baja": {
+    "min": 613963,
+    "tipico": 690325,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 710,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 798015,
+    "tipico": 952697,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 710,
+    "aerolinea": "LATAM",
+    "resultados": 6
+   }
+  },
+  "GRU": {
+   "ciudadGoogle": "São Paulo",
+   "baja": {
+    "min": 319325,
+    "tipico": 345563,
+    "minDirecto": 319325,
+    "escalasMin": 0,
+    "duracionMin": 230,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 381607,
+    "tipico": 399408,
+    "minDirecto": 482818,
+    "escalasMin": 0,
+    "duracionMin": 230,
+    "aerolinea": "LATAM",
+    "resultados": 15
+   }
+  },
+  "GUA": {
+   "ciudadGoogle": "Ciudad de Guatemala",
+   "baja": {
+    "min": 514950,
+    "tipico": 522376,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 624,
+    "aerolinea": "Avianca",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 637723,
+    "tipico": 669752,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 611,
+    "aerolinea": "COPA",
+    "resultados": 16
+   }
+  },
+  "GYE": {
+   "ciudadGoogle": "Guayaquil",
+   "baja": {
+    "min": 441447,
+    "tipico": 461003,
+    "minDirecto": 461003,
+    "escalasMin": 0,
+    "duracionMin": 318,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 469037,
+    "tipico": 542504,
+    "minDirecto": 624740,
+    "escalasMin": 0,
+    "duracionMin": 318,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   }
+  },
+  "HAN": {
+   "ciudadGoogle": "Hanói",
+   "baja": {
+    "min": 1671934,
+    "tipico": 1951126,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1785,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 2172203,
+    "tipico": 2357921,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1785,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 10
+   }
+  },
+  "HAV": {
+   "ciudadGoogle": "La Habana",
+   "baja": {
+    "min": 627228,
+    "tipico": 642755,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 657,
+    "aerolinea": "COPA",
+    "resultados": 6
+   },
+   "alta": {
+    "min": 754606,
+    "tipico": 765130,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 623,
+    "aerolinea": "COPA",
+    "resultados": 10
+   }
+  },
+  "HKG": {
+   "ciudadGoogle": "Hong Kong",
+   "baja": {
+    "min": 1536713,
+    "tipico": 1756282,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1605,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 14
+   },
+   "alta": {
+    "min": 2080341,
+    "tipico": 2143644,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1605,
+    "aerolinea": "United",
+    "resultados": 12
+   }
+  },
+  "HKT": {
+   "ciudadGoogle": "Phuket",
+   "baja": {
+    "min": 1827007,
+    "tipico": 1881292,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1690,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 13
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2448000.0
+  },
+  "HND": {
+   "ciudadGoogle": "Tokio",
+   "baja": {
+    "min": 1586011,
+    "tipico": 1862544,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1615,
+    "aerolinea": "LATAM y JAL",
+    "resultados": 13
+   },
+   "alta": {
+    "min": 2389281,
+    "tipico": 2556104,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1625,
+    "aerolinea": "Delta",
+    "resultados": 9
+   }
+  },
+  "HNL": {
+   "ciudadGoogle": "Honolulu",
+   "baja": {
+    "min": 1098531,
+    "tipico": 1123985,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1149,
+    "aerolinea": "LATAM y Delta",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1335448,
+    "tipico": 1603059,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1160,
+    "aerolinea": "American",
+    "resultados": 10
+   }
+  },
+  "ICN": {
+   "ciudadGoogle": "Seúl",
+   "baja": {
+    "min": 1661782,
+    "tipico": 1789070,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1660,
+    "aerolinea": "Air Canada",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1756008,
+    "tipico": 2175086,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1710,
+    "aerolinea": "Aeromexico",
+    "resultados": 10
+   }
+  },
+  "IGR": {
+   "ciudadGoogle": "Puerto Iguazú",
+   "baja": {
+    "min": 384388,
+    "tipico": 399073,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 350,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 223832,
+    "tipico": 298236,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 500,
+    "aerolinea": "JetSMART",
+    "resultados": 8
+   }
+  },
+  "IPC": {
+   "ciudadGoogle": "Isla de Pascua",
+   "baja": {
+    "min": 633068,
+    "tipico": 633068,
+    "minDirecto": 633068,
+    "escalasMin": 0,
+    "duracionMin": 320,
+    "aerolinea": "LATAM",
+    "resultados": 2
+   },
+   "alta": {
+    "min": 1156068,
+    "tipico": 1156068,
+    "minDirecto": 1156068,
+    "escalasMin": 0,
+    "duracionMin": 320,
+    "aerolinea": "LATAM",
+    "resultados": 2
+   }
+  },
+  "IQQ": {
+   "ciudadGoogle": "Iquique",
+   "baja": {
+    "min": 83868,
+    "tipico": 125802,
+    "minDirecto": 83868,
+    "escalasMin": 0,
+    "duracionMin": 144,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 53868,
+    "tipico": 80802,
+    "minDirecto": 53868,
+    "escalasMin": 0,
+    "duracionMin": 144,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   }
+  },
+  "IQT": {
+   "ciudadGoogle": "Iquitos",
+   "baja": {
+    "min": 372246,
+    "tipico": 372246,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 445,
+    "aerolinea": "LATAM",
+    "resultados": 7
+   },
+   "alta": {
+    "min": 378580,
+    "tipico": 385228,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 445,
+    "aerolinea": "LATAM",
+    "resultados": 7
+   }
+  },
+  "IST": {
+   "ciudadGoogle": "Estambul",
+   "baja": {
+    "min": 1376082,
+    "tipico": 1436436,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1080,
+    "aerolinea": "Air France y KLM",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1903155,
+    "tipico": 2305662,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1080,
+    "aerolinea": "Air France",
+    "resultados": 8
+   }
+  },
+  "JFK": {
+   "ciudadGoogle": "Nueva York",
+   "baja": {
+    "min": 683653,
+    "tipico": 701970,
+    "minDirecto": 759208,
+    "escalasMin": 0,
+    "duracionMin": 635,
+    "aerolinea": "Avianca",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1130188,
+    "tipico": 1197800,
+    "minDirecto": 1325070,
+    "escalasMin": 0,
+    "duracionMin": 635,
+    "aerolinea": "Avianca",
+    "resultados": 8
+   }
+  },
+  "JJD": {
+   "ciudadGoogle": "Cruz",
+   "baja": {
+    "min": 654374,
+    "tipico": 654374,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 550,
+    "aerolinea": "LATAM",
+    "resultados": 3
+   },
+   "alta": {
+    "min": 824389,
+    "tipico": 956186,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 550,
+    "aerolinea": "LATAM",
+    "resultados": 7
+   }
+  },
+  "JRO": {
+   "ciudadGoogle": "Kilimanjaro",
+   "baja": {
+    "min": 1836083,
+    "tipico": 2157460,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1600,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 7
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2807000.0
+  },
+  "JTR": {
+   "ciudadGoogle": "Santorini",
+   "baja": {
+    "min": 1725027,
+    "tipico": 1878514,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1495,
+    "aerolinea": "Air France y Aegean",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 2375194,
+    "tipico": 3024961,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1495,
+    "aerolinea": "Air France y Aegean",
+    "resultados": 8
+   }
+  },
+  "KEF": {
+   "ciudadGoogle": "Reikiavik",
+   "baja": {
+    "min": 1292772,
+    "tipico": 1754960,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1360,
+    "aerolinea": "Air France y Icelandair",
+    "resultados": 5
+   },
+   "alta": {
+    "min": 2164230,
+    "tipico": 2431820,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1360,
+    "aerolinea": "Air France y Icelandair",
+    "resultados": 7
+   }
+  },
+  "KGL": {
+   "ciudadGoogle": "Kigali",
+   "baja": {
+    "min": 1905822,
+    "tipico": 1949792,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1640,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 11
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2537000.0
+  },
+  "KIX": {
+   "ciudadGoogle": "Osaka",
+   "baja": {
+    "min": 2094752,
+    "tipico": 2219246,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1800,
+    "aerolinea": "Air Canada",
+    "resultados": 15
+   },
+   "alta": {
+    "min": 2176360,
+    "tipico": 2525711,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1800,
+    "aerolinea": "Air France",
+    "resultados": 11
+   }
+  },
+  "KRK": {
+   "ciudadGoogle": "Cracovia",
+   "baja": {
+    "min": 1021584,
+    "tipico": 1371583,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1150,
+    "aerolinea": "Air Canada y Lufthansa",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1784000.0
+  },
+  "KTM": {
+   "ciudadGoogle": "Katmandú",
+   "baja": {
+    "min": 2312826,
+    "tipico": 2332593,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1590,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 13
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3035000.0
+  },
+  "LAS": {
+   "ciudadGoogle": "Las Vegas",
+   "baja": {
+    "min": 886088,
+    "tipico": 906647,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 890,
+    "aerolinea": "LATAM y Delta",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 1175872,
+    "tipico": 1235386,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 882,
+    "aerolinea": "Delta",
+    "resultados": 11
+   }
+  },
+  "LAX": {
+   "ciudadGoogle": "Los Ángeles",
+   "baja": {
+    "min": 851234,
+    "tipico": 870325,
+    "minDirecto": 851234,
+    "escalasMin": 0,
+    "duracionMin": 680,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 1373041,
+    "tipico": 1420621,
+    "minDirecto": 1373041,
+    "escalasMin": 0,
+    "duracionMin": 680,
+    "aerolinea": "COPA",
+    "resultados": 10
+   }
+  },
+  "LHR": {
+   "ciudadGoogle": "Londres",
+   "baja": {
+    "min": 1029220,
+    "tipico": 1047995,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 995,
+    "aerolinea": "LEVEL y Vueling",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 1331782,
+    "tipico": 1759973,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 995,
+    "aerolinea": "Avianca",
+    "resultados": 8
+   }
+  },
+  "LIM": {
+   "ciudadGoogle": "Lima",
+   "baja": {
+    "min": 174497,
+    "tipico": 261746,
+    "minDirecto": 174497,
+    "escalasMin": 0,
+    "duracionMin": 225,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 290019,
+    "tipico": 344335,
+    "minDirecto": 290019,
+    "escalasMin": 0,
+    "duracionMin": 225,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   }
+  },
+  "LIS": {
+   "ciudadGoogle": "Lisboa",
+   "baja": {
+    "min": 770709,
+    "tipico": 792247,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 935,
+    "aerolinea": "LATAM",
+    "resultados": 14
+   },
+   "alta": {
+    "min": 1337723,
+    "tipico": 1362324,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 915,
+    "aerolinea": "LATAM",
+    "resultados": 14
+   }
+  },
+  "LJU": {
+   "ciudadGoogle": "Liubliana",
+   "baja": {
+    "min": 1355976,
+    "tipico": 1495941,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1215,
+    "aerolinea": "Air France y KLM",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1946000.0
+  },
+  "LPB": {
+   "ciudadGoogle": "La Paz",
+   "baja": {
+    "min": 570615,
+    "tipico": 692800,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 665,
+    "aerolinea": "Aerolíneas Argentinas y BoA",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 629703,
+    "tipico": 877282,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 665,
+    "aerolinea": "Avianca",
+    "resultados": 4
+   }
+  },
+  "LPQ": {
+   "ciudadGoogle": "Luang Prabang",
+   "baja": {
+    "min": 2155969,
+    "tipico": 2512260,
+    "minDirecto": 0,
+    "escalasMin": 3,
+    "duracionMin": 2250,
+    "aerolinea": "Iberia, Qatar Airways y Bangkok Airways",
+    "resultados": 8
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3268000.0
+  },
+  "LSC": {
+   "ciudadGoogle": "La Serena",
+   "baja": {
+    "min": 57868,
+    "tipico": 68048,
+    "minDirecto": 57868,
+    "escalasMin": 0,
+    "duracionMin": 66,
+    "aerolinea": "LATAM",
+    "resultados": 7
+   },
+   "alta": {
+    "min": 80048,
+    "tipico": 97048,
+    "minDirecto": 80048,
+    "escalasMin": 0,
+    "duracionMin": 66,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   }
+  },
+  "MAD": {
+   "ciudadGoogle": "Madrid",
+   "baja": {
+    "min": 732960,
+    "tipico": 899390,
+    "minDirecto": 732960,
+    "escalasMin": 0,
+    "duracionMin": 755,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 1310792,
+    "tipico": 1345248,
+    "minDirecto": 1475042,
+    "escalasMin": 0,
+    "duracionMin": 755,
+    "aerolinea": "Avianca",
+    "resultados": 11
+   }
+  },
+  "MAO": {
+   "ciudadGoogle": "Manaos",
+   "baja": {
+    "min": 561859,
+    "tipico": 573335,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 640,
+    "aerolinea": "LATAM",
+    "resultados": 13
+   },
+   "alta": {
+    "min": 596613,
+    "tipico": 692838,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 575,
+    "aerolinea": "LATAM",
+    "resultados": 15
+   }
+  },
+  "MBJ": {
+   "ciudadGoogle": "Bahía Montego",
+   "baja": {
+    "min": 627530,
+    "tipico": 819904,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 599,
+    "aerolinea": "COPA",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 708846,
+    "tipico": 856186,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 566,
+    "aerolinea": "COPA",
+    "resultados": 11
+   }
+  },
+  "MCO": {
+   "ciudadGoogle": "Orlando",
+   "baja": {
+    "min": 655948,
+    "tipico": 720636,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 682,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 849790,
+    "tipico": 897272,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 668,
+    "aerolinea": "COPA",
+    "resultados": 13
+   }
+  },
+  "MCT": {
+   "ciudadGoogle": "Mascate",
+   "baja": {
+    "min": 1677229,
+    "tipico": 1742030,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1400,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 8
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2266000.0
+  },
+  "MDE": {
+   "ciudadGoogle": "Medellín",
+   "baja": {
+    "min": 261393,
+    "tipico": 325028,
+    "minDirecto": 261393,
+    "escalasMin": 0,
+    "duracionMin": 375,
+    "aerolinea": "JetSMART",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 413138,
+    "tipico": 425865,
+    "minDirecto": 425865,
+    "escalasMin": 0,
+    "duracionMin": 375,
+    "aerolinea": "JetSMART",
+    "resultados": 10
+   }
+  },
+  "MDQ": {
+   "ciudadGoogle": "Mar del Plata",
+   "baja": {
+    "min": 366766,
+    "tipico": 550149,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 410,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 4
+   },
+   "alta": {
+    "min": 405926,
+    "tipico": 430401,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 330,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 4
+   }
+  },
+  "MDZ": {
+   "ciudadGoogle": "Mendoza",
+   "baja": {
+    "min": 173055,
+    "tipico": 214173,
+    "minDirecto": 173055,
+    "escalasMin": 0,
+    "duracionMin": 65,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 110436,
+    "tipico": 165654,
+    "minDirecto": 110436,
+    "escalasMin": 0,
+    "duracionMin": 65,
+    "aerolinea": "JetSMART",
+    "resultados": 7
+   }
+  },
+  "MEL": {
+   "ciudadGoogle": "Melbourne",
+   "baja": {
+    "min": 1496458,
+    "tipico": 1616726,
+    "minDirecto": 1496458,
+    "escalasMin": 0,
+    "duracionMin": 860,
+    "aerolinea": "LATAM y Qantas",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 2162107,
+    "tipico": 2583601,
+    "minDirecto": 2162107,
+    "escalasMin": 0,
+    "duracionMin": 860,
+    "aerolinea": "LATAM y Qantas",
+    "resultados": 7
+   }
+  },
+  "MEX": {
+   "ciudadGoogle": "Ciudad de México",
+   "baja": {
+    "min": 567465,
+    "tipico": 626871,
+    "minDirecto": 720682,
+    "escalasMin": 0,
+    "duracionMin": 520,
+    "aerolinea": "Avianca",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 688257,
+    "tipico": 738304,
+    "minDirecto": 828372,
+    "escalasMin": 0,
+    "duracionMin": 520,
+    "aerolinea": "Avianca",
+    "resultados": 11
+   }
+  },
+  "MHC": {
+   "ciudadGoogle": "Castro",
+   "baja": {
+    "min": 182138,
+    "tipico": 182138,
+    "minDirecto": 182138,
+    "escalasMin": 0,
+    "duracionMin": 114,
+    "aerolinea": "LATAM",
+    "resultados": 1
+   },
+   "alta": {
+    "min": 106138,
+    "tipico": 106138,
+    "minDirecto": 106138,
+    "escalasMin": 0,
+    "duracionMin": 114,
+    "aerolinea": "LATAM",
+    "resultados": 1
+   }
+  },
+  "MIA": {
+   "ciudadGoogle": "Miami",
+   "baja": {
+    "min": 569282,
+    "tipico": 582988,
+    "minDirecto": 582988,
+    "escalasMin": 0,
+    "duracionMin": 510,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 807416,
+    "tipico": 833612,
+    "minDirecto": 825780,
+    "escalasMin": 0,
+    "duracionMin": 520,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   }
+  },
+  "MID": {
+   "ciudadGoogle": "Mérida",
+   "baja": {
+    "min": 841187,
+    "tipico": 1056616,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 817,
+    "aerolinea": "LATAM y Aeromexico",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 955730,
+    "tipico": 1198174,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 756,
+    "aerolinea": "Aeromexico",
+    "resultados": 10
+   }
+  },
+  "MLA": {
+   "ciudadGoogle": "Malta",
+   "baja": {
+    "min": 1283271,
+    "tipico": 1413689,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1250,
+    "aerolinea": "Air France y KM Malta Airlines",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 2005160,
+    "tipico": 2175771,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1250,
+    "aerolinea": "Air France y KM Malta Airlines",
+    "resultados": 7
+   }
+  },
+  "MLE": {
+   "ciudadGoogle": "Malé",
+   "baja": {
+    "min": 1995834,
+    "tipico": 2032196,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1565,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 2181485,
+    "tipico": 2351811,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1565,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 10
+   }
+  },
+  "MRU": {
+   "ciudadGoogle": "Isla de Mauricio",
+   "baja": {
+    "min": 2444417,
+    "tipico": 2553058,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1275,
+    "aerolinea": "LATAM y South African",
+    "resultados": 11
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3322000.0
+  },
+  "MSY": {
+   "ciudadGoogle": "Nueva Orleans",
+   "baja": {
+    "min": 936995,
+    "tipico": 946786,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 783,
+    "aerolinea": "LATAM y Delta",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1172935,
+    "tipico": 1222461,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 791,
+    "aerolinea": "LATAM y Delta",
+    "resultados": 12
+   }
+  },
+  "MUB": {
+   "ciudadGoogle": "Maun",
+   "baja": {
+    "min": 1993205,
+    "tipico": 2989808,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1240,
+    "aerolinea": "LATAM y Ethiopian",
+    "resultados": 4
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3890000.0
+  },
+  "MVD": {
+   "ciudadGoogle": "Montevideo",
+   "baja": {
+    "min": 300132,
+    "tipico": 355740,
+    "minDirecto": 412717,
+    "escalasMin": 0,
+    "duracionMin": 133,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 171883,
+    "tipico": 257824,
+    "minDirecto": 171883,
+    "escalasMin": 0,
+    "duracionMin": 133,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   }
+  },
+  "NAN": {
+   "ciudadGoogle": "Nadi",
+   "baja": {
+    "min": 2661403,
+    "tipico": 2775442,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1310,
+    "aerolinea": "Qantas y Fiji Airways",
+    "resultados": 8
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3611000.0
+  },
+  "NAP": {
+   "ciudadGoogle": "Nápoles",
+   "baja": {
+    "min": 1429383,
+    "tipico": 1454887,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1345,
+    "aerolinea": "LATAM y ITA",
+    "resultados": 7
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1893000.0
+  },
+  "NAV": {
+   "ciudadGoogle": "Nevşehir",
+   "baja": {
+    "min": 1646763,
+    "tipico": 2470144,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1325,
+    "aerolinea": "Turkish Airlines",
+    "resultados": 2
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3214000.0
+  },
+  "NBO": {
+   "ciudadGoogle": "Nairobi",
+   "baja": {
+    "min": 1604549,
+    "tipico": 1684139,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1610,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 12
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2191000.0
+  },
+  "NCE": {
+   "ciudadGoogle": "Niza",
+   "baja": {
+    "min": 906359,
+    "tipico": 1089748,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1005,
+    "aerolinea": "LATAM y Lufthansa",
+    "resultados": 14
+   },
+   "alta": {
+    "min": 1592976,
+    "tipico": 1861863,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 975,
+    "aerolinea": "Air France y KLM",
+    "resultados": 12
+   }
+  },
+  "OAX": {
+   "ciudadGoogle": "Oaxaca de Juárez",
+   "baja": {
+    "min": 840619,
+    "tipico": 1026354,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 799,
+    "aerolinea": "LATAM y Aeromexico",
+    "resultados": 11
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1335000.0
+  },
+  "OPO": {
+   "ciudadGoogle": "Oporto",
+   "baja": {
+    "min": 1025124,
+    "tipico": 1028683,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 950,
+    "aerolinea": "Iberia",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1366776,
+    "tipico": 1786039,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 950,
+    "aerolinea": "Iberia",
+    "resultados": 10
+   }
+  },
+  "PBH": {
+   "ciudadGoogle": "Paro",
+   "baja": null,
+   "alta": null
+  },
+  "PDL": {
+   "ciudadGoogle": "Distrito de Ponta Delgada",
+   "baja": {
+    "min": 1192072,
+    "tipico": 1559911,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1360,
+    "aerolinea": "LATAM y Tap Air Portugal",
+    "resultados": 7
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2029000.0
+  },
+  "PDP": {
+   "ciudadGoogle": "Punta del Este",
+   "baja": null,
+   "alta": {
+    "min": 415645,
+    "tipico": 415645,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 285,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 3
+   },
+   "bajaEstimadaCLP": 319000.0
+  },
+  "PEI": {
+   "ciudadGoogle": "Pereira",
+   "baja": {
+    "min": 475953,
+    "tipico": 500266,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 532,
+    "aerolinea": "JetSMART",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 507934,
+    "tipico": 573691,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 532,
+    "aerolinea": "JetSMART",
+    "resultados": 13
+   }
+  },
+  "PEK": {
+   "ciudadGoogle": "Pekín",
+   "baja": {
+    "min": 1526020,
+    "tipico": 1847032,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1870,
+    "aerolinea": "Air Canada",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 1808198,
+    "tipico": 2324359,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1765,
+    "aerolinea": "United",
+    "resultados": 10
+   }
+  },
+  "PMC": {
+   "ciudadGoogle": "Puerto Montt",
+   "baja": {
+    "min": 97014,
+    "tipico": 128223,
+    "minDirecto": 97014,
+    "escalasMin": 0,
+    "duracionMin": 105,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 101868,
+    "tipico": 152802,
+    "minDirecto": 101868,
+    "escalasMin": 0,
+    "duracionMin": 105,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   }
+  },
+  "PMI": {
+   "ciudadGoogle": "Palma de Mallorca",
+   "baja": {
+    "min": 966777,
+    "tipico": 967451,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 900,
+    "aerolinea": "Iberia",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1362915,
+    "tipico": 1758816,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 900,
+    "aerolinea": "Iberia y Vueling",
+    "resultados": 11
+   }
+  },
+  "PMY": {
+   "ciudadGoogle": "Puerto Madryn",
+   "baja": {
+    "min": 309955,
+    "tipico": 464932,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 470,
+    "aerolinea": "LATAM y Aerolíneas Argentinas",
+    "resultados": 6
+   },
+   "alta": null,
+   "altaEstimadaCLP": 605000.0
+  },
+  "PNT": {
+   "ciudadGoogle": "Puerto Natales",
+   "baja": {
+    "min": 366743,
+    "tipico": 366743,
+    "minDirecto": 366743,
+    "escalasMin": 0,
+    "duracionMin": 198,
+    "aerolinea": "LATAM",
+    "resultados": 2
+   },
+   "alta": null,
+   "altaEstimadaCLP": 477000.0
+  },
+  "PPS": {
+   "ciudadGoogle": "Puerto Princesa City",
+   "baja": {
+    "min": 1951456,
+    "tipico": 2032135,
+    "minDirecto": 0,
+    "escalasMin": 3,
+    "duracionMin": 2190,
+    "aerolinea": "LATAM, Qatar Airways y Philippine Airlines",
+    "resultados": 10
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2644000.0
+  },
+  "PPT": {
+   "ciudadGoogle": "Tahití",
+   "baja": {
+    "min": 2388000,
+    "tipico": 3582000,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1625,
+    "aerolinea": "United",
+    "resultados": 5
+   },
+   "alta": {
+    "min": 3699517,
+    "tipico": 5549276,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1683,
+    "aerolinea": "LATAM, Qantas y Air Tahiti Nui",
+    "resultados": 5
+   }
+  },
+  "PRG": {
+   "ciudadGoogle": "Praga",
+   "baja": {
+    "min": 1153202,
+    "tipico": 1272661,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1070,
+    "aerolinea": "LEVEL y Vueling",
+    "resultados": 11
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1656000.0
+  },
+  "PTY": {
+   "ciudadGoogle": "Panamá",
+   "baja": {
+    "min": 524257,
+    "tipico": 524257,
+    "minDirecto": 524257,
+    "escalasMin": 0,
+    "duracionMin": 416,
+    "aerolinea": "COPA",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 553960,
+    "tipico": 553960,
+    "minDirecto": 553960,
+    "escalasMin": 0,
+    "duracionMin": 407,
+    "aerolinea": "COPA",
+    "resultados": 12
+   }
+  },
+  "PUJ": {
+   "ciudadGoogle": "Punta Cana",
+   "baja": {
+    "min": 484449,
+    "tipico": 606824,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 625,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 637375,
+    "tipico": 717451,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 603,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   }
+  },
+  "PUQ": {
+   "ciudadGoogle": "Punta Arenas",
+   "baja": {
+    "min": 141174,
+    "tipico": 182077,
+    "minDirecto": 141174,
+    "escalasMin": 0,
+    "duracionMin": 205,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 169349,
+    "tipico": 218048,
+    "minDirecto": 169349,
+    "escalasMin": 0,
+    "duracionMin": 205,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   }
+  },
+  "PVA": {
+   "ciudadGoogle": "Isla de Providencia",
+   "baja": null,
+   "alta": null
+  },
+  "RAK": {
+   "ciudadGoogle": "Marrakech",
+   "baja": {
+    "min": 1178581,
+    "tipico": 1373240,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1100,
+    "aerolinea": "Iberia",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1787000.0
+  },
+  "REC": {
+   "ciudadGoogle": "Recife",
+   "baja": {
+    "min": 436143,
+    "tipico": 443586,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 550,
+    "aerolinea": "LATAM",
+    "resultados": 13
+   },
+   "alta": {
+    "min": 524919,
+    "tipico": 623360,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 496,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   }
+  },
+  "RTB": {
+   "ciudadGoogle": "Coxen Hole",
+   "baja": {
+    "min": 1577488,
+    "tipico": 2366232,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1094,
+    "aerolinea": "American",
+    "resultados": 2
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3078000.0
+  },
+  "RVN": {
+   "ciudadGoogle": "Rovaniemi",
+   "baja": {
+    "min": 1610133,
+    "tipico": 1672656,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1375,
+    "aerolinea": "LATAM y Finnair",
+    "resultados": 12
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2176000.0
+  },
+  "SAI": {
+   "ciudadGoogle": "Ciudad de Siem Riep",
+   "baja": {
+    "min": 2121852,
+    "tipico": 2122831,
+    "minDirecto": 0,
+    "escalasMin": 3,
+    "duracionMin": 2100,
+    "aerolinea": "Turkish Airlines y THAI",
+    "resultados": 3
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2762000.0
+  },
+  "SEZ": {
+   "ciudadGoogle": "Mahé",
+   "baja": {
+    "min": 2801352,
+    "tipico": 2878137,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1892,
+    "aerolinea": "LATAM y Emirates",
+    "resultados": 8
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3744000.0
+  },
+  "SFO": {
+   "ciudadGoogle": "San Francisco",
+   "baja": {
+    "min": 775238,
+    "tipico": 925248,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 931,
+    "aerolinea": "LATAM y Delta",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1156291,
+    "tipico": 1234611,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 936,
+    "aerolinea": "American",
+    "resultados": 10
+   }
+  },
+  "SID": {
+   "ciudadGoogle": "Isla de Sal",
+   "baja": {
+    "min": 2227693,
+    "tipico": 3341540,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 2060,
+    "aerolinea": "LATAM, Qatar Airways y Royal Air Maroc",
+    "resultados": 6
+   },
+   "alta": null,
+   "altaEstimadaCLP": 4347000.0
+  },
+  "SIN": {
+   "ciudadGoogle": "Singapur",
+   "baja": {
+    "min": 1690462,
+    "tipico": 1720019,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1715,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 2040954,
+    "tipico": 2438790,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1715,
+    "aerolinea": "Turkish Airlines",
+    "resultados": 13
+   }
+  },
+  "SJD": {
+   "ciudadGoogle": "San José del Cabo",
+   "baja": {
+    "min": 894905,
+    "tipico": 1095616,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 799,
+    "aerolinea": "LATAM y Aeromexico",
+    "resultados": 12
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1425000.0
+  },
+  "SJO": {
+   "ciudadGoogle": "San José",
+   "baja": {
+    "min": 444724,
+    "tipico": 446297,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 540,
+    "aerolinea": "COPA",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 587881,
+    "tipico": 615560,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 530,
+    "aerolinea": "COPA",
+    "resultados": 13
+   }
+  },
+  "SJU": {
+   "ciudadGoogle": "San Juan",
+   "baja": {
+    "min": 646723,
+    "tipico": 694789,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 625,
+    "aerolinea": "COPA",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 707119,
+    "tipico": 793179,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 625,
+    "aerolinea": "COPA",
+    "resultados": 11
+   }
+  },
+  "SLA": {
+   "ciudadGoogle": "Salta",
+   "baja": {
+    "min": 312921,
+    "tipico": 350123,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 415,
+    "aerolinea": "JetSMART",
+    "resultados": 6
+   },
+   "alta": {
+    "min": 257118,
+    "tipico": 321070,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 430,
+    "aerolinea": "JetSMART",
+    "resultados": 9
+   }
+  },
+  "SLZ": {
+   "ciudadGoogle": "São Luís",
+   "baja": {
+    "min": 547915,
+    "tipico": 556649,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 595,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 724000.0
+  },
+  "SMR": {
+   "ciudadGoogle": "Santa Marta",
+   "baja": {
+    "min": 368071,
+    "tipico": 453897,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 572,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 518349,
+    "tipico": 526669,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 537,
+    "aerolinea": "JetSMART",
+    "resultados": 11
+   }
+  },
+  "SRE": {
+   "ciudadGoogle": "Sucre",
+   "baja": {
+    "min": 649000,
+    "tipico": 649000,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1640,
+    "aerolinea": "Aerolíneas Argentinas y BoA",
+    "resultados": 1
+   },
+   "alta": null,
+   "altaEstimadaCLP": 844000.0
+  },
+  "SSA": {
+   "ciudadGoogle": "Salvador de Bahía",
+   "baja": {
+    "min": 402584,
+    "tipico": 475520,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 505,
+    "aerolinea": "LATAM",
+    "resultados": 14
+   },
+   "alta": {
+    "min": 434207,
+    "tipico": 467855,
+    "minDirecto": 467855,
+    "escalasMin": 0,
+    "duracionMin": 330,
+    "aerolinea": "Aerolíneas Argentinas y Gol",
+    "resultados": 9
+   }
+  },
+  "SVQ": {
+   "ciudadGoogle": "Sevilla",
+   "baja": {
+    "min": 1044466,
+    "tipico": 1045151,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 945,
+    "aerolinea": "Iberia",
+    "resultados": 13
+   },
+   "alta": {
+    "min": 1479764,
+    "tipico": 1729115,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 945,
+    "aerolinea": "Iberia",
+    "resultados": 14
+   }
+  },
+  "SYD": {
+   "ciudadGoogle": "Sídney",
+   "baja": {
+    "min": 1471004,
+    "tipico": 1612313,
+    "minDirecto": 1535309,
+    "escalasMin": 0,
+    "duracionMin": 850,
+    "aerolinea": "LATAM y Qantas",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 2140396,
+    "tipico": 2409789,
+    "minDirecto": 2140396,
+    "escalasMin": 0,
+    "duracionMin": 850,
+    "aerolinea": "LATAM y Qantas",
+    "resultados": 9
+   }
+  },
+  "TAS": {
+   "ciudadGoogle": "Taskent",
+   "baja": {
+    "min": 1739084,
+    "tipico": 1863941,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1655,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2425000.0
+  },
+  "TBS": {
+   "ciudadGoogle": "Tiflis",
+   "baja": {
+    "min": 1512333,
+    "tipico": 1570079,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1340,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2043000.0
+  },
+  "TFS": {
+   "ciudadGoogle": "Tenerife",
+   "baja": {
+    "min": 1185503,
+    "tipico": 1251868,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1275,
+    "aerolinea": "Iberia",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 1934238,
+    "tipico": 2017422,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1275,
+    "aerolinea": "Iberia",
+    "resultados": 9
+   }
+  },
+  "TIA": {
+   "ciudadGoogle": "Tirana",
+   "baja": {
+    "min": 1283069,
+    "tipico": 1365659,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1170,
+    "aerolinea": "LATAM y Lufthansa",
+    "resultados": 11
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1777000.0
+  },
+  "TIV": {
+   "ciudadGoogle": "Tivat",
+   "baja": {
+    "min": 1634806,
+    "tipico": 2452209,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1355,
+    "aerolinea": "LATAM, Lufthansa y Air Serbia",
+    "resultados": 6
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3190000.0
+  },
+  "TLL": {
+   "ciudadGoogle": "Tallin",
+   "baja": {
+    "min": 1230771,
+    "tipico": 1252772,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1215,
+    "aerolinea": "Air France y Air Baltic",
+    "resultados": 12
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1630000.0
+  },
+  "TNR": {
+   "ciudadGoogle": "Antananarivo",
+   "baja": {
+    "min": 2334287,
+    "tipico": 2682511,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1755,
+    "aerolinea": "Air France",
+    "resultados": 8
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3490000.0
+  },
+  "TPE": {
+   "ciudadGoogle": "Taipéi",
+   "baja": {
+    "min": 1546911,
+    "tipico": 1824349,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1700,
+    "aerolinea": "COPA y EVA Air",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 2063041,
+    "tipico": 2117722,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1700,
+    "aerolinea": "Air Canada y China Airlines",
+    "resultados": 12
+   }
+  },
+  "TYL": {
+   "ciudadGoogle": "Talara",
+   "baja": {
+    "min": 364208,
+    "tipico": 370856,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 635,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 377307,
+    "tipico": 383955,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 555,
+    "aerolinea": "LATAM",
+    "resultados": 5
+   }
+  },
+  "UBN": {
+   "ciudadGoogle": "Ulán Bator",
+   "baja": {
+    "min": 2475822,
+    "tipico": 2475822,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 2170,
+    "aerolinea": "Delta y Asiana Airlines",
+    "resultados": 7
+   },
+   "alta": null,
+   "altaEstimadaCLP": 3221000.0
+  },
+  "UIO": {
+   "ciudadGoogle": "Quito",
+   "baja": {
+    "min": 336228,
+    "tipico": 504342,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 450,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 416751,
+    "tipico": 534124,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 450,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   }
+  },
+  "USH": {
+   "ciudadGoogle": "Ushuaia",
+   "baja": {
+    "min": 386346,
+    "tipico": 398681,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 570,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 386346,
+    "tipico": 454876,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 590,
+    "aerolinea": "Aerolíneas Argentinas",
+    "resultados": 8
+   }
+  },
+  "UYU": {
+   "ciudadGoogle": "Uyuni",
+   "baja": {
+    "min": 742260,
+    "tipico": 1113390,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 2090,
+    "aerolinea": "LATAM y BoA",
+    "resultados": 3
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1449000.0
+  },
+  "VCE": {
+   "ciudadGoogle": "Venecia",
+   "baja": {
+    "min": 966015,
+    "tipico": 1031744,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1075,
+    "aerolinea": "LEVEL y Vueling",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1646894,
+    "tipico": 1730332,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1020,
+    "aerolinea": "Iberia",
+    "resultados": 12
+   }
+  },
+  "VIE": {
+   "ciudadGoogle": "Viena",
+   "baja": {
+    "min": 1013168,
+    "tipico": 1195693,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1080,
+    "aerolinea": "Iberia",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1375545,
+    "tipico": 1773756,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1085,
+    "aerolinea": "Air Canada",
+    "resultados": 11
+   }
+  },
+  "WDH": {
+   "ciudadGoogle": "Windhoek",
+   "baja": {
+    "min": 1501565,
+    "tipico": 1552291,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1175,
+    "aerolinea": "LATAM y Airlink",
+    "resultados": 10
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2020000.0
+  },
+  "YUL": {
+   "ciudadGoogle": "Montreal",
+   "baja": {
+    "min": 654330,
+    "tipico": 656959,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 830,
+    "aerolinea": "Delta",
+    "resultados": 7
+   },
+   "alta": {
+    "min": 1054216,
+    "tipico": 1158792,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 822,
+    "aerolinea": "Delta",
+    "resultados": 9
+   }
+  },
+  "YVR": {
+   "ciudadGoogle": "Vancouver",
+   "baja": {
+    "min": 614337,
+    "tipico": 659546,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 995,
+    "aerolinea": "Delta",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 1128809,
+    "tipico": 1229127,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1046,
+    "aerolinea": "American",
+    "resultados": 13
+   }
+  },
+  "YYZ": {
+   "ciudadGoogle": "Toronto",
+   "baja": {
+    "min": 620491,
+    "tipico": 627505,
+    "minDirecto": 1212948,
+    "escalasMin": 0,
+    "duracionMin": 645,
+    "aerolinea": "LATAM y Delta",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1014634,
+    "tipico": 1178521,
+    "minDirecto": 1638515,
+    "escalasMin": 0,
+    "duracionMin": 645,
+    "aerolinea": "Delta",
+    "resultados": 9
+   }
+  },
+  "ZAL": {
+   "ciudadGoogle": "Valdivia",
+   "baja": {
+    "min": 237150,
+    "tipico": 237150,
+    "minDirecto": 237150,
+    "escalasMin": 0,
+    "duracionMin": 92,
+    "aerolinea": "LATAM",
+    "resultados": 1
+   },
+   "alta": {
+    "min": 104695,
+    "tipico": 104695,
+    "minDirecto": 104695,
+    "escalasMin": 0,
+    "duracionMin": 92,
+    "aerolinea": "LATAM",
+    "resultados": 1
+   }
+  },
+  "ZCO": {
+   "ciudadGoogle": "Temuco",
+   "baja": {
+    "min": 88079,
+    "tipico": 90014,
+    "minDirecto": 88079,
+    "escalasMin": 0,
+    "duracionMin": 83,
+    "aerolinea": "LATAM",
+    "resultados": 6
+   },
+   "alta": {
+    "min": 39868,
+    "tipico": 59802,
+    "minDirecto": 39868,
+    "escalasMin": 0,
+    "duracionMin": 83,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   }
+  },
+  "ZNZ": {
+   "ciudadGoogle": "Zanzíbar",
+   "baja": {
+    "min": 2022068,
+    "tipico": 2110025,
+    "minDirecto": 0,
+    "escalasMin": 2,
+    "duracionMin": 1705,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 2745000.0
+  },
+  "ZQN": {
+   "ciudadGoogle": "Queenstown",
+   "baja": {
+    "min": 1259847,
+    "tipico": 1264793,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 980,
+    "aerolinea": "LATAM y Air New Zealand",
+    "resultados": 9
+   },
+   "alta": null,
+   "altaEstimadaCLP": 1645000.0
+  },
+  "ZRH": {
+   "ciudadGoogle": "Zúrich",
+   "baja": {
+    "min": 967624,
+    "tipico": 1188898,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 990,
+    "aerolinea": "Air Canada",
+    "resultados": 14
+   },
+   "alta": {
+    "min": 1548119,
+    "tipico": 1659023,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 990,
+    "aerolinea": "Air Canada",
+    "resultados": 12
+   }
+  }
+ }
+}

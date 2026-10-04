@@ -14,6 +14,32 @@ const MESES_CORTOS = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "s
 const CON_QUIEN = { S: "solo", P: "en pareja", F: "en familia", A: "con amigos" };
 const PRESUPUESTO_TXT = { 1.5: "ajustado", 3: "moderado", 4: "cómodo", 5: "sin límite" };
 
+/*
+ * Presupuesto en pesos: por persona, para una semana, con pasajes.
+ * Costo estimado de cada destino = pasaje ida y vuelta + 7 días de gasto allá.
+ * El catálogo trae costoEstimadoCLP con el pasaje real (foto de Google Flights,
+ * ver data/FUENTES.md); si falta, se estima el pasaje según las horas de vuelo.
+ */
+const PASOS_MONTO = [600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000, 2500, 3000, 4000, 5000].map((x) => x * 1000);
+const DIAS_VIAJE = 7;
+function pasajeEstimado(h) {
+  return h <= 2.5 ? 150000 : h <= 5 ? 350000 : h <= 9 ? 700000 : h <= 13 ? 1000000 : 1400000;
+}
+function gastoDiarioEstimado(d) {
+  const nivel = d.indicadoresPais && d.indicadoresPais.nivelPrecios2023 != null ? d.indicadoresPais.nivelPrecios2023 : 0.3 + d.costo * 0.2;
+  return 20000 + 100000 * nivel;
+}
+function costoEstimado(d) {
+  // El catálogo trae el costo calculado con precios reales (foto de Google Flights); esto es el respaldo
+  if (d.costoEstimadoCLP) return d.costoEstimadoCLP;
+  return Math.round((pasajeEstimado(d.horasVuelo) + DIAS_VIAJE * gastoDiarioEstimado(d)) / 10000) * 10000;
+}
+function montoTxt(m) {
+  if (m >= 5000000) return "$5 millones o más";
+  if (m >= 1000000) { const x = String(Math.round(m / 100000) / 10).replace(".", ","); return `$${x} ${x === "1" ? "millón" : "millones"}`; }
+  return `$${Math.round(m / 1000)} mil`;
+}
+
 // [código, nombre, aeropuerto de salida, ciudad de salida]
 const PAISES = [
   ["CL", "Chile", "SCL", "Santiago"],
@@ -93,7 +119,12 @@ function puntaje(d, r) {
   const coincidencias = d.tags.filter((t) => r.tags.includes(t));
   s += (40 * coincidencias.length) / r.tags.length;
 
-  const castigo = d.costo > r.presupuesto ? (d.costo - r.presupuesto) * 8 : (r.presupuesto - d.costo) * 3;
+  let castigo;
+  if (r.monto) {
+    // Pasarse del presupuesto castiga fuerte; quedar bajo, apenas
+    const razon = r.monto >= 5000000 ? Math.min(1, costoEstimado(d) / r.monto) : costoEstimado(d) / r.monto;
+    castigo = razon > 1 ? (razon - 1) * 50 : (1 - razon) * 6;
+  } else castigo = d.costo > r.presupuesto ? (d.costo - r.presupuesto) * 8 : (r.presupuesto - d.costo) * 3;
   s += Math.max(0, 20 - castigo);
 
   s += 15 * (1 - Math.abs(d.actividad - r.ritmo) / 4);
@@ -126,7 +157,7 @@ function razones(d, r, coincidencias) {
   if (yaTienePermiso(d, r)) out.push(`Ya tienes ${DOCUMENTOS[r.docs.find((k) => DOCUMENTOS[k] && DOCUMENTOS[k].paises.includes(d.codigoPais))].nombre}, no necesitas trámites.`);
   else if ((r.docs || []).includes("carnet") && d.codigoPais !== r.pais && entraConCarnet(d)) out.push("Puedes entrar solo con tu carnet, sin pasaporte.");
   else if (r.visa && r.visa !== "da_igual" && d.visa === "N" && d.codigoPais !== r.pais) out.push("No necesitas visa con pasaporte chileno.");
-  if (d.costo <= r.presupuesto) out.push(`Calza con un presupuesto ${PRESUPUESTO_TXT[r.presupuesto]}.`);
+  if (r.monto ? costoEstimado(d) <= r.monto * 1.05 : d.costo <= r.presupuesto) out.push(r.monto ? `Estimamos ~${montoTxt(costoEstimado(d))} por persona la semana: calza con tu presupuesto.` : `Calza con un presupuesto ${PRESUPUESTO_TXT[r.presupuesto]}.`);
   const buenos = mesesDe(r).filter((m) => d.meses.includes(m)).map((m) => MESES[m - 1]);
   if (buenos.length === 1) out.push(`${cap(buenos[0])} está entre sus mejores meses.`);
   else if (buenos.length > 1) out.push(`${cap(listaTxt(buenos))} están entre sus mejores meses.`);
@@ -169,5 +200,5 @@ function recomendar(destinos, r) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
+  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PASOS_MONTO, costoEstimado, montoTxt, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
 }

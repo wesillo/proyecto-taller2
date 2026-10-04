@@ -2,7 +2,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const DESTINOS = require("../data/destinos.js");
-const { recomendar, mesesTxt, razones, puntaje, PAISES_CON_CARNET } = require("../js/matching.js");
+const { recomendar, mesesTxt, razones, puntaje, PAISES_CON_CARNET, montoTxt } = require("../js/matching.js");
 
 const TAGS_VALIDOS = ["Playa", "Cultura", "Aventura", "Naturaleza", "Relax", "Gastronomía", "Vida nocturna", "Compras", "Nieve"];
 
@@ -143,4 +143,16 @@ test("varios meses: el puntaje sube con la proporción de meses buenos y 'no sé
   assert.ok(todos > mitad && mitad > ninguno);
   assert.ok(noSe > ninguno && noSe < todos);
   assert.ok(razones(d, { ...r, meses: d.meses.slice(0, 2) }, []).some((t) => t.includes("están entre sus mejores meses")));
+});
+
+test("presupuesto en pesos: todos los destinos tienen costo estimado y el monto ordena bien", () => {
+  for (const d of DESTINOS) assert.ok(d.costoEstimadoCLP > 100000 && d.costoEstimadoCLP < 10000000, d.nombre);
+  const barato = DESTINOS.reduce((a, b) => (a.costoEstimadoCLP < b.costoEstimadoCLP ? a : b));
+  const caro = DESTINOS.reduce((a, b) => (a.costoEstimadoCLP > b.costoEstimadoCLP ? a : b));
+  const r = { pais: "CL", alcance: "da_igual", tags: ["Cultura"], ritmo: 3, conQuien: "S", estilo: "da_igual", docs: [] };
+  const poco = { ...r, monto: barato.costoEstimadoCLP, presupuesto: barato.costoEstimadoCLP };
+  const harto = { ...r, monto: 5000000, presupuesto: 5000000 };
+  // Con poco presupuesto, el destino caro pierde puntos; con "5 millones o más", no
+  assert.ok(puntaje(caro, poco).puntaje < puntaje(caro, harto).puntaje);
+  assert.ok(montoTxt(1200000) === "$1,2 millones" && montoTxt(800000) === "$800 mil" && montoTxt(1000000) === "$1 millón");
 });

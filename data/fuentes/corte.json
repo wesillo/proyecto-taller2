@@ -5,7 +5,8 @@
   "clima": 3650,
   "aeropuertos": 365,
   "horasVuelo": 365,
-  "indicadores": 365
+  "indicadores": 365,
+  "precios": 90
  },
  "descripcion": "Corte de datos del catálogo de destinos. Cada dato con fuente guarda su fecha de captura; la app avisa cuando un dato supera su vigencia."
 }

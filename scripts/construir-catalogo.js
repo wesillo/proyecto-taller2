@@ -6,6 +6,7 @@
  *   data/fuentes/clima.json              clima mensual por destino, con fuente y período
  *   data/fuentes/aeropuertos.json        coordenadas de aeropuertos (OurAirports)
  *   data/fuentes/banco-mundial.json      indicadores por país (nivel de precios, llegadas de turistas)
+ *   data/fuentes/precios-vuelos.json     foto de precios de pasajes desde Santiago (Google Flights)
  *   data/fuentes/corte.json              fecha del corte de datos y vigencia de cada tipo de dato
  *
  * Uso:  npm run catalogo
@@ -27,6 +28,62 @@ const clima = leer("data/fuentes/clima.json");
 const { aeropuertos, fechaCaptura: fechaAeropuertos, fuente: fuenteAeropuertos, fuenteUrl: urlAeropuertos } = leer("data/fuentes/aeropuertos.json");
 const bancoMundial = leer("data/fuentes/banco-mundial.json");
 const corte = leer("data/fuentes/corte.json");
+const precios = leer("data/fuentes/precios-vuelos.json");
+
+/*
+ * Costo estimado de una semana por persona = pasaje ida y vuelta + 7 días de gasto en el destino.
+ *   Pasaje: promedio de la tarifa típica en temporada baja y alta (foto de Google Flights).
+ *           Si no hay precio, se estima según las horas de vuelo (marcado como "estimado").
+ *   Gasto diario: $20.000 + $100.000 × nivel de precios del país (Banco Mundial, PPA / tipo de cambio).
+ *           Es una aproximación del equipo para alojamiento sencillo, comida y transporte local.
+ */
+const DIAS_VIAJE = 7;
+const pasajePorHoras = (h) => (h <= 2.5 ? 150000 : h <= 5 ? 350000 : h <= 9 ? 700000 : h <= 13 ? 1000000 : 1400000);
+const gastoDiario = (nivel, costoEditorial) => 20000 + 100000 * (nivel ?? 0.3 + costoEditorial * 0.2);
+const redondear10mil = (n) => Math.round(n / 10000) * 10000;
+
+/*
+ * Destinos donde el gasto real no depende del nivel de precios del país sino de una
+ * experiencia que se paga aparte (expedición, safari, tarifas de parque, resorts).
+ * Piso de gasto diario por persona, estimado por el equipo; revisar con cotizaciones reales.
+ */
+const GASTO_DIARIO_MINIMO = {
+  antartica: { clp: 600000, motivo: "expedición desde Ushuaia o Punta Arenas (crucero o vuelo con operador)" },
+  butan: { clp: 240000, motivo: "tarifa de desarrollo sostenible (SDF) diaria y tour guiado obligatorio" },
+  "islas-galapagos": { clp: 180000, motivo: "entrada al parque nacional y excursiones en bote" },
+  "kilimanjaro-y-serengeti": { clp: 280000, motivo: "safari con operador y entradas a parques" },
+  "safari-en-kenia": { clp: 280000, motivo: "safari con operador y entradas a parques" },
+  "delta-del-okavango": { clp: 280000, motivo: "safari con operador y lodges" },
+  ruanda: { clp: 330000, motivo: "permiso para ver gorilas y tours guiados" },
+  maldivas: { clp: 230000, motivo: "alojamiento en resort y traslados en hidroavión o lancha" },
+  seychelles: { clp: 180000, motivo: "alojamiento y traslados entre islas" },
+};
+
+function resumenPasaje(ap) {
+  const p = precios.aeropuertos[ap];
+  if (!p) return null;
+  const temporadas = ["baja", "alta"].filter((t) => p[t]);
+  if (!temporadas.length) return null;
+  // Si falta una temporada se usa la estimada (razón mediana alta/baja de la foto)
+  const baja = p.baja ? p.baja.tipico : p.bajaEstimadaCLP;
+  const alta = p.alta ? p.alta.tipico : p.altaEstimadaCLP;
+  const directo = temporadas.some((t) => p[t].minDirecto > 0);
+  const escalas = Math.min(...temporadas.map((t) => p[t].escalasMin));
+  const duraciones = temporadas.map((t) => p[t].duracionMin).filter((x) => x > 0);
+  return {
+    tipicoCLP: Math.round((baja + alta) / 2),
+    desdeCLP: Math.min(...temporadas.map((t) => p[t].min)),
+    bajaCLP: baja,
+    altaCLP: alta,
+    temporadaEstimada: !p.baja ? "baja" : !p.alta ? "alta" : null,
+    directo,
+    escalas: directo ? 0 : escalas,
+    duracionHoras: duraciones.length ? Math.round((Math.min(...duraciones) / 60) * 10) / 10 : null,
+    aerolinea: (p.baja || p.alta).aerolinea || "",
+    ciudadConsultada: p.ciudadGoogle,
+    fecha: precios.fechaCaptura,
+  };
+}
 
 // Requisitos que obligan a hacer algo ANTES de viajar (se castigan si el usuario pide "sin trámites")
 const REQUIERE_TRAMITE = new Set(["autorizacion_electronica", "e_visa", "visa_consular"]);
@@ -73,10 +130,22 @@ if (errores.length) {
 const pctKm = percentiles(filas.map((f) => f.km));
 const pctPrecio = percentiles(filas.map((f) => f.ind.nivelPrecios2023 ?? null));
 
+const horasRevisar = [];
 const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
   const tramitePrevio = TRAMITE_ESPECIAL[d.codigoPais] ?? REQUIERE_TRAMITE.has(req.requisito);
   const minimo = horasMinimas(km);
   const mezcla = pctPrecio[i] == null ? null : 0.5 * pctKm[i] + 0.5 * pctPrecio[i];
+  const pasaje = resumenPasaje(d.aeropuerto);
+  // Horas: la duración real del itinerario más rápido (con escalas) si hay foto de precios; si no, la editorial
+  // Si la duración real difiere mucho de la editorial (itinerario raro esa semana, o destino con tramo
+  // terrestre incluido en la editorial), se mantiene la editorial y queda en la lista para revisar.
+  const real = pasaje && pasaje.duracionHoras;
+  const usarReal = real && real >= d.horasVuelo * 0.6 && real <= d.horasVuelo * 1.6;
+  if (real && !usarReal) horasRevisar.push(`${d.nombre} (${d.aeropuerto}): editorial ${d.horasVuelo} h, Google Flights ${real} h`);
+  const horas = usarReal ? real : d.horasVuelo;
+  const piso = GASTO_DIARIO_MINIMO[d.id];
+  const diario = Math.max(gastoDiario(ind.nivelPrecios2023, d.costo), piso ? piso.clp : 0);
+  const costoEstimadoCLP = redondear10mil((pasaje ? pasaje.tipicoCLP : pasajePorHoras(horas)) + DIAS_VIAJE * diario);
   return {
     id: d.id,
     nombre: d.nombre,
@@ -88,7 +157,7 @@ const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
     actividad: d.actividad,
     popularidad: d.popularidad,
     // Las horas editoriales nunca pueden ser menores que el mínimo físico de un vuelo directo
-    horasVuelo: Math.max(d.horasVuelo, minimo),
+    horasVuelo: Math.max(horas, minimo),
     visa: d.codigoPais === "CL" || !tramitePrevio ? "N" : "E",
     visaTexto: req.texto,
     meses: d.meses,
@@ -124,10 +193,16 @@ const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
     ubicacion: { lat: ap.lat, lon: ap.lon, distanciaKmDesdeSantiago: km, horasMinimasDirecto: minimo, fecha: fechaAeropuertos },
     indicadoresPais: { nivelPrecios2023: ind.nivelPrecios2023 ?? null, llegadasTuristas2019: ind.llegadasTuristas2019 ?? null, fecha: bancoMundial.fechaCaptura },
     costoCalculado: mezcla == null ? null : Math.min(5, 1 + Math.floor(mezcla * 5)),
+    pasaje,
+    gastoDiarioCLP: Math.round(diario / 1000) * 1000,
+    gastoDiarioMotivo: piso ? piso.motivo : null,
+    costoEstimadoCLP,
     calidad: {
       ingreso: `verificado (${req.confianza})`,
       clima: `fuente citada (${cl.confianza})`,
-      horasVuelo: "estimado, validado con distancia real",
+      horasVuelo: usarReal ? "fuente (Google Flights, itinerario más rápido)" : "estimado, validado con distancia real",
+      pasaje: pasaje ? "fuente (foto de Google Flights)" : "estimado por horas de vuelo",
+      costoEstimado: "calculado: pasaje + 7 días de gasto (estimación del equipo)",
       ubicacion: "fuente (OurAirports)",
       costo: "editorial",
       actividad: "editorial",
@@ -146,7 +221,9 @@ const CORTE_DATOS = {
     clima: "Servicios meteorológicos nacionales y tablas climáticas que los citan (una URL por destino)",
     aeropuertos: `${fuenteAeropuertos} (${urlAeropuertos})`,
     indicadores: "Banco Mundial (ST.INT.ARVL, PA.NUS.PPP, PA.NUS.FCRF)",
+    pasajes: `${precios.fuente}, capturado el ${precios.fechaCaptura} (${precios.descripcion})`,
   },
+  precios: { fechaCaptura: precios.fechaCaptura, temporadas: precios.temporadas, diasViaje: DIAS_VIAJE },
 };
 
 const encabezado = `/*
@@ -178,5 +255,9 @@ console.log(`Catálogo generado: ${DESTINOS.length} destinos, corte ${corte.fech
 console.log("Confianza requisitos de ingreso:", conteo(DESTINOS.map((x) => x.ingreso.confianza)));
 console.log("Confianza clima:", conteo(DESTINOS.map((x) => x.climaMensual.confianza)));
 console.log(`Horas ajustadas al mínimo físico: ${filas.filter((f) => f.d.horasVuelo < horasMinimas(f.km)).map((f) => f.d.nombre).join(", ") || "ninguna"}`);
+console.log(`Horas de vuelo que no se reemplazaron por la duración de Google Flights (revisar): ${horasRevisar.length}`);
+for (const x of horasRevisar) console.log(`  ${x}`);
+const sinPrecio = DESTINOS.filter((x) => !x.pasaje);
+console.log(`Destinos con precio de pasaje (Google Flights): ${DESTINOS.length - sinPrecio.length}; sin precio: ${sinPrecio.map((x) => x.nombre).join(", ") || "ninguno"}`);
 console.log(`Costo editorial vs calculado con diferencia de 2 o más (revisar): ${diferenciasCosto.length}`);
 for (const x of diferenciasCosto) console.log(`  ${x.nombre}: editorial ${x.costo}, calculado ${x.costoCalculado}`);

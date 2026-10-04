@@ -11,6 +11,7 @@ En vez de consultar visas, clima o precios en vivo (lo que requiere APIs pagadas
 | Requisitos de ingreso (visas) | 180 días | Cambian seguido y equivocarse tiene consecuencias |
 | Horas de vuelo y aeropuertos | 365 días | Cambian con rutas nuevas |
 | Indicadores país (Banco Mundial) | 365 días | Se publican una vez al año |
+| Precios de pasajes (Google Flights) | 90 días | Cambian a diario; sirven para comparar destinos |
 | Clima mensual | 3650 días | Son promedios de 30 años |
 
 ## De dónde sale cada campo
@@ -20,7 +21,8 @@ En vez de consultar visas, clima o precios en vivo (lo que requiere APIs pagadas
 | Requisito de ingreso para chilenos | **Verificado** | Sitio oficial del país de destino (migraciones, cancillería, portal eVisa/ETA) o Cancillería de Chile. Una URL por país. | `data/fuentes/requisitos-ingreso.json` |
 | Clima mensual (máx., mín., lluvia) | **Fuente citada** | Servicios meteorológicos nacionales (DMC, SMN, INMET, SENAMHI, NOAA, AEMET, JMA, BOM...) directamente o a través de tablas climáticas que los citan. Una URL por destino. | `data/fuentes/clima.json` |
 | Coordenadas y distancia desde Santiago | **Calculado** | Coordenadas de OurAirports; distancia ortodrómica (haversine) desde SCL. | `data/fuentes/aeropuertos.json` |
-| Horas de vuelo | Estimado, validado | Estimación con escalas típicas. Nunca menor al mínimo físico de un vuelo directo: distancia / 880 km/h + 0,5 h. | `data/base/destinos-base.json` |
+| Horas de vuelo | **Fuente** o estimado | Duración del itinerario más rápido en Google Flights (ver abajo); si no, estimación editorial. Nunca menor al mínimo físico de un vuelo directo: distancia / 880 km/h + 0,5 h. | `data/fuentes/precios-vuelos.json`, `data/base/destinos-base.json` |
+| Pasaje ida y vuelta y costo estimado de la semana | **Fuente** + calculado | Foto de Google Flights (2 temporadas) + gasto diario según nivel de precios del país. | `data/fuentes/precios-vuelos.json` |
 | Nivel de precios y llegadas de turistas (por país) | **Fuente** | Banco Mundial: PA.NUS.PPP / PA.NUS.FCRF (2023) y ST.INT.ARVL (2019, último año previo a la pandemia). | `data/fuentes/banco-mundial.json` |
 | Costo, actividad, popularidad, tipos de experiencia, ideal para, pros y contras | **Editorial** | Criterio del equipo. El costo se contrasta con un costo calculado (ver abajo). | `data/base/destinos-base.json` |
 
@@ -135,3 +137,17 @@ La verificación encontró errores en la base anterior, ya corregidos:
 2. Cambia `fechaCorte` en `data/fuentes/corte.json`.
 3. Corre `npm run catalogo` para regenerar `data/destinos.js` y `npm test` para validar.
 4. Sube los cambios. GitHub revisa que el catálogo esté regenerado antes de publicar.
+
+## Precios de pasajes y costo estimado de la semana
+
+**Foto capturada el 2026-10-04** en Vuelos de Google (Google Flights), archivo `data/fuentes/precios-vuelos.json`.
+
+- **Qué se consultó:** ida y vuelta desde Santiago (SCL) a cada uno de los 171 aeropuertos del catálogo, 1 adulto, clase económica, en pesos chilenos, para dos semanas: temporada baja (16 al 23 de noviembre de 2026) y alta (11 al 18 de enero de 2027).
+- **Qué se guardó por aeropuerto y temporada:** tarifa más baja, tarifa "típica" (mediana de las 5 más bajas, con tope de 1,5 veces la mínima para que un vuelo raro no la infle), si hay vuelo directo, mínimo de escalas, duración del itinerario más rápido (solo ida) y aerolínea principal.
+- **Cobertura:** 112 aeropuertos con ambas temporadas, 56 con una sola (la otra se estimó con la razón mediana alta/baja, 1,30) y 3 sin resultados (Bonito, Providencia, Paro/Bután), que usan un pasaje estimado según las horas de vuelo.
+- **Vigencia:** 90 días. Los precios de pasajes cambian todos los días; la foto sirve para comparar destinos entre sí, no como cotización.
+
+**Costo estimado de la semana** (lo que usa la barra de presupuesto) = pasaje típico (promedio de temporada baja y alta) + 7 días × gasto diario.
+El gasto diario es una estimación del equipo: $20.000 + $100.000 × nivel de precios del país (Banco Mundial, PPA / tipo de cambio). Para destinos donde lo caro es una experiencia que se paga aparte (Antártica, Bután, Galápagos, safaris, Ruanda, Maldivas, Seychelles) se usa un piso diario más alto, con el motivo indicado en `scripts/construir-catalogo.js`.
+
+**Horas de vuelo:** cuando la duración del itinerario más rápido de Google Flights está entre 0,6 y 1,6 veces la estimación editorial, se usa la de Google Flights. Si difiere más (itinerarios raros esa semana o destinos cuya estimación incluía un tramo por tierra), se mantiene la editorial; `npm run catalogo` lista esos 17 casos para revisarlos.

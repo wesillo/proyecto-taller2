@@ -219,3 +219,21 @@ a{color:inherit}
 .feedback .opt[disabled]:not([aria-pressed="true"]){opacity:.45}
 .feedback .opt[disabled]:hover{border-color:var(--linea)}
 .feedback .opt[disabled][aria-pressed="true"]:hover{border-color:var(--senal)}
+
+/* Barra de presupuesto */
+.monto{margin-top:8px}
+.monto-num{display:block;font-family:var(--display);font-weight:800;font-size:clamp(40px,11vw,56px);line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.monto-pp{display:block;font-size:15px;color:var(--suave);margin-top:4px}
+.monto-range{-webkit-appearance:none;appearance:none;width:100%;height:44px;margin:22px 0 0;background:transparent;cursor:pointer}
+.monto-range::-webkit-slider-runnable-track{height:8px;border-radius:2px;background:linear-gradient(to right,var(--texto) 0 var(--p),var(--linea) var(--p) 100%)}
+.monto-range::-moz-range-track{height:8px;border-radius:2px;background:var(--linea)}
+.monto-range::-moz-range-progress{height:8px;border-radius:2px;background:var(--texto)}
+.monto-range::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-12px;border-radius:3px;background:var(--amarillo);border:3px solid #000}
+.monto-range::-moz-range-thumb{width:26px;height:26px;border-radius:3px;background:var(--amarillo);border:3px solid #000}
+.monto-range:focus-visible{outline:3px solid var(--foco);outline-offset:4px}
+.monto-ends{display:flex;justify-content:space-between;font-size:13px;color:var(--suave);margin-top:2px}
+.monto-hint{margin-top:22px;padding:14px 16px;background:var(--panel);border:2px solid var(--linea);border-left:6px solid var(--amarillo);border-radius:3px;min-height:84px}
+.monto-hint b{display:block;font-family:var(--display);font-weight:700;font-size:19px}
+.monto-hint span{display:block;font-size:15px;color:var(--suave);margin-top:4px;line-height:1.4}
+
+.v-sub{display:block;font-size:13px;font-weight:600;color:var(--suave);margin-top:2px}

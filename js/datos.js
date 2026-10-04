@@ -25,7 +25,7 @@ const COLUMNAS = [
   "iria", "motivo", "abrio_compra",
   "segundos_decidir", "segundos_respuesta", "dispositivo", "version",
 ];
-const VERSION_APP = "fly4ward-2026-10";
+const VERSION_APP = "fly4ward-2026-10b"; // desde "b", la columna presupuesto guarda el monto en pesos (antes una escala 1,5 a 5)
 
 let SESION = "";
 // Cada vez que alguien responde el cuestionario completo es una sesión nueva

@@ -282,3 +282,11 @@ a{color:inherit}
 .step:disabled{background:transparent;color:var(--suave);border-color:var(--linea);cursor:default}
 .step:focus-visible{outline:3px solid var(--foco);outline-offset:2px}
 .step-num{min-width:2ch;text-align:center;font-family:var(--display);font-weight:800;font-size:28px;font-variant-numeric:tabular-nums}
+
+/* Pestañas del resultado */
+.tabs{display:flex;gap:0;border-bottom:3px solid var(--senal);margin-bottom:14px}
+.tab{flex:1;padding:12px 10px;border:2px solid var(--linea);border-bottom:0;background:var(--panel);color:var(--texto);font-family:var(--display);font-weight:700;font-size:16px;line-height:1.2;cursor:pointer;border-radius:3px 3px 0 0;margin-right:4px}
+.tab:last-child{margin-right:0}
+.tab[aria-selected="true"]{background:var(--senal);border-color:var(--senal);color:var(--amarillo)}
+.tab:focus-visible{outline:3px solid var(--foco);outline-offset:2px}
+.tab-panel:focus-visible{outline:3px solid var(--foco);outline-offset:4px}

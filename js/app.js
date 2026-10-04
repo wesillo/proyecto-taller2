@@ -347,6 +347,7 @@ function avanzar() {
   estado.elegido = 0;
   estado.feedback = {};
   estado.vistoEn = {};
+  estado.pestana = null;
   // Segundos desde que empezó el cuestionario hasta que pidió su destino
   estado.segundos = estado.inicio ? Math.round((Date.now() - estado.inicio) / 1000) : "";
   nuevaSesion();
@@ -463,15 +464,12 @@ function bloqueComoLlegar(d, r) {
   if (primera) horasPrimera = etapa.filter((x) => !x.opcional).reduce((a, x) => a + x.horas, 0);
   const desde = r.pais === "CL" ? "Desde Santiago" : `Desde el aeropuerto de ${ll.ciudadAeropuerto}`;
   return `
-  <div class="section">
-    <h3>Cómo llegar</h3>
     <div class="route">
       <div class="route-head"><span>${desde} hasta ${esc(ll.base || d.nombre)}</span><b>~${duracion(horasPrimera)}</b></div>
       <ol class="legs">${filas}${final}</ol>
       ${ll.otra ? `<p class="route-alt"><b>Otra opción:</b> ${esc(ll.otra)}</p>` : ""}
       <p class="src">Tiempos aproximados, en movimiento y sin contar esperas ni conexiones. El vuelo sale de la JAC y Google Flights; los tramos por tierra o mar son una estimación del equipo: confirma horarios antes de viajar.</p>
-    </div>
-  </div>`;
+    </div>`;
 }
 
 /* ---------- Resultado ---------- */
@@ -507,16 +505,54 @@ function bloqueIngreso(d, r) {
     ing.soloCarnet ? "entras con carnet" : "requiere pasaporte",
   ].filter(Boolean).join(", ");
   return `
-  <div class="section">
-    <h3>Requisitos de entrada</h3>
     <div class="req">
       <div class="req-top"><b>${yaTienePermiso(d, r) ? "Ya tienes el permiso que se pide" : esc(ing.texto)}</b>${datos ? `<span>${datos}</span>` : ""}</div>
       ${r.pais !== "CL" ? `<p class="warnbox" style="margin-top:6px">Esta información es para pasaporte chileno. Revisa los requisitos para tu nacionalidad.</p>` : ""}
       <p>${esc(ing.notas)}</p>
       <p class="src">Fuente: ${enlace(ing.fuenteUrl, ing.fuenteNombre || "Cancillería")}, verificado el ${fechaTxt(ing.fecha)}.${ing.confianza !== "alta" ? " <strong>Confírmalo antes de comprar.</strong>" : ""}</p>
       ${vencido(ing.fecha, "visa") ? `<p class="warnbox">Este dato tiene más de ${corte.vigenciaDias.visa} días: puede estar desactualizado.</p>` : ""}
+    </div>`;
+}
+
+// "Cómo llegar" y "Requisitos de entrada" en pestañas, para que el resultado no se vea tan cargado
+function bloquePestanas(d, r) {
+  const panes = [
+    { id: "llegar", titulo: "Cómo llegar", html: bloqueComoLlegar(d, r) },
+    { id: "requisitos", titulo: "Requisitos de entrada", corto: "Requisitos", html: bloqueIngreso(d, r) },
+  ].filter((x) => x.html);
+  if (!panes.length) return "";
+  if (panes.length === 1) return `<div class="section"><h3>${panes[0].titulo}</h3>${panes[0].html}</div>`;
+  const activa = panes.some((x) => x.id === estado.pestana) ? estado.pestana : panes[0].id;
+  return `
+  <div class="section tabs-wrap">
+    <div class="tabs" role="tablist" aria-label="Detalles del viaje">
+      ${panes.map((x) => `<button class="tab" role="tab" id="tab-${x.id}" data-tab="${x.id}" aria-controls="panel-${x.id}" aria-selected="${x.id === activa}" tabindex="${x.id === activa ? 0 : -1}">${x.corto || x.titulo}</button>`).join("")}
     </div>
+    ${panes.map((x) => `<div class="tab-panel" role="tabpanel" id="panel-${x.id}" aria-labelledby="tab-${x.id}" tabindex="0" ${x.id === activa ? "" : "hidden"}>${x.html}</div>`).join("")}
   </div>`;
+}
+
+function activarPestanas() {
+  const tabs = [...app.querySelectorAll(".tab")];
+  const elegir = (t, foco) => {
+    estado.pestana = t.dataset.tab;
+    for (const x of tabs) {
+      const on = x === t;
+      x.setAttribute("aria-selected", on);
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(`panel-${x.dataset.tab}`).hidden = !on;
+    }
+    if (foco) t.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.onclick = () => elegir(t, false);
+    // Flechas para moverse entre pestañas con teclado
+    t.onkeydown = (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      elegir(tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length], true);
+    };
+  });
 }
 
 // Clima en los meses elegidos: rango de temperaturas y lluvia (promedio mensual si son varios meses)
@@ -658,9 +694,7 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</d
     </div>
   </div>
 
-  ${bloqueComoLlegar(d, r)}
-
-  ${bloqueIngreso(d, r)}
+  ${bloquePestanas(d, r)}
 
   ${bloqueFuentes(d)}
 
@@ -674,6 +708,7 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</d
   <p class="why-one">Te recomendamos un destino y solo dos alternativas a propósito: comparar muchas opciones cansa y no ayuda a decidir. Ninguna aerolínea paga por aparecer aquí.</p>`;
 
   pintarFeedback();
+  activarPestanas();
   document.getElementById("buy").onclick = () => {
     actualizarRegistro(estado.registro, { abrio_compra: 1 });
     abrirCompra(d);

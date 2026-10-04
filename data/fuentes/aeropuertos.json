@@ -11,6 +11,14 @@
    "lon": -81.7112,
    "icao": "SKSP"
   },
+  "AKL": {
+   "nombre": "Auckland International Airport",
+   "ciudad": "Auckland",
+   "paisISO": "NZ",
+   "lat": -37.012,
+   "lon": 174.7863,
+   "icao": "NZAA"
+  },
   "AMM": {
    "nombre": "Queen Alia International Airport",
    "ciudad": "Amman",
@@ -58,6 +66,14 @@
    "lat": 59.6485,
    "lon": 17.9288,
    "icao": "ESSA"
+  },
+  "ASU": {
+   "nombre": "Silvio Pettirossi International Airport",
+   "ciudad": "Asunción",
+   "paisISO": "PY",
+   "lat": -25.2402,
+   "lon": -57.5192,
+   "icao": "SGAS"
   },
   "AUA": {
    "nombre": "Queen Beatrix International Airport",
@@ -139,6 +155,14 @@
    "lon": 4.4844,
    "icao": "EBBR"
   },
+  "BSB": {
+   "nombre": "Presidente Juscelino Kubitschek International Airport",
+   "ciudad": "Brasília",
+   "paisISO": "BR",
+   "lat": -15.8692,
+   "lon": -47.9208,
+   "icao": "SBBR"
+  },
   "BUD": {
    "nombre": "Budapest Liszt Ferenc International Airport",
    "ciudad": "Budapest",
@@ -187,6 +211,14 @@
    "lon": -68.9036,
    "icao": "SCCF"
   },
+  "CLO": {
+   "nombre": "Alfonso Bonilla Aragon International Airport",
+   "ciudad": "Cali",
+   "paisISO": "CO",
+   "lat": 3.5427,
+   "lon": -76.3819,
+   "icao": "SKCL"
+  },
   "CMB": {
    "nombre": "Bandaranaike International Colombo Airport",
    "ciudad": "Colombo",
@@ -194,6 +226,14 @@
    "lat": 7.1808,
    "lon": 79.8841,
    "icao": "VCBI"
+  },
+  "CNF": {
+   "nombre": "Tancredo Neves International Airport",
+   "ciudad": "Belo Horizonte",
+   "paisISO": "BR",
+   "lat": -19.6357,
+   "lon": -43.9669,
+   "icao": "SBCF"
   },
   "CNS": {
    "nombre": "Cairns International Airport",
@@ -299,6 +339,14 @@
    "lon": -71.9388,
    "icao": "SPZO"
   },
+  "CWB": {
+   "nombre": "Curitiba-Afonso Pena International Airport",
+   "ciudad": "Curitiba",
+   "paisISO": "BR",
+   "lat": -25.5285,
+   "lon": -49.1758,
+   "icao": "SBCT"
+  },
   "DBV": {
    "nombre": "Dubrovnik Ruđer Bošković Airport",
    "ciudad": "Dubrovnik",
@@ -402,6 +450,14 @@
    "lat": 32.6978,
    "lon": -16.7746,
    "icao": "LPMA"
+  },
+  "FOR": {
+   "nombre": "Pinto Martins International Airport",
+   "ciudad": "Fortaleza",
+   "paisISO": "BR",
+   "lat": -3.7758,
+   "lon": -38.5322,
+   "icao": "SBFZ"
   },
   "FTE": {
    "nombre": "El Calafate - Commander Armando Tola International Airport",
@@ -971,6 +1027,14 @@
    "lon": -72.5291,
    "icao": "SCNT"
   },
+  "POA": {
+   "nombre": "Porto Alegre-Salgado Filho International Airport",
+   "ciudad": "Porto Alegre",
+   "paisISO": "BR",
+   "lat": -29.994,
+   "lon": -51.1675,
+   "icao": "SBPA"
+  },
   "PPS": {
    "nombre": "Puerto Princesa International Airport / PAF Antonio Bautista Air Base",
    "ciudad": "Puerto Princesa",
@@ -1251,6 +1315,14 @@
    "lon": 121.233,
    "icao": "RCTP"
   },
+  "TRU": {
+   "nombre": "Capitán FAP Carlos Martínez de Pinillos International Airport",
+   "ciudad": "Trujillo",
+   "paisISO": "PE",
+   "lat": -8.0824,
+   "lon": -79.1088,
+   "icao": "SPRU"
+  },
   "TYL": {
    "nombre": "Captain Victor Montes Arias International Airport",
    "ciudad": "Talara",
@@ -1307,6 +1379,14 @@
    "lon": 16.5697,
    "icao": "LOWW"
   },
+  "VVI": {
+   "nombre": "Viru Viru International Airport",
+   "ciudad": "Santa Cruz",
+   "paisISO": "BO",
+   "lat": -17.6448,
+   "lon": -63.1354,
+   "icao": "SLVR"
+  },
   "WDH": {
    "nombre": "Hosea Kutako International Airport",
    "ciudad": "Windhoek",
@@ -1314,6 +1394,14 @@
    "lat": -22.4799,
    "lon": 17.4709,
    "icao": "FYWH"
+  },
+  "WPU": {
+   "nombre": "Guardia Marina Zañartu Airport",
+   "ciudad": "Puerto Williams",
+   "paisISO": "CL",
+   "lat": -54.9311,
+   "lon": -67.6263,
+   "icao": "SCGZ"
   },
   "YUL": {
    "nombre": "Montreal / Pierre Elliott Trudeau International Airport",
@@ -1362,6 +1450,14 @@
    "lat": -6.222,
    "lon": 39.2249,
    "icao": "HTZA"
+  },
+  "ZOS": {
+   "nombre": "Cañal Bajo Carlos Hott Siebert Airport",
+   "ciudad": "Osorno",
+   "paisISO": "CL",
+   "lat": -40.6112,
+   "lon": -73.061,
+   "icao": "SCJO"
   },
   "ZQN": {
    "nombre": "Queenstown Airport",

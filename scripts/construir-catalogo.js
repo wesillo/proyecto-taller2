@@ -187,8 +187,11 @@ const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
   // Si la duración real difiere mucho de la editorial (itinerario raro esa semana, o destino con tramo
   // terrestre incluido en la editorial), se mantiene la editorial y queda en la lista para revisar.
   const real = pasaje && pasaje.duracionHoras;
-  const usarReal = real && real >= d.horasVuelo * 0.6 && real <= d.horasVuelo * 1.6;
-  if (real && !usarReal) horasRevisar.push(`${d.nombre} (${d.aeropuerto}): editorial ${d.horasVuelo} h, Google Flights ${real} h`);
+  // Si la JAC dice que hay vuelo directo pero esa semana Google Flights solo mostró itinerarios con escala,
+  // la duración de Google no representa el vuelo directo: se usa la editorial.
+  const conEscalaPeroJacDirecto = directoJac && pasaje && !pasaje.directo;
+  const usarReal = real && !conEscalaPeroJacDirecto && real >= d.horasVuelo * 0.6 && real <= d.horasVuelo * 1.6;
+  if (real && !usarReal && !conEscalaPeroJacDirecto) horasRevisar.push(`${d.nombre} (${d.aeropuerto}): editorial ${d.horasVuelo} h, Google Flights ${real} h`);
   const horas = usarReal ? real : d.horasVuelo;
   const piso = GASTO_DIARIO_MINIMO[d.id];
   const diario = Math.max(gastoDiario(ind.nivelPrecios2023, d.costo), piso ? piso.clp : 0);

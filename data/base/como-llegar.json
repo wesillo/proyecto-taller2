@@ -1260,6 +1260,191 @@
      "nota": "Bus o auto por la costa; Ksamil queda ~2 h más al sur"
     }
    ]
+  },
+  "puerto-williams": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeródromo",
+     "hasta": "Puerto Williams",
+     "horas": 0.15,
+     "nota": "Taxi, ~3 km"
+    }
+   ],
+   "otra": "También se llega en ferry desde Punta Arenas (~30 h por los canales) o en lancha desde Ushuaia en temporada."
+  },
+  "huilo-huilo": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Valdivia",
+     "hasta": "Huilo Huilo",
+     "horas": 2.5,
+     "nota": "Auto o bus por Panguipulli; también se llega desde Temuco (~3 h)"
+    }
+   ]
+  },
+  "desierto-florido": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Copiapó",
+     "hasta": "Zonas de floración",
+     "horas": 2,
+     "nota": "Auto o tour; las zonas cambian cada año (Llanos de Challe, Huasco, Vallenar)"
+    }
+   ]
+  },
+  "puyehue": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Osorno",
+     "hasta": "Termas de Puyehue",
+     "horas": 1.25,
+     "nota": "Auto o bus; Antillanca queda ~1 h más arriba"
+    }
+   ]
+  },
+  "parque-pumalin": {
+   "tramos": [
+    {
+     "modo": "vuelo",
+     "desde": "Puerto Montt",
+     "hasta": "Chaitén",
+     "horas": 0.75,
+     "nota": "Avionetas regionales; también hay ferry de ~9 h"
+    },
+    {
+     "modo": "auto",
+     "desde": "Chaitén",
+     "hasta": "Parque Pumalín",
+     "horas": 0.5,
+     "nota": "Sector El Amarillo; conviene auto o transfer"
+    }
+   ]
+  },
+  "auckland": {
+   "base": "Auckland",
+   "tramos": [
+    {
+     "grupo": "Para ir a Rotorua"
+    },
+    {
+     "modo": "bus",
+     "desde": "Auckland",
+     "hasta": "Rotorua",
+     "horas": 3.5,
+     "nota": "Bus o auto arrendado"
+    }
+   ]
+  },
+  "asuncion": {
+   "base": "Asunción",
+   "tramos": [
+    {
+     "grupo": "Otro día: a las misiones jesuíticas"
+    },
+    {
+     "modo": "bus",
+     "desde": "Asunción",
+     "hasta": "Encarnación",
+     "horas": 6,
+     "nota": "Bus; desde Encarnación las ruinas de Trinidad quedan a ~30 min",
+     "opcional": true
+    }
+   ]
+  },
+  "santa-cruz-de-la-sierra": {
+   "base": "Santa Cruz de la Sierra",
+   "tramos": [
+    {
+     "grupo": "Para ir a las misiones de Chiquitos"
+    },
+    {
+     "modo": "bus",
+     "desde": "Santa Cruz",
+     "hasta": "San Javier",
+     "horas": 4,
+     "nota": "Bus o auto; el circuito completo toma 3 a 4 días"
+    }
+   ]
+  },
+  "trujillo-y-huanchaco": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Trujillo",
+     "hasta": "Huanchaco",
+     "horas": 0.3,
+     "nota": "Taxi o combi, ~13 km"
+    }
+   ]
+  },
+  "ouro-preto": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Confins",
+     "hasta": "Ouro Preto",
+     "horas": 2.5,
+     "nota": "Bus o transfer; Belo Horizonte queda en el camino"
+    }
+   ]
+  },
+  "curitiba": {
+   "base": "Curitiba",
+   "tramos": [
+    {
+     "grupo": "Otro día: tren por la Serra do Mar"
+    },
+    {
+     "modo": "tren",
+     "desde": "Curitiba",
+     "hasta": "Morretes",
+     "horas": 4,
+     "nota": "Tren turístico entre bosque atlántico",
+     "opcional": true
+    }
+   ]
+  },
+  "gramado": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Aeropuerto de Porto Alegre",
+     "hasta": "Gramado",
+     "horas": 2,
+     "nota": "Bus o transfer; Canela queda a 15 min"
+    }
+   ]
+  },
+  "chapada-dos-veadeiros": {
+   "base": "Brasilia",
+   "tramos": [
+    {
+     "grupo": "Para ir a la Chapada"
+    },
+    {
+     "modo": "auto",
+     "desde": "Brasilia",
+     "hasta": "Alto Paraíso de Goiás",
+     "horas": 3.5,
+     "nota": "Auto arrendado o bus"
+    }
+   ]
+  },
+  "fortaleza": {
+   "tramos": [
+    {
+     "modo": "auto",
+     "desde": "Fortaleza",
+     "hasta": "Canoa Quebrada",
+     "horas": 2.5,
+     "nota": "Bus o transfer",
+     "opcional": true
+    }
+   ]
   }
  }
 }

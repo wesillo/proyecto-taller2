@@ -21,7 +21,7 @@ Investigamos el transporte aéreo en Chile con entrevistas a pasajeros y operari
 ## La solución
 
 1. El usuario responde qué busca (presupuesto para el pasaje con una barra en pesos, tipo de experiencia, ritmo, con quién viaja, edad, mes, horas de vuelo, documentos que ya tiene y tolerancia a trámites).
-2. Un sistema de **matching por atributos** cruza esas respuestas con 178 destinos y elige el que mejor calza.
+2. Un sistema de **matching por atributos** cruza esas respuestas con 193 destinos y elige el que mejor calza.
 3. Muestra **una recomendación** con las razones, pros y contras concretos.
 4. Le pregunta **"¿Irías a este destino?"** y, si no, por qué. Esa respuesta es la etiqueta con la que se entrenará el Machine Learning.
 5. Si el usuario quiere avanzar, lo lleva a Google Flights o Skyscanner con la ruta cargada.
@@ -40,7 +40,7 @@ css/styles.css          los estilos
 js/matching.js          el motor de recomendación (puntajes y razones)
 js/datos.js             registro de datos (CSV y envío a Google Sheet)
 js/app.js               la interfaz (preguntas, resultado, compra)
-data/destinos.js        catálogo de 178 destinos (GENERADO, no editar a mano)
+data/destinos.js        catálogo de 193 destinos (GENERADO, no editar a mano)
 data/base/              datos editoriales de cada destino y cómo llegar desde el aeropuerto
 data/fuentes/           datos con fuente y fecha: visas, clima, aeropuertos, Banco Mundial
 data/FUENTES.md         metodología del corte de datos y qué falta revisar
@@ -113,9 +113,10 @@ El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato
 - [x] Visas verificadas en fuentes oficiales y clima mensual con fuente (corte 1 oct 2026)
 - [ ] Revisar los datos de confianza media o baja listados en `data/FUENTES.md`
 - [ ] Horas de vuelo y visas para usuarios de otros países
-- [x] Foto de precios de pasajes desde Santiago en Google Flights (171 aeropuertos, temporada baja y alta, 4 oct 2026)
+- [x] Foto de precios de pasajes desde Santiago en Google Flights (183 aeropuertos, temporada baja y alta, 4 oct 2026)
 - [x] Rutas directas y temporada alta con datos de la JAC (sep 2025 a ago 2026)
-- [x] "Cómo llegar": vuelo desde Santiago más los tramos por tierra o mar hasta el destino (92 destinos)
+- [x] "Cómo llegar": vuelo desde Santiago más los tramos por tierra o mar hasta el destino (106 destinos)
+- [x] 15 destinos nuevos: más Chile y rutas con vuelo directo según la JAC
 - [ ] Verificar con fuentes los tramos por tierra o mar de `data/base/como-llegar.json`
 - [ ] Precios en vivo vía API de vuelos (requiere un servidor)
 - [ ] Fase 2: Machine Learning entrenado con los datos de uso reales

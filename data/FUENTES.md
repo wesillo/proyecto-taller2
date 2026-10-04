@@ -29,8 +29,8 @@ En vez de consultar visas, clima o precios en vivo (lo que requiere APIs pagadas
 
 ## Nivel de confianza
 
-- **Requisitos de ingreso** (89 países): 73 alta, 15 media, 1 baja. "Alta" = confirmado en fuente oficial el día del corte. Cuando no es alta, la app le pide al usuario confirmarlo antes de comprar.
-- **Clima** (178 destinos): 148 alta, 22 media, 8 baja. "Alta" = servicio meteorológico oficial o tabla que lo cita.
+- **Requisitos de ingreso** (90 países): 74 alta, 15 media, 1 baja. "Alta" = confirmado en fuente oficial el día del corte. Cuando no es alta, la app le pide al usuario confirmarlo antes de comprar.
+- **Clima** (193 destinos): 158 alta, 27 media, 8 baja. "Alta" = servicio meteorológico oficial o tabla que lo cita.
 
 ### Requisitos de ingreso con confianza media o baja (revisar primero)
 
@@ -143,9 +143,9 @@ La verificación encontró errores en la base anterior, ya corregidos:
 
 **Foto capturada el 2026-10-04** en Vuelos de Google (Google Flights), archivo `data/fuentes/precios-vuelos.json`.
 
-- **Qué se consultó:** ida y vuelta desde Santiago (SCL) a cada uno de los 171 aeropuertos del catálogo, 1 adulto, clase económica, en pesos chilenos, para dos semanas: temporada baja (16 al 23 de noviembre de 2026) y alta (11 al 18 de enero de 2027).
+- **Qué se consultó:** ida y vuelta desde Santiago (SCL) a cada uno de los 183 aeropuertos del catálogo (los 12 de los destinos agregados el mismo día con la misma metodología), 1 adulto, clase económica, en pesos chilenos, para dos semanas: temporada baja (16 al 23 de noviembre de 2026) y alta (11 al 18 de enero de 2027).
 - **Qué se guardó por aeropuerto y temporada:** tarifa más baja, tarifa "típica" (mediana de las 5 más bajas, con tope de 1,5 veces la mínima para que un vuelo raro no la infle), si hay vuelo directo, mínimo de escalas, duración del itinerario más rápido (solo ida) y aerolínea principal.
-- **Cobertura:** 112 aeropuertos con ambas temporadas, 56 con una sola (la otra se estimó con la razón mediana alta/baja, 1,30) y 3 sin resultados (Bonito, Providencia, Paro/Bután), que usan un pasaje estimado según las horas de vuelo.
+- **Cobertura:** 122 aeropuertos con ambas temporadas, 57 con una sola (la otra se estimó con la razón mediana alta/baja, 1,30) y 4 sin resultados (Bonito, Providencia, Paro/Bután y Puerto Williams, cuyo tramo final opera DAP y no aparece en Google Flights), que usan un pasaje estimado según las horas de vuelo.
 - **Vigencia:** 90 días. Los precios de pasajes cambian todos los días; la foto sirve para comparar destinos entre sí, no como cotización.
 
 **Barra de presupuesto:** compara el monto que elige la persona con el **pasaje típico** de cada destino (promedio de temporada baja y alta). Alojamiento y gastos en el destino no se consideran por ahora, porque la app se enfoca en el viaje aéreo.
@@ -153,7 +153,7 @@ La verificación encontró errores en la base anterior, ya corregidos:
 **Para más adelante (no se usa en la app):** el catálogo también guarda un costo estimado de la semana (`costoEstimadoCLP`) = pasaje típico + 7 días × gasto diario.
 El gasto diario es una estimación del equipo: $20.000 + $100.000 × nivel de precios del país (Banco Mundial, PPA / tipo de cambio). Para destinos donde lo caro es una experiencia que se paga aparte (Antártica, Bután, Galápagos, safaris, Ruanda, Maldivas, Seychelles) se usa un piso diario más alto, con el motivo indicado en `scripts/construir-catalogo.js`.
 
-**Horas de vuelo:** cuando la duración del itinerario más rápido de Google Flights está entre 0,6 y 1,6 veces la estimación editorial, se usa la de Google Flights. Si difiere más (itinerarios raros esa semana o destinos cuya estimación incluía un tramo por tierra), se mantiene la editorial; `npm run catalogo` lista esos 17 casos para revisarlos.
+**Horas de vuelo:** cuando la duración del itinerario más rápido de Google Flights está entre 0,6 y 1,6 veces la estimación editorial, se usa la de Google Flights. Si difiere más (itinerarios raros esa semana o destinos cuya estimación incluía un tramo por tierra), se mantiene la editorial; también cuando la JAC dice que hay vuelo directo pero esa semana Google Flights solo mostró itinerarios con escala. `npm run catalogo` lista los casos para revisarlos.
 
 ## Rutas directas desde Santiago (JAC)
 
@@ -161,7 +161,7 @@ El gasto diario es una estimación del equipo: $20.000 + $100.000 × nivel de pr
 
 - **Qué se tomó:** pasajeros transportados en vuelos directos entre Santiago (SCL) y cada ciudad, sumando ambos sentidos y todas las aerolíneas, de septiembre de 2025 a agosto de 2026 (los últimos 12 meses publicados), mes a mes y con las aerolíneas que operan. Son 80 ciudades.
 - **Cómo se usa:** una ruta es **directa regular** si en 12 meses tuvo al menos 3.000 pasajeros y vuelos en 3 meses o más (un mes cuenta si tuvo al menos 200 pasajeros y el 10% del mes más alto). Así se descartan vuelos ocasionales o chárter. La **temporada alta** son los meses con 85% o más del mes más alto (hasta 4), solo en rutas claramente estacionales.
-- **En la app:** 56 destinos del catálogo tienen ruta directa regular (6 solo en temporada, como Bariloche, El Calafate, Ushuaia, Toronto y Montreal). El resultado muestra si el vuelo es directo todo el año o en qué meses, cuántos pasajeros vuelan la ruta y si el mes elegido es temporada alta; avisa cuando en los meses elegidos no hay vuelo directo.
+- **En la app:** 71 destinos del catálogo tienen ruta directa regular (7 solo en temporada, como Bariloche, El Calafate, Ushuaia, Puerto Williams, Toronto y Montreal). El resultado muestra si el vuelo es directo todo el año o en qué meses, cuántos pasajeros vuelan la ruta y si el mes elegido es temporada alta; avisa cuando en los meses elegidos no hay vuelo directo.
 - **Ciudades con más de un aeropuerto:** Buenos Aires suma Aeroparque (AEP) y Ezeiza (EZE); São Paulo suma Guarulhos (GRU) y Viracopos (VCP); para las Cataratas del Iguazú se usa el aeropuerto brasileño (IGU), que es el que tiene vuelo directo desde Santiago.
 - **Vigencia:** 365 días. La JAC publica el archivo cada mes, así que se puede actualizar repitiendo el cálculo.
 
@@ -170,6 +170,15 @@ El gasto diario es una estimación del equipo: $20.000 + $100.000 × nivel de pr
 Muchos destinos no son la ciudad del aeropuerto: a Torres del Paine se vuela a Puerto Natales, a la Costa Amalfitana a Nápoles, a Machu Picchu a Cusco. Para esos casos, `data/base/como-llegar.json` guarda los tramos que siguen después del vuelo (bus, tren, traslado, barco u otro vuelo interno), con tiempos aproximados.
 
 - **El vuelo desde Santiago** sale de los datos con fuente: duración (Google Flights o estimación validada), si es directo y en qué meses (JAC) y las aerolíneas.
-- **Los tramos por tierra o mar son editoriales** (confianza baja: estimación del equipo). La app lo dice y pide confirmar horarios antes de viajar. Son 92 destinos con tramos.
+- **Los tramos por tierra o mar son editoriales** (confianza baja: estimación del equipo). La app lo dice y pide confirmar horarios antes de viajar. Son 106 destinos con tramos.
 - **Destinos en dos etapas:** cuando se llega primero a una ciudad base y el lugar se visita otro día (Cusco y Machu Picchu, La Paz y el Titicaca, Las Vegas y el Gran Cañón...), el campo `base` marca la ciudad de llegada y los tramos después de un `grupo` son "otro día".
 - **Destinos que eran un país completo** ahora nombran el lugar concreto (por ejemplo, "Eslovenia" pasó a ser "Liubliana y lago Bled" y "Vietnam" a "Hanói y Ha Long"), para que la recomendación diga a qué ciudad ir; el país se sigue mostrando debajo.
+
+## Destinos agregados el 2026-10-04
+
+Se sumaron 15 destinos (de 178 a 193), todos a los que se llega en avión, para cubrir dos huecos:
+
+- **Chile** (más opciones para "Dentro de Chile"): Puerto Williams y Navarino, Huilo Huilo, Desierto Florido, Puyehue y Osorno, Parque Pumalín.
+- **Rutas con vuelo directo desde Santiago según la JAC** que no estaban en el catálogo: Auckland y Rotorua, Asunción, Santa Cruz de la Sierra, Cali, Trujillo y Huanchaco, Belo Horizonte y Ouro Preto, Curitiba, Gramado y Canela, Brasilia y Chapada dos Veadeiros, Fortaleza.
+
+Cada uno tiene los mismos datos que el resto: requisitos de ingreso (se agregó Paraguay, verificado en la Dirección Nacional de Migraciones), clima mensual con fuente, coordenadas de OurAirports, foto de precios de Google Flights, ruta JAC, indicadores del Banco Mundial (se agregó Paraguay) y cómo llegar. Los campos editoriales (tipo de experiencia, ritmo, costo relativo, pros y contras) siguen el mismo criterio del equipo. Valparaíso, Colchagua y el Cajón del Maipo quedaron fuera a propósito: se llega por tierra y la app se enfoca en el transporte aéreo.

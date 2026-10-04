@@ -1139,6 +1139,20 @@
   "confianza": "alta",
   "fechaVerificacion": "2026-10-01"
  },
+ "PY": {
+  "codigo": "PY",
+  "pais": "Paraguay",
+  "requisito": "sin_visa",
+  "texto": "Sin visa (sirve cédula)",
+  "soloCarnet": true,
+  "estadiaMaxDias": 90,
+  "costoUSD": null,
+  "notas": "La cédula de identidad chilena vigente es documento de viaje válido (acuerdo Mercosur). Estadía de hasta 90 días como turista (referencial).",
+  "fuenteNombre": "Dirección Nacional de Migraciones de Paraguay",
+  "fuenteUrl": "https://migraciones.gov.py/documentos-de-viaje-validos-del-mercosur/",
+  "confianza": "alta",
+  "fechaVerificacion": "2026-10-04"
+ },
  "RW": {
   "codigo": "RW",
   "pais": "Ruanda",

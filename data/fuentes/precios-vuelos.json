@@ -39,6 +39,28 @@
     "resultados": 11
    }
   },
+  "AKL": {
+   "ciudadGoogle": "Auckland",
+   "baja": {
+    "min": 1119108,
+    "tipico": 1523533,
+    "minDirecto": 1119108,
+    "escalasMin": 0,
+    "duracionMin": 740,
+    "aerolinea": "LATAM y Air New Zealand",
+    "resultados": 6
+   },
+   "alta": {
+    "min": 2253465,
+    "tipico": 2612766,
+    "minDirecto": 2265517,
+    "escalasMin": 0,
+    "duracionMin": 740,
+    "aerolinea": "LATAM y Air New Zealand",
+    "resultados": 9
+   },
+   "capturadoEl": "2026-10-04"
+  },
   "AMM": {
    "ciudadGoogle": "Amán",
    "baja": {
@@ -157,6 +179,28 @@
     "aerolinea": "Air France y KLM",
     "resultados": 14
    }
+  },
+  "ASU": {
+   "ciudadGoogle": "Asunción",
+   "baja": {
+    "min": 268835,
+    "tipico": 320722,
+    "minDirecto": 387489,
+    "escalasMin": 0,
+    "duracionMin": 155,
+    "aerolinea": "JetSMART",
+    "resultados": 10
+   },
+   "alta": {
+    "min": 217927,
+    "tipico": 321701,
+    "minDirecto": 387489,
+    "escalasMin": 0,
+    "duracionMin": 158,
+    "aerolinea": "JetSMART",
+    "resultados": 8
+   },
+   "capturadoEl": "2026-10-04"
   },
   "AUA": {
    "ciudadGoogle": "Aruba",
@@ -361,6 +405,28 @@
     "resultados": 14
    }
   },
+  "BSB": {
+   "ciudadGoogle": "Brasilia",
+   "baja": {
+    "min": 441755,
+    "tipico": 446182,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 465,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 436884,
+    "tipico": 446674,
+    "minDirecto": 567668,
+    "escalasMin": 0,
+    "duracionMin": 260,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   },
+   "capturadoEl": "2026-10-04"
+  },
   "BUD": {
    "ciudadGoogle": "Budapest",
    "baja": {
@@ -457,6 +523,28 @@
     "resultados": 21
    }
   },
+  "CLO": {
+   "ciudadGoogle": "Cali",
+   "baja": {
+    "min": 277057,
+    "tipico": 415586,
+    "minDirecto": 277057,
+    "escalasMin": 0,
+    "duracionMin": 359,
+    "aerolinea": "JetSMART",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 366146,
+    "tipico": 549219,
+    "minDirecto": 366146,
+    "escalasMin": 0,
+    "duracionMin": 359,
+    "aerolinea": "JetSMART",
+    "resultados": 8
+   },
+   "capturadoEl": "2026-10-04"
+  },
   "CMB": {
    "ciudadGoogle": "Colombo",
    "baja": {
@@ -470,6 +558,28 @@
    },
    "alta": null,
    "altaEstimadaCLP": 2461000.0
+  },
+  "CNF": {
+   "ciudadGoogle": "Belo Horizonte",
+   "baja": {
+    "min": 382618,
+    "tipico": 388523,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 430,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 382648,
+    "tipico": 422752,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 430,
+    "aerolinea": "LATAM",
+    "resultados": 13
+   },
+   "capturadoEl": "2026-10-04"
   },
   "CNS": {
    "ciudadGoogle": "Cairns",
@@ -709,6 +819,28 @@
     "resultados": 9
    }
   },
+  "CWB": {
+   "ciudadGoogle": "Curitiba",
+   "baja": {
+    "min": 326337,
+    "tipico": 366516,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 445,
+    "aerolinea": "LATAM",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 365602,
+    "tipico": 409426,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 420,
+    "aerolinea": "LATAM",
+    "resultados": 13
+   },
+   "capturadoEl": "2026-10-04"
+  },
   "DBV": {
    "ciudadGoogle": "Dubrovnik (Ragusa)",
    "baja": {
@@ -946,6 +1078,28 @@
    },
    "alta": null,
    "altaEstimadaCLP": 1816000.0
+  },
+  "FOR": {
+   "ciudadGoogle": "Fortaleza",
+   "baja": {
+    "min": 462272,
+    "tipico": 506128,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 555,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 565490,
+    "tipico": 620314,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 530,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   },
+   "capturadoEl": "2026-10-04"
   },
   "FTE": {
    "ciudadGoogle": "El Calafate",
@@ -2289,6 +2443,28 @@
    "alta": null,
    "altaEstimadaCLP": 477000.0
   },
+  "POA": {
+   "ciudadGoogle": "Porto Alegre",
+   "baja": {
+    "min": 329009,
+    "tipico": 382018,
+    "minDirecto": 382018,
+    "escalasMin": 0,
+    "duracionMin": 185,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 379772,
+    "tipico": 439759,
+    "minDirecto": 526458,
+    "escalasMin": 0,
+    "duracionMin": 185,
+    "aerolinea": "LATAM",
+    "resultados": 10
+   },
+   "capturadoEl": "2026-10-04"
+  },
   "PPS": {
    "ciudadGoogle": "Puerto Princesa City",
    "baja": {
@@ -2868,6 +3044,28 @@
     "resultados": 12
    }
   },
+  "TRU": {
+   "ciudadGoogle": "Trujillo",
+   "baja": {
+    "min": 147369,
+    "tipico": 221054,
+    "minDirecto": 147369,
+    "escalasMin": 0,
+    "duracionMin": 267,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 360656,
+    "tipico": 375438,
+    "minDirecto": 360656,
+    "escalasMin": 0,
+    "duracionMin": 267,
+    "aerolinea": "LATAM",
+    "resultados": 7
+   },
+   "capturadoEl": "2026-10-04"
+  },
   "TYL": {
    "ciudadGoogle": "Talara",
    "baja": {
@@ -3001,6 +3199,28 @@
     "resultados": 11
    }
   },
+  "VVI": {
+   "ciudadGoogle": "Santa Cruz de la Sierra",
+   "baja": {
+    "min": 518341,
+    "tipico": 777512,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 455,
+    "aerolinea": "Aerolíneas Argentinas y BoA",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 593724,
+    "tipico": 890586,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 455,
+    "aerolinea": "COPA",
+    "resultados": 9
+   },
+   "capturadoEl": "2026-10-04"
+  },
   "WDH": {
    "ciudadGoogle": "Windhoek",
    "baja": {
@@ -3014,6 +3234,12 @@
    },
    "alta": null,
    "altaEstimadaCLP": 2020000.0
+  },
+  "WPU": {
+   "ciudadGoogle": "Puerto Williams",
+   "baja": null,
+   "alta": null,
+   "capturadoEl": "2026-10-04"
   },
   "YUL": {
    "ciudadGoogle": "Montreal",
@@ -3133,6 +3359,21 @@
    },
    "alta": null,
    "altaEstimadaCLP": 2745000.0
+  },
+  "ZOS": {
+   "ciudadGoogle": "Osorno",
+   "baja": null,
+   "alta": {
+    "min": 138038,
+    "tipico": 138038,
+    "minDirecto": 138038,
+    "escalasMin": 0,
+    "duracionMin": 97,
+    "aerolinea": "LATAM",
+    "resultados": 1
+   },
+   "bajaEstimadaCLP": 106000.0,
+   "capturadoEl": "2026-10-04"
   },
   "ZQN": {
    "ciudadGoogle": "Queenstown",

@@ -26,6 +26,15 @@ const PREGUNTAS = [
     opciones: TIPOS.map(([v, desc]) => ({ v, label: v, desc })),
   },
   {
+    clave: "conQuien", tipo: "unica", titulo: "¿Con quién viajas?", layout: "two",
+    opciones: [
+      { v: "S", label: "Solo" },
+      { v: "P", label: "En pareja" },
+      { v: "F", label: "En familia" },
+      { v: "A", label: "Con amigos" },
+    ],
+  },
+  {
     clave: "presupuesto", tipo: "monto", mostrar: (r) => r.pais === "CL", titulo: "¿Cuánto quieres gastar en el pasaje?", ayuda: "Ida y vuelta por persona, saliendo desde Santiago.",
   },
   {
@@ -34,15 +43,6 @@ const PREGUNTAS = [
       { v: 1, label: "Tranquilo", desc: "Descansar y pasear sin apuro" },
       { v: 3, label: "Equilibrado", desc: "Un poco de todo" },
       { v: 5, label: "Intenso", desc: "Caminatas largas y actividad física" },
-    ],
-  },
-  {
-    clave: "conQuien", tipo: "unica", titulo: "¿Con quién viajas?", layout: "two",
-    opciones: [
-      { v: "S", label: "Solo" },
-      { v: "P", label: "En pareja" },
-      { v: "F", label: "En familia" },
-      { v: "A", label: "Con amigos" },
     ],
   },
   {
@@ -200,7 +200,7 @@ function renderPregunta() {
     const i = Math.max(0, PASOS_MONTO.indexOf(r.monto));
     cuerpo = `<div class="monto">
       <output class="monto-num" id="montoNum" for="montoSel">${montoTxt(r.monto)}</output>
-      <span class="monto-pp">ida y vuelta, por persona</span>
+      <span class="monto-pp">ida y vuelta, por persona<span id="montoGrupo">${personasDe(r) > 1 ? ` (${totalGrupoTxt(r.monto, personasDe(r))})` : ""}</span></span>
       <input type="range" id="montoSel" class="monto-range" min="0" max="${PASOS_MONTO.length - 1}" step="1" value="${i}"
         aria-label="Presupuesto para el pasaje, ida y vuelta por persona" aria-valuetext="${montoTxt(r.monto)}" style="--p:${(i / (PASOS_MONTO.length - 1)) * 100}%">
       <div class="monto-ends" aria-hidden="true"><span>${montoTxt(PASOS_MONTO[0])}</span><span>${montoTxt(PASOS_MONTO[PASOS_MONTO.length - 1])}</span></div>
@@ -212,6 +212,17 @@ function renderPregunta() {
       <button class="opt month wide" aria-pressed="${marcados.includes(0)}" data-v="0">Aún no lo sé</button></div>`;
   } else {
     cuerpo = `<div class="opts ${p.layout === "two" ? "two" : ""}">${p.opciones.map((o) => boton(o, String(r[p.clave]) === String(o.v))).join("")}</div>`;
+    // En familia o con amigos: cuántos son (para mostrar el costo del pasaje para todo el grupo)
+    if (p.clave === "conQuien" && (r.conQuien === "F" || r.conQuien === "A")) {
+      cuerpo += `<div class="personas">
+        <span class="personas-lbl" id="personasLbl">¿Cuántos son, contándote a ti?</span>
+        <div class="stepper" role="group" aria-labelledby="personasLbl">
+          <button class="step" id="menos" aria-label="Una persona menos" ${r.personas <= 2 ? "disabled" : ""}>−</button>
+          <output class="step-num" id="personasNum" aria-live="polite">${r.personas}</output>
+          <button class="step" id="mas" aria-label="Una persona más" ${r.personas >= MAX_PERSONAS ? "disabled" : ""}>+</button>
+        </div>
+      </div>`;
+    }
   }
 
   // Siempre se avanza con "Continuar": elegir una opción solo la marca
@@ -241,6 +252,15 @@ function renderPregunta() {
   };
   const siguiente = document.getElementById("next");
   if (siguiente) siguiente.onclick = avanzar;
+  const cambiarPersonas = (delta) => {
+    r.personas = Math.min(MAX_PERSONAS, Math.max(2, r.personas + delta));
+    renderPregunta();
+    document.getElementById(delta > 0 ? "mas" : "menos")?.focus({ preventScroll: true });
+  };
+  const menos = document.getElementById("menos");
+  if (menos) menos.onclick = () => cambiarPersonas(-1);
+  const mas = document.getElementById("mas");
+  if (mas) mas.onclick = () => cambiarPersonas(1);
   const barra = document.getElementById("montoSel");
   if (barra) {
     // Se actualiza en vivo sin redibujar la pantalla, para no cortar el arrastre
@@ -250,10 +270,21 @@ function renderPregunta() {
       barra.setAttribute("aria-valuetext", montoTxt(r.monto));
       barra.style.setProperty("--p", `${(barra.value / (PASOS_MONTO.length - 1)) * 100}%`);
       document.getElementById("montoNum").textContent = montoTxt(r.monto);
+      document.getElementById("montoGrupo").textContent = personasDe(r) > 1 ? ` (${totalGrupoTxt(r.monto, personasDe(r))})` : "";
       document.getElementById("montoHint").innerHTML = alcanceMonto(r);
     };
   }
 }
+
+// Personas que viajan: solo = 1, pareja = 2, familia o amigos = lo que indiquen (3 por defecto)
+const MAX_PERSONAS = 10;
+function personasPorDefecto(conQuien, previo, actual) {
+  if (conQuien === "S") return 1;
+  if (conQuien === "P") return 2;
+  return (previo === "F" || previo === "A") && actual ? actual : 3; // al cambiar entre familia y amigos se mantiene el número
+}
+const personasDe = (r) => r.personas || (r.conQuien === "P" ? 2 : r.conQuien === "S" ? 1 : 1);
+const totalGrupoTxt = (monto, n) => (n > 1 ? `${montoTxt(monto * n)}${monto >= MONTO_SIN_TOPE ? " o más" : ""} para ${n === 2 && estado.r.conQuien === "P" ? "los dos" : `${n} personas`}` : "");
 
 // Cuántos destinos calzan con el monto y algunos ejemplos de lo más lejos que alcanza
 function alcanceMonto(r) {
@@ -289,8 +320,10 @@ function elegir(p, valor) {
     app.querySelector(`.opt[data-v="${CSS.escape(String(valor))}"]`)?.focus({ preventScroll: true });
     return;
   }
+  const previo = r[p.clave];
   if (p.tipo === "alcance") r[p.clave] = valor;
   else r[p.clave] = p.opciones.find((o) => String(o.v) === valor).v;
+  if (p.clave === "conQuien") r.personas = personasPorDefecto(r.conQuien, previo, r.personas);
   renderPregunta();
   // Mantiene el foco en la opción recién elegida (útil al navegar con teclado)
   app.querySelector(`.opt[data-v="${CSS.escape(String(valor))}"]`)?.focus({ preventScroll: true });
@@ -588,7 +621,7 @@ function renderResultado(animar = true) {
     <div class="field"><dt class="k">Clima</dt><dd class="v">${esc(d.clima)}</dd></div>
     ${campoClima(d, r)}
     <div class="field"><dt class="k">${r.pais === "CL" ? "Visa para chilenos" : "Visa"}</dt><dd class="v">${visaTexto}</dd></div>
-${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</dt><dd class="v">~${montoTxt(precioPasaje(d))}<small class="v-sub">${d.pasaje ? `precio típico, Google Flights` : "estimado"}</small></dd></div>` : ""}
+${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</dt><dd class="v">~${montoTxt(precioPasaje(d))}<small class="v-sub">${personasDe(r) > 1 ? `${totalGrupoTxt(precioPasaje(d), personasDe(r))}, ` : ""}${d.pasaje ? `precio típico, Google Flights` : "estimado"}</small></dd></div>` : ""}
     <div class="field"><dt class="k">Ideal para</dt><dd class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</dd></div>
   </dl>
   ${notaRuta(d, r)}

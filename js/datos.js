@@ -23,9 +23,9 @@ const COLUMNAS = [
   "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo",
   "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje",
   "iria", "motivo", "abrio_compra",
-  "segundos_decidir", "segundos_respuesta", "dispositivo", "version",
+  "segundos_decidir", "segundos_respuesta", "dispositivo", "version", "personas",
 ];
-const VERSION_APP = "fly4ward-2026-10b"; // desde "b", la columna presupuesto guarda el monto en pesos (antes una escala 1,5 a 5)
+const VERSION_APP = "fly4ward-2026-10c"; // "b": presupuesto en pesos (antes escala 1,5 a 5); "c": columna personas
 
 let SESION = "";
 // Cada vez que alguien responde el cuestionario completo es una sesión nueva
@@ -57,6 +57,7 @@ function registrarRecomendacion(r, x, opcion, segundos) {
     segundos_decidir: segundos ?? "", segundos_respuesta: "",
     dispositivo: matchMedia("(max-width: 700px)").matches ? "movil" : "escritorio",
     version: VERSION_APP,
+    personas: r.personas || (r.conQuien === "P" ? 2 : 1),
   };
   filas.push(fila);
   escribirDatos(filas);

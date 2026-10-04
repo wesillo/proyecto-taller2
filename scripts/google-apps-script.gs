@@ -11,7 +11,7 @@
  */
 
 const NOMBRE_HOJA = "respuestas";
-const COLUMNAS = ["id", "sesion", "fecha", "opcion", "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo", "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje", "iria", "motivo", "abrio_compra", "segundos_decidir", "segundos_respuesta", "dispositivo", "version"];
+const COLUMNAS = ["id", "sesion", "fecha", "opcion", "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo", "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje", "iria", "motivo", "abrio_compra", "segundos_decidir", "segundos_respuesta", "dispositivo", "version", "personas"];
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -46,6 +46,10 @@ function obtenerHoja() {
   const libro = SpreadsheetApp.getActiveSpreadsheet();
   let hoja = libro.getSheetByName(NOMBRE_HOJA);
   if (!hoja) hoja = libro.insertSheet(NOMBRE_HOJA);
+  // Si la hoja ya existía con menos columnas (versión anterior del script), agrega los títulos que faltan
+  if (hoja.getLastRow() > 0 && hoja.getLastColumn() < COLUMNAS.length) {
+    hoja.getRange(1, 1, 1, COLUMNAS.length).setValues([COLUMNAS]).setFontWeight("bold");
+  }
   if (hoja.getLastRow() === 0) {
     hoja.appendRow(COLUMNAS);
     hoja.setFrozenRows(1);

@@ -273,3 +273,12 @@ a{color:inherit}
 .leg-route.code{letter-spacing:.05em}
 .leg.opcional .leg-pict{background:transparent;color:var(--texto);border:2px solid var(--texto)}
 .leg.barco .leg-pict{color:#9BD3FF}
+
+/* Cuántos son (familia o amigos) */
+.personas{margin-top:18px;padding:14px 16px;background:var(--panel);border:2px solid var(--linea);border-radius:3px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.personas-lbl{font-weight:600;font-size:17px}
+.stepper{display:flex;align-items:center;gap:10px}
+.step{width:44px;height:44px;border-radius:3px;border:2px solid var(--senal);background:var(--amarillo);color:#000;font-family:var(--display);font-weight:800;font-size:24px;line-height:1;cursor:pointer}
+.step:disabled{background:transparent;color:var(--suave);border-color:var(--linea);cursor:default}
+.step:focus-visible{outline:3px solid var(--foco);outline-offset:2px}
+.step-num{min-width:2ch;text-align:center;font-family:var(--display);font-weight:800;font-size:28px;font-variant-numeric:tabular-nums}

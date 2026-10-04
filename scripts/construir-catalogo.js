@@ -7,6 +7,7 @@
  *   data/fuentes/aeropuertos.json        coordenadas de aeropuertos (OurAirports)
  *   data/fuentes/banco-mundial.json      indicadores por país (nivel de precios, llegadas de turistas)
  *   data/fuentes/precios-vuelos.json     foto de precios de pasajes desde Santiago (Google Flights)
+ *   data/fuentes/jac-rutas.json          pasajeros por ruta directa desde Santiago (JAC, últimos 12 meses)
  *   data/fuentes/corte.json              fecha del corte de datos y vigencia de cada tipo de dato
  *
  * Uso:  npm run catalogo
@@ -29,6 +30,46 @@ const { aeropuertos, fechaCaptura: fechaAeropuertos, fuente: fuenteAeropuertos, 
 const bancoMundial = leer("data/fuentes/banco-mundial.json");
 const corte = leer("data/fuentes/corte.json");
 const precios = leer("data/fuentes/precios-vuelos.json");
+const jac = leer("data/fuentes/jac-rutas.json");
+
+/*
+ * Ruta directa desde Santiago según la JAC (pasajeros reales de los últimos 12 meses).
+ *   Opera en un mes si ese mes tuvo al menos 200 pasajeros y el 10% del mes con más tráfico.
+ *   Es "regular" si opera 3 meses o más y suma 3.000 pasajeros o más (descarta vuelos ocasionales).
+ *   Temporada alta: meses con 85% o más del máximo (hasta 4), solo si la ruta es claramente estacional
+ *   (el mes más bajo con vuelos tiene menos del 60% del máximo).
+ */
+const JAC_ALIAS = { EZE: ["EZE", "AEP"], GRU: ["GRU", "VCP"], IGR: ["IGU"] }; // ciudades con más de un aeropuerto
+function rutaJac(ap) {
+  const codigos = (JAC_ALIAS[ap] || [ap]).filter((c) => jac.rutas[c]);
+  if (!codigos.length) return null;
+  const porMes = Array(12).fill(0);
+  const operadores = new Set();
+  for (const c of codigos) {
+    jac.rutas[c].porMes.forEach((v, i) => (porMes[i] += v));
+    jac.rutas[c].operadores.forEach((o) => operadores.add(o));
+  }
+  const total = porMes.reduce((a, b) => a + b, 0);
+  const max = Math.max(...porMes);
+  const meses = porMes.map((v, i) => (v >= Math.max(200, 0.1 * max) ? i + 1 : 0)).filter(Boolean);
+  const regular = meses.length >= 3 && total >= 3000;
+  if (!regular) return null;
+  const minOpera = Math.min(...meses.map((m) => porMes[m - 1]));
+  const altos = porMes.map((v, i) => (v >= 0.85 * max ? i + 1 : 0)).filter(Boolean);
+  const temporadaAlta = minOpera / max < 0.6 && altos.length <= 4 ? altos : [];
+  return {
+    pasajeros12m: total,
+    mesesConVuelo: meses,
+    todoElAnio: meses.length === 12,
+    temporadaAlta,
+    operadores: [...operadores].slice(0, 4),
+    // Nombre de la ciudad con tildes (de Google Flights); la JAC lo publica en mayúsculas sin tildes
+    ciudad: (precios.aeropuertos[ap] && precios.aeropuertos[ap].ciudadGoogle) || jac.rutas[codigos[0]].ciudad,
+    aeropuertoJac: codigos.join("/"),
+    periodo: jac.periodo,
+    fecha: jac.fechaCaptura,
+  };
+}
 
 /*
  * PARA MÁS ADELANTE (la app no lo usa todavía: el presupuesto compara solo el pasaje).
@@ -137,6 +178,7 @@ const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
   const minimo = horasMinimas(km);
   const mezcla = pctPrecio[i] == null ? null : 0.5 * pctKm[i] + 0.5 * pctPrecio[i];
   const pasaje = resumenPasaje(d.aeropuerto);
+  const directoJac = rutaJac(d.aeropuerto);
   // Horas: la duración real del itinerario más rápido (con escalas) si hay foto de precios; si no, la editorial
   // Si la duración real difiere mucho de la editorial (itinerario raro esa semana, o destino con tramo
   // terrestre incluido en la editorial), se mantiene la editorial y queda en la lista para revisar.
@@ -194,7 +236,8 @@ const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
     ubicacion: { lat: ap.lat, lon: ap.lon, distanciaKmDesdeSantiago: km, horasMinimasDirecto: minimo, fecha: fechaAeropuertos },
     indicadoresPais: { nivelPrecios2023: ind.nivelPrecios2023 ?? null, llegadasTuristas2019: ind.llegadasTuristas2019 ?? null, fecha: bancoMundial.fechaCaptura },
     costoCalculado: mezcla == null ? null : Math.min(5, 1 + Math.floor(mezcla * 5)),
-    pasaje,
+    pasaje: pasaje && directoJac ? { ...pasaje, directo: true, escalas: 0 } : pasaje,
+    directoJac,
     gastoDiarioCLP: Math.round(diario / 1000) * 1000,
     gastoDiarioMotivo: piso ? piso.motivo : null,
     costoEstimadoCLP,
@@ -223,6 +266,7 @@ const CORTE_DATOS = {
     aeropuertos: `${fuenteAeropuertos} (${urlAeropuertos})`,
     indicadores: "Banco Mundial (ST.INT.ARVL, PA.NUS.PPP, PA.NUS.FCRF)",
     pasajes: `${precios.fuente}, capturado el ${precios.fechaCaptura} (${precios.descripcion})`,
+    rutas: `${jac.fuente}, ${jac.periodo.desde} a ${jac.periodo.hasta} (${jac.fuenteUrl})`,
   },
   precios: { fechaCaptura: precios.fechaCaptura, temporadas: precios.temporadas, diasViaje: DIAS_VIAJE },
 };
@@ -258,6 +302,8 @@ console.log("Confianza clima:", conteo(DESTINOS.map((x) => x.climaMensual.confia
 console.log(`Horas ajustadas al mínimo físico: ${filas.filter((f) => f.d.horasVuelo < horasMinimas(f.km)).map((f) => f.d.nombre).join(", ") || "ninguna"}`);
 console.log(`Horas de vuelo que no se reemplazaron por la duración de Google Flights (revisar): ${horasRevisar.length}`);
 for (const x of horasRevisar) console.log(`  ${x}`);
+const conJac = DESTINOS.filter((x) => x.directoJac);
+console.log(`Destinos con vuelo directo regular desde Santiago según la JAC: ${conJac.length} (${conJac.filter((x) => !x.directoJac.todoElAnio).length} solo en temporada)`);
 const sinPrecio = DESTINOS.filter((x) => !x.pasaje);
 console.log(`Destinos con precio de pasaje (Google Flights): ${DESTINOS.length - sinPrecio.length}; sin precio: ${sinPrecio.map((x) => x.nombre).join(", ") || "ninguno"}`);
 console.log(`Costo editorial vs calculado con diferencia de 2 o más (revisar): ${diferenciasCosto.length}`);

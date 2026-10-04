@@ -161,3 +161,19 @@ test("presupuesto para el pasaje: todos los destinos tienen precio y el monto or
   assert.equal(montoTxt(1000000), "$1 millón");
   assert.equal(montoTxt(MONTO_SIN_TOPE), "$3 millones o más");
 });
+
+test("rutas directas según la JAC: temporada y meses sin vuelo directo", () => {
+  const { mesesSinDirecto } = require("../js/matching.js");
+  const conJac = DESTINOS.filter((d) => d.directoJac);
+  assert.ok(conJac.length >= 40, "hay rutas directas cargadas");
+  for (const d of conJac) {
+    assert.ok(d.directoJac.pasajeros12m >= 3000 && d.directoJac.mesesConVuelo.length >= 3, d.nombre);
+    assert.ok(d.pasaje === null || d.pasaje.directo, `${d.nombre}: si la JAC dice directo, el pasaje también`);
+  }
+  const natales = DESTINOS.find((d) => d.aeropuerto === "PNT");
+  assert.ok(natales.directoJac && natales.directoJac.temporadaAlta.includes(1), "Puerto Natales: enero es temporada alta");
+  const estacional = conJac.find((d) => !d.directoJac.todoElAnio);
+  const mesSin = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].find((m) => !estacional.directoJac.mesesConVuelo.includes(m));
+  assert.deepEqual(mesesSinDirecto(estacional, { meses: [mesSin] }), [mesSin]);
+  assert.deepEqual(mesesSinDirecto(estacional, { meses: [0] }), []);
+});

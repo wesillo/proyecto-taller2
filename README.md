@@ -101,7 +101,7 @@ Si prefieres no tocar código, abre un **Issue** con la plantilla "Nuevo destino
 
 ## El catálogo y su corte de datos
 
-El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato con su fuente (corte actual: 1 de octubre de 2026). Las visas están verificadas en sitios oficiales país por país, el clima mensual viene de servicios meteorológicos nacionales las distancias se calculan con las coordenadas reales de cada aeropuerto y los pasajes vienen de una foto de Google Flights (4 de octubre de 2026, temporada baja y alta), que es con lo que se compara el presupuesto. La app muestra la fuente y la fecha de cada dato, y avisa cuando un dato supera su vigencia. Lo que sigue siendo criterio del equipo (ritmo, popularidad, pros y contras) está marcado como editorial. Todo el detalle está en [`data/FUENTES.md`](data/FUENTES.md).
+El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato con su fuente (corte actual: 1 de octubre de 2026). Las visas están verificadas en sitios oficiales país por país, el clima mensual viene de servicios meteorológicos nacionales las distancias se calculan con las coordenadas reales de cada aeropuerto y los pasajes vienen de una foto de Google Flights (4 de octubre de 2026, temporada baja y alta), que es con lo que se compara el presupuesto. Las rutas directas desde Santiago, sus meses de operación y su temporada alta salen de las estadísticas de tráfico de la Junta de Aeronáutica Civil (JAC). La app muestra la fuente y la fecha de cada dato, y avisa cuando un dato supera su vigencia. Lo que sigue siendo criterio del equipo (ritmo, popularidad, pros y contras) está marcado como editorial. Todo el detalle está en [`data/FUENTES.md`](data/FUENTES.md).
 
 ---
 
@@ -114,6 +114,7 @@ El catálogo no consulta datos en vivo: guarda una **foto fechada** de cada dato
 - [ ] Revisar los datos de confianza media o baja listados en `data/FUENTES.md`
 - [ ] Horas de vuelo y visas para usuarios de otros países
 - [x] Foto de precios de pasajes desde Santiago en Google Flights (171 aeropuertos, temporada baja y alta, 4 oct 2026)
+- [x] Rutas directas y temporada alta con datos de la JAC (sep 2025 a ago 2026)
 - [ ] Precios en vivo vía API de vuelos (requiere un servidor)
 - [ ] Fase 2: Machine Learning entrenado con los datos de uso reales
 

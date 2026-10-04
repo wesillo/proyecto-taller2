@@ -1,0 +1,1852 @@
+{
+ "fuente": "Junta de Aeronáutica Civil (JAC), Tráfico Aéreo Mensual",
+ "fuenteUrl": "https://datos.gob.cl/dataset/trafico-aereo",
+ "archivo": "https://datos.gob.cl/dataset/934b4b83-4fd4-476f-b8b4-ec5aa7e9157f/resource/23a54a1b-6234-4bfb-b45b-84fa147dc2ec/download/trafico.csv",
+ "fechaCaptura": "2026-10-04",
+ "periodo": {
+  "desde": "2025-09",
+  "hasta": "2026-08"
+ },
+ "descripcion": "Pasajeros transportados en vuelos directos entre Santiago (SCL) y cada ciudad, sumando ambos sentidos y todas las aerolíneas, en los últimos 12 meses publicados. porMes va de enero (0) a diciembre (11); septiembre a diciembre son de 2025 y enero a agosto de 2026.",
+ "rutas": {
+  "AEP": {
+   "ciudad": "Buenos Aires",
+   "pais": "Argentina",
+   "pasajeros12m": 1097034,
+   "porMes": [
+    94260,
+    83563,
+    91311,
+    89394,
+    95485,
+    83335,
+    98834,
+    90648,
+    87920,
+    90723,
+    96973,
+    94588
+   ],
+   "operadores": [
+    "LATAM",
+    "JetSMART",
+    "Aerolíneas Argentinas",
+    "SKY"
+   ]
+  },
+  "AKL": {
+   "ciudad": "Auckland",
+   "pais": "Nueva Zelandia",
+   "pasajeros12m": 88304,
+   "porMes": [
+    10404,
+    9025,
+    8418,
+    7174,
+    5363,
+    4979,
+    5953,
+    4529,
+    6736,
+    7810,
+    7362,
+    10551
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "AMS": {
+   "ciudad": "Amsterdam",
+   "pais": "Holanda",
+   "pasajeros12m": 46928,
+   "porMes": [
+    4176,
+    4205,
+    4131,
+    3847,
+    3628,
+    4682,
+    3550,
+    3106,
+    3344,
+    3978,
+    3975,
+    4306
+   ],
+   "operadores": [
+    "KLM"
+   ]
+  },
+  "ANF": {
+   "ciudad": "Antofagasta",
+   "pais": "Chile",
+   "pasajeros12m": 2051420,
+   "porMes": [
+    171232,
+    161116,
+    169521,
+    162653,
+    159368,
+    173556,
+    186229,
+    163679,
+    171882,
+    187154,
+    170146,
+    174884
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART",
+    "DAP"
+   ]
+  },
+  "ARI": {
+   "ciudad": "Arica",
+   "pais": "Chile",
+   "pasajeros12m": 557738,
+   "porMes": [
+    54395,
+    58839,
+    51272,
+    37290,
+    38853,
+    39534,
+    49119,
+    44053,
+    47253,
+    48788,
+    42403,
+    45939
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART"
+   ]
+  },
+  "ASU": {
+   "ciudad": "Asuncion",
+   "pais": "Paraguay",
+   "pasajeros12m": 66272,
+   "porMes": [
+    6027,
+    5127,
+    5298,
+    4910,
+    4401,
+    4466,
+    6141,
+    5883,
+    6140,
+    5979,
+    5925,
+    5975
+   ],
+   "operadores": [
+    "LATAM",
+    "JetSMART",
+    "Paranair"
+   ]
+  },
+  "ATL": {
+   "ciudad": "Atlanta",
+   "pais": "Estados Unidos",
+   "pasajeros12m": 201401,
+   "porMes": [
+    24257,
+    15838,
+    16124,
+    14670,
+    14823,
+    14526,
+    15210,
+    15655,
+    14478,
+    16140,
+    14486,
+    25194
+   ],
+   "operadores": [
+    "Delta"
+   ]
+  },
+  "BBA": {
+   "ciudad": "Balmaceda",
+   "pais": "Chile",
+   "pasajeros12m": 344768,
+   "porMes": [
+    45746,
+    45038,
+    37404,
+    22322,
+    19571,
+    16878,
+    18177,
+    17035,
+    27251,
+    30026,
+    29431,
+    35889
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART",
+    "DAP"
+   ]
+  },
+  "BCN": {
+   "ciudad": "Barcelona",
+   "pais": "España",
+   "pasajeros12m": 102508,
+   "porMes": [
+    11876,
+    10762,
+    8091,
+    6530,
+    6935,
+    7092,
+    7271,
+    7212,
+    8956,
+    7568,
+    8366,
+    11849
+   ],
+   "operadores": [
+    "LEVEL",
+    "Iberia"
+   ]
+  },
+  "BOG": {
+   "ciudad": "Bogota",
+   "pais": "Colombia",
+   "pasajeros12m": 745566,
+   "porMes": [
+    75492,
+    68070,
+    69178,
+    57958,
+    57090,
+    50140,
+    63207,
+    57588,
+    58600,
+    61886,
+    56363,
+    69994
+   ],
+   "operadores": [
+    "Avianca",
+    "LATAM",
+    "JetSMART",
+    "SKY"
+   ]
+  },
+  "BRC": {
+   "ciudad": "Bariloche",
+   "pais": "Argentina",
+   "pasajeros12m": 34538,
+   "porMes": [
+    5957,
+    5099,
+    1517,
+    0,
+    0,
+    0,
+    1947,
+    2174,
+    2530,
+    0,
+    182,
+    15132
+   ],
+   "operadores": [
+    "SKY",
+    "JetSMART",
+    "LATAM"
+   ]
+  },
+  "BSB": {
+   "ciudad": "Brasilia",
+   "pais": "Brasil",
+   "pasajeros12m": 60471,
+   "porMes": [
+    3797,
+    4547,
+    4218,
+    3981,
+    3515,
+    5810,
+    10070,
+    7823,
+    4748,
+    4448,
+    3872,
+    3642
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "CCP": {
+   "ciudad": "Concepcion",
+   "pais": "Chile",
+   "pasajeros12m": 1360492,
+   "porMes": [
+    114369,
+    110008,
+    124718,
+    112599,
+    112135,
+    110038,
+    110908,
+    114019,
+    107006,
+    122880,
+    106678,
+    115134
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART"
+   ]
+  },
+  "CDG": {
+   "ciudad": "Paris",
+   "pais": "Francia",
+   "pasajeros12m": 222613,
+   "porMes": [
+    18925,
+    17282,
+    18615,
+    16535,
+    17188,
+    17370,
+    17727,
+    18388,
+    23453,
+    21273,
+    17545,
+    18312
+   ],
+   "operadores": [
+    "Air France"
+   ]
+  },
+  "CJC": {
+   "ciudad": "Calama",
+   "pais": "Chile",
+   "pasajeros12m": 2261320,
+   "porMes": [
+    181559,
+    167862,
+    195504,
+    196013,
+    187982,
+    181422,
+    198179,
+    184477,
+    187915,
+    198431,
+    185848,
+    196128
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART",
+    "DAP"
+   ]
+  },
+  "CLO": {
+   "ciudad": "Cali",
+   "pais": "Colombia",
+   "pasajeros12m": 86889,
+   "porMes": [
+    11863,
+    11824,
+    6606,
+    5428,
+    5486,
+    6097,
+    6351,
+    5406,
+    4368,
+    5057,
+    7356,
+    11047
+   ],
+   "operadores": [
+    "JetSMART"
+   ]
+  },
+  "CNF": {
+   "ciudad": "Belo Horizonte",
+   "pais": "Brasil",
+   "pasajeros12m": 61487,
+   "porMes": [
+    3565,
+    3195,
+    3260,
+    2966,
+    3397,
+    5718,
+    12974,
+    10906,
+    6196,
+    3570,
+    2120,
+    3620
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "GOL"
+   ]
+  },
+  "COR": {
+   "ciudad": "Cordoba",
+   "pais": "Argentina",
+   "pasajeros12m": 107557,
+   "porMes": [
+    10867,
+    8801,
+    9526,
+    8190,
+    8063,
+    6279,
+    7881,
+    7720,
+    10913,
+    10408,
+    9132,
+    9777
+   ],
+   "operadores": [
+    "LATAM",
+    "Avianca"
+   ]
+  },
+  "CPO": {
+   "ciudad": "Copiapo",
+   "pais": "Chile",
+   "pasajeros12m": 663290,
+   "porMes": [
+    54956,
+    56058,
+    56483,
+    55092,
+    54026,
+    53633,
+    58358,
+    55984,
+    51248,
+    64026,
+    49210,
+    54216
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "DAP"
+   ]
+  },
+  "CPP": {
+   "ciudad": "Pica",
+   "pais": "Chile",
+   "pasajeros12m": 13127,
+   "porMes": [
+    794,
+    1004,
+    1120,
+    1262,
+    1013,
+    1214,
+    1205,
+    996,
+    1160,
+    1045,
+    1151,
+    1163
+   ],
+   "operadores": [
+    "DAP"
+   ]
+  },
+  "CRD": {
+   "ciudad": "Com. Rivadavia",
+   "pais": "Argentina",
+   "pasajeros12m": 139,
+   "porMes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    139,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "CTG": {
+   "ciudad": "Cartagena",
+   "pais": "Colombia",
+   "pasajeros12m": 7469,
+   "porMes": [
+    3883,
+    3586,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "Avianca"
+   ]
+  },
+  "CUN": {
+   "ciudad": "Cancún",
+   "pais": "Mexico",
+   "pasajeros12m": 31300,
+   "porMes": [
+    4427,
+    4034,
+    4015,
+    1884,
+    2340,
+    1842,
+    1913,
+    1970,
+    1755,
+    2186,
+    1213,
+    3721
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "CUZ": {
+   "ciudad": "Cuzco",
+   "pais": "Peru",
+   "pasajeros12m": 111497,
+   "porMes": [
+    9191,
+    8057,
+    8863,
+    10314,
+    10189,
+    8421,
+    11408,
+    7699,
+    8401,
+    9361,
+    10831,
+    8762
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "CWB": {
+   "ciudad": "Curitiba",
+   "pais": "Brasil",
+   "pasajeros12m": 52214,
+   "porMes": [
+    3865,
+    3395,
+    3551,
+    3330,
+    3692,
+    4237,
+    8452,
+    6665,
+    5497,
+    2840,
+    3232,
+    3458
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "DFW": {
+   "ciudad": "Dallas",
+   "pais": "Estados Unidos",
+   "pasajeros12m": 60206,
+   "porMes": [
+    13029,
+    12013,
+    11892,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    939,
+    8568,
+    13765
+   ],
+   "operadores": [
+    "American Airlines",
+    "United Airlines"
+   ]
+  },
+  "ESR": {
+   "ciudad": "El Salvador",
+   "pais": "Chile",
+   "pasajeros12m": 24328,
+   "porMes": [
+    1825,
+    1786,
+    2172,
+    2320,
+    1797,
+    1625,
+    1556,
+    1466,
+    2851,
+    2595,
+    2284,
+    2051
+   ],
+   "operadores": [
+    "DAP"
+   ]
+  },
+  "EZE": {
+   "ciudad": "Buenos Aires",
+   "pais": "Argentina",
+   "pasajeros12m": 446175,
+   "porMes": [
+    48292,
+    45932,
+    41279,
+    33315,
+    23577,
+    24213,
+    38854,
+    43195,
+    33858,
+    34386,
+    34250,
+    45024
+   ],
+   "operadores": [
+    "LATAM",
+    "KLM",
+    "SKY",
+    "JetSMART"
+   ]
+  },
+  "FLN": {
+   "ciudad": "Florianopolis",
+   "pais": "Brasil",
+   "pasajeros12m": 571138,
+   "porMes": [
+    91438,
+    98733,
+    52510,
+    27160,
+    22662,
+    23828,
+    40713,
+    32484,
+    45645,
+    28614,
+    35674,
+    71677
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART"
+   ]
+  },
+  "FOR": {
+   "ciudad": "Fortaleza",
+   "pais": "Brasil",
+   "pasajeros12m": 14002,
+   "porMes": [
+    1278,
+    1196,
+    1083,
+    910,
+    1130,
+    1078,
+    1236,
+    1479,
+    1116,
+    1091,
+    1331,
+    1074
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "FTE": {
+   "ciudad": "El Calafate",
+   "pais": "Argentina",
+   "pasajeros12m": 7327,
+   "porMes": [
+    2385,
+    1980,
+    915,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2047
+   ],
+   "operadores": [
+    "SKY"
+   ]
+  },
+  "GIG": {
+   "ciudad": "Rio De Janeiro",
+   "pais": "Brasil",
+   "pasajeros12m": 991198,
+   "porMes": [
+    121094,
+    133032,
+    94474,
+    61880,
+    60488,
+    61298,
+    92740,
+    66288,
+    78038,
+    70346,
+    71639,
+    79881
+   ],
+   "operadores": [
+    "LATAM",
+    "JetSMART",
+    "SKY"
+   ]
+  },
+  "GRU": {
+   "ciudad": "Sao Paulo",
+   "pais": "Brasil",
+   "pasajeros12m": 1354708,
+   "porMes": [
+    99768,
+    96781,
+    88666,
+    87931,
+    87265,
+    112681,
+    206309,
+    172118,
+    119187,
+    98703,
+    96554,
+    88745
+   ],
+   "operadores": [
+    "LATAM",
+    "JetSMART",
+    "SKY",
+    "Turkish Airlines"
+   ]
+  },
+  "GYE": {
+   "ciudad": "Guayaquil",
+   "pais": "Ecuador",
+   "pasajeros12m": 80130,
+   "porMes": [
+    7441,
+    6655,
+    6886,
+    6363,
+    6033,
+    5475,
+    6647,
+    7196,
+    6080,
+    6830,
+    7173,
+    7351
+   ],
+   "operadores": [
+    "LATAM",
+    "Arajet"
+   ]
+  },
+  "IAH": {
+   "ciudad": "Houston",
+   "pais": "Estados Unidos",
+   "pasajeros12m": 66995,
+   "porMes": [
+    14453,
+    13346,
+    12586,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1893,
+    10915,
+    13802
+   ],
+   "operadores": [
+    "United Airlines"
+   ]
+  },
+  "IGU": {
+   "ciudad": "Cataratas De Iguazu",
+   "pais": "Brasil",
+   "pasajeros12m": 44101,
+   "porMes": [
+    5351,
+    3813,
+    2796,
+    2932,
+    2676,
+    2995,
+    6172,
+    4417,
+    3362,
+    2651,
+    2738,
+    4198
+   ],
+   "operadores": [
+    "JetSMART"
+   ]
+  },
+  "IPC": {
+   "ciudad": "Isla De Pascua",
+   "pais": "Chile",
+   "pasajeros12m": 309371,
+   "porMes": [
+    30131,
+    27964,
+    30515,
+    21485,
+    26068,
+    23190,
+    24686,
+    24620,
+    26396,
+    21245,
+    23348,
+    29723
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "IQQ": {
+   "ciudad": "Iquique",
+   "pais": "Chile",
+   "pasajeros12m": 1356277,
+   "porMes": [
+    124306,
+    118856,
+    115585,
+    106765,
+    108352,
+    99249,
+    125326,
+    103649,
+    112698,
+    121691,
+    104967,
+    114833
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART",
+    "DAP"
+   ]
+  },
+  "IST": {
+   "ciudad": "Estambul",
+   "pais": "Turquia",
+   "pasajeros12m": 62363,
+   "porMes": [
+    7064,
+    7188,
+    7624,
+    5224,
+    5027,
+    4416,
+    4434,
+    5372,
+    3886,
+    4180,
+    3866,
+    4082
+   ],
+   "operadores": [
+    "Turkish Airlines"
+   ]
+  },
+  "JFK": {
+   "ciudad": "New York",
+   "pais": "Estados Unidos",
+   "pasajeros12m": 166027,
+   "porMes": [
+    13858,
+    12555,
+    14796,
+    13887,
+    13984,
+    12925,
+    15729,
+    14901,
+    13182,
+    14154,
+    11747,
+    14309
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "LAX": {
+   "ciudad": "Los Angeles",
+   "pais": "Estados Unidos",
+   "pasajeros12m": 142211,
+   "porMes": [
+    14770,
+    13203,
+    13971,
+    8917,
+    10110,
+    9573,
+    12417,
+    12316,
+    13553,
+    9357,
+    9805,
+    14219
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "LHR": {
+   "ciudad": "Londres",
+   "pais": "Reino Unido",
+   "pasajeros12m": 69079,
+   "porMes": [
+    7595,
+    6732,
+    7247,
+    4230,
+    4463,
+    5113,
+    4835,
+    4302,
+    5287,
+    5531,
+    6748,
+    6996
+   ],
+   "operadores": [
+    "British Airways"
+   ]
+  },
+  "LIM": {
+   "ciudad": "Lima",
+   "pais": "Peru",
+   "pasajeros12m": 1551341,
+   "porMes": [
+    163921,
+    146238,
+    138093,
+    116950,
+    111433,
+    104831,
+    125826,
+    117553,
+    125183,
+    130977,
+    129022,
+    141314
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART",
+    "Arajet"
+   ]
+  },
+  "LPB": {
+   "ciudad": "La Paz",
+   "pais": "Bolivia",
+   "pasajeros12m": 12582,
+   "porMes": [
+    1485,
+    1241,
+    1294,
+    1154,
+    1062,
+    548,
+    935,
+    1129,
+    1034,
+    1001,
+    687,
+    1012
+   ],
+   "operadores": [
+    "LATAM",
+    "BoA"
+   ]
+  },
+  "LSC": {
+   "ciudad": "La Serena",
+   "pais": "Chile",
+   "pasajeros12m": 803572,
+   "porMes": [
+    79807,
+    81786,
+    72017,
+    64393,
+    65538,
+    69399,
+    56691,
+    64888,
+    56112,
+    68891,
+    57050,
+    67000
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART",
+    "DAP"
+   ]
+  },
+  "MAD": {
+   "ciudad": "Madrid",
+   "pais": "España",
+   "pasajeros12m": 673335,
+   "porMes": [
+    58578,
+    54277,
+    55155,
+    46566,
+    56192,
+    60609,
+    62004,
+    59649,
+    58877,
+    56032,
+    48205,
+    57191
+   ],
+   "operadores": [
+    "Iberia",
+    "LATAM"
+   ]
+  },
+  "MCO": {
+   "ciudad": "Orlando",
+   "pais": "Estados Unidos",
+   "pasajeros12m": 2664,
+   "porMes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    19,
+    11,
+    2634,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "MDE": {
+   "ciudad": "Medellin",
+   "pais": "Colombia",
+   "pasajeros12m": 56448,
+   "porMes": [
+    8106,
+    9023,
+    6820,
+    5195,
+    5539,
+    5532,
+    5759,
+    5574,
+    0,
+    50,
+    0,
+    4850
+   ],
+   "operadores": [
+    "JetSMART",
+    "LATAM"
+   ]
+  },
+  "MDZ": {
+   "ciudad": "Mendoza",
+   "pais": "Argentina",
+   "pasajeros12m": 345432,
+   "porMes": [
+    35510,
+    29497,
+    29623,
+    24464,
+    27936,
+    24824,
+    32172,
+    32242,
+    26600,
+    29435,
+    26058,
+    27071
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART",
+    "DAP"
+   ]
+  },
+  "MEL": {
+   "ciudad": "Melbourne",
+   "pais": "Australia",
+   "pasajeros12m": 131711,
+   "porMes": [
+    16229,
+    13671,
+    16281,
+    8443,
+    10497,
+    10287,
+    11258,
+    9910,
+    6066,
+    6280,
+    8493,
+    14296
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "MEX": {
+   "ciudad": "Ciudad De Mexico",
+   "pais": "Mexico",
+   "pasajeros12m": 192010,
+   "porMes": [
+    24479,
+    22146,
+    18045,
+    10250,
+    9252,
+    8873,
+    12555,
+    13142,
+    12118,
+    16671,
+    23296,
+    21183
+   ],
+   "operadores": [
+    "LATAM",
+    "Aeroméxico"
+   ]
+  },
+  "MHC": {
+   "ciudad": "Castro",
+   "pais": "Chile",
+   "pasajeros12m": 140828,
+   "porMes": [
+    17023,
+    17311,
+    9596,
+    8017,
+    9161,
+    7918,
+    9517,
+    8038,
+    12292,
+    13477,
+    13943,
+    14535
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY"
+   ]
+  },
+  "MIA": {
+   "ciudad": "Miami",
+   "pais": "Estados Unidos",
+   "pasajeros12m": 436943,
+   "porMes": [
+    45875,
+    41525,
+    40379,
+    30378,
+    34207,
+    34012,
+    39020,
+    33000,
+    34308,
+    32881,
+    28564,
+    42794
+   ],
+   "operadores": [
+    "LATAM",
+    "American Airlines",
+    "SKY"
+   ]
+  },
+  "MPN": {
+   "ciudad": "Malvinas",
+   "pais": "Reino Unido",
+   "pasajeros12m": 3695,
+   "porMes": [
+    249,
+    390,
+    492,
+    307,
+    480,
+    124,
+    236,
+    445,
+    297,
+    239,
+    0,
+    436
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "MVD": {
+   "ciudad": "Montevideo",
+   "pais": "Uruguay",
+   "pasajeros12m": 285006,
+   "porMes": [
+    28545,
+    25347,
+    26353,
+    22334,
+    21977,
+    18690,
+    21881,
+    20577,
+    23508,
+    26585,
+    25770,
+    23439
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART"
+   ]
+  },
+  "NQN": {
+   "ciudad": "Neuquen",
+   "pais": "Argentina",
+   "pasajeros12m": 13466,
+   "porMes": [
+    0,
+    0,
+    294,
+    2642,
+    2812,
+    1949,
+    3394,
+    2375,
+    0,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "PMC": {
+   "ciudad": "Puerto Montt",
+   "pais": "Chile",
+   "pasajeros12m": 1318557,
+   "porMes": [
+    138033,
+    133282,
+    124442,
+    99786,
+    97312,
+    95538,
+    104681,
+    92650,
+    100242,
+    112800,
+    106040,
+    113751
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART",
+    "DAP"
+   ]
+  },
+  "PNT": {
+   "ciudad": "Puerto Natales",
+   "pais": "Chile",
+   "pasajeros12m": 232278,
+   "porMes": [
+    37684,
+    36526,
+    31011,
+    19884,
+    6552,
+    5001,
+    6111,
+    5204,
+    9137,
+    15484,
+    26770,
+    32914
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "DAP"
+   ]
+  },
+  "POA": {
+   "ciudad": "Porto Alegre",
+   "pais": "Brasil",
+   "pasajeros12m": 82948,
+   "porMes": [
+    6445,
+    6164,
+    6140,
+    3332,
+    3710,
+    5608,
+    12638,
+    13529,
+    7435,
+    5322,
+    6279,
+    6346
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY"
+   ]
+  },
+  "PTY": {
+   "ciudad": "Ciudad De Panamá",
+   "pais": "Panama",
+   "pasajeros12m": 591047,
+   "porMes": [
+    52923,
+    52114,
+    48392,
+    46338,
+    49347,
+    45721,
+    56094,
+    53063,
+    45117,
+    47365,
+    46283,
+    48290
+   ],
+   "operadores": [
+    "Copa"
+   ]
+  },
+  "PUJ": {
+   "ciudad": "Punta Cana",
+   "pais": "Rep. Dominicana",
+   "pasajeros12m": 82166,
+   "porMes": [
+    9117,
+    8445,
+    7258,
+    5871,
+    8494,
+    7196,
+    8756,
+    3564,
+    5967,
+    5140,
+    4232,
+    8126
+   ],
+   "operadores": [
+    "Arajet",
+    "LATAM"
+   ]
+  },
+  "PUQ": {
+   "ciudad": "Punta Arenas",
+   "pais": "Chile",
+   "pasajeros12m": 642627,
+   "porMes": [
+    79560,
+    75729,
+    65638,
+    43729,
+    37664,
+    34976,
+    38309,
+    35069,
+    45822,
+    55718,
+    58359,
+    72054
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "DAP",
+    "JetSMART"
+   ]
+  },
+  "REC": {
+   "ciudad": "Recife",
+   "pais": "Brasil",
+   "pasajeros12m": 21245,
+   "porMes": [
+    1456,
+    1214,
+    1061,
+    1047,
+    1303,
+    2578,
+    3986,
+    3835,
+    1145,
+    1356,
+    1093,
+    1171
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "RGL": {
+   "ciudad": "Rio Gallegos",
+   "pais": "Argentina",
+   "pasajeros12m": 4,
+   "porMes": [
+    0,
+    3,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "ROS": {
+   "ciudad": "Rosario",
+   "pais": "Argentina",
+   "pasajeros12m": 60,
+   "porMes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    60,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "Aerolíneas Argentinas"
+   ]
+  },
+  "SCPE": {
+   "ciudad": "San Pedro De Atacama",
+   "pais": "Chile",
+   "pasajeros12m": 20,
+   "porMes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    4,
+    16
+   ],
+   "operadores": [
+    "DAP"
+   ]
+  },
+  "SDQ": {
+   "ciudad": "Santo Domingo",
+   "pais": "Rep. Dominicana",
+   "pasajeros12m": 50,
+   "porMes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    50,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "SKY"
+   ]
+  },
+  "SSA": {
+   "ciudad": "Salvador",
+   "pais": "Brasil",
+   "pasajeros12m": 14113,
+   "porMes": [
+    1851,
+    3331,
+    1279,
+    364,
+    389,
+    999,
+    909,
+    641,
+    725,
+    577,
+    993,
+    2055
+   ],
+   "operadores": [
+    "SKY"
+   ]
+  },
+  "SYD": {
+   "ciudad": "Sydney",
+   "pais": "Australia",
+   "pasajeros12m": 259213,
+   "porMes": [
+    26286,
+    22894,
+    26762,
+    25777,
+    21142,
+    18684,
+    20136,
+    18292,
+    17868,
+    18027,
+    21271,
+    22074
+   ],
+   "operadores": [
+    "LATAM",
+    "Qantas"
+   ]
+  },
+  "TRU": {
+   "ciudad": "Trujillo",
+   "pais": "Peru",
+   "pasajeros12m": 52189,
+   "porMes": [
+    6847,
+    5249,
+    5566,
+    4304,
+    3857,
+    4022,
+    4266,
+    3577,
+    2282,
+    3463,
+    3261,
+    5495
+   ],
+   "operadores": [
+    "JetSMART"
+   ]
+  },
+  "UAQ": {
+   "ciudad": "San Juan",
+   "pais": "Argentina",
+   "pasajeros12m": 1,
+   "porMes": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "DAP"
+   ]
+  },
+  "USH": {
+   "ciudad": "Ushuaia",
+   "pais": "Argentina",
+   "pasajeros12m": 4634,
+   "porMes": [
+    1459,
+    245,
+    127,
+    0,
+    0,
+    0,
+    0,
+    0,
+    8,
+    358,
+    1052,
+    1385
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "VCP": {
+   "ciudad": "Sao Paulo",
+   "pais": "Brasil",
+   "pasajeros12m": 265,
+   "porMes": [
+    0,
+    125,
+    140,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "operadores": [
+    "LATAM"
+   ]
+  },
+  "VVI": {
+   "ciudad": "Santa Cruz",
+   "pais": "Bolivia",
+   "pasajeros12m": 35665,
+   "porMes": [
+    3118,
+    3090,
+    2803,
+    2744,
+    2583,
+    3252,
+    4192,
+    3841,
+    2248,
+    2311,
+    2749,
+    2734
+   ],
+   "operadores": [
+    "LATAM",
+    "BoA",
+    "SKY"
+   ]
+  },
+  "WPU": {
+   "ciudad": "Puerto Williams",
+   "pais": "Chile",
+   "pasajeros12m": 5515,
+   "porMes": [
+    0,
+    590,
+    762,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    732,
+    1410,
+    2021
+   ],
+   "operadores": [
+    "DAP"
+   ]
+  },
+  "YUL": {
+   "ciudad": "Montreal",
+   "pais": "Canada",
+   "pasajeros12m": 16035,
+   "porMes": [
+    6166,
+    5522,
+    1202,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3145
+   ],
+   "operadores": [
+    "Air Canada"
+   ]
+  },
+  "YYZ": {
+   "ciudad": "Toronto",
+   "pais": "Canada",
+   "pasajeros12m": 56226,
+   "porMes": [
+    11284,
+    11166,
+    10422,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1860,
+    9606,
+    11888
+   ],
+   "operadores": [
+    "Air Canada"
+   ]
+  },
+  "ZAL": {
+   "ciudad": "Valdivia",
+   "pais": "Chile",
+   "pasajeros12m": 274759,
+   "porMes": [
+    32424,
+    35903,
+    19357,
+    15553,
+    16354,
+    15589,
+    14541,
+    16157,
+    26436,
+    31521,
+    23955,
+    26969
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY"
+   ]
+  },
+  "ZCO": {
+   "ciudad": "Temuco",
+   "pais": "Chile",
+   "pasajeros12m": 950580,
+   "porMes": [
+    102104,
+    100484,
+    82036,
+    66896,
+    68159,
+    71276,
+    76172,
+    72271,
+    76399,
+    82254,
+    69126,
+    83403
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY",
+    "JetSMART"
+   ]
+  },
+  "ZOS": {
+   "ciudad": "Osorno",
+   "pais": "Chile",
+   "pasajeros12m": 265778,
+   "porMes": [
+    31085,
+    32189,
+    27872,
+    18372,
+    18242,
+    14982,
+    17433,
+    15707,
+    19082,
+    26555,
+    20377,
+    23882
+   ],
+   "operadores": [
+    "LATAM",
+    "SKY"
+   ]
+  }
+ }
+}

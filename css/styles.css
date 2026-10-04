@@ -242,3 +242,8 @@ a{color:inherit}
 .origen{margin:0 0 18px}
 .nota-origen{font-size:14px;color:var(--suave);margin:8px 0 0;line-height:1.45}
 .nota-origen.aviso{color:var(--texto);padding:10px 12px;border-left:4px solid var(--amarillo);background:var(--panel)}
+
+/* Ruta según la JAC */
+.ruta-nota{margin:12px 0 0;font-size:15px;line-height:1.45;color:var(--suave)}
+.ruta-nota b{color:var(--texto)}
+.ruta-nota .src{font-size:13px}

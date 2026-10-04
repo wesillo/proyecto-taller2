@@ -99,6 +99,9 @@ function mesesTxt(meses) {
   return cap(partes.join(" y "));
 }
 
+// Meses elegidos en que la ruta directa desde Santiago no opera (según la JAC)
+const mesesSinDirecto = (d, r) => (d.directoJac ? mesesDe(r).filter((m) => !d.directoJac.mesesConVuelo.includes(m)) : []);
+
 /*
  * Pesos del puntaje (máximo teórico: 103 puntos)
  *   Tipo de experiencia   40
@@ -166,6 +169,9 @@ function razones(d, r, coincidencias) {
   }
   if (r.estilo === "sorpresa" && d.popularidad <= 2) out.push("Es un destino poco masificado.");
   if (r.horas && d.horasVuelo <= r.horas && r.horas < 99) out.push(`${horasTxt(d.horasVuelo)} de vuelo, dentro de lo que aguantas.`);
+  // Vuelo directo según la JAC, solo si opera en los meses elegidos (o si no eligió meses)
+  const jac = d.directoJac;
+  if (jac && r.pais === "CL" && mesesDe(r).every((m) => jac.mesesConVuelo.includes(m))) out.push("Hay vuelo directo desde Santiago, sin escalas.");
   return out.slice(0, 5);
 }
 
@@ -199,5 +205,5 @@ function recomendar(destinos, r) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PASOS_MONTO, MONTO_SIN_TOPE, precioPasaje, pasajeCalza, montoTxt, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
+  module.exports = { mesesSinDirecto, MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PASOS_MONTO, MONTO_SIN_TOPE, precioPasaje, pasajeCalza, montoTxt, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
 }

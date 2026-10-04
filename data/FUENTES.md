@@ -12,6 +12,7 @@ En vez de consultar visas, clima o precios en vivo (lo que requiere APIs pagadas
 | Horas de vuelo y aeropuertos | 365 días | Cambian con rutas nuevas |
 | Indicadores país (Banco Mundial) | 365 días | Se publican una vez al año |
 | Precios de pasajes (Google Flights) | 90 días | Cambian a diario; sirven para comparar destinos |
+| Rutas directas (JAC) | 365 días | La JAC publica mes a mes |
 | Clima mensual | 3650 días | Son promedios de 30 años |
 
 ## De dónde sale cada campo
@@ -153,3 +154,13 @@ La verificación encontró errores en la base anterior, ya corregidos:
 El gasto diario es una estimación del equipo: $20.000 + $100.000 × nivel de precios del país (Banco Mundial, PPA / tipo de cambio). Para destinos donde lo caro es una experiencia que se paga aparte (Antártica, Bután, Galápagos, safaris, Ruanda, Maldivas, Seychelles) se usa un piso diario más alto, con el motivo indicado en `scripts/construir-catalogo.js`.
 
 **Horas de vuelo:** cuando la duración del itinerario más rápido de Google Flights está entre 0,6 y 1,6 veces la estimación editorial, se usa la de Google Flights. Si difiere más (itinerarios raros esa semana o destinos cuya estimación incluía un tramo por tierra), se mantiene la editorial; `npm run catalogo` lista esos 17 casos para revisarlos.
+
+## Rutas directas desde Santiago (JAC)
+
+**Fuente:** Junta de Aeronáutica Civil, *Tráfico Aéreo Mensual* ([datos.gob.cl](https://datos.gob.cl/dataset/trafico-aereo)), capturado el 2026-10-04. Archivo: `data/fuentes/jac-rutas.json`.
+
+- **Qué se tomó:** pasajeros transportados en vuelos directos entre Santiago (SCL) y cada ciudad, sumando ambos sentidos y todas las aerolíneas, de septiembre de 2025 a agosto de 2026 (los últimos 12 meses publicados), mes a mes y con las aerolíneas que operan. Son 80 ciudades.
+- **Cómo se usa:** una ruta es **directa regular** si en 12 meses tuvo al menos 3.000 pasajeros y vuelos en 3 meses o más (un mes cuenta si tuvo al menos 200 pasajeros y el 10% del mes más alto). Así se descartan vuelos ocasionales o chárter. La **temporada alta** son los meses con 85% o más del mes más alto (hasta 4), solo en rutas claramente estacionales.
+- **En la app:** 56 destinos del catálogo tienen ruta directa regular (6 solo en temporada, como Bariloche, El Calafate, Ushuaia, Toronto y Montreal). El resultado muestra si el vuelo es directo todo el año o en qué meses, cuántos pasajeros vuelan la ruta y si el mes elegido es temporada alta; avisa cuando en los meses elegidos no hay vuelo directo.
+- **Ciudades con más de un aeropuerto:** Buenos Aires suma Aeroparque (AEP) y Ezeiza (EZE); São Paulo suma Guarulhos (GRU) y Viracopos (VCP); para las Cataratas del Iguazú se usa el aeropuerto brasileño (IGU), que es el que tiene vuelo directo desde Santiago.
+- **Vigencia:** 365 días. La JAC publica el archivo cada mes, así que se puede actualizar repitiendo el cálculo.

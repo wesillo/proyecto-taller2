@@ -358,6 +358,29 @@ const enlace = (url, texto) => (url ? `<a href="${esc(url)}" target="_blank" rel
 const redondear = (n) => String(Math.abs(n) >= 10 ? Math.round(n) : Math.round(n * 10) / 10).replace(".", ",");
 
 /* ---------- Resultado ---------- */
+// Directo o con escalas: la JAC dice si hay ruta directa regular; si no, la foto de Google Flights
+function subVuelo(d) {
+  const j = d.directoJac;
+  let t = "";
+  if (j) t = j.todoElAnio ? "directo todo el año" : `directo de ${mesesTxt(j.mesesConVuelo).toLowerCase()}`;
+  else if (d.pasaje) t = d.pasaje.directo ? "hay vuelo directo" : d.pasaje.escalas === 1 ? "con 1 escala" : d.pasaje.escalas && d.pasaje.escalas < 9 ? `con ${d.pasaje.escalas} escalas` : "con escalas";
+  return t ? `<small class="v-sub">${t}</small>` : "";
+}
+
+// La ruta según la JAC: cuánta gente vuela directo desde Santiago y cuándo hay más demanda
+function notaRuta(d, r) {
+  const j = d.directoJac;
+  if (!j || r.pais !== "CL") return "";
+  const miles = j.pasajeros12m >= 1000000 ? `${String(Math.round(j.pasajeros12m / 100000) / 10).replace(".", ",")} millones de` : j.pasajeros12m >= 1000 ? `${Math.round(j.pasajeros12m / 1000).toLocaleString("es-CL")} mil` : j.pasajeros12m;
+  const elegidosAltos = mesesDe(r).filter((m) => j.temporadaAlta.includes(m));
+  const alta = j.temporadaAlta.length
+    ? elegidosAltos.length
+      ? ` ${cap(listaTxt(elegidosAltos.map((m) => MESES[m - 1])))} ${elegidosAltos.length > 1 ? "son" : "es"} temporada alta de la ruta: los pasajes suelen subir y conviene comprar con anticipación.`
+      : ` La temporada alta de la ruta es ${j.temporadaAlta.length === 1 ? MESES[j.temporadaAlta[0] - 1] : mesesTxt(j.temporadaAlta).toLowerCase()}.`
+    : "";
+  return `<p class="ruta-nota"><b>Ruta directa Santiago–${esc(j.ciudad || d.nombre)}:</b> ${miles} pasajeros en los últimos 12 meses, con ${esc(listaTxt(j.operadores))}.${alta} <span class="src">Fuente: JAC.</span></p>`;
+}
+
 function bloqueIngreso(d, r) {
   const ing = d.ingreso;
   if (!ing || d.codigoPais === r.pais) return "";
@@ -402,6 +425,7 @@ function bloqueFuentes(d) {
       ${u ? `<li><b>Distancia:</b> ${u.distanciaKmDesdeSantiago.toLocaleString("es-CL")} km desde Santiago, calculada con las coordenadas del aeropuerto ${esc(d.aeropuerto)} (OurAirports).</li>` : ""}
       ${d.ingreso && d.ingreso.fuenteUrl ? `<li><b>Requisitos de entrada:</b> ${enlace(d.ingreso.fuenteUrl, d.ingreso.fuenteNombre)}, verificado el ${fechaTxt(d.ingreso.fecha)}.</li>` : ""}
       ${d.pasaje ? `<li><b>Pasaje:</b> tarifa típica ida y vuelta desde Santiago ~${montoTxt(d.pasaje.tipicoCLP)} (temporada baja ~${montoTxt(d.pasaje.bajaCLP || d.pasaje.tipicoCLP)}, alta ~${montoTxt(d.pasaje.altaCLP || d.pasaje.tipicoCLP)}), según ${enlace("https://www.google.com/travel/flights", "Google Flights")} el ${fechaTxt(d.pasaje.fecha)}. Precios para 1 adulto en clase económica; cambian a diario.</li>` : `<li><b>Pasaje:</b> estimado según las horas de vuelo (no encontramos precio publicado).</li>`}
+      ${d.directoJac ? `<li><b>Ruta directa:</b> pasajeros entre Santiago y ${esc(d.directoJac.aeropuertoJac)}, ${d.directoJac.periodo.desde} a ${d.directoJac.periodo.hasta}, según la ${enlace("https://datos.gob.cl/dataset/trafico-aereo", "Junta de Aeronáutica Civil (Tráfico Aéreo Mensual)")}.</li>` : ""}
       <li><b>Ritmo, popularidad, tipo de experiencia y pros/contras:</b> estimación editorial del equipo.</li>
     </ul>
     ${corte.fechaCorte ? `<p class="src">Corte de datos del catálogo: ${fechaTxt(corte.fechaCorte)}.</p>` : ""}
@@ -475,7 +499,7 @@ function renderResultado(animar = true) {
   <dl class="fields">
     <div class="field"><dt class="k">Mejor época</dt><dd class="v">${mesesTxt(d.meses)}</dd></div>
     ${r.pais === "CL"
-      ? `<div class="field"><dt class="k">Vuelo desde Santiago</dt><dd class="v">${horasTxt(d.horasVuelo)}${d.pasaje ? `<small class="v-sub">${d.pasaje.directo ? "hay vuelo directo" : d.pasaje.escalas === 1 ? "con 1 escala" : d.pasaje.escalas < 9 ? `con ${d.pasaje.escalas} escalas` : "con escalas"}</small>` : ""}</dd></div>`
+      ? `<div class="field"><dt class="k">Vuelo desde Santiago</dt><dd class="v">${horasTxt(d.horasVuelo)}${subVuelo(d)}</dd></div>`
       : `<div class="field"><dt class="k">Región</dt><dd class="v">${esc(d.region)}</dd></div>`}
     <div class="field"><dt class="k">Clima</dt><dd class="v">${esc(d.clima)}</dd></div>
     ${campoClima(d, r)}
@@ -483,6 +507,7 @@ function renderResultado(animar = true) {
 ${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</dt><dd class="v">~${montoTxt(precioPasaje(d))}<small class="v-sub">${d.pasaje ? `precio típico, Google Flights` : "estimado"}</small></dd></div>` : ""}
     <div class="field"><dt class="k">Ideal para</dt><dd class="v">${cap(listaTxt([...d.idealPara].map((c) => CON_QUIEN[c])))}</dd></div>
   </dl>
+  ${notaRuta(d, r)}
 
   ${total > 1 ? `<div class="section alts">
     <h3>${estado.elegido === 0 ? "También podría gustarte" : "Tus otras opciones"}</h3>
@@ -498,6 +523,7 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</d
   ${r.pais !== "CL" ? `<p class="warnbox">Resultado referencial: en este prototipo los vuelos, precios y visas están calculados para quien sale desde Chile.</p>` : ""}
   ${estado.sinCandidatos ? `<p class="warnbox">Todavía no tenemos destinos cargados para esa opción, así que te mostramos el mejor match en todo el catálogo.</p>` : ""}
   ${r.monto && !pasajeCalza(d, r) ? `<p class="warnbox">El pasaje sale ~${montoTxt(precioPasaje(d))} ida y vuelta, sobre tu presupuesto de ${montoTxt(r.monto)}. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
+  ${mesesSinDirecto(d, r).length && r.pais === "CL" ? `<p class="warnbox">En ${listaTxt(mesesSinDirecto(d, r).map((m) => MESES[m - 1]))} no hay vuelo directo desde Santiago (la ruta opera de ${mesesTxt(d.directoJac.mesesConVuelo).toLowerCase()}, según la JAC). Tendrías que volar con escala.</p>` : ""}
   ${excedeHoras ? `<p class="warnbox">Este destino supera las horas de vuelo que marcaste. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
   ${sinPasaporte ? `<p class="warnbox">Para este destino necesitas pasaporte. En Chile se tramita en el Registro Civil; considera el tiempo de espera antes de comprar.</p>` : ""}
   ${r.edad === "menor" && !nacional ? `<p class="warnbox">Si eres menor de edad y no viajas con ambos padres, necesitas una autorización notarial para salir de Chile.</p>` : ""}

@@ -7,4 +7,5 @@ _site/
 # Archivos de prueba locales
 *.png
 !docs/capturas/*.png
+!docs/afiche/*.png
 datos.csv

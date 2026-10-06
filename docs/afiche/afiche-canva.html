@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Afiche Fly4ward 50x70</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#6FB1E3;--amarillo:#FFD33F;--rosa:#F6A8D0;--rojo:#FF3B3C;--negro:#111111;--blanco:#FFFFFF;--borde:6.0px;--sombra:15.1px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{margin:0;background:#6FB1E3}
+.page{width:1890.0px;height:2646.0px;background:var(--azul);color:var(--negro);font-family:"Quicksand",sans-serif;font-weight:600;padding:90.7px 98.3px 98.3px;display:flex;flex-direction:column;gap:45.4px;overflow:hidden}
+.titulo{font-family:"Archivo Black",sans-serif;font-weight:400;letter-spacing:-.01em;line-height:1.02}
+.card{border:var(--borde) solid var(--negro);border-radius:26.5px;box-shadow:var(--sombra) var(--sombra) 0 var(--negro);padding:41.6px 45.4px}
+.chip{display:inline-block;border:4.2px solid var(--negro);border-radius:999px;padding:8.3px 22.7px;font-weight:700;font-size:28.7px;line-height:1.1;background:var(--blanco)}
+
+/* Portada */
+.hero{display:flex;gap:60.5px;align-items:stretch;flex:0 0 auto}
+.hero-txt{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
+.etiqueta{align-self:flex-start;background:var(--negro);color:var(--blanco);font-weight:700;font-size:28.0px;letter-spacing:.04em;padding:9.1px 20.8px;border-radius:7.6px}
+.marca{font-size:151.2px;margin:18.9px 0 15.1px;line-height:.92;letter-spacing:-.005em}
+.lema{font-size:42.3px;line-height:1.3;font-weight:600;max-width:907.2px}
+.chips{display:flex;flex-wrap:wrap;gap:15.1px;margin-top:26.5px}
+.chips .amarillo{background:var(--amarillo)}.chips .rosa{background:var(--rosa)}
+.hero-img{flex:0 0 567.0px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.marco{width:536.8px;height:627.5px;border:var(--borde) solid var(--negro);border-radius:26.5px;box-shadow:var(--sombra) var(--sombra) 0 var(--negro);transform:rotate(3deg);overflow:hidden;background:#EAECEB}
+.marco img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.pie{font-size:24.9px;font-weight:700;margin-top:26.5px}
+
+/* Problema + cómo funciona */
+.medio{display:flex;gap:45.4px;flex:1 1 auto;min-height:0}
+.problema{background:var(--blanco);flex:0 0 774.9px;display:flex;flex-direction:column}
+.problema h2{font-size:58.6px;margin-bottom:18.9px}
+.problema p{font-size:29.9px;line-height:1.38}
+.stats{display:flex;flex-direction:column;gap:26.5px;margin-top:auto;padding-top:26.5px}
+.stat-top{display:flex;align-items:flex-end;gap:18.9px}
+.pct{font-family:"Archivo Black",sans-serif;color:var(--rojo);font-size:102.1px;line-height:.9;letter-spacing:-.01em}
+.stat-lbl{font-size:30.2px;line-height:1.2;font-weight:700;padding-bottom:5.7px}
+.barra{height:32.1px;border:4.5px solid var(--negro);border-radius:999px;margin-top:15.1px;overflow:hidden;background:var(--blanco)}
+.barra i{display:block;height:100%}
+.pasos{background:var(--negro);color:var(--blanco);flex:1 1 auto;display:flex;flex-direction:column}
+.pasos h2{color:var(--amarillo);font-size:64.3px;margin-bottom:30.2px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:34.0px 34.0px;flex:1 1 auto;align-content:space-evenly}
+.circ{width:71.8px;height:71.8px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:37.8px;color:var(--negro);margin-bottom:15.1px}
+.paso h3{font-weight:600;font-size:37.8px;margin-bottom:9.4px}
+.paso p{font-size:27.6px;line-height:1.36;font-weight:500;color:#EDEDED}
+
+/* Competencia */
+.compe{display:flex;gap:45.4px;flex:0 0 auto}
+.existe{background:var(--blanco);flex:0 0 604.8px}
+.existe h2{font-size:47.2px;margin-bottom:22.7px}
+.existe .chips{margin-top:0;gap:13.2px}
+.existe .chip{font-size:26.5px;padding:7.6px 18.9px}
+.nadie{background:var(--amarillo);flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
+.nadie h2{font-size:52.9px;margin-bottom:18.9px}
+.nadie p{font-size:32.5px;line-height:1.38;font-weight:700}
+
+/* Validación */
+.valid{background:var(--rosa);flex:0 0 auto}
+.valid h2{font-size:56.7px;margin-bottom:26.5px}
+.cajas{display:grid;grid-template-columns:repeat(3,1fr);gap:34.0px}
+.caja{background:var(--blanco);border:var(--borde) solid var(--negro);border-radius:18.9px;padding:26.5px 22.7px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.caja b{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:90.7px;line-height:1;display:block}
+.caja b.min{font-size:71.8px;line-height:1.05}
+.caja span{font-size:28.0px;line-height:1.3;font-weight:700;margin-top:11.3px;display:block}
+.valid .nota{font-size:30.2px;font-weight:700;margin-top:26.5px}
+</style>
+</head>
+<body>
+<div class="page" data-document-role="page" data-label="Afiche Fly4ward 50x70">
+  <section class="hero">
+    <div class="hero-txt">
+      <span class="etiqueta">GRUPO 4WARD · TRANSPORTE AÉREO</span>
+      <h1 class="titulo marca">FLY4WARD</h1>
+      <p class="lema">Un solo destino, hecho a tu medida.<br>Sin listas infinitas, sin comparar 20 pestañas.</p>
+      <div class="chips"><span class="chip amarillo">Gratis</span><span class="chip rosa">Sin descarga</span><span class="chip">Para cualquier pasajero</span></div>
+    </div>
+    <div class="hero-img">
+      <div class="marco"><img src="https://cdn.jsdelivr.net/gh/wesillo/proyecto-taller2@main/docs/afiche/app.png" alt="Pantalla de resultado de Fly4ward"></div>
+      <p class="pie">Así se ve tu destino en la app</p>
+    </div>
+  </section>
+
+  <section class="medio">
+    <div class="card problema">
+      <h2 class="titulo">Tantas opciones, ninguna certeza</h2>
+      <p>Hoy el pasajero no sabe a dónde ir: la información está fragmentada y la inseguridad no baja hasta conocer el destino. Lo vimos en entrevistas en el aeropuerto, encuestas a pasajeros primerizos y experimentados, un design sprint y una feria.</p>
+      <div class="stats">
+        <div><div class="stat-top"><span class="pct">63%</span><span class="stat-lbl">compara 3 o más opciones</span></div><div class="barra"><i style="width:63%;background:var(--azul)"></i></div></div>
+        <div><div class="stat-top"><span class="pct">49%</span><span class="stat-lbl">termina estresado o eligiendo cualquiera</span></div><div class="barra"><i style="width:49%;background:var(--rosa)"></i></div></div>
+      </div>
+    </div>
+    <div class="card pasos">
+      <h2 class="titulo">11 preguntas y listo</h2>
+      <div class="grid">
+        <div class="paso"><div class="circ" style="background:var(--amarillo)">1</div><h3>Respondes</h3><p>Presupuesto, tipo de viaje, ritmo, con quién, mes, horas de vuelo y visa.</p></div>
+        <div class="paso"><div class="circ" style="background:var(--azul)">2</div><h3>Cruzamos</h3><p>Tus respuestas contra 178 destinos en Chile y el mundo.</p></div>
+        <div class="paso"><div class="circ" style="background:var(--rosa)">3</div><h3>Recibes</h3><p>Un destino, por qué calza contigo y sus pros y contras concretos.</p></div>
+        <div class="paso"><div class="circ" style="background:var(--blanco)">4</div><h3>Compras</h3><p>Te llevamos a Google Flights o Skyscanner con la ruta lista.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compe">
+    <div class="card existe">
+      <h2 class="titulo">¿Y lo que ya existe?</h2>
+      <div class="chips"><span class="chip">Chatbot de KAYAK</span><span class="chip">Wanderlog</span><span class="chip">Inteliviaje</span><span class="chip">ChatGPT</span></div>
+    </div>
+    <div class="card nadie">
+      <h2 class="titulo">Lo que nadie más hace</h2>
+      <p>Una personalización que hoy nadie ofrece: cruzamos atributos específicos de cada pasajero con datos verificados.</p>
+    </div>
+  </section>
+
+  <section class="card valid">
+    <h2 class="titulo">Lo probamos con 80 pasajeros</h2>
+    <div class="cajas">
+      <div class="caja"><b>92%</b><span>iría (o tal vez) al destino recomendado</span></div>
+      <div class="caja"><b class="min">1 min 24 s</b><span>en promedio para decidir</span></div>
+      <div class="caja"><b>65%</b><span>presionó «Buscar vuelo en Google Flights»</span></div>
+    </div>
+    <p class="nota">Lo que más destaca: la rapidez y que te dé un destino exacto.</p>
+  </section>
+</div>
+</body>
+</html>

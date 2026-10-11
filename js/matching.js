@@ -74,6 +74,32 @@ const yaTienePermiso = (d, r) =>
 const faltaPasaporte = (d, r) =>
   (r.docs || []).includes("carnet") && d.codigoPais !== r.pais && !entraConCarnet(d);
 
+/*
+ * Continentes que puede preferir el usuario. Es una preferencia, no un filtro:
+ * los destinos del continente elegido suman puntos, pero si otro lugar calza
+ * mucho mejor igual puede aparecer (el resultado lo avisa).
+ */
+const CONTINENTES = {
+  sudamerica: { nombre: "Sudamérica", regiones: ["Sudamérica", "Antártica"] },
+  norteamerica: { nombre: "Norteamérica", regiones: ["Norteamérica"] },
+  centro_caribe: { nombre: "Centroamérica y el Caribe", regiones: ["Centroamérica", "Caribe"] },
+  europa: { nombre: "Europa", regiones: ["Europa"] },
+  asia: { nombre: "Asia y Medio Oriente", regiones: ["Asia"] },
+  africa: { nombre: "África", regiones: ["África"] },
+  oceania: { nombre: "Oceanía", regiones: ["Oceanía"] },
+};
+const continenteDe = (d) => Object.keys(CONTINENTES).find((k) => CONTINENTES[k].regiones.includes(d.region));
+// Continentes elegidos (vacío = sin preferencia o "me da lo mismo")
+const continentesDe = (r) => (r.continentes || []).filter((k) => CONTINENTES[k]);
+const enContinenteElegido = (d, r) => continentesDe(r).includes(continenteDe(d));
+// "Europa", "Europa o Asia y Medio Oriente", "África u Oceanía" (se eligen como alternativas, por eso "o")
+function continentesTxt(r) {
+  const n = continentesDe(r).map((k) => CONTINENTES[k].nombre);
+  if (n.length <= 1) return n.join("");
+  const ultimo = n[n.length - 1];
+  return `${n.slice(0, -1).join(", ")} ${/^h?o/i.test(ultimo) ? "u" : "o"} ${ultimo}`;
+}
+
 // Meses elegidos por el usuario (1 = enero ... 12 = diciembre). Vacío = "aún no lo sé".
 const mesesDe = (r) => (Array.isArray(r.meses) ? r.meses.filter((m) => m > 0).sort((a, b) => a - b) : r.mes ? [r.mes] : []);
 
@@ -103,17 +129,17 @@ function mesesTxt(meses) {
 const mesesSinDirecto = (d, r) => (d.directoJac ? mesesDe(r).filter((m) => !d.directoJac.mesesConVuelo.includes(m)) : []);
 
 /*
- * Pesos del puntaje (máximo teórico: 103 puntos)
+ * Pesos del puntaje (máximo teórico: 128 puntos)
  *   Tipo de experiencia   40
+ *   Continente            25  (si le da lo mismo, todos suman 25)
  *   Presupuesto           20
  *   Ritmo                 15
  *   Compañía              10
  *   Temporada             10
  *   Clásico / distinto     8
- *   Horas de vuelo        penaliza si excede lo que aguanta el usuario
  *   Visa                  penaliza si pidió "sin trámites"
  */
-const PUNTAJE_MAXIMO = 103;
+const PUNTAJE_MAXIMO = 128;
 
 function puntaje(d, r) {
   let s = 0;
@@ -142,7 +168,9 @@ function puntaje(d, r) {
   else if (r.estilo === "sorpresa") s += (8 * (5 - d.popularidad)) / 4;
   else s += 4;
 
-  if (r.horas && d.horasVuelo > r.horas) s -= 30 + (d.horasVuelo - r.horas);
+  // Si le da lo mismo, cualquier continente le cumple; si eligió, suma solo el continente elegido
+  if (!continentesDe(r).length || enContinenteElegido(d, r)) s += 25;
+
   if (r.visa === "ninguna" && d.visa !== "N" && d.codigoPais !== r.pais && !yaTienePermiso(d, r)) s -= 15;
   // Sin pasaporte: sacarlo toma tiempo, así que se prefieren destinos a los que se entra con carnet
   if (faltaPasaporte(d, r)) s -= r.visa === "ninguna" ? 25 : 12;
@@ -155,7 +183,9 @@ function razones(d, r, coincidencias) {
   const out = [];
   if (coincidencias.length) out.push(`Tiene lo que buscas: ${listaTxt(coincidencias.map((c) => c.toLowerCase()))}.`);
   if (r.alcance === "dentro") out.push(`Está dentro de ${pais[1]}, como pediste.`);
-  if (r.alcance === "fuera" && r.pais !== "XX") out.push(`Es fuera de ${pais[1]}, como pediste.`);
+  // Si eligió continente y calza, eso dice más que "es fuera de tu país"
+  if (enContinenteElegido(d, r) && d.codigoPais !== r.pais) out.push(`Está en ${CONTINENTES[continenteDe(d)].nombre}, como querías.`);
+  else if (r.alcance === "fuera" && r.pais !== "XX") out.push(`Es fuera de ${pais[1]}, como pediste.`);
   if (yaTienePermiso(d, r)) out.push(`Ya tienes ${DOCUMENTOS[r.docs.find((k) => DOCUMENTOS[k] && DOCUMENTOS[k].paises.includes(d.codigoPais))].nombre}, no necesitas trámites.`);
   else if ((r.docs || []).includes("carnet") && d.codigoPais !== r.pais && entraConCarnet(d)) out.push("Puedes entrar solo con tu carnet, sin pasaporte.");
   else if (r.visa && r.visa !== "da_igual" && d.visa === "N" && d.codigoPais !== r.pais) out.push("No necesitas visa con pasaporte chileno.");
@@ -168,7 +198,6 @@ function razones(d, r, coincidencias) {
     out.push(r.ritmo >= 4 ? "Tiene la actividad física que pediste." : r.ritmo <= 2 ? "Se disfruta sin apuro, a tu ritmo." : "Mezcla actividad y descanso.");
   }
   if (r.estilo === "sorpresa" && d.popularidad <= 2) out.push("Es un destino poco masificado.");
-  if (r.horas && d.horasVuelo <= r.horas && r.horas < 99) out.push(`${horasTxt(d.horasVuelo)} de vuelo, dentro de lo que aguantas.`);
   // Vuelo directo según la JAC, solo si opera en los meses elegidos (o si no eligió meses)
   const jac = d.directoJac;
   if (jac && r.pais === "CL" && mesesDe(r).every((m) => jac.mesesConVuelo.includes(m))) out.push("Hay vuelo directo desde Santiago, sin escalas.");
@@ -205,5 +234,5 @@ function recomendar(destinos, r) {
 }
 
 if (typeof module !== "undefined") {
-  module.exports = { mesesSinDirecto, MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PASOS_MONTO, MONTO_SIN_TOPE, precioPasaje, pasajeCalza, montoTxt, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
+  module.exports = { CONTINENTES, continenteDe, continentesDe, enContinenteElegido, continentesTxt, mesesSinDirecto, MESES, MESES_CORTOS, CON_QUIEN, PRESUPUESTO_TXT, PASOS_MONTO, MONTO_SIN_TOPE, precioPasaje, pasajeCalza, montoTxt, PAISES, PAISES_CON_CARNET, DOCUMENTOS, entraConCarnet, yaTienePermiso, faltaPasaporte, PUNTAJE_MAXIMO, mesesDe, cap, listaTxt, horasTxt, mesesTxt, paisDe, puntaje, razones, recomendar };
 }

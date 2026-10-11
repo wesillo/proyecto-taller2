@@ -22,6 +22,21 @@ const ORIGENES_CHILE = [["SCL", "Santiago"], ["CCP", "Concepción"], ["ANF", "An
 const PREGUNTAS = [
   { clave: "alcance", tipo: "alcance", titulo: "¿Dónde quieres viajar?" },
   {
+    // Preferencia, no filtro: el continente elegido suma puntos (ver puntaje en matching.js)
+    clave: "continentes", tipo: "multiple", max: 3, exclusiva: "da_igual", mostrar: (r) => r.alcance !== "dentro",
+    titulo: "¿Qué parte del mundo te llama más?", ayuda: "Elige hasta 3. Si otro lugar te calza mucho mejor, igual te lo mostramos.",
+    opciones: [
+      { v: "sudamerica", label: "Sudamérica", desc: "Incluye la Antártica" },
+      { v: "norteamerica", label: "Norteamérica", desc: "Estados Unidos, Canadá y México" },
+      { v: "centro_caribe", label: "Centroamérica y el Caribe", desc: "Costa Rica, Cuba, Punta Cana" },
+      { v: "europa", label: "Europa", desc: "España, Italia, los países nórdicos" },
+      { v: "asia", label: "Asia y Medio Oriente", desc: "Japón, Tailandia, Dubái" },
+      { v: "africa", label: "África", desc: "Marruecos, Egipto, safaris" },
+      { v: "oceania", label: "Oceanía", desc: "Australia, Nueva Zelanda, Tahití" },
+      { v: "da_igual", label: "Me da lo mismo", desc: "Lo que mejor me calce" },
+    ],
+  },
+  {
     clave: "tags", tipo: "multiple", max: 3, titulo: "¿Qué buscas en este viaje?", ayuda: "Elige hasta 3. Es lo que más pesa en la recomendación.",
     opciones: TIPOS.map(([v, desc]) => ({ v, label: v, desc })),
   },
@@ -58,15 +73,6 @@ const PREGUNTAS = [
     ],
   },
   { clave: "meses", tipo: "meses", exclusiva: 0, titulo: "¿En qué meses podrías viajar?", ayuda: "Elige uno o varios. Algunos destinos cambian mucho según la temporada." },
-  {
-    clave: "horas", tipo: "unica", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
-    titulo: "¿Cuántas horas de vuelo aguantas?", ayuda: "Aproximado desde Santiago, contando escalas.",
-    opciones: [
-      { v: 5, label: "Hasta 5 horas", desc: "Chile y países vecinos" },
-      { v: 12, label: "Hasta 12 horas", desc: "Sudamérica, Caribe y Norteamérica" },
-      { v: 99, label: "Lo que sea", desc: "Al otro lado del mundo si vale la pena" },
-    ],
-  },
   {
     clave: "docs", tipo: "multiple", mostrar: (r) => r.pais === "CL" && r.alcance !== "dentro",
     titulo: "¿Qué documentos de viaje ya tienes?", ayuda: "Marca todos los que tengas vigentes.",
@@ -117,7 +123,7 @@ function render() {
 function empezar() {
   estado.pantalla = "preguntas";
   estado.paso = 0;
-  estado.r = { tags: [], docs: [], meses: [], pais: estado.r.pais || "CL" };
+  estado.r = { tags: [], docs: [], meses: [], continentes: [], pais: estado.r.pais || "CL" };
   estado.inicio = Date.now(); // para medir cuánto tarda en decidir
   render();
   enfocarTitulo();
@@ -128,7 +134,7 @@ function empezar() {
 function notaOrigen() {
   const pais = paisDe(estado.r.pais || "CL");
   if (pais[0] === "CL") return `<p class="nota-origen" id="notaOrigen">Fly4ward está afinado para quienes viajan desde Chile: horas de vuelo, precios de pasajes y visas calculados desde Santiago.</p>`;
-  return `<p class="nota-origen aviso" id="notaOrigen"><b>Desde ${esc(pais[0] === "XX" ? "otros países" : pais[1])} los resultados son referenciales.</b> En este prototipo los vuelos, precios y visas están calculados para quien sale desde Chile: armar la red completa de todos los países es el siguiente paso. Por eso no te preguntaremos horas de vuelo, presupuesto del pasaje ni trámites.</p>`;
+  return `<p class="nota-origen aviso" id="notaOrigen"><b>Desde ${esc(pais[0] === "XX" ? "otros países" : pais[1])} los resultados son referenciales.</b> En este prototipo los vuelos, precios y visas están calculados para quien sale desde Chile: armar la red completa de todos los países es el siguiente paso. Por eso no te preguntaremos presupuesto del pasaje ni trámites.</p>`;
 }
 
 function renderInicio() {
@@ -292,15 +298,19 @@ function alcanceMonto(r) {
   let lista = DESTINOS.filter((d) => d.aeropuerto !== pais[2]);
   if (r.alcance === "dentro") lista = lista.filter((d) => d.codigoPais === r.pais);
   if (r.alcance === "fuera") lista = lista.filter((d) => d.codigoPais !== r.pais);
+  // Si eligió continentes, la pista cuenta solo esos (la pregunta va antes que el presupuesto)
+  const enContinente = lista.filter((d) => enContinenteElegido(d, r));
+  const donde = continentesDe(r).length && enContinente.length ? ` en ${esc(continentesTxt(r))}` : "";
+  if (donde) lista = enContinente;
   const alcanza = lista.filter((d) => pasajeCalza(d, r));
   // Ejemplos: lo más lejos que alcanza (los pasajes más cercanos al monto), priorizando los conocidos
   const ejemplos = [...alcanza].sort((a, b) => precioPasaje(b) - precioPasaje(a)).slice(0, 12)
     .sort((a, b) => b.popularidad - a.popularidad).slice(0, 3).map((d) => d.nombre);
   if (!alcanza.length) {
     const minimo = Math.min(...lista.map(precioPasaje));
-    return `<b>No alcanza para ningún pasaje</b><span>El más económico parte en ~${montoTxt(minimo)} ida y vuelta.</span>`;
+    return `<b>No alcanza para ningún pasaje${donde}</b><span>El más económico parte en ~${montoTxt(minimo)} ida y vuelta.</span>`;
   }
-  return `<b>Te alcanza el pasaje a ${alcanza.length === lista.length ? "todos los" : `${alcanza.length} de ${lista.length}`} destinos</b>${ejemplos.length ? `<span>Por ejemplo: ${ejemplos.map(esc).join(" / ")}</span>` : ""}`;
+  return `<b>Te alcanza el pasaje a ${alcanza.length === lista.length ? "todos los" : `${alcanza.length} de ${lista.length}`} destinos${donde}</b>${ejemplos.length ? `<span>Por ejemplo: ${ejemplos.map(esc).join(" / ")}</span>` : ""}`;
 }
 
 function elegir(p, valor) {
@@ -621,6 +631,17 @@ function girar(selector, { base = 350, paso = 160, ritmo = 55 } = {}) {
   });
 }
 
+// Por qué el destino no está en el continente que eligió (lo más común: el presupuesto no alcanza)
+function avisoContinente(d, r) {
+  const lista = esc(continentesTxt(r));
+  const enContinente = DESTINOS.filter((z) => enContinenteElegido(z, r) && z.codigoPais !== r.pais);
+  if (r.monto && enContinente.length && !enContinente.some((z) => pasajeCalza(z, r))) {
+    const minimo = Math.min(...enContinente.map(precioPasaje));
+    return `Los pasajes a ${lista} parten en ~${montoTxt(minimo)} ida y vuelta, sobre tu presupuesto de ${montoTxt(r.monto)}.${pasajeCalza(d, r) ? " Por eso te recomendamos este, que sí calza." : ""}`;
+  }
+  return `No está en ${lista}, pero es el que mejor te calza en todo lo demás.`;
+}
+
 function renderResultado(animar = true) {
   const x = estado.resultado[estado.elegido];
   const d = x.destino;
@@ -628,7 +649,7 @@ function renderResultado(animar = true) {
   const pais = paisActual();
   const nacional = d.codigoPais === r.pais;
   const total = estado.resultado.length;
-  const excedeHoras = !!r.horas && d.horasVuelo > r.horas;
+  const fueraDeContinente = continentesDe(r).length > 0 && !enContinenteElegido(d, r);
   
   const visaTexto = nacional ? "No aplica, es nacional"
     : r.pais !== "CL" ? "Revisa según tu pasaporte"
@@ -677,7 +698,7 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</d
   ${estado.sinCandidatos ? `<p class="warnbox">Todavía no tenemos destinos cargados para esa opción, así que te mostramos el mejor match en todo el catálogo.</p>` : ""}
   ${r.monto && !pasajeCalza(d, r) ? `<p class="warnbox">El pasaje sale ~${montoTxt(precioPasaje(d))} ida y vuelta, sobre tu presupuesto de ${montoTxt(r.monto)}. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
   ${mesesSinDirecto(d, r).length && r.pais === "CL" ? `<p class="warnbox">En ${listaTxt(mesesSinDirecto(d, r).map((m) => MESES[m - 1]))} no hay vuelo directo desde Santiago (la ruta opera de ${mesesTxt(d.directoJac.mesesConVuelo).toLowerCase()}, según la JAC). Tendrías que volar con escala.</p>` : ""}
-  ${excedeHoras ? `<p class="warnbox">Este destino supera las horas de vuelo que marcaste. Aparece porque calza muy bien en todo lo demás.</p>` : ""}
+  ${fueraDeContinente ? `<p class="warnbox">${avisoContinente(d, r)}</p>` : ""}
   ${sinPasaporte ? `<p class="warnbox">Para este destino necesitas pasaporte. En Chile se tramita en el Registro Civil; considera el tiempo de espera antes de comprar.</p>` : ""}
   ${r.edad === "menor" && !nacional ? `<p class="warnbox">Si eres menor de edad y no viajas con ambos padres, necesitas una autorización notarial para salir de Chile.</p>` : ""}
 

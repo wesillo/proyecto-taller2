@@ -20,7 +20,7 @@ Investigamos el transporte aéreo en Chile con entrevistas a pasajeros y operari
 
 ## La solución
 
-1. El usuario responde qué busca (presupuesto para el pasaje con una barra en pesos, tipo de experiencia, ritmo, con quién viaja, edad, mes, horas de vuelo, documentos que ya tiene y tolerancia a trámites).
+1. El usuario responde qué busca (presupuesto para el pasaje con una barra en pesos, tipo de experiencia, ritmo, con quién viaja, edad, mes, continente que prefiere, documentos que ya tiene y tolerancia a trámites).
 2. Un sistema de **matching por atributos** cruza esas respuestas con 193 destinos y elige el que mejor calza.
 3. Muestra **una recomendación** con las razones, pros y contras concretos.
 4. Le pregunta **"¿Irías a este destino?"** y, si no, por qué. Esa respuesta es la etiqueta con la que se entrenará el Machine Learning.
@@ -56,14 +56,15 @@ tests/                  pruebas automáticas del motor
 | Criterio | Puntos máximos |
 |---|---|
 | Tipo de experiencia (lo que más pesa) | 40 |
+| Continente que prefiere (si le da lo mismo, todos suman) | 25 |
 | Presupuesto | 20 |
 | Ritmo / actividad física | 15 |
 | Compañía de viaje | 10 |
 | Temporada | 10 |
 | Clásico o poco conocido | 8 |
-| Horas de vuelo, visa y pasaporte | Restan si no calzan |
+| Visa y pasaporte | Restan si no calzan |
 
-La edad **no** cambia el puntaje: se guarda como dato para el modelo y para avisar a menores de edad que necesitan autorización notarial. Si el usuario ya tiene la ESTA, la eTA de Canadá o la ETA del Reino Unido, esos destinos no se castigan por visa. Si solo tiene carnet, se priorizan los países a los que se entra sin pasaporte.
+El continente es una preferencia, no un filtro: si otro destino calza mucho mejor en todo lo demás, igual puede aparecer y el resultado lo avisa. La edad **no** cambia el puntaje: se guarda como dato para el modelo y para avisar a menores de edad que necesitan autorización notarial. Si el usuario ya tiene la ESTA, la eTA de Canadá o la ETA del Reino Unido, esos destinos no se castigan por visa. Si solo tiene carnet, se priorizan los países a los que se entra sin pasaporte.
 
 Los pesos están en `js/matching.js`. Si los cambian, corran `npm test` para verificar que todo sigue funcionando.
 

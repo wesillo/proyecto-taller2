@@ -2,7 +2,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const DESTINOS = require("../data/destinos.js");
-const { recomendar, mesesTxt, razones, puntaje, PAISES_CON_CARNET, montoTxt, precioPasaje, pasajeCalza, MONTO_SIN_TOPE } = require("../js/matching.js");
+const { recomendar, mesesTxt, razones, puntaje, PAISES_CON_CARNET, montoTxt, precioPasaje, pasajeCalza, MONTO_SIN_TOPE, CONTINENTES, continenteDe } = require("../js/matching.js");
 
 const TAGS_VALIDOS = ["Playa", "Cultura", "Aventura", "Naturaleza", "Relax", "Gastronomía", "Vida nocturna", "Compras", "Nieve"];
 
@@ -31,7 +31,7 @@ test("todos los destinos tienen los campos completos y válidos", () => {
 const base = { tags: ["Naturaleza", "Aventura"], presupuesto: 3, ritmo: 5, conQuien: "P", mes: 1, estilo: "da_igual", pais: "CL" };
 
 test("siempre devuelve hasta 3 recomendaciones con porcentaje entre 0 y 99", () => {
-  const { resultado } = recomendar(DESTINOS, { ...base, alcance: "da_igual", horas: 99, visa: "da_igual" });
+  const { resultado } = recomendar(DESTINOS, { ...base, alcance: "da_igual", visa: "da_igual" });
   assert.equal(resultado.length, 3);
   for (const x of resultado) assert.ok(x.porcentaje >= 0 && x.porcentaje <= 99);
 });
@@ -49,13 +49,31 @@ test("'fuera de Perú' nunca recomienda Perú y no repite país", () => {
   assert.equal(new Set(paises).size, paises.length);
 });
 
-test("respeta el límite de horas de vuelo cuando hay opciones que calzan", () => {
-  const { resultado } = recomendar(DESTINOS, { ...base, alcance: "fuera", horas: 5, visa: "ninguna" });
-  assert.ok(resultado[0].destino.horasVuelo <= 5);
+test("prioriza el continente elegido cuando hay opciones que calzan", () => {
+  for (const k of ["europa", "asia", "norteamerica"]) {
+    const r = { ...base, alcance: "fuera", visa: "da_igual", continentes: [k] };
+    const { resultado } = recomendar(DESTINOS, r);
+    assert.equal(continenteDe(resultado[0].destino), k, k);
+    assert.match(razones(resultado[0].destino, r, resultado[0].coincidencias).join(" "), /como querías/);
+  }
+});
+
+test("el continente es preferencia, no filtro: puede aparecer otro si calza mejor", () => {
+  const r = { ...base, alcance: "fuera", visa: "da_igual", continentes: ["oceania"] };
+  const { resultado } = recomendar(DESTINOS, r);
+  assert.equal(resultado.length, 3);
+  // Con "me da lo mismo" el puntaje de continente es igual para todos
+  const igual = recomendar(DESTINOS, { ...base, alcance: "fuera", visa: "da_igual", continentes: [] });
+  const todos = recomendar(DESTINOS, { ...base, alcance: "fuera", visa: "da_igual" });
+  assert.deepEqual(igual.resultado.map((x) => x.destino.nombre), todos.resultado.map((x) => x.destino.nombre));
+});
+
+test("todos los destinos pertenecen a algún continente de la pregunta", () => {
+  for (const d of DESTINOS) assert.ok(CONTINENTES[continenteDe(d)], `${d.nombre} (${d.region})`);
 });
 
 test("'sin trámites' prioriza destinos sin visa", () => {
-  const { resultado } = recomendar(DESTINOS, { ...base, tags: ["Cultura", "Compras"], alcance: "fuera", horas: 99, visa: "ninguna" });
+  const { resultado } = recomendar(DESTINOS, { ...base, tags: ["Cultura", "Compras"], alcance: "fuera", visa: "ninguna" });
   assert.equal(resultado[0].destino.visa, "N");
 });
 
@@ -72,14 +90,14 @@ test("mesesTxt agrupa rangos que cruzan el año", () => {
 });
 
 test("sin pasaporte: prioriza países a los que se entra con carnet", () => {
-  const base = { pais: "CL", alcance: "fuera", tags: ["Cultura", "Gastronomía"], presupuesto: 3, ritmo: 3, conQuien: "P", mes: 0, horas: 99, visa: "ninguna", estilo: "da_igual" };
+  const base = { pais: "CL", alcance: "fuera", tags: ["Cultura", "Gastronomía"], presupuesto: 3, ritmo: 3, conQuien: "P", mes: 0, visa: "ninguna", estilo: "da_igual" };
   const { resultado } = recomendar(DESTINOS, { ...base, docs: ["carnet"] });
   for (const x of resultado) assert.ok(PAISES_CON_CARNET.includes(x.destino.codigoPais), `${x.destino.nombre} pide pasaporte`);
 });
 
 test("si ya tiene la ESTA, Estados Unidos no se castiga por visa", () => {
   const ny = DESTINOS.find((d) => d.codigoPais === "US");
-  const r = { pais: "CL", alcance: "fuera", tags: ny.tags.slice(0, 2), presupuesto: 5, ritmo: 3, conQuien: "A", mes: 0, horas: 99, visa: "ninguna", estilo: "da_igual" };
+  const r = { pais: "CL", alcance: "fuera", tags: ny.tags.slice(0, 2), presupuesto: 5, ritmo: 3, conQuien: "A", mes: 0, visa: "ninguna", estilo: "da_igual" };
   const sin = puntaje(ny, { ...r, docs: ["pasaporte"] }).puntaje;
   const con = puntaje(ny, { ...r, docs: ["pasaporte", "esta"] }).puntaje;
   assert.equal(con - sin, 15);

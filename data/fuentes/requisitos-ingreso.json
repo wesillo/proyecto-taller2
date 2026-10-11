@@ -944,6 +944,21 @@
   "confianza": "alta",
   "fechaVerificacion": "2026-10-01"
  },
+ "MY": {
+  "codigo": "MY",
+  "pais": "Malasia",
+  "requisito": "sin_visa",
+  "texto": "Sin visa",
+  "soloCarnet": false,
+  "estadiaMaxDias": 30,
+  "costoUSD": null,
+  "notas": "Chile está en la lista de exención de visa por 30 días. Completar la Malaysia Digital Arrival Card (MDAC) online y gratis dentro de los 3 días antes de llegar.",
+  "fuenteNombre": "Departamento de Inmigración de Malasia (lista de exención de visa), vía Wikipedia",
+  "fuenteUrl": "https://en.wikipedia.org/wiki/Visa_policy_of_Malaysia",
+  "fuenteSecundariaUrl": "https://www.imi.gov.my/index.php/en/main-services/visa/visa-requirement-by-country/",
+  "confianza": "media",
+  "fechaVerificacion": "2026-10-11"
+ },
  "NA": {
   "codigo": "NA",
   "pais": "Namibia",

@@ -75,6 +75,14 @@
    "lon": -57.5192,
    "icao": "SGAS"
   },
+  "ATH": {
+   "nombre": "Athens Eleftherios Venizelos International Airport",
+   "ciudad": "Atenas",
+   "paisISO": "GR",
+   "lat": 37.936401,
+   "lon": 23.9445,
+   "icao": "LGAV"
+  },
   "AUA": {
    "nombre": "Queen Beatrix International Airport",
    "ciudad": "Oranjestad",
@@ -82,6 +90,14 @@
    "lat": 12.5011,
    "lon": -70.0143,
    "icao": "TNCA"
+  },
+  "AYQ": {
+   "nombre": "Ayers Rock Connellan Airport",
+   "ciudad": "Yulara",
+   "paisISO": "AU",
+   "lat": -25.185913,
+   "lon": 130.97703,
+   "icao": "YAYE"
   },
   "BBA": {
    "nombre": "Balmaceda Airport",
@@ -130,6 +146,14 @@
    "lat": 13.6811,
    "lon": 100.747,
    "icao": "VTBS"
+  },
+  "BOD": {
+   "nombre": "Bordeaux–Mérignac Airport",
+   "ciudad": "Burdeos",
+   "paisISO": "FR",
+   "lat": 44.82865,
+   "lon": -0.715356,
+   "icao": "LFBD"
   },
   "BOG": {
    "nombre": "El Dorado International Airport",
@@ -675,6 +699,14 @@
    "lon": 85.3591,
    "icao": "VNKT"
   },
+  "KUL": {
+   "nombre": "Kuala Lumpur International Airport",
+   "ciudad": "Kuala Lumpur",
+   "paisISO": "MY",
+   "lat": 2.74558,
+   "lon": 101.709999,
+   "icao": "WMKK"
+  },
   "LAS": {
    "nombre": "Harry Reid International Airport",
    "ciudad": "Las Vegas",
@@ -787,6 +819,14 @@
    "lon": 58.2853,
    "icao": "OOMS"
   },
+  "MCZ": {
+   "nombre": "Zumbi dos Palmares International Airport",
+   "ciudad": "Maceió",
+   "paisISO": "BR",
+   "lat": -9.512559,
+   "lon": -35.791839,
+   "icao": "SBMO"
+  },
   "MDE": {
    "nombre": "Jose Maria Córdova International Airport",
    "ciudad": "Medellín",
@@ -898,6 +938,14 @@
    "lat": -34.8356,
    "lon": -56.0265,
    "icao": "SUMU"
+  },
+  "MXP": {
+   "nombre": "Milan Malpensa International Airport",
+   "ciudad": "Milán",
+   "paisISO": "IT",
+   "lat": 45.6306,
+   "lon": 8.72811,
+   "icao": "LIMC"
   },
   "NAN": {
    "nombre": "Nadi International Airport",
@@ -1090,6 +1138,14 @@
    "lat": 13.3575,
    "lon": -81.358,
    "icao": "SKPV"
+  },
+  "PVR": {
+   "nombre": "Puerto Vallarta International Airport",
+   "ciudad": "Puerto Vallarta",
+   "paisISO": "MX",
+   "lat": 20.679913,
+   "lon": -105.254391,
+   "icao": "MMPR"
   },
   "RAK": {
    "nombre": "Marrakesh Menara Airport",

@@ -1445,6 +1445,76 @@
      "opcional": true
     }
    ]
+  },
+  "lago-de-como": {
+   "tramos": [
+    {
+     "modo": "tren",
+     "desde": "Milán",
+     "hasta": "Varenna (lago de Como)",
+     "horas": 1,
+     "nota": "Tren regional desde Milano Centrale; a Como San Giovanni hay trenes directos de ~40 min. Desde Malpensa a Milán, Malpensa Express (~50 min)"
+    }
+   ]
+  },
+  "uluru": {
+   "tramos": [
+    {
+     "modo": "bus",
+     "desde": "Yulara",
+     "hasta": "Uluru",
+     "horas": 0.3,
+     "nota": "Bus o tour desde el resort Ayers Rock; el aeropuerto queda al lado del resort"
+    }
+   ]
+  },
+  "atenas": {
+   "base": "Atenas",
+   "tramos": [
+    {
+     "grupo": "Para ir a las islas"
+    },
+    {
+     "modo": "barco",
+     "desde": "El Pireo",
+     "hasta": "Egina",
+     "horas": 1,
+     "nota": "Ferry rápido; también salen ferries a Mykonos y Santorini (5 a 8 h)",
+     "opcional": true
+    }
+   ]
+  },
+  "burdeos": {
+   "base": "Burdeos",
+   "tramos": [
+    {
+     "grupo": "Para recorrer los viñedos"
+    },
+    {
+     "modo": "tren",
+     "desde": "Burdeos",
+     "hasta": "Saint-Émilion",
+     "horas": 0.6,
+     "nota": "Tren regional; para los châteaux del Médoc conviene tour o auto",
+     "opcional": true
+    }
+   ]
+  },
+  "maceio": {
+   "base": "Maceió",
+   "tramos": [
+    {
+     "grupo": "Para playas más lejanas"
+    },
+    {
+     "modo": "auto",
+     "desde": "Maceió",
+     "hasta": "Maragogi",
+     "horas": 2.5,
+     "nota": "Transfer o tour; ahí están las piscinas naturales de Galés",
+     "opcional": true
+    }
+   ]
   }
  }
 }

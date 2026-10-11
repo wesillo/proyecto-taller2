@@ -202,6 +202,28 @@
    },
    "capturadoEl": "2026-10-04"
   },
+  "ATH": {
+   "ciudadGoogle": "Atenas",
+   "fechaCaptura": "2026-10-11",
+   "baja": {
+    "min": 1114090,
+    "tipico": 1140579,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1160,
+    "aerolinea": "LEVEL y Vueling",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1373229,
+    "tipico": 1396901,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1015,
+    "aerolinea": "Air Canada",
+    "resultados": 14
+   }
+  },
   "AUA": {
    "ciudadGoogle": "Aruba",
    "baja": {
@@ -221,6 +243,28 @@
     "duracionMin": 570,
     "aerolinea": "LATAM",
     "resultados": 12
+   }
+  },
+  "AYQ": {
+   "ciudadGoogle": "Uluru",
+   "fechaCaptura": "2026-10-11",
+   "baja": {
+    "min": 1982801,
+    "tipico": 1982801,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 2045,
+    "aerolinea": "LATAM y Qantas",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 3020552,
+    "tipico": 3044360,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1360,
+    "aerolinea": "LATAM, Jetstar y Qantas",
+    "resultados": 8
    }
   },
   "BBA": {
@@ -340,6 +384,28 @@
     "duracionMin": 1685,
     "aerolinea": "Iberia y Qatar Airways",
     "resultados": 12
+   }
+  },
+  "BOD": {
+   "ciudadGoogle": "Burdeos",
+   "fechaCaptura": "2026-10-11",
+   "baja": {
+    "min": 1078009,
+    "tipico": 1252964,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 945,
+    "aerolinea": "Iberia",
+    "resultados": 9
+   },
+   "alta": {
+    "min": 1718568,
+    "tipico": 2018123,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 945,
+    "aerolinea": "LATAM y KLM",
+    "resultados": 10
    }
   },
   "BOG": {
@@ -1633,6 +1699,28 @@
    "alta": null,
    "altaEstimadaCLP": 3035000.0
   },
+  "KUL": {
+   "ciudadGoogle": "Kuala Lumpur",
+   "fechaCaptura": "2026-10-11",
+   "baja": {
+    "min": 1672355,
+    "tipico": 1674921,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1570,
+    "aerolinea": "Iberia y Qatar Airways",
+    "resultados": 19
+   },
+   "alta": {
+    "min": 1652926,
+    "tipico": 2147673,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1570,
+    "aerolinea": "LATAM y Qatar Airways",
+    "resultados": 8
+   }
+  },
   "LAS": {
    "ciudadGoogle": "Las Vegas",
    "baja": {
@@ -1905,6 +1993,28 @@
    },
    "alta": null,
    "altaEstimadaCLP": 2266000.0
+  },
+  "MCZ": {
+   "ciudadGoogle": "Maceió",
+   "fechaCaptura": "2026-10-11",
+   "baja": {
+    "min": 557030,
+    "tipico": 576716,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 520,
+    "aerolinea": "LATAM",
+    "resultados": 8
+   },
+   "alta": {
+    "min": 555178,
+    "tipico": 603149,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 520,
+    "aerolinea": "LATAM",
+    "resultados": 9
+   }
   },
   "MDE": {
    "ciudadGoogle": "Medellín",
@@ -2184,6 +2294,28 @@
     "duracionMin": 133,
     "aerolinea": "LATAM",
     "resultados": 9
+   }
+  },
+  "MXP": {
+   "ciudadGoogle": "Milán",
+   "fechaCaptura": "2026-10-11",
+   "baja": {
+    "min": 900218,
+    "tipico": 1098555,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1000,
+    "aerolinea": "LATAM",
+    "resultados": 12
+   },
+   "alta": {
+    "min": 1615996,
+    "tipico": 1652259,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 1000,
+    "aerolinea": "Iberia y LATAM",
+    "resultados": 10
    }
   },
   "NAN": {
@@ -2581,6 +2713,28 @@
    "ciudadGoogle": "Isla de Providencia",
    "baja": null,
    "alta": null
+  },
+  "PVR": {
+   "ciudadGoogle": "Puerto Vallarta",
+   "fechaCaptura": "2026-10-11",
+   "baja": {
+    "min": 1054307,
+    "tipico": 1069274,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 750,
+    "aerolinea": "LATAM y Aeromexico",
+    "resultados": 11
+   },
+   "alta": {
+    "min": 1181695,
+    "tipico": 1436292,
+    "minDirecto": 0,
+    "escalasMin": 1,
+    "duracionMin": 759,
+    "aerolinea": "LATAM y Aeromexico",
+    "resultados": 10
+   }
   },
   "RAK": {
    "ciudadGoogle": "Marrakech",

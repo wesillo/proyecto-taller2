@@ -29,8 +29,8 @@ En vez de consultar visas, clima o precios en vivo (lo que requiere APIs pagadas
 
 ## Nivel de confianza
 
-- **Requisitos de ingreso** (90 países): 74 alta, 15 media, 1 baja. "Alta" = confirmado en fuente oficial el día del corte. Cuando no es alta, la app le pide al usuario confirmarlo antes de comprar.
-- **Clima** (193 destinos): 158 alta, 27 media, 8 baja. "Alta" = servicio meteorológico oficial o tabla que lo cita.
+- **Requisitos de ingreso** (92 países): 75 alta, 16 media, 1 baja. "Alta" = confirmado en fuente oficial el día del corte. Cuando no es alta, la app le pide al usuario confirmarlo antes de comprar.
+- **Clima** (200 destinos): 163 alta, 29 media, 8 baja. "Alta" = servicio meteorológico oficial o tabla que lo cita.
 
 ### Requisitos de ingreso con confianza media o baja (revisar primero)
 
@@ -51,12 +51,15 @@ En vez de consultar visas, clima o precios en vivo (lo que requiere APIs pagadas
 | Madagascar | e-Visa o visa a la llegada | media | Desde 16/02/2026: €30 hasta 15 días, €35 hasta 30, €40 hasta 60, €50 hasta 90. No se pudo abrir el portal oficial. |
 | Polinesia Francesa | Sin visa | media | Fuera de Schengen, régimen propio: exentos hasta 3 meses cada 6. Lista oficial (Anexo II arrêté 2011) no accesible para confirmar Chile. |
 | Seychelles | Autorización de viaje online | media | Travel Authorisation obligatoria antes de viajar, solo en seychelles.govtas.com (€10 estándar). Permiso de visitante gratis hasta 3 meses. |
+| Malasia | Sin visa | media | Chile en la lista de exención de 30 días (lista del Departamento de Inmigración, vía Wikipedia; el sitio oficial no cargó para confirmarlo). MDAC online gratis dentro de los 3 días antes de llegar. |
 | Uruguay | Sin visa (sirve cédula) | media | Cédula vigente basta. Estadía de 90 días es referencial: no se halló el plazo en una fuente oficial uruguaya. |
 
 ### Clima con confianza media o baja
 
 | Destino | Lugar de referencia | Confianza |
 |---|---|---|
+| Milán y lago de Como | Como, Italia (tabla sin fuente detallada, valores redondeados) | media |
+| Puerto Vallarta | Puerto Vallarta, Jalisco, México (período no indicado) | media |
 | San Pedro de Atacama | San Pedro de Atacama, Chile | media |
 | Chiloé | Castro, Chiloé, Chile | media |
 | Pucón | Pucón, Chile (valores modelados; la estación DMC Pucón Aeródromo no publica normales) | baja |
@@ -141,7 +144,7 @@ La verificación encontró errores en la base anterior, ya corregidos:
 
 ## Precios de pasajes y costo estimado de la semana
 
-**Foto capturada el 2026-10-04** en Vuelos de Google (Google Flights), archivo `data/fuentes/precios-vuelos.json`.
+**Foto capturada el 2026-10-04** (y el 2026-10-11 para los 7 destinos agregados ese día, con la misma metodología y las mismas semanas) en Vuelos de Google (Google Flights), archivo `data/fuentes/precios-vuelos.json`.
 
 - **Qué se consultó:** ida y vuelta desde Santiago (SCL) a cada uno de los 183 aeropuertos del catálogo (los 12 de los destinos agregados el mismo día con la misma metodología), 1 adulto, clase económica, en pesos chilenos, para dos semanas: temporada baja (16 al 23 de noviembre de 2026) y alta (11 al 18 de enero de 2027).
 - **Qué se guardó por aeropuerto y temporada:** tarifa más baja, tarifa "típica" (mediana de las 5 más bajas, con tope de 1,5 veces la mínima para que un vuelo raro no la infle), si hay vuelo directo, mínimo de escalas, duración del itinerario más rápido (solo ida) y aerolínea principal.
@@ -194,3 +197,11 @@ Se agregaron tres tipos de experiencia, con el mismo criterio editorial que los 
 | Cielos y estrellas | 11 | Astroturismo o auroras como atractivo propio: observatorios y cielos certificados (Atacama, Elqui, Teide en Tenerife, NamibRand cerca de Sossusvlei), auroras boreales (Rovaniemi, Islandia) o desiertos de cielo limpio (Uyuni, Gobi, Wadi Rum). |
 
 Un destino puede tener ahora hasta 4 tipos. El puntaje no cambia: el tipo de experiencia vale 40 puntos repartidos entre los que elige el usuario.
+
+## Destinos agregados el 11 de octubre de 2026 (193 a 200)
+
+Atenas, Milán y lago de Como, Kuala Lumpur, Puerto Vallarta, Uluru, Burdeos y Maceió. Se eligieron para cubrir clásicos que faltaban (Atenas, lago de Como, Puerto Vallarta, Maceió), un hub barato del sudeste asiático (Kuala Lumpur) y los tipos de experiencia con pocos destinos (Uluru para cielos y estrellas, Burdeos para vino).
+
+Antes se revisó el catálogo contra las 80 ciudades con vuelo directo desde Santiago según la JAC: las 15 que no están (Antofagasta, Concepción, Atlanta, Houston, Dallas, Comodoro Rivadavia, Río Gallegos, entre otras) son rutas de negocios o de conexión, no destinos turísticos.
+
+Cada uno tiene los mismos datos que el resto: foto de precios de Google Flights (capturada el 2026-10-11, mismas semanas de temporada baja y alta), clima mensual con fuente, coordenadas de OurAirports y requisitos de ingreso. Se agregó Malasia a los requisitos (sin visa 30 días + MDAC, confianza media) y a los indicadores del Banco Mundial (nivel de precios 2023: 0,312; llegadas de turistas 2019: 26,1 millones).

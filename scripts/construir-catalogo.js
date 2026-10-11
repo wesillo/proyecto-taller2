@@ -34,7 +34,7 @@ const precios = leer("data/fuentes/precios-vuelos.json");
 const jac = leer("data/fuentes/jac-rutas.json");
 const comoLlegar = leer("data/base/como-llegar.json");
 // Nombres más claros que los de Google Flights para algunos aeropuertos
-const NOMBRE_AEROPUERTO = { DEL: "Delhi", MBJ: "Montego Bay", COK: "Kochi", PDL: "Ponta Delgada", BRU: "Bruselas", JJD: "Cruz", GPS: "Isla Baltra", RTB: "Roatán", DBV: "Dubrovnik", PPS: "Puerto Princesa", SAI: "Siem Riep", COR: "Córdoba", BRC: "Bariloche", OAX: "Oaxaca", PPT: "Tahití (Papeete)", SEZ: "Mahé", SID: "Isla de Sal", MRU: "Mauricio", FAE: "Islas Feroe (Vágar)", NAN: "Nadi" };
+const NOMBRE_AEROPUERTO = { DEL: "Delhi", MBJ: "Montego Bay", COK: "Kochi", PDL: "Ponta Delgada", BRU: "Bruselas", JJD: "Cruz", GPS: "Isla Baltra", RTB: "Roatán", DBV: "Dubrovnik", PPS: "Puerto Princesa", SAI: "Siem Riep", COR: "Córdoba", BRC: "Bariloche", OAX: "Oaxaca", PPT: "Tahití (Papeete)", SEZ: "Mahé", SID: "Isla de Sal", MRU: "Mauricio", FAE: "Islas Feroe (Vágar)", NAN: "Nadi", MXP: "Milán (Malpensa)", AYQ: "Yulara (Ayers Rock)", KUL: "Kuala Lumpur" };
 
 /*
  * Ruta directa desde Santiago según la JAC (pasajeros reales de los últimos 12 meses).
@@ -127,7 +127,7 @@ function resumenPasaje(ap) {
     duracionHoras: duraciones.length ? Math.round((Math.min(...duraciones) / 60) * 10) / 10 : null,
     aerolinea: (p.baja || p.alta).aerolinea || "",
     ciudadConsultada: p.ciudadGoogle,
-    fecha: precios.fechaCaptura,
+    fecha: p.fechaCaptura || precios.fechaCaptura,
   };
 }
 

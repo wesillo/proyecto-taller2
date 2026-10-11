@@ -7,12 +7,15 @@ const TIPOS = [
   ["Playa", "Sol y arena"],
   ["Cultura", "Museos, historia y arquitectura"],
   ["Aventura", "Trekking, deportes y adrenalina"],
-  ["Naturaleza", "Paisajes, parques y fauna"],
+  ["Naturaleza", "Paisajes, parques y senderos"],
   ["Relax", "Descansar sin agenda"],
   ["Gastronomía", "Comer bien y probar la cocina local"],
   ["Vida nocturna", "Bares, fiestas y salidas de noche"],
   ["Compras", "Tiendas, outlets y mercados"],
   ["Nieve", "Ski, frío y paisajes nevados"],
+  ["Vida silvestre", "Safaris, ballenas, pingüinos y más"],
+  ["Vino", "Viñas, catas y rutas del vino"],
+  ["Cielos y estrellas", "Observatorios, cielos limpios y auroras"],
 ];
 
 // Ciudades de salida dentro de Chile para la búsqueda de vuelos

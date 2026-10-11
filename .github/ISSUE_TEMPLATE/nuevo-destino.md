@@ -9,7 +9,7 @@ labels: datos
 
 **Aeropuerto de llegada (código IATA):**
 
-**Tipo de experiencia** (Playa, Cultura, Aventura, Naturaleza, Relax, Gastronomía, Vida nocturna, Compras, Nieve):
+**Tipo de experiencia** (Playa, Cultura, Aventura, Naturaleza, Relax, Gastronomía, Vida nocturna, Compras, Nieve, Vida silvestre, Vino, Cielos y estrellas):
 
 **Costo (1-5), actividad física (1-5), popularidad (1-5):**
 

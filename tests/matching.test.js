@@ -4,7 +4,21 @@ const assert = require("node:assert/strict");
 const DESTINOS = require("../data/destinos.js");
 const { recomendar, mesesTxt, razones, puntaje, PAISES_CON_CARNET, montoTxt, precioPasaje, pasajeCalza, MONTO_SIN_TOPE, CONTINENTES, continenteDe } = require("../js/matching.js");
 
-const TAGS_VALIDOS = ["Playa", "Cultura", "Aventura", "Naturaleza", "Relax", "Gastronomía", "Vida nocturna", "Compras", "Nieve"];
+const TAGS_VALIDOS = ["Playa", "Cultura", "Aventura", "Naturaleza", "Relax", "Gastronomía", "Vida nocturna", "Compras", "Nieve", "Vida silvestre", "Vino", "Cielos y estrellas"];
+
+test("cada tipo de experiencia tiene al menos 8 destinos para elegir", () => {
+  for (const t of TAGS_VALIDOS) {
+    const n = DESTINOS.filter((d) => d.tags.includes(t)).length;
+    assert.ok(n >= 8, `${t}: solo ${n} destinos`);
+  }
+});
+
+test("los temas nuevos llevan a destinos que los tienen", () => {
+  for (const t of ["Vida silvestre", "Vino", "Cielos y estrellas"]) {
+    const { resultado } = recomendar(DESTINOS, { ...{ pais: "CL", alcance: "da_igual", ritmo: 3, conQuien: "P", estilo: "da_igual", docs: ["pasaporte"], visa: "da_igual" }, tags: [t] });
+    assert.ok(resultado[0].destino.tags.includes(t), `${t}: ${resultado[0].destino.nombre}`);
+  }
+});
 
 test("todos los destinos tienen los campos completos y válidos", () => {
   const vistos = new Set();

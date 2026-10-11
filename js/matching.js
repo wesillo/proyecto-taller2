@@ -178,10 +178,13 @@ function puntaje(d, r) {
   return { puntaje: s, coincidencias };
 }
 
+// Cómo se nombra cada tipo dentro de una frase (para no escribir "vino y cielos y estrellas")
+const TIPO_EN_FRASE = { "Cielos y estrellas": "cielos estrellados" };
+
 function razones(d, r, coincidencias) {
   const pais = paisDe(r.pais);
   const out = [];
-  if (coincidencias.length) out.push(`Tiene lo que buscas: ${listaTxt(coincidencias.map((c) => c.toLowerCase()))}.`);
+  if (coincidencias.length) out.push(`Tiene lo que buscas: ${listaTxt(coincidencias.map((c) => TIPO_EN_FRASE[c] || c.toLowerCase()))}.`);
   if (r.alcance === "dentro") out.push(`Está dentro de ${pais[1]}, como pediste.`);
   // Si eligió continente y calza, eso dice más que "es fuera de tu país"
   if (enContinenteElegido(d, r) && d.codigoPais !== r.pais) out.push(`Está en ${CONTINENTES[continenteDe(d)].nombre}, como querías.`);

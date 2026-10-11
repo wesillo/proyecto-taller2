@@ -182,3 +182,15 @@ Se sumaron 15 destinos (de 178 a 193), todos a los que se llega en avión, para 
 - **Rutas con vuelo directo desde Santiago según la JAC** que no estaban en el catálogo: Auckland y Rotorua, Asunción, Santa Cruz de la Sierra, Cali, Trujillo y Huanchaco, Belo Horizonte y Ouro Preto, Curitiba, Gramado y Canela, Brasilia y Chapada dos Veadeiros, Fortaleza.
 
 Cada uno tiene los mismos datos que el resto: requisitos de ingreso (se agregó Paraguay, verificado en la Dirección Nacional de Migraciones), clima mensual con fuente, coordenadas de OurAirports, foto de precios de Google Flights, ruta JAC, indicadores del Banco Mundial (se agregó Paraguay) y cómo llegar. Los campos editoriales (tipo de experiencia, ritmo, costo relativo, pros y contras) siguen el mismo criterio del equipo. Valparaíso, Colchagua y el Cajón del Maipo quedaron fuera a propósito: se llega por tierra y la app se enfoca en el transporte aéreo.
+
+## Tipos de experiencia nuevos (octubre 2026)
+
+Se agregaron tres tipos de experiencia, con el mismo criterio editorial que los demás: el tema tiene que ser una razón principal para ir, no algo que existe en el lugar.
+
+| Tipo | Destinos | Criterio |
+|---|---|---|
+| Vida silvestre | 23 | Ver animales en su hábitat es uno de los atractivos centrales (safaris, Galápagos, ballenas en Península Valdés, pingüinos en Punta Arenas o Chiloé, gorilas en Ruanda). "Naturaleza" queda para paisajes, parques y senderos. |
+| Vino | 16 | Hay rutas del vino o viñedos visitables a pocas horas del destino (Mendoza, Toscana, Douro desde Oporto, Stellenbosch desde Ciudad del Cabo, Valle de Elqui, Kakheti desde Tiflis, Serra Gaúcha desde Gramado). |
+| Cielos y estrellas | 11 | Astroturismo o auroras como atractivo propio: observatorios y cielos certificados (Atacama, Elqui, Teide en Tenerife, NamibRand cerca de Sossusvlei), auroras boreales (Rovaniemi, Islandia) o desiertos de cielo limpio (Uyuni, Gobi, Wadi Rum). |
+
+Un destino puede tener ahora hasta 4 tipos. El puntaje no cambia: el tipo de experiencia vale 40 puntos repartidos entre los que elige el usuario.

@@ -1,12 +1,9 @@
 {
   "fuente": "Wikimedia Commons",
   "fechaCaptura": "2026-10-12",
-  "total": 396,
+  "total": 399,
   "errores": [
-    "punta-arenas-2: no existe el artículo \"Punta Arenas Cathedral\" | Cape Froward: image/png | Magellanic penguin: misma foto que la primera",
-    "iquique-2: no existe el artículo \"Cerros Pintados\" | no existe el artículo \"Iquique Municipal Theatre\"",
-    "san-andres-2: no existe el artículo \"Haynes Cay\" | no existe el artículo \"Rocky Cay (San Andrés)\" | no existe el artículo \"San Luis, San Andrés\"",
-    "cali-2: no existe el artículo \"Iglesia de La Ermita\" | no existe el artículo \"Cristo Rey (Cali)\""
+    "san-andres-2: no existe el artículo \"Haynes Cay\" | no existe el artículo \"Rocky Cay (San Andrés)\" | no existe el artículo \"San Luis, San Andrés\""
   ],
   "fotos": {
     "alaska": {
@@ -3004,16 +3001,31 @@
     "cabo-verde": {
       "archivo": "img/destinos/cabo-verde-2.webp",
       "fuente": [
-        "Fogo, Cape Verde",
-        "Santo Antão, Cape Verde",
-        "Pedra de Lume"
+        "Pedra de Lume",
+        "Santo Antão, Cape Verde"
       ],
-      "nombreArchivo": "Fogo,_Cape_Verde_Islands.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Fogo,_Cape_Verde_Islands.jpg",
+      "nombreArchivo": "Pedra_Lume_CV.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Pedra_Lume_CV.jpg",
       "mime": "image/jpeg",
-      "ancho": 2800,
-      "alto": 2800,
-      "autor": "Jesse Allen Image created using data from instrument EO-1 ALI, provided courtesy of the NASA EO-1 Team.",
+      "ancho": 2592,
+      "alto": 1944,
+      "autor": "Ingo Wölbern",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "cali": {
+      "archivo": "img/destinos/cali-2.webp",
+      "fuente": [
+        "La Ermita Church",
+        "Cristo Rey, Cali",
+        "Farallones de Cali National Natural Park"
+      ],
+      "nombreArchivo": "Pico_de_Loro_2.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Pico_de_Loro_2.JPG",
+      "mime": "image/jpeg",
+      "ancho": 2288,
+      "alto": 1712,
+      "autor": "Carlos A. Arango",
       "licencia": "Public domain",
       "licenciaUrl": ""
     },
@@ -3729,6 +3741,22 @@
       "autor": "Yann ; edited by Jim Carter",
       "licencia": "CC BY-SA 4.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "iquique": {
+      "archivo": "img/destinos/iquique-2.webp",
+      "fuente": [
+        "Pica, Chile",
+        "Cavancha Beach",
+        "Alto Hospicio"
+      ],
+      "nombreArchivo": "Pica,_Chili.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Pica,_Chili.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3046,
+      "alto": 1484,
+      "autor": "Bachelot Pierre J-P",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "irlanda": {
       "archivo": "img/destinos/irlanda-2.webp",
@@ -4920,6 +4948,22 @@
       "autor": "Autor desconocido",
       "licencia": "CC BY-SA 3.0",
       "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "punta-arenas": {
+      "archivo": "img/destinos/punta-arenas-2.webp",
+      "fuente": [
+        "Otway Sound",
+        "Magdalena Island",
+        "Cape Froward"
+      ],
+      "nombreArchivo": "Magellanic_penguin4.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Magellanic_penguin4.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1024,
+      "alto": 683,
+      "autor": "Michaël CATANZARITI",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
     },
     "punta-cana": {
       "archivo": "img/destinos/punta-cana-2.webp",

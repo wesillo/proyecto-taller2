@@ -1,4 +1,4 @@
-// Descarga una foto por destino desde Wikimedia Commons y guarda sus créditos.
+// Descarga dos fotos por destino desde Wikimedia Commons y guarda sus créditos.
 // Se corre en GitHub Actions (.github/workflows/fotos.yml) porque necesita internet abierto.
 //
 // Para cada destino toma la imagen principal con licencia libre (JPG) del artículo de Wikipedia
@@ -62,24 +62,33 @@ async function infoDe(archivo) {
   };
 }
 
-async function main() {
-  fs.mkdirSync(CARPETA, { recursive: true });
+// Una "ranura" por foto: la 1 sale de fotos-wiki.json y la 2 de fotos-wiki-2.json
+const RANURAS = [
+  { mapa: MAPA, sufijo: "", campo: "fotos", archivoMapa: "fotos-wiki.json" },
+  { mapa: JSON.parse(fs.readFileSync(path.join(RAIZ, "data/base/fotos-wiki-2.json"), "utf8")), sufijo: "-2", campo: "fotos2", archivoMapa: "fotos-wiki-2.json" },
+];
+
+async function bajarRanura(r, evitar) {
   const fotos = {};
   const errores = [];
   for (const d of DESTINOS) {
-    const valor = MAPA[d.id];
-    const destino = path.join(CARPETA, `${d.id}.webp`);
-    const antes = previo.fotos[d.id];
-    if (!valor) { errores.push(`${d.id}: sin artículo en fotos-wiki.json`); continue; }
+    const valor = r.mapa[d.id];
+    const nombre = `${d.id}${r.sufijo}.webp`;
+    const destino = path.join(CARPETA, nombre);
+    const antes = (previo[r.campo] || {})[d.id];
+    const repetida = (a) => evitar && evitar[d.id] && evitar[d.id].nombreArchivo === a;
+    if (!valor) { errores.push(`${d.id}: sin artículo en ${r.archivoMapa}`); continue; }
     const clave = JSON.stringify(valor);
-    if (antes && JSON.stringify(antes.fuente) === clave && fs.existsSync(destino)) { fotos[d.id] = antes; continue; }
+    if (antes && JSON.stringify(antes.fuente) === clave && fs.existsSync(destino) && !repetida(antes.nombreArchivo)) { fotos[d.id] = antes; continue; }
     try {
       // Prueba cada artículo en orden y se queda con la primera foto JPG (descarta mapas, banderas y logos)
+      // La segunda foto nunca repite el archivo de la primera
       let archivo = null, info = null;
       const motivos = [];
       for (const v of [].concat(valor)) {
         try {
           const a = await archivoDe(v);
+          if (repetida(a)) { motivos.push(`${v}: misma foto que la primera`); continue; }
           const i = await infoDe(a);
           if (i.mime !== "image/jpeg") { motivos.push(`${v}: ${i.mime}`); continue; }
           archivo = a; info = i; break;
@@ -87,24 +96,41 @@ async function main() {
         await espera(200);
       }
       if (!info) throw new Error(motivos.join(" | "));
-      const r = await fetch(info.url, { headers: { "User-Agent": UA } });
-      if (!r.ok) throw new Error(`no se pudo descargar ${info.url}`);
-      const buf = Buffer.from(await r.arrayBuffer());
+      const resp = await fetch(info.url, { headers: { "User-Agent": UA } });
+      if (!resp.ok) throw new Error(`no se pudo descargar ${info.url}`);
+      const buf = Buffer.from(await resp.arrayBuffer());
       await sharp(buf).rotate().resize(ANCHO, ALTO, { fit: "cover", position: sharp.strategy.attention }).webp({ quality: 68 }).toFile(destino);
-      fotos[d.id] = { archivo: `img/destinos/${d.id}.webp`, fuente: valor, nombreArchivo: archivo, ...info };
+      fotos[d.id] = { archivo: `img/destinos/${nombre}`, fuente: valor, nombreArchivo: archivo, ...info };
       delete fotos[d.id].url;
-      console.log(`ok  ${d.id} ← ${archivo}`);
+      console.log(`ok  ${nombre} ← ${archivo}`);
     } catch (e) {
-      errores.push(`${d.id}: ${e.message}`);
-      console.log(`ERR ${d.id}: ${e.message}`);
+      errores.push(`${d.id}${r.sufijo}: ${e.message}`);
+      console.log(`ERR ${d.id}${r.sufijo}: ${e.message}`);
     }
     await espera(200);
   }
-  // Borra fotos de destinos que ya no existen
-  for (const f of fs.readdirSync(CARPETA)) if (!fotos[f.replace(/\.webp$/, "")]) fs.unlinkSync(path.join(CARPETA, f));
-  const ordenado = Object.fromEntries(Object.keys(fotos).sort().map((k) => [k, fotos[k]]));
-  fs.writeFileSync(SALIDA, JSON.stringify({ fuente: "Wikimedia Commons", fechaCaptura: new Date().toISOString().slice(0, 10), total: Object.keys(ordenado).length, errores, fotos: ordenado }, null, 2) + "\n");
-  console.log(`\n${Object.keys(ordenado).length} fotos, ${errores.length} errores`);
+  return { fotos, errores };
+}
+
+const ordenar = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
+
+async function main() {
+  fs.mkdirSync(CARPETA, { recursive: true });
+  const uno = await bajarRanura(RANURAS[0], null);
+  const dos = await bajarRanura(RANURAS[1], uno.fotos);
+  // Borra archivos que ya no corresponden a ninguna foto
+  const usados = new Set([...Object.values(uno.fotos), ...Object.values(dos.fotos)].map((f) => path.basename(f.archivo)));
+  for (const f of fs.readdirSync(CARPETA)) if (!usados.has(f)) fs.unlinkSync(path.join(CARPETA, f));
+  const errores = [...uno.errores, ...dos.errores];
+  fs.writeFileSync(SALIDA, JSON.stringify({
+    fuente: "Wikimedia Commons",
+    fechaCaptura: new Date().toISOString().slice(0, 10),
+    total: Object.keys(uno.fotos).length + Object.keys(dos.fotos).length,
+    errores,
+    fotos: ordenar(uno.fotos),
+    fotos2: ordenar(dos.fotos),
+  }, null, 2) + "\n");
+  console.log(`\n${Object.keys(uno.fotos).length} + ${Object.keys(dos.fotos).length} fotos, ${errores.length} errores`);
   errores.forEach((e) => console.log("  - " + e));
 }
 

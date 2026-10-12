@@ -7,6 +7,7 @@ on:
     branches: [main]
     paths:
       - data/base/fotos-wiki.json
+      - data/base/fotos-wiki-2.json
       - scripts/fotos.js
       - .github/workflows/fotos.yml
   workflow_dispatch:

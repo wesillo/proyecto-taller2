@@ -1,0 +1,985 @@
+{
+  "_nota": "Segunda foto de cada destino: otro lugar emblemático, distinto del de fotos-wiki.json. Mismo formato que ese archivo. Lo lee scripts/fotos.js.",
+  "san-pedro-de-atacama": [
+    "El Tatio",
+    "Laguna Miscanti",
+    "Licancabur"
+  ],
+  "torres-del-paine": [
+    "Torres del Paine",
+    "Grey Glacier",
+    "Lake Pehoé"
+  ],
+  "puerto-varas": [
+    "Petrohué Waterfalls",
+    "Llanquihue Lake"
+  ],
+  "isla-de-pascua": [
+    "Rano Raraku",
+    "Anakena",
+    "Orongo"
+  ],
+  "chiloe": [
+    "Church of Castro",
+    "Churches of Chiloé",
+    "Chiloé National Park"
+  ],
+  "pucon": [
+    "Huerquehue National Park",
+    "Caburgua Lake",
+    "Villarrica Lake"
+  ],
+  "punta-arenas": [
+    "Fuerte Bulnes",
+    "Plaza Muñoz Gamero",
+    "Magdalena Island (Chile)"
+  ],
+  "la-serena-y-valle-de-elqui": [
+    "Faro Monumental de La Serena",
+    "Cerro Tololo Inter-American Observatory",
+    "Mamalluca Observatory"
+  ],
+  "iquique": [
+    "Cerro Dragón",
+    "Pica, Chile",
+    "Iquique"
+  ],
+  "arica": [
+    "Lake Chungará",
+    "Lauca National Park",
+    "Parinacota (volcano)"
+  ],
+  "carretera-austral": [
+    "Marble Caves",
+    "Queulat National Park",
+    "Cerro Castillo National Park"
+  ],
+  "bariloche": [
+    "Cerro Catedral",
+    "Llao Llao Hotel",
+    "Cerro Otto"
+  ],
+  "buenos-aires": [
+    "Caminito",
+    "Teatro Colón",
+    "Puerto Madero"
+  ],
+  "mendoza": [
+    "Puente del Inca",
+    "Uco Valley",
+    "Potrerillos Dam"
+  ],
+  "el-calafate": [
+    "Fitz Roy",
+    "El Chaltén",
+    "Lake Argentino"
+  ],
+  "ushuaia": [
+    "Tierra del Fuego National Park",
+    "Beagle Channel",
+    "Martial Glacier"
+  ],
+  "salta-y-jujuy": [
+    "Cerro de los Siete Colores",
+    "Salinas Grandes",
+    "Purmamarca"
+  ],
+  "cataratas-del-iguazu": [
+    "Iguazú National Park",
+    "Iguaçu National Park"
+  ],
+  "rio-de-janeiro": [
+    "Sugarloaf Mountain",
+    "Selarón Steps",
+    "Copacabana, Rio de Janeiro"
+  ],
+  "florianopolis": [
+    "Lagoa da Conceição",
+    "Hercílio Luz Bridge",
+    "Joaquina Beach"
+  ],
+  "salvador-de-bahia": [
+    "Lacerda Elevator",
+    "Farol da Barra",
+    "Church and Convent of São Francisco (Salvador)"
+  ],
+  "fernando-de-noronha": [
+    "Baía do Sancho",
+    "Morro Dois Irmãos",
+    "Fernando de Noronha Marine National Park"
+  ],
+  "jericoacoara": [
+    "Pedra Furada",
+    "Jericoacoara National Park",
+    "Jijoca de Jericoacoara"
+  ],
+  "lencois-maranhenses": [
+    "Barreirinhas",
+    "Santo Amaro do Maranhão",
+    "Lençóis Maranhenses"
+  ],
+  "bonito": [
+    "Gruta do Lago Azul",
+    "Serra da Bodoquena National Park",
+    "Rio da Prata (Mato Grosso do Sul)"
+  ],
+  "cusco-y-machu-picchu": [
+    "Vinicunca",
+    "Sacsayhuamán",
+    "Cusco Cathedral"
+  ],
+  "lima": [
+    "Basilica and Convent of San Francisco, Lima",
+    "Plaza Mayor, Lima",
+    "Huaca Pucllana"
+  ],
+  "arequipa-y-colca": [
+    "Santa Catalina Monastery",
+    "Misti",
+    "Basilica Cathedral of Arequipa"
+  ],
+  "amazonia-peruana": [
+    "Tambopata National Reserve",
+    "Manú National Park",
+    "Iquitos",
+    "Pacaya-Samiria National Reserve"
+  ],
+  "mancora": [
+    "Punta Sal District",
+    "Los Órganos District",
+    "Green sea turtle"
+  ],
+  "salar-de-uyuni": [
+    "Laguna Colorada",
+    "Incahuasi Island"
+  ],
+  "la-paz-y-titicaca": [
+    "Mi Teleférico",
+    "Illimani",
+    "Valle de la Luna (Bolivia)"
+  ],
+  "cartagena": [
+    "Rosario Islands",
+    "Getsemaní",
+    "Clock Tower (Cartagena)"
+  ],
+  "medellin": [
+    "El Peñol",
+    "Guatapé",
+    "Plaza Botero"
+  ],
+  "san-andres": [
+    "Johnny Cay",
+    "San Andrés (island)"
+  ],
+  "eje-cafetero": [
+    "Coffee Cultural Landscape of Colombia",
+    "Filandia, Quindío",
+    "Ceroxylon quindiuense"
+  ],
+  "parque-tayrona": [
+    "Ciudad Perdida",
+    "Sierra Nevada de Santa Marta"
+  ],
+  "islas-galapagos": [
+    "Galápagos tortoise",
+    "Marine iguana",
+    "Bartolomé Island"
+  ],
+  "punta-del-este": [
+    "La Mano de Punta del Este",
+    "Casapueblo",
+    "José Ignacio, Uruguay"
+  ],
+  "cancun-y-riviera-maya": [
+    "Isla Mujeres",
+    "Xcaret Park",
+    "Cozumel"
+  ],
+  "ciudad-de-mexico": [
+    "Teotihuacan",
+    "Chapultepec Castle",
+    "Zócalo"
+  ],
+  "oaxaca": [
+    "Hierve el Agua",
+    "Church of Santo Domingo de Guzmán (Oaxaca)",
+    "Mitla"
+  ],
+  "los-cabos": [
+    "Cabo San Lucas",
+    "Medano Beach",
+    "San José del Cabo"
+  ],
+  "punta-cana": [
+    "Saona Island",
+    "Bávaro",
+    "Higüey"
+  ],
+  "la-habana": [
+    "Malecón, Havana",
+    "Cathedral of Havana",
+    "Viñales Valley"
+  ],
+  "costa-rica": [
+    "Monteverde Cloud Forest Reserve",
+    "La Fortuna Waterfall",
+    "Resplendent quetzal"
+  ],
+  "panama-y-san-blas": [
+    "Panama Canal",
+    "Casco Viejo, Panama",
+    "Miraflores Locks"
+  ],
+  "aruba": [
+    "California Lighthouse",
+    "Arikok National Park",
+    "Oranjestad, Aruba"
+  ],
+  "antigua-guatemala": [
+    "Volcán de Agua",
+    "Lake Atitlán",
+    "Volcán de Fuego"
+  ],
+  "roatan": [
+    "Utila",
+    "Cayos Cochinos",
+    "Bay Islands Department"
+  ],
+  "nueva-york": [
+    "Times Square",
+    "Brooklyn Bridge",
+    "Central Park",
+    "Statue of Liberty"
+  ],
+  "miami": [
+    "Wynwood Walls",
+    "Everglades National Park",
+    "Ocean Drive"
+  ],
+  "orlando": [
+    "Kennedy Space Center",
+    "Epcot",
+    "Universal Studios Florida"
+  ],
+  "los-angeles": [
+    "Santa Monica Pier",
+    "Griffith Observatory",
+    "Venice Beach"
+  ],
+  "parques-de-california": [
+    "Yosemite Valley",
+    "Half Dome",
+    "El Capitan"
+  ],
+  "las-vegas-y-gran-canon": [
+    "Las Vegas Strip",
+    "Antelope Canyon",
+    "Hoover Dam"
+  ],
+  "hawai": [
+    "Waikiki",
+    "Hanauma Bay",
+    "Kualoa Ranch"
+  ],
+  "vancouver-y-banff": [
+    "Lake Louise",
+    "Stanley Park",
+    "Capilano Suspension Bridge"
+  ],
+  "madrid": [
+    "Royal Palace of Madrid",
+    "Retiro Park",
+    "Puerta de Alcalá"
+  ],
+  "barcelona": [
+    "Casa Batlló",
+    "Casa Milà",
+    "Barceloneta beach"
+  ],
+  "sevilla-y-andalucia": [
+    "Alhambra",
+    "Seville Cathedral",
+    "Real Alcázar of Seville"
+  ],
+  "islas-canarias": [
+    "Los Gigantes",
+    "Masca",
+    "Anaga Rural Park"
+  ],
+  "lisboa": [
+    "Pena Palace",
+    "Praça do Comércio",
+    "Jerónimos Monastery"
+  ],
+  "azores": [
+    "Lagoa do Fogo",
+    "Furnas",
+    "Pico Island"
+  ],
+  "paris": [
+    "Arc de Triomphe",
+    "Louvre Pyramid",
+    "Sacré-Cœur, Paris"
+  ],
+  "roma": [
+    "Trevi Fountain",
+    "St. Peter's Basilica",
+    "Pantheon, Rome"
+  ],
+  "costa-amalfitana": [
+    "Amalfi",
+    "Ravello",
+    "Capri"
+  ],
+  "toscana-y-florencia": [
+    "Val d'Orcia",
+    "Piazza del Campo",
+    "Leaning Tower of Pisa"
+  ],
+  "londres": [
+    "Big Ben",
+    "Buckingham Palace",
+    "London Eye"
+  ],
+  "escocia": [
+    "Eilean Donan",
+    "Old Man of Storr",
+    "Glen Coe"
+  ],
+  "amsterdam": [
+    "Zaanse Schans",
+    "Rijksmuseum",
+    "Keukenhof"
+  ],
+  "praga": [
+    "Prague Castle",
+    "Old Town Square",
+    "Prague astronomical clock"
+  ],
+  "budapest": [
+    "Széchenyi thermal bath",
+    "Fisherman's Bastion",
+    "Buda Castle"
+  ],
+  "dubrovnik-y-costa-croata": [
+    "Plitvice Lakes National Park",
+    "Diocletian's Palace",
+    "Hvar"
+  ],
+  "islas-griegas": [
+    "Navagio",
+    "Mykonos",
+    "Fira"
+  ],
+  "alpes-suizos": [
+    "Lauterbrunnen",
+    "Lake Lucerne",
+    "Jungfrau"
+  ],
+  "islandia": [
+    "Jökulsárlón",
+    "Seljalandsfoss",
+    "Hallgrímskirkja"
+  ],
+  "fiordos-de-noruega": [
+    "Preikestolen",
+    "Trolltunga",
+    "Bryggen"
+  ],
+  "laponia": [
+    "Aurora",
+    "Pyhä-Luosto National Park",
+    "Arktikum"
+  ],
+  "estambul": [
+    "Sultan Ahmed Mosque",
+    "Galata Tower",
+    "Grand Bazaar, Istanbul"
+  ],
+  "capadocia": [
+    "Fairy chimney",
+    "Uçhisar",
+    "Göreme National Park"
+  ],
+  "georgia": [
+    "Narikala",
+    "Ushguli",
+    "Mtskheta"
+  ],
+  "eslovenia": [
+    "Triple Bridge",
+    "Lake Bohinj",
+    "Predjama Castle"
+  ],
+  "marrakech": [
+    "Majorelle Garden",
+    "Koutoubia Mosque",
+    "Ait Benhaddou"
+  ],
+  "egipto": [
+    "Karnak",
+    "Abu Simbel temples",
+    "Luxor Temple"
+  ],
+  "ciudad-del-cabo": [
+    "Boulders Beach",
+    "Cape of Good Hope",
+    "Bo-Kaap"
+  ],
+  "safari-en-kenia": [
+    "Amboseli National Park",
+    "Lake Nakuru",
+    "Maasai people"
+  ],
+  "zanzibar": [
+    "Nungwi",
+    "Prison Island",
+    "Jozani Chwaka Bay National Park"
+  ],
+  "dubai": [
+    "Burj Khalifa",
+    "Burj Al Arab",
+    "Dubai Creek"
+  ],
+  "jordania-y-petra": [
+    "Wadi Rum",
+    "Dead Sea",
+    "Jerash"
+  ],
+  "tokio": [
+    "Sensō-ji",
+    "Mount Fuji",
+    "Tokyo Tower"
+  ],
+  "kioto": [
+    "Kinkaku-ji",
+    "Kiyomizu-dera",
+    "Arashiyama"
+  ],
+  "seul": [
+    "N Seoul Tower",
+    "Bukchon Hanok Village",
+    "Changdeokgung"
+  ],
+  "bangkok": [
+    "Grand Palace",
+    "Wat Pho",
+    "Damnoen Saduak Floating Market"
+  ],
+  "phuket-e-islas-tailandesas": [
+    "Railay Beach",
+    "Khao Phing Kan",
+    "Maya Bay"
+  ],
+  "bali": [
+    "Tanah Lot",
+    "Uluwatu Temple",
+    "Jatiluwih"
+  ],
+  "vietnam": [
+    "Tràng An",
+    "Hoan Kiem Lake",
+    "Hội An"
+  ],
+  "palawan": [
+    "Kayangan Lake",
+    "Puerto Princesa Subterranean River National Park",
+    "Coron, Palawan"
+  ],
+  "maldivas": [
+    "Baa Atoll",
+    "Vaadhoo",
+    "Kuda Huraa"
+  ],
+  "sri-lanka": [
+    "Temple of the Tooth",
+    "Adam's Peak",
+    "Nine Arches Bridge"
+  ],
+  "nepal": [
+    "Boudhanath",
+    "Annapurna Massif",
+    "Swayambhunath"
+  ],
+  "india-rajastan": [
+    "Taj Mahal",
+    "Amber Fort",
+    "Mehrangarh"
+  ],
+  "singapur": [
+    "Marina Bay Sands",
+    "Merlion"
+  ],
+  "china-pekin": [
+    "Mutianyu",
+    "Forbidden City",
+    "Summer Palace"
+  ],
+  "sidney": [
+    "Sydney Harbour Bridge",
+    "Bondi Beach",
+    "Blue Mountains (Australia)"
+  ],
+  "queenstown": [
+    "Milford Sound",
+    "The Remarkables",
+    "Shotover River"
+  ],
+  "tahiti-y-bora-bora": [
+    "Teahupoo",
+    "Moorea",
+    "Papeete"
+  ],
+  "valdivia": [
+    "Niebla, Chile",
+    "Torreón Los Canelos",
+    "Valdivia"
+  ],
+  "bahia-inglesa": [
+    "Pan de Azúcar National Park",
+    "Caldera, Chile"
+  ],
+  "futaleufu": [
+    "Futaleufú",
+    "Lake Yelcho",
+    "Corcovado National Park (Chile)"
+  ],
+  "antartica": [
+    "Lemaire Channel",
+    "Gentoo penguin",
+    "Deception Island"
+  ],
+  "cordoba": [
+    "Córdoba Cathedral, Argentina",
+    "Villa General Belgrano",
+    "Quebrada del Condorito National Park"
+  ],
+  "peninsula-valdes": [
+    "Southern right whale",
+    "Southern elephant seal",
+    "Punta Tombo"
+  ],
+  "san-martin-de-los-andes": [
+    "Lácar Lake",
+    "Lanín Volcano",
+    "Seven Lakes Road"
+  ],
+  "mar-del-plata": [
+    "Torreón del Monje",
+    "South American sea lion",
+    "Playa Grande (Mar del Plata)"
+  ],
+  "sao-paulo": [
+    "São Paulo Museum of Art",
+    "Liberdade, São Paulo",
+    "Paulista Avenue"
+  ],
+  "buzios": [
+    "Arraial do Cabo",
+    "Cabo Frio"
+  ],
+  "porto-de-galinhas": [
+    "Olinda",
+    "Tamandaré",
+    "Recife"
+  ],
+  "manaos-y-amazonas": [
+    "Meeting of Waters",
+    "Rio Negro (Amazon)",
+    "Amazon River"
+  ],
+  "paracas-y-huacachina": [
+    "Ballestas Islands",
+    "Paracas National Reserve",
+    "Nazca lines"
+  ],
+  "huaraz": [
+    "Pastoruri Glacier",
+    "Llanganuco Lakes",
+    "Chavín de Huántar"
+  ],
+  "sucre-y-potosi": [
+    "Sucre",
+    "Casa de la Libertad",
+    "Potosí"
+  ],
+  "quito-y-mitad-del-mundo": [
+    "Cotopaxi",
+    "Ciudad Mitad del Mundo",
+    "TelefériQo"
+  ],
+  "montanita": [
+    "Machalilla National Park",
+    "Isla de la Plata",
+    "Ayampe"
+  ],
+  "bogota": [
+    "Salt Cathedral of Zipaquirá",
+    "Bolívar Square",
+    "La Candelaria, Bogotá"
+  ],
+  "providencia": [
+    "Old Providence McBean Lagoon National Natural Park",
+    "Providencia Island",
+    "Crab Cay"
+  ],
+  "montevideo-y-colonia": [
+    "Palacio Salvo",
+    "Rambla of Montevideo",
+    "Montevideo"
+  ],
+  "cabo-polonio": [
+    "Punta del Diablo",
+    "South American fur seal",
+    "Cabo Polonio National Park"
+  ],
+  "merida-y-yucatan": [
+    "Uxmal",
+    "Ik Kil",
+    "Mérida Cathedral (Yucatán)"
+  ],
+  "tulum": [
+    "Sian Ka'an",
+    "Coba",
+    "Akumal"
+  ],
+  "san-juan": [
+    "Old San Juan",
+    "El Yunque National Forest",
+    "Mosquito Bay"
+  ],
+  "belice": [
+    "Great Blue Hole",
+    "Belize Barrier Reef",
+    "Ambergris Caye"
+  ],
+  "curazao": [
+    "Queen Emma Bridge",
+    "Handelskade",
+    "Christoffel National Park"
+  ],
+  "jamaica": [
+    "Dunn's River Falls",
+    "Blue Mountains (Jamaica)",
+    "Rick's Café"
+  ],
+  "nueva-orleans": [
+    "Steamboat Natchez",
+    "Garden District, New Orleans",
+    "Bourbon Street"
+  ],
+  "alaska": [
+    "Denali",
+    "Mendenhall Glacier",
+    "Portage Glacier"
+  ],
+  "toronto-y-niagara": [
+    "CN Tower",
+    "Casa Loma"
+  ],
+  "montreal-y-quebec": [
+    "Notre-Dame Basilica (Montreal)",
+    "Old Quebec",
+    "Mount Royal"
+  ],
+  "berlin": [
+    "Reichstag building",
+    "Berlin Cathedral",
+    "East Side Gallery"
+  ],
+  "viena": [
+    "St. Stephen's Cathedral, Vienna",
+    "Belvedere, Vienna",
+    "Hofburg"
+  ],
+  "oporto": [
+    "Alto Douro Wine Region",
+    "Livraria Lello",
+    "Porto Cathedral"
+  ],
+  "madeira": [
+    "Cabo Girão",
+    "Pico Ruivo",
+    "Funchal"
+  ],
+  "mallorca": [
+    "Serra de Tramuntana",
+    "Valldemossa",
+    "Cap de Formentor"
+  ],
+  "pais-vasco": [
+    "Gaztelugatxe",
+    "La Concha (beach)",
+    "San Sebastián"
+  ],
+  "venecia": [
+    "St Mark's Basilica",
+    "Rialto Bridge",
+    "Burano"
+  ],
+  "sicilia": [
+    "Valley of the Temples",
+    "Mount Etna",
+    "Cefalù"
+  ],
+  "costa-azul": [
+    "Èze",
+    "Monte Carlo",
+    "Saint-Tropez"
+  ],
+  "brujas-y-bruselas": [
+    "Grand-Place",
+    "Atomium"
+  ],
+  "copenhague": [
+    "Tivoli Gardens",
+    "The Little Mermaid (statue)",
+    "Amalienborg"
+  ],
+  "estocolmo": [
+    "Stockholm City Hall",
+    "Vasa (ship)",
+    "Drottningholm Palace"
+  ],
+  "irlanda": [
+    "Ring of Kerry",
+    "Temple Bar, Dublin",
+    "Trinity College Dublin"
+  ],
+  "cracovia": [
+    "Wawel Castle",
+    "Wieliczka Salt Mine",
+    "St. Mary's Basilica, Kraków"
+  ],
+  "malta": [
+    "Mdina",
+    "Blue Lagoon (Malta)",
+    "Gozo"
+  ],
+  "kotor-y-montenegro": [
+    "Perast",
+    "Sveti Stefan",
+    "Our Lady of the Rocks"
+  ],
+  "riviera-albanesa": [
+    "Blue Eye (Albania)",
+    "Butrint",
+    "Gjirokastër"
+  ],
+  "islas-feroe": [
+    "Sørvágsvatn",
+    "Kirkjubøur",
+    "Tórshavn"
+  ],
+  "tallin": [
+    "Toompea",
+    "Alexander Nevsky Cathedral, Tallinn",
+    "Kadriorg Palace"
+  ],
+  "hong-kong": [
+    "Tian Tan Buddha",
+    "Star Ferry",
+    "Avenue of Stars, Hong Kong"
+  ],
+  "taiwan": [
+    "Chiang Kai-shek Memorial Hall",
+    "Taroko National Park",
+    "Sun Moon Lake"
+  ],
+  "hokkaido": [
+    "Shiretoko National Park",
+    "Otaru Canal",
+    "Sapporo Snow Festival"
+  ],
+  "angkor": [
+    "Bayon",
+    "Ta Prohm",
+    "Banteay Srei"
+  ],
+  "luang-prabang": [
+    "Kuang Si Falls",
+    "Wat Xieng Thong"
+  ],
+  "oman": [
+    "Wahiba Sands",
+    "Wadi Shab",
+    "Muttrah"
+  ],
+  "samarcanda": [
+    "Gur-e-Amir",
+    "Shah-i-Zinda",
+    "Bibi-Khanym Mosque"
+  ],
+  "mongolia": [
+    "Genghis Khan Equestrian Statue",
+    "Khongoryn Els",
+    "Gandan Monastery"
+  ],
+  "butan": [
+    "Punakha Dzong",
+    "Tashichho Dzong",
+    "Buddha Dordenma statue"
+  ],
+  "kerala": [
+    "Chinese fishing nets",
+    "Munnar"
+  ],
+  "namibia": [
+    "Deadvlei",
+    "Etosha National Park",
+    "Fish River Canyon"
+  ],
+  "kilimanjaro-y-serengeti": [
+    "Serengeti",
+    "Ngorongoro Crater"
+  ],
+  "mauricio": [
+    "Seven Coloured Earths",
+    "Chamarel Waterfall",
+    "Pamplemousses Botanical Garden"
+  ],
+  "seychelles": [
+    "Vallée de Mai",
+    "La Digue",
+    "Praslin"
+  ],
+  "madagascar": [
+    "Ring-tailed lemur",
+    "Tsingy de Bemaraha Strict Nature Reserve",
+    "Isalo National Park"
+  ],
+  "cabo-verde": [
+    "Pedra de Lume",
+    "Fogo, Cape Verde",
+    "Santo Antão, Cape Verde"
+  ],
+  "ruanda": [
+    "Mountain gorilla",
+    "Lake Kivu"
+  ],
+  "delta-del-okavango": [
+    "Chobe National Park",
+    "Moremi Game Reserve",
+    "African bush elephant"
+  ],
+  "melbourne": [
+    "Twelve Apostles (Victoria)",
+    "Hosier Lane"
+  ],
+  "gran-barrera-de-coral": [
+    "Heart Reef",
+    "Green Island (Queensland)",
+    "Ocellaris clownfish"
+  ],
+  "fiyi": [
+    "Yasawa Islands",
+    "Monuriki",
+    "Denarau Island"
+  ],
+  "puerto-williams": [
+    "Dientes de Navarino",
+    "Cape Horn",
+    "Navarino Island"
+  ],
+  "huilo-huilo": [
+    "Mocho-Choshuenco",
+    "Neltume"
+  ],
+  "desierto-florido": [
+    "Atacama Desert",
+    "Cistanthe grandiflora",
+    "Copiapó"
+  ],
+  "puyehue": [
+    "Puyehue-Cordón Caulle",
+    "Lake Rupanco",
+    "Puyehue Lake"
+  ],
+  "parque-pumalin": [
+    "Chaitén (volcano)",
+    "Michinmahuida",
+    "Fitzroya"
+  ],
+  "auckland": [
+    "Hobbiton Movie Set",
+    "Waitomo Glowworm Caves",
+    "Pōhutu Geyser"
+  ],
+  "asuncion": [
+    "Cathedral of Asunción",
+    "Panteón Nacional de los Héroes",
+    "Jesuit Missions of La Santísima Trinidad de Paraná and Jesús de Tavarangue"
+  ],
+  "santa-cruz-de-la-sierra": [
+    "Amboró National Park",
+    "Samaipata",
+    "Jesuit Missions of Chiquitos"
+  ],
+  "cali": [
+    "Cristo Rey (Cali)",
+    "Iglesia de La Ermita",
+    "Farallones de Cali National Natural Park"
+  ],
+  "trujillo-y-huanchaco": [
+    "Chan Chan",
+    "Huaca de la Luna"
+  ],
+  "ouro-preto": [
+    "Inhotim",
+    "Pampulha Modern Ensemble",
+    "Church of St. Francis of Assisi (Ouro Preto)"
+  ],
+  "curitiba": [
+    "Wire Opera House",
+    "Oscar Niemeyer Museum",
+    "Serra Verde Express"
+  ],
+  "gramado": [
+    "Canela, Rio Grande do Sul",
+    "Aparados da Serra National Park"
+  ],
+  "chapada-dos-veadeiros": [
+    "Cathedral of Brasília",
+    "National Congress Palace"
+  ],
+  "fortaleza": [
+    "Canoa Quebrada",
+    "Iracema Beach",
+    "Beach Park"
+  ],
+  "atenas": [
+    "Temple of Olympian Zeus, Athens",
+    "Plaka",
+    "Erechtheion"
+  ],
+  "lago-de-como": [
+    "Milan Cathedral",
+    "Bellagio, Lombardy",
+    "Galleria Vittorio Emanuele II"
+  ],
+  "kuala-lumpur": [
+    "Sultan Abdul Samad Building",
+    "Thean Hou Temple",
+    "Merdeka Square, Kuala Lumpur"
+  ],
+  "puerto-vallarta": [
+    "Sayulita",
+    "Banderas Bay"
+  ],
+  "uluru": [
+    "Kata Tjuta",
+    "Kings Canyon (Northern Territory)",
+    "Uluṟu-Kata Tjuṯa National Park"
+  ],
+  "burdeos": [
+    "Saint-Émilion",
+    "Dune of Pilat",
+    "Bordeaux Cathedral"
+  ],
+  "maceio": [
+    "Pajuçara",
+    "São Miguel dos Milagres",
+    "Maragogi"
+  ]
+}

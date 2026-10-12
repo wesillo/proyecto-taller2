@@ -1,8 +1,9 @@
 // Descarga una foto por destino desde Wikimedia Commons y guarda sus créditos.
 // Se corre en GitHub Actions (.github/workflows/fotos.yml) porque necesita internet abierto.
 //
-// Para cada destino toma la imagen principal con licencia libre del artículo de Wikipedia
-// indicado en data/base/fotos-wiki.json (o un archivo de Commons si el valor parte con "File:"),
+// Para cada destino toma la imagen principal con licencia libre (JPG) del artículo de Wikipedia
+// indicado en data/base/fotos-wiki.json (o de la lista de artículos, en orden; o un archivo de
+// Commons si el valor parte con "File:"),
 // la recorta a 960x540 en WebP y anota autor y licencia en data/fuentes/fotos.json.
 // Solo vuelve a descargar las que cambiaron, así que se puede correr muchas veces.
 
@@ -70,10 +71,22 @@ async function main() {
     const destino = path.join(CARPETA, `${d.id}.webp`);
     const antes = previo.fotos[d.id];
     if (!valor) { errores.push(`${d.id}: sin artículo en fotos-wiki.json`); continue; }
-    if (antes && antes.fuente === valor && fs.existsSync(destino)) { fotos[d.id] = antes; continue; }
+    const clave = JSON.stringify(valor);
+    if (antes && JSON.stringify(antes.fuente) === clave && fs.existsSync(destino)) { fotos[d.id] = antes; continue; }
     try {
-      const archivo = await archivoDe(valor);
-      const info = await infoDe(archivo);
+      // Prueba cada artículo en orden y se queda con la primera foto JPG (descarta mapas, banderas y logos)
+      let archivo = null, info = null;
+      const motivos = [];
+      for (const v of [].concat(valor)) {
+        try {
+          const a = await archivoDe(v);
+          const i = await infoDe(a);
+          if (i.mime !== "image/jpeg") { motivos.push(`${v}: ${i.mime}`); continue; }
+          archivo = a; info = i; break;
+        } catch (e) { motivos.push(e.message); }
+        await espera(200);
+      }
+      if (!info) throw new Error(motivos.join(" | "));
       const r = await fetch(info.url, { headers: { "User-Agent": UA } });
       if (!r.ok) throw new Error(`no se pudo descargar ${info.url}`);
       const buf = Buffer.from(await r.arrayBuffer());

@@ -645,6 +645,27 @@ function avisoContinente(d, r) {
   return `No está en ${lista}, pero es el que mejor te calza en todo lo demás.`;
 }
 
+// Foto del destino (Wikimedia Commons) con su crédito. Si no hay foto, no se muestra nada.
+function fotoDestino(d) {
+  const f = d.foto;
+  if (!f) return "";
+  const licencia = f.licenciaUrl ? `<a href="${esc(f.licenciaUrl)}" target="_blank" rel="noopener">${esc(f.licencia)}</a>` : esc(f.licencia);
+  return `<figure class="dest-photo">
+    <img src="${esc(f.src)}" width="960" height="540" alt="Foto de ${esc(d.nombre)}, ${esc(d.pais)}" decoding="async">
+    <figcaption><span>Foto: <span class="autor" title="${esc(f.autor)}">${esc(f.autor)}</span></span><span>${licencia}</span><span><a href="${esc(f.fuenteUrl)}" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption>
+  </figure>`;
+}
+
+// La foto aparece suave cuando termina de cargar; si falla, se quita y la tarjeta queda como antes
+function mostrarFoto() {
+  const img = app.querySelector(".dest-photo img");
+  if (!img) return;
+  const lista = () => img.classList.add("lista");
+  const falla = () => { img.closest(".dest-photo").remove(); app.querySelector(".gate").classList.remove("con-foto"); };
+  if (img.complete && img.naturalWidth) lista();
+  else { img.addEventListener("load", lista, { once: true }); img.addEventListener("error", falla, { once: true }); }
+}
+
 function renderResultado(animar = true) {
   const x = estado.resultado[estado.elegido];
   const d = x.destino;
@@ -663,7 +684,7 @@ function renderResultado(animar = true) {
   estado.vistoEn[estado.elegido] ||= Date.now();
 
   app.innerHTML = `
-    <article class="gate" aria-label="Destino recomendado: ${esc(d.nombre)}, ${esc(d.pais)}">
+    <article class="gate${d.foto ? " con-foto" : ""}" aria-label="Destino recomendado: ${esc(d.nombre)}, ${esc(d.pais)}">
     <div class="gate-head">
       <span class="pict" aria-hidden="true">${avion(20)}</span>
       <span>${estado.elegido === 0 ? "Tu destino" : "Alternativa"}</span>
@@ -673,6 +694,7 @@ function renderResultado(animar = true) {
     <h2 class="dest-name" tabindex="-1" id="qtitle" aria-label="${esc(d.nombre)}"><span aria-hidden="true">${letrasNombre(d.nombre)}</span></h2>
     <div class="dest-country">${esc(d.pais)}${pais[2] ? `, saliendo desde ${esc(pais[3])} (${pais[2]})` : ""}${llegaPorOtraCiudad(d) ? `<br>Vuelas a ${esc(d.llegada.ciudadAeropuerto)} y sigues desde ahí` : ""}</div>
   </article>
+  ${fotoDestino(d)}
   <dl class="fields">
     <div class="field"><dt class="k">Mejor época</dt><dd class="v">${mesesTxt(d.meses)}</dd></div>
     ${r.pais === "CL"
@@ -733,6 +755,7 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</d
 
   pintarFeedback();
   activarPestanas();
+  mostrarFoto();
   document.getElementById("buy").onclick = () => {
     actualizarRegistro(estado.registro, { abrio_compra: 1 });
     abrirCompra(d);

@@ -41,6 +41,7 @@ js/matching.js          el motor de recomendación (puntajes y razones)
 js/datos.js             registro de datos (CSV y envío a Google Sheet)
 js/app.js               la interfaz (preguntas, resultado, compra)
 data/destinos.js        catálogo de 200 destinos (GENERADO, no editar a mano)
+img/destinos/           una foto por destino (Wikimedia Commons, la baja .github/workflows/fotos.yml)
 data/base/              datos editoriales de cada destino y cómo llegar desde el aeropuerto
 data/fuentes/           datos con fuente y fecha: visas, clima, aeropuertos, Banco Mundial
 data/FUENTES.md         metodología del corte de datos y qué falta revisar

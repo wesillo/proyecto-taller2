@@ -130,6 +130,19 @@ a{color:inherit}
 .dest-name{font-family:var(--display);font-weight:700;font-size:clamp(32px,8vw,44px);line-height:1;margin:0;color:#FFFFFF}
 .dest-name:focus{outline:none}
 .dest-country{font-size:17px;color:#BDBDBD;margin-top:6px}
+/* Foto del destino: entre el panel negro y los datos, a todo el ancho de la tarjeta */
+.gate.con-foto{border-radius:4px 4px 0 0}
+.dest-photo{margin:0;background:var(--senal);border:2px solid var(--senal);border-top:0;border-bottom:0}
+.dest-photo img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#1A1A1A;opacity:0;transition:opacity .4s ease}
+.dest-photo img.lista{opacity:1}
+.dest-photo figcaption{display:flex;flex-wrap:wrap;align-items:baseline;row-gap:2px;background:var(--panel);color:var(--suave);font-size:12.5px;line-height:1.35;padding:7px 16px;border-bottom:1px solid var(--linea);overflow-wrap:anywhere}
+.dest-photo figcaption>span{min-width:0}
+.dest-photo figcaption>span+span::before{content:"·";margin:0 .5em}
+.dest-photo figcaption a{color:inherit;text-underline-offset:2px}
+.dest-photo .autor{display:inline-block;max-width:22em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom}
+:root[data-theme="dark"] .dest-photo{border-color:var(--linea)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .dest-photo{border-color:var(--linea)}}
+@media (prefers-reduced-motion: reduce){.dest-photo img{transition:none}}
 .fields{display:grid;grid-template-columns:1fr 1fr;margin:0;background:var(--panel);border:2px solid var(--senal);border-top:0;border-radius:0 0 4px 4px}
 :root[data-theme="dark"] .fields{border-color:var(--linea)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fields{border-color:var(--linea)}}

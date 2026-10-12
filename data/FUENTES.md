@@ -205,3 +205,13 @@ Atenas, Milán y lago de Como, Kuala Lumpur, Puerto Vallarta, Uluru, Burdeos y M
 Antes se revisó el catálogo contra las 80 ciudades con vuelo directo desde Santiago según la JAC: las 15 que no están (Antofagasta, Concepción, Atlanta, Houston, Dallas, Comodoro Rivadavia, Río Gallegos, entre otras) son rutas de negocios o de conexión, no destinos turísticos.
 
 Cada uno tiene los mismos datos que el resto: foto de precios de Google Flights (capturada el 2026-10-11, mismas semanas de temporada baja y alta), clima mensual con fuente, coordenadas de OurAirports y requisitos de ingreso. Se agregó Malasia a los requisitos (sin visa 30 días + MDAC, confianza media) y a los indicadores del Banco Mundial (nivel de precios 2023: 0,312; llegadas de turistas 2019: 26,1 millones).
+
+## Fotos de los destinos (octubre 2026)
+
+Cada destino tiene una foto de **Wikimedia Commons**, todas con licencia libre (Creative Commons o dominio público). La app muestra el autor, la licencia y el enlace a la página original de Commons debajo de cada foto, como piden esas licencias.
+
+- `data/base/fotos-wiki.json`: el artículo de Wikipedia (en inglés) de donde sale la foto de cada destino. Se eligieron lugares emblemáticos (por ejemplo, la catedral de Florencia para "Toscana y Florencia") en vez del artículo de la ciudad, que suele traer un collage. Si un destino tiene varios artículos, se usa el primero que tenga una foto válida.
+- `scripts/fotos.js`: baja la imagen principal de cada artículo (solo JPG, para descartar mapas, banderas y logos), la recorta a 960×540 en WebP y anota los créditos en `data/fuentes/fotos.json`.
+- `.github/workflows/fotos.yml`: corre el script en GitHub Actions cada vez que cambia `fotos-wiki.json` y sube las fotos a `img/destinos/`.
+
+Para cambiar la foto de un destino, edita su línea en `fotos-wiki.json` (otro artículo, o `"File:Nombre.jpg"` para un archivo exacto de Commons), sube el cambio y espera que el workflow termine. Después corre `npm run catalogo`.

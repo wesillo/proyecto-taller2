@@ -703,17 +703,17 @@
     "eje-cafetero": {
       "archivo": "img/destinos/eje-cafetero.webp",
       "fuente": [
-        "Ceroxylon quindiuense",
-        "Salento, Quindío"
+        "Salento, Quindío",
+        "Ceroxylon quindiuense"
       ],
-      "nombreArchivo": "Palma_de_cera_del_Quindío_(Ceroxylon_quindiuense)_(14728442862).jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Palma_de_cera_del_Quind%C3%ADo_(Ceroxylon_quindiuense)_(14728442862).jpg",
+      "nombreArchivo": "View_of_Salento,_Colombia_01.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:View_of_Salento,_Colombia_01.jpg",
       "mime": "image/jpeg",
-      "ancho": 2432,
-      "alto": 3648,
-      "autor": "Alejandro Bayer Tamayo from Armenia, Colombia",
-      "licencia": "CC BY-SA 2.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      "ancho": 4944,
+      "alto": 3296,
+      "autor": "Bernard Gagnon",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     "el-calafate": {
       "archivo": "img/destinos/el-calafate.webp",
@@ -1887,17 +1887,18 @@
     "puerto-vallarta": {
       "archivo": "img/destinos/puerto-vallarta.webp",
       "fuente": [
-        "Banderas Bay",
-        "Malecón (Puerto Vallarta)"
+        "Church of Our Lady of Guadalupe (Puerto Vallarta)",
+        "Los Arcos National Marine Park",
+        "Banderas Bay"
       ],
-      "nombreArchivo": "VeleroBanderas.JPG",
-      "commons": "https://commons.wikimedia.org/wiki/File:VeleroBanderas.JPG",
+      "nombreArchivo": "Puerto_Vallarta_cathedral_1.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Puerto_Vallarta_cathedral_1.jpg",
       "mime": "image/jpeg",
-      "ancho": 2816,
-      "alto": 2112,
-      "autor": "Oescalona",
-      "licencia": "CC BY-SA 4.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "ancho": 1200,
+      "alto": 1685,
+      "autor": "Stan Shebs",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "puerto-varas": {
       "archivo": "img/destinos/puerto-varas.webp",
@@ -1926,17 +1927,18 @@
     "punta-arenas": {
       "archivo": "img/destinos/punta-arenas.webp",
       "fuente": [
-        "Magdalena Island (Chile)",
+        "Magellanic penguin",
+        "Punta Arenas Cathedral",
         "Strait of Magellan"
       ],
-      "nombreArchivo": "StraitOfMagellan.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:StraitOfMagellan.jpg",
+      "nombreArchivo": "MagellanicPenguin.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:MagellanicPenguin.jpg",
       "mime": "image/jpeg",
-      "ancho": 2000,
-      "alto": 2600,
-      "autor": "Jacques Descloitres, MODIS Rapid Response Team, NASA /GSFC",
-      "licencia": "Public domain",
-      "licenciaUrl": ""
+      "ancho": 5600,
+      "alto": 4480,
+      "autor": "Polinova",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     "punta-cana": {
       "archivo": "img/destinos/punta-cana.webp",
@@ -2394,17 +2396,17 @@
     "trujillo-y-huanchaco": {
       "archivo": "img/destinos/trujillo-y-huanchaco.webp",
       "fuente": [
-        "Huanchaco",
-        "Caballito de totora"
+        "Caballito de totora",
+        "Chan Chan"
       ],
-      "nombreArchivo": "PhotomontageHuanchaco.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:PhotomontageHuanchaco.jpg",
+      "nombreArchivo": "Huanchaco.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Huanchaco.jpg",
       "mime": "image/jpeg",
-      "ancho": 500,
-      "alto": 899,
-      "autor": "Enjoyatom21",
-      "licencia": "CC BY-SA 3.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      "ancho": 4406,
+      "alto": 3285,
+      "autor": "Melissa Thereliz from Trujillo, Perú",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
     },
     "tulum": {
       "archivo": "img/destinos/tulum.webp",

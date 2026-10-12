@@ -10,7 +10,8 @@
   "chiloe": "Palafito",
   "pucon": "Villarrica (volcano)",
   "punta-arenas": [
-    "Magdalena Island (Chile)",
+    "Magellanic penguin",
+    "Punta Arenas Cathedral",
     "Strait of Magellan"
   ],
   "la-serena-y-valle-de-elqui": [
@@ -64,8 +65,8 @@
     "San Andrés, San Andrés y Providencia"
   ],
   "eje-cafetero": [
-    "Ceroxylon quindiuense",
-    "Salento, Quindío"
+    "Salento, Quindío",
+    "Ceroxylon quindiuense"
   ],
   "parque-tayrona": "Tayrona National Natural Park",
   "islas-galapagos": "Galápagos Islands",
@@ -289,8 +290,8 @@
   "santa-cruz-de-la-sierra": "Santa Cruz de la Sierra",
   "cali": "Cali",
   "trujillo-y-huanchaco": [
-    "Huanchaco",
-    "Caballito de totora"
+    "Caballito de totora",
+    "Chan Chan"
   ],
   "ouro-preto": "Ouro Preto",
   "curitiba": "Jardim Botânico de Curitiba",
@@ -304,8 +305,9 @@
     "Sultan Abdul Samad Building"
   ],
   "puerto-vallarta": [
-    "Banderas Bay",
-    "Malecón (Puerto Vallarta)"
+    "Church of Our Lady of Guadalupe (Puerto Vallarta)",
+    "Los Arcos National Marine Park",
+    "Banderas Bay"
   ],
   "uluru": "Uluru",
   "burdeos": "Place de la Bourse",

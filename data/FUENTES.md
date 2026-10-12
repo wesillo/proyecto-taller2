@@ -208,10 +208,12 @@ Cada uno tiene los mismos datos que el resto: foto de precios de Google Flights 
 
 ## Fotos de los destinos (octubre 2026)
 
-Cada destino tiene una foto de **Wikimedia Commons**, todas con licencia libre (Creative Commons o dominio público). La app muestra el autor, la licencia y el enlace a la página original de Commons debajo de cada foto, como piden esas licencias.
+Cada destino tiene dos fotos de **Wikimedia Commons** (199 de 200; San Andrés tiene una), todas con licencia libre (Creative Commons o dominio público). La app muestra el autor, la licencia y el enlace a la página original de Commons debajo de cada foto, como piden esas licencias.
 
-- `data/base/fotos-wiki.json`: el artículo de Wikipedia (en inglés) de donde sale la foto de cada destino. Se eligieron lugares emblemáticos (por ejemplo, la catedral de Florencia para "Toscana y Florencia") en vez del artículo de la ciudad, que suele traer un collage. Si un destino tiene varios artículos, se usa el primero que tenga una foto válida.
+- `data/base/fotos-wiki.json` y `data/base/fotos-wiki-2.json`: el artículo de Wikipedia (en inglés) de donde sale la primera y la segunda foto de cada destino. La segunda es otro lugar emblemático y nunca repite la primera. Se eligieron lugares emblemáticos (por ejemplo, la catedral de Florencia para "Toscana y Florencia") en vez del artículo de la ciudad, que suele traer un collage. Si un destino tiene varios artículos, se usa el primero que tenga una foto válida.
 - `scripts/fotos.js`: baja la imagen principal de cada artículo (solo JPG, para descartar mapas, banderas y logos), la recorta a 960×540 en WebP y anota los créditos en `data/fuentes/fotos.json`.
 - `.github/workflows/fotos.yml`: corre el script en GitHub Actions cada vez que cambia `fotos-wiki.json` y sube las fotos a `img/destinos/`.
 
-Para cambiar la foto de un destino, edita su línea en `fotos-wiki.json` (otro artículo, o `"File:Nombre.jpg"` para un archivo exacto de Commons), sube el cambio y espera que el workflow termine. Después corre `npm run catalogo`.
+En la app se ven como carrusel: se deslizan con el dedo o con las flechas, y el crédito cambia según la foto visible.
+
+Para cambiar una foto, edita su línea en `fotos-wiki.json` o `fotos-wiki-2.json` (otro artículo, o `"File:Nombre.jpg"` para un archivo exacto de Commons), sube el cambio y espera que el workflow termine. Después corre `npm run catalogo`.

@@ -645,25 +645,84 @@ function avisoContinente(d, r) {
   return `No está en ${lista}, pero es el que mejor te calza en todo lo demás.`;
 }
 
-// Foto del destino (Wikimedia Commons) con su crédito. Si no hay foto, no se muestra nada.
-function fotoDestino(d) {
-  const f = d.foto;
-  if (!f) return "";
+// Fotos del destino (Wikimedia Commons) en un carrusel: se desliza con el dedo, con flechas y puntos.
+// El crédito de abajo cambia según la foto visible. Si no hay fotos, no se muestra nada.
+function creditoFoto(f) {
   const licencia = f.licenciaUrl ? `<a href="${esc(f.licenciaUrl)}" target="_blank" rel="noopener">${esc(f.licencia)}</a>` : esc(f.licencia);
+  return `<span>Foto: <span class="autor" title="${esc(f.autor)}">${esc(f.autor)}</span></span><span>${licencia}</span><span><a href="${esc(f.fuenteUrl)}" target="_blank" rel="noopener">Wikimedia Commons</a></span>`;
+}
+
+function fotoDestino(d) {
+  const fotos = d.fotos || [];
+  if (!fotos.length) return "";
+  const varias = fotos.length > 1;
   return `<figure class="dest-photo">
-    <img src="${esc(f.src)}" width="960" height="540" alt="Foto de ${esc(d.nombre)}, ${esc(d.pais)}" decoding="async">
-    <figcaption><span>Foto: <span class="autor" title="${esc(f.autor)}">${esc(f.autor)}</span></span><span>${licencia}</span><span><a href="${esc(f.fuenteUrl)}" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption>
+    <div class="ph-stage">
+      <div class="ph-track" ${varias ? `tabindex="0" role="region" aria-roledescription="carrusel" aria-label="Fotos de ${esc(d.nombre)}"` : ""}>
+        ${fotos.map((f, i) => `<img src="${esc(f.src)}" width="960" height="540" alt="Foto ${i + 1} de ${fotos.length}: ${esc(d.nombre)}, ${esc(d.pais)}" decoding="async" ${i ? 'loading="lazy"' : ""}>`).join("")}
+      </div>
+      ${varias ? `<button class="ph-btn prev" type="button" aria-label="Foto anterior" hidden>${flecha("izq")}</button>
+      <button class="ph-btn next" type="button" aria-label="Foto siguiente">${flecha("der")}</button>
+      <div class="ph-dots" aria-hidden="true">${fotos.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("")}</div>` : ""}
+    </div>
+    <figcaption aria-live="polite">${creditoFoto(fotos[0])}</figcaption>
   </figure>`;
 }
 
-// La foto aparece suave cuando termina de cargar; si falla, se quita y la tarjeta queda como antes
-function mostrarFoto() {
-  const img = app.querySelector(".dest-photo img");
-  if (!img) return;
-  const lista = () => img.classList.add("lista");
-  const falla = () => { img.closest(".dest-photo").remove(); app.querySelector(".gate").classList.remove("con-foto"); };
-  if (img.complete && img.naturalWidth) lista();
-  else { img.addEventListener("load", lista, { once: true }); img.addEventListener("error", falla, { once: true }); }
+const flecha = (lado) => `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="${lado === "izq" ? "M20 12H6M12 5l-7 7 7 7" : "M4 12h14M12 5l7 7-7 7"}"/></svg>`;
+
+// Activa el carrusel: carga suave, flechas, puntos y crédito según la foto visible
+function mostrarFoto(d) {
+  const fig = app.querySelector(".dest-photo");
+  if (!fig) return;
+  const fotos = (d.fotos || []).slice();
+  const track = fig.querySelector(".ph-track");
+  const quitar = () => { fig.remove(); app.querySelector(".gate").classList.remove("con-foto"); };
+  [...track.querySelectorAll("img")].forEach((img, i) => {
+    const lista = () => img.classList.add("lista");
+    if (img.complete && img.naturalWidth) lista();
+    else {
+      img.addEventListener("load", lista, { once: true });
+      img.addEventListener("error", () => {
+        // Si una foto no carga, se saca del carrusel; si no queda ninguna, se quita el bloque
+        const k = [...track.children].indexOf(img);
+        img.remove(); fotos.splice(k, 1);
+        const punto = fig.querySelectorAll(".ph-dots i")[k];
+        if (punto) punto.remove();
+        if (!fotos.length) return quitar();
+        if (fotos.length < 2) fig.querySelectorAll(".ph-btn, .ph-dots").forEach((e) => e.remove());
+        actualizar();
+      }, { once: true });
+    }
+  });
+  const prev = fig.querySelector(".ph-btn.prev");
+  const next = fig.querySelector(".ph-btn.next");
+  const cap = fig.querySelector("figcaption");
+  let actual = 0;
+  const indice = () => Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+  function actualizar() {
+    const i = Math.min(indice(), fotos.length - 1);
+    if (prev) prev.hidden = i === 0;
+    if (next) next.hidden = i >= fotos.length - 1;
+    fig.querySelectorAll(".ph-dots i").forEach((p, k) => p.classList.toggle("on", k === i));
+    if (i !== actual) { actual = i; cap.innerHTML = creditoFoto(fotos[i]); }
+  }
+  const ir = (paso) => {
+    const suave = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+    track.scrollTo({ left: (indice() + paso) * track.clientWidth, behavior: suave ? "smooth" : "auto" });
+  };
+  if (prev) prev.onclick = () => ir(-1);
+  if (next) next.onclick = () => ir(1);
+  let pendiente = false;
+  track.addEventListener("scroll", () => {
+    if (pendiente) return;
+    pendiente = true;
+    requestAnimationFrame(() => { pendiente = false; actualizar(); });
+  }, { passive: true });
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); ir(1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); ir(-1); }
+  });
 }
 
 function renderResultado(animar = true) {
@@ -684,7 +743,7 @@ function renderResultado(animar = true) {
   estado.vistoEn[estado.elegido] ||= Date.now();
 
   app.innerHTML = `
-    <article class="gate${d.foto ? " con-foto" : ""}" aria-label="Destino recomendado: ${esc(d.nombre)}, ${esc(d.pais)}">
+    <article class="gate${(d.fotos || []).length ? " con-foto" : ""}" aria-label="Destino recomendado: ${esc(d.nombre)}, ${esc(d.pais)}">
     <div class="gate-head">
       <span class="pict" aria-hidden="true">${avion(20)}</span>
       <span>${estado.elegido === 0 ? "Tu destino" : "Alternativa"}</span>
@@ -755,7 +814,7 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">Pasaje ida y vuelta</d
 
   pintarFeedback();
   activarPestanas();
-  mostrarFoto();
+  mostrarFoto(d);
   document.getElementById("buy").onclick = () => {
     actualizarRegistro(estado.registro, { abrio_compra: 1 });
     abrirCompra(d);

@@ -10,7 +10,7 @@
  *   data/base/como-llegar.json           tramos por tierra/mar desde el aeropuerto hasta el destino (editorial)
  *   data/fuentes/jac-rutas.json          pasajeros por ruta directa desde Santiago (JAC, últimos 12 meses)
  *   data/fuentes/corte.json              fecha del corte de datos y vigencia de cada tipo de dato
- *   data/fuentes/fotos.json              foto de cada destino (Wikimedia Commons) con autor y licencia
+ *   data/fuentes/fotos.json              dos fotos por destino (Wikimedia Commons) con autor y licencia
  *
  * Uso:  npm run catalogo
  *
@@ -35,11 +35,12 @@ const precios = leer("data/fuentes/precios-vuelos.json");
 const jac = leer("data/fuentes/jac-rutas.json");
 const comoLlegar = leer("data/base/como-llegar.json");
 // Fotos: las baja el workflow de GitHub Actions (scripts/fotos.js). Si aún no existen, el catálogo sale sin fotos.
-const fotos = fs.existsSync(path.join(raiz, "data/fuentes/fotos.json")) ? leer("data/fuentes/fotos.json").fotos : {};
-function fotoDe(id) {
-  const f = fotos[id];
-  if (!f || !fs.existsSync(path.join(raiz, f.archivo))) return null;
-  return { src: f.archivo, autor: f.autor, licencia: f.licencia, licenciaUrl: f.licenciaUrl, fuenteUrl: f.commons };
+const manifiestoFotos = fs.existsSync(path.join(raiz, "data/fuentes/fotos.json")) ? leer("data/fuentes/fotos.json") : {};
+const RANURAS_FOTO = [manifiestoFotos.fotos || {}, manifiestoFotos.fotos2 || {}];
+function fotosDe(id) {
+  return RANURAS_FOTO.map((r) => r[id])
+    .filter((f) => f && fs.existsSync(path.join(raiz, f.archivo)))
+    .map((f) => ({ src: f.archivo, autor: f.autor, licencia: f.licencia, licenciaUrl: f.licenciaUrl, fuenteUrl: f.commons }));
 }
 // Nombres más claros que los de Google Flights para algunos aeropuertos
 const NOMBRE_AEROPUERTO = { DEL: "Delhi", MBJ: "Montego Bay", COK: "Kochi", PDL: "Ponta Delgada", BRU: "Bruselas", JJD: "Cruz", GPS: "Isla Baltra", RTB: "Roatán", DBV: "Dubrovnik", PPS: "Puerto Princesa", SAI: "Siem Riep", COR: "Córdoba", BRC: "Bariloche", OAX: "Oaxaca", PPT: "Tahití (Papeete)", SEZ: "Mahé", SID: "Isla de Sal", MRU: "Mauricio", FAE: "Islas Feroe (Vágar)", NAN: "Nadi", MXP: "Milán (Malpensa)", AYQ: "Yulara (Ayers Rock)", KUL: "Kuala Lumpur" };
@@ -224,7 +225,7 @@ const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
     clima: d.clima,
     pros: d.pros,
     contras: d.contras,
-    foto: fotoDe(d.id),
+    fotos: fotosDe(d.id),
     ingreso: {
       requisito: req.requisito,
       texto: req.texto,

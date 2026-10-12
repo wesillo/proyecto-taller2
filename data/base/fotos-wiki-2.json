@@ -30,9 +30,9 @@
     "Villarrica Lake"
   ],
   "punta-arenas": [
-    "Fuerte Bulnes",
-    "Plaza Muñoz Gamero",
-    "Magdalena Island (Chile)"
+    "Punta Arenas Cathedral",
+    "Cape Froward",
+    "Magellanic penguin"
   ],
   "la-serena-y-valle-de-elqui": [
     "Faro Monumental de La Serena",
@@ -40,9 +40,8 @@
     "Mamalluca Observatory"
   ],
   "iquique": [
-    "Cerro Dragón",
-    "Pica, Chile",
-    "Iquique"
+    "Cerros Pintados",
+    "Iquique Municipal Theatre"
   ],
   "arica": [
     "Lake Chungará",
@@ -70,13 +69,13 @@
     "Potrerillos Dam"
   ],
   "el-calafate": [
-    "Fitz Roy",
     "El Chaltén",
+    "Laguna de los Tres",
     "Lake Argentino"
   ],
   "ushuaia": [
-    "Tierra del Fuego National Park",
     "Beagle Channel",
+    "End of the World Train",
     "Martial Glacier"
   ],
   "salta-y-jujuy": [
@@ -85,8 +84,8 @@
     "Purmamarca"
   ],
   "cataratas-del-iguazu": [
-    "Iguazú National Park",
-    "Iguaçu National Park"
+    "Iguaçu National Park",
+    "Toco toucan"
   ],
   "rio-de-janeiro": [
     "Sugarloaf Mountain",
@@ -114,9 +113,9 @@
     "Jijoca de Jericoacoara"
   ],
   "lencois-maranhenses": [
-    "Barreirinhas",
     "Santo Amaro do Maranhão",
-    "Lençóis Maranhenses"
+    "Preguiças River",
+    "Atins"
   ],
   "bonito": [
     "Gruta do Lago Azul",
@@ -169,8 +168,9 @@
     "Plaza Botero"
   ],
   "san-andres": [
-    "Johnny Cay",
-    "San Andrés (island)"
+    "Haynes Cay",
+    "Rocky Cay (San Andrés)",
+    "San Luis, San Andrés"
   ],
   "eje-cafetero": [
     "Coffee Cultural Landscape of Colombia",
@@ -192,7 +192,7 @@
     "José Ignacio, Uruguay"
   ],
   "cancun-y-riviera-maya": [
-    "Isla Mujeres",
+    "Playa del Carmen",
     "Xcaret Park",
     "Cozumel"
   ],
@@ -207,9 +207,8 @@
     "Mitla"
   ],
   "los-cabos": [
-    "Cabo San Lucas",
-    "Medano Beach",
-    "San José del Cabo"
+    "San José del Cabo",
+    "Medano Beach"
   ],
   "punta-cana": [
     "Saona Island",
@@ -313,9 +312,9 @@
     "Jerónimos Monastery"
   ],
   "azores": [
-    "Lagoa do Fogo",
-    "Furnas",
-    "Pico Island"
+    "Pico Island",
+    "Terra Nostra Park",
+    "Lagoa do Fogo"
   ],
   "paris": [
     "Arc de Triomphe",
@@ -398,9 +397,9 @@
     "Grand Bazaar, Istanbul"
   ],
   "capadocia": [
-    "Fairy chimney",
     "Uçhisar",
-    "Göreme National Park"
+    "Göreme National Park and the Rock Sites of Cappadocia",
+    "Derinkuyu underground city"
   ],
   "georgia": [
     "Narikala",
@@ -438,14 +437,14 @@
     "Jozani Chwaka Bay National Park"
   ],
   "dubai": [
-    "Burj Khalifa",
     "Burj Al Arab",
+    "Dubai Fountain",
     "Dubai Creek"
   ],
   "jordania-y-petra": [
-    "Wadi Rum",
-    "Dead Sea",
-    "Jerash"
+    "Wadi Rum Protected Area",
+    "Jerash",
+    "Dead Sea"
   ],
   "tokio": [
     "Sensō-ji",
@@ -488,9 +487,9 @@
     "Coron, Palawan"
   ],
   "maldivas": [
-    "Baa Atoll",
-    "Vaadhoo",
-    "Kuda Huraa"
+    "Hulhumalé",
+    "Banana Reef",
+    "Whale shark"
   ],
   "sri-lanka": [
     "Temple of the Tooth",
@@ -527,14 +526,12 @@
     "Shotover River"
   ],
   "tahiti-y-bora-bora": [
-    "Teahupoo",
     "Moorea",
     "Papeete"
   ],
   "valdivia": [
-    "Niebla, Chile",
-    "Torreón Los Canelos",
-    "Valdivia"
+    "Valdivian fort system",
+    "Niebla, Chile"
   ],
   "bahia-inglesa": [
     "Pan de Azúcar National Park",
@@ -546,9 +543,9 @@
     "Corcovado National Park (Chile)"
   ],
   "antartica": [
-    "Lemaire Channel",
     "Gentoo penguin",
-    "Deception Island"
+    "Adélie penguin",
+    "Humpback whale"
   ],
   "cordoba": [
     "Córdoba Cathedral, Argentina",
@@ -620,14 +617,12 @@
     "La Candelaria, Bogotá"
   ],
   "providencia": [
-    "Old Providence McBean Lagoon National Natural Park",
-    "Providencia Island",
     "Crab Cay"
   ],
   "montevideo-y-colonia": [
-    "Palacio Salvo",
     "Rambla of Montevideo",
-    "Montevideo"
+    "Solís Theatre",
+    "Montevideo Metropolitan Cathedral"
   ],
   "cabo-polonio": [
     "Punta del Diablo",
@@ -704,9 +699,9 @@
     "Funchal"
   ],
   "mallorca": [
-    "Serra de Tramuntana",
     "Valldemossa",
-    "Cap de Formentor"
+    "Cap de Formentor",
+    "Caló des Moro"
   ],
   "pais-vasco": [
     "Gaztelugatxe",
@@ -788,7 +783,6 @@
     "Sun Moon Lake"
   ],
   "hokkaido": [
-    "Shiretoko National Park",
     "Otaru Canal",
     "Sapporo Snow Festival"
   ],
@@ -840,8 +834,8 @@
     "Pamplemousses Botanical Garden"
   ],
   "seychelles": [
-    "Vallée de Mai",
     "La Digue",
+    "Anse Lazio",
     "Praslin"
   ],
   "madagascar": [
@@ -850,9 +844,9 @@
     "Isalo National Park"
   ],
   "cabo-verde": [
-    "Pedra de Lume",
     "Fogo, Cape Verde",
-    "Santo Antão, Cape Verde"
+    "Santo Antão, Cape Verde",
+    "Pedra de Lume"
   ],
   "ruanda": [
     "Mountain gorilla",
@@ -868,12 +862,10 @@
     "Hosier Lane"
   ],
   "gran-barrera-de-coral": [
-    "Heart Reef",
-    "Green Island (Queensland)",
-    "Ocellaris clownfish"
+    "Ocellaris clownfish",
+    "Coral reef"
   ],
   "fiyi": [
-    "Yasawa Islands",
     "Monuriki",
     "Denarau Island"
   ],
@@ -892,14 +884,14 @@
     "Copiapó"
   ],
   "puyehue": [
-    "Puyehue-Cordón Caulle",
     "Lake Rupanco",
-    "Puyehue Lake"
+    "Puyehue Lake",
+    "Antillanca"
   ],
   "parque-pumalin": [
-    "Chaitén (volcano)",
+    "Fitzroya",
     "Michinmahuida",
-    "Fitzroya"
+    "Chaitén"
   ],
   "auckland": [
     "Hobbiton Movie Set",
@@ -917,9 +909,8 @@
     "Jesuit Missions of Chiquitos"
   ],
   "cali": [
-    "Cristo Rey (Cali)",
     "Iglesia de La Ermita",
-    "Farallones de Cali National Natural Park"
+    "Cristo Rey (Cali)"
   ],
   "trujillo-y-huanchaco": [
     "Chan Chan",
@@ -944,8 +935,8 @@
     "National Congress Palace"
   ],
   "fortaleza": [
-    "Canoa Quebrada",
     "Iracema Beach",
+    "Dragão do Mar Center of Art and Culture",
     "Beach Park"
   ],
   "atenas": [
@@ -964,8 +955,8 @@
     "Merdeka Square, Kuala Lumpur"
   ],
   "puerto-vallarta": [
-    "Sayulita",
-    "Banderas Bay"
+    "Yelapa",
+    "Los Arcos National Marine Park"
   ],
   "uluru": [
     "Kata Tjuta",

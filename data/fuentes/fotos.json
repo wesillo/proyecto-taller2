@@ -1,15 +1,8 @@
 {
   "fuente": "Wikimedia Commons",
   "fechaCaptura": "2026-10-12",
-  "total": 194,
-  "errores": [
-    "la-serena-y-valle-de-elqui: el artículo \"Elqui Valley\" no tiene imagen libre",
-    "cartagena: no existe el artículo \"Walled City of Cartagena\"",
-    "maldivas: no existe el artículo \"Overwater bungalow\"",
-    "jamaica: no existe el artículo \"Seven Mile Beach (Jamaica)\"",
-    "oman: \"Sultan_Qaboos_Grand_Mosque_RB.jpg\" no está en Wikimedia Commons",
-    "mongolia: API en.wikipedia.org respondió con error"
-  ],
+  "total": 200,
+  "errores": [],
   "fotos": {
     "alaska": {
       "archivo": "img/destinos/alaska.webp",
@@ -73,15 +66,18 @@
     },
     "antartica": {
       "archivo": "img/destinos/antartica.webp",
-      "fuente": "Antarctic Peninsula",
-      "nombreArchivo": "Antpen-en.png",
-      "commons": "https://commons.wikimedia.org/wiki/File:Antpen-en.png",
-      "mime": "image/png",
-      "ancho": 1025,
-      "alto": 1584,
-      "autor": "Gi",
-      "licencia": "CC BY-SA 3.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      "fuente": [
+        "Lemaire Channel",
+        "Paradise Harbor"
+      ],
+      "nombreArchivo": "Paradise_Harbour,_Antarctica_(6087257019).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Paradise_Harbour,_Antarctica_(6087257019).jpg",
+      "mime": "image/jpeg",
+      "ancho": 5616,
+      "alto": 3744,
+      "autor": "Liam Quinn from Canada",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
     },
     "antigua-guatemala": {
       "archivo": "img/destinos/antigua-guatemala.webp",
@@ -157,15 +153,18 @@
     },
     "auckland": {
       "archivo": "img/destinos/auckland.webp",
-      "fuente": "Sky Tower (Auckland)",
-      "nombreArchivo": "01_Auckland_New_Zealand-1000137.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:01_Auckland_New_Zealand-1000137.jpg",
+      "fuente": [
+        "Auckland Harbour Bridge",
+        "Rangitoto Island"
+      ],
+      "nombreArchivo": "Auckland_Harbour_Bridge_-_August_2024.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Auckland_Harbour_Bridge_-_August_2024.jpg",
       "mime": "image/jpeg",
-      "ancho": 506,
-      "alto": 900,
-      "autor": "QFSE Media",
-      "licencia": "CC BY-SA 3.0 nz",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0/nz/deed.en"
+      "ancho": 6000,
+      "alto": 4000,
+      "autor": "MrSeabody",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
     },
     "azores": {
       "archivo": "img/destinos/azores.webp",
@@ -217,15 +216,18 @@
     },
     "barcelona": {
       "archivo": "img/destinos/barcelona.webp",
-      "fuente": "Sagrada Família",
-      "nombreArchivo": "SF_maig_2_cropped.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg",
+      "fuente": [
+        "Park Güell",
+        "Casa Batlló"
+      ],
+      "nombreArchivo": "Parc_guell_-_panoramio.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Parc_guell_-_panoramio.jpg",
       "mime": "image/jpeg",
-      "ancho": 1227,
-      "alto": 1786,
-      "autor": "Canaan",
-      "licencia": "CC BY-SA 4.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "ancho": 2048,
+      "alto": 1536,
+      "autor": "essetefano",
+      "licencia": "CC BY 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/3.0"
     },
     "bariloche": {
       "archivo": "img/destinos/bariloche.webp",
@@ -373,15 +375,18 @@
     },
     "cabo-verde": {
       "archivo": "img/destinos/cabo-verde.webp",
-      "fuente": "Sal, Cape Verde",
-      "nombreArchivo": "Bela-vista-net-Sal-map.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Bela-vista-net-Sal-map.jpg",
+      "fuente": [
+        "Santa Maria, Cape Verde",
+        "Pedra de Lume"
+      ],
+      "nombreArchivo": "SantaMariaSal.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:SantaMariaSal.jpg",
       "mime": "image/jpeg",
-      "ancho": 340,
-      "alto": 474,
-      "autor": "The original uploader was Bela-vista.net at German Wikipedia .",
-      "licencia": "CC BY-SA 3.0",
-      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+      "ancho": 3264,
+      "alto": 2448,
+      "autor": "Montek",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     "cali": {
       "archivo": "img/destinos/cali.webp",
@@ -421,13 +426,31 @@
     },
     "carretera-austral": {
       "archivo": "img/destinos/carretera-austral.webp",
-      "fuente": "Carretera Austral",
-      "nombreArchivo": "Ruta_7_Chile_100km_sign.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Ruta_7_Chile_100km_sign.jpg",
+      "fuente": [
+        "Marble Caves",
+        "General Carrera Lake"
+      ],
+      "nombreArchivo": "Lago_Gral._Carrera_01.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Lago_Gral._Carrera_01.JPG",
       "mime": "image/jpeg",
-      "ancho": 2816,
-      "alto": 2112,
-      "autor": "Jason Quinn",
+      "ancho": 1280,
+      "alto": 960,
+      "autor": "Jorge Morales Piderit",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "cartagena": {
+      "archivo": "img/destinos/cartagena.webp",
+      "fuente": [
+        "Castillo San Felipe de Barajas",
+        "Cartagena, Colombia"
+      ],
+      "nombreArchivo": "62_-_Carthagène_-_Décembre_2008.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:62_-_Carthag%C3%A8ne_-_D%C3%A9cembre_2008.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4719,
+      "alto": 2660,
+      "autor": "Martin St-Amant ( S23678 )",
       "licencia": "CC BY-SA 3.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
@@ -469,15 +492,18 @@
     },
     "china-pekin": {
       "archivo": "img/destinos/china-pekin.webp",
-      "fuente": "Forbidden City",
-      "nombreArchivo": "The_Forbidden_City_-_View_from_Coal_Hill.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:The_Forbidden_City_-_View_from_Coal_Hill.jpg",
+      "fuente": [
+        "Temple of Heaven",
+        "Mutianyu"
+      ],
+      "nombreArchivo": "Temple_of_Heaven_20160323_01.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_20160323_01.jpg",
       "mime": "image/jpeg",
-      "ancho": 4092,
-      "alto": 2046,
-      "autor": "Pixelflake",
-      "licencia": "CC BY-SA 3.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      "ancho": 2400,
+      "alto": 1597,
+      "autor": "Shujianyang",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     "ciudad-de-mexico": {
       "archivo": "img/destinos/ciudad-de-mexico.webp",
@@ -637,13 +663,16 @@
     },
     "dubai": {
       "archivo": "img/destinos/dubai.webp",
-      "fuente": "Burj Khalifa",
-      "nombreArchivo": "Burj_Khalifa_(worlds_tallest_building)_and_the_Dubai_skyline_(25781049892).jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(worlds_tallest_building)_and_the_Dubai_skyline_(25781049892).jpg",
+      "fuente": [
+        "Dubai Marina",
+        "Burj Al Arab"
+      ],
+      "nombreArchivo": "Dubai_Marina_Skyline.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Dubai_Marina_Skyline.jpg",
       "mime": "image/jpeg",
-      "ancho": 5496,
-      "alto": 3670,
-      "autor": "imran shahabuddin",
+      "ancho": 6000,
+      "alto": 4000,
+      "autor": "Norlando Pobre",
       "licencia": "CC BY 2.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
     },
@@ -673,15 +702,18 @@
     },
     "eje-cafetero": {
       "archivo": "img/destinos/eje-cafetero.webp",
-      "fuente": "Cocora Valley",
-      "nombreArchivo": "Valle_del_cocora_-_general_view.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Valle_del_cocora_-_general_view.jpg",
+      "fuente": [
+        "Ceroxylon quindiuense",
+        "Salento, Quindío"
+      ],
+      "nombreArchivo": "Palma_de_cera_del_Quindío_(Ceroxylon_quindiuense)_(14728442862).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Palma_de_cera_del_Quind%C3%ADo_(Ceroxylon_quindiuense)_(14728442862).jpg",
       "mime": "image/jpeg",
-      "ancho": 1280,
-      "alto": 1704,
-      "autor": "Angela Calle and Daniel Di Palma",
-      "licencia": "CC BY-SA 4.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "ancho": 2432,
+      "alto": 3648,
+      "autor": "Alejandro Bayer Tamayo from Armenia, Colombia",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
     },
     "el-calafate": {
       "archivo": "img/destinos/el-calafate.webp",
@@ -841,15 +873,19 @@
     },
     "gran-barrera-de-coral": {
       "archivo": "img/destinos/gran-barrera-de-coral.webp",
-      "fuente": "Great Barrier Reef",
-      "nombreArchivo": "ISS-45_StoryOfWater,_Great_Barrier_Reef,_Australia.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:ISS-45_StoryOfWater,_Great_Barrier_Reef,_Australia.jpg",
+      "fuente": [
+        "Whitehaven Beach",
+        "Heart Reef",
+        "Green Island (Queensland)"
+      ],
+      "nombreArchivo": "Whitehaven_Beach,_Whitsunday_Island,_Queensland.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Whitehaven_Beach,_Whitsunday_Island,_Queensland.jpg",
       "mime": "image/jpeg",
-      "ancho": 1600,
-      "alto": 1065,
-      "autor": "NASA/Kjell Lindgren",
-      "licencia": "Public domain",
-      "licenciaUrl": ""
+      "ancho": 2929,
+      "alto": 1947,
+      "autor": "Slug69",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
     },
     "hawai": {
       "archivo": "img/destinos/hawai.webp",
@@ -877,15 +913,18 @@
     },
     "hong-kong": {
       "archivo": "img/destinos/hong-kong.webp",
-      "fuente": "Victoria Harbour",
-      "nombreArchivo": "1957_map_of_Victoria_Harbour_by_the_British_War_Office.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:1957_map_of_Victoria_Harbour_by_the_British_War_Office.jpg",
+      "fuente": [
+        "Victoria Peak",
+        "Avenue of Stars, Hong Kong"
+      ],
+      "nombreArchivo": "High_West_and_Victoria_Peak_from_Victoria_Gap_(crop1).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:High_West_and_Victoria_Peak_from_Victoria_Gap_(crop1).jpg",
       "mime": "image/jpeg",
-      "ancho": 16570,
-      "alto": 12629,
-      "autor": "War Office",
-      "licencia": "Public domain",
-      "licenciaUrl": ""
+      "ancho": 3600,
+      "alto": 2700,
+      "autor": "Daniel Case",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "huaraz": {
       "archivo": "img/destinos/huaraz.webp",
@@ -1019,17 +1058,35 @@
       "licencia": "CC BY 3.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by/3.0"
     },
+    "jamaica": {
+      "archivo": "img/destinos/jamaica.webp",
+      "fuente": [
+        "Negril",
+        "Dunn's River Falls"
+      ],
+      "nombreArchivo": "Negril_Jamaica_2007-09.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Negril_Jamaica_2007-09.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1400,
+      "alto": 933,
+      "autor": "Autor desconocido",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
     "jericoacoara": {
       "archivo": "img/destinos/jericoacoara.webp",
-      "fuente": "Jericoacoara",
-      "nombreArchivo": "Ceara_Municip_JijocadeJericoacoara.svg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Ceara_Municip_JijocadeJericoacoara.svg",
-      "mime": "image/svg+xml",
-      "ancho": 829,
-      "alto": 990,
-      "autor": "Raphael Lorenzeto de Abreu",
-      "licencia": "CC BY 2.5",
-      "licenciaUrl": "https://creativecommons.org/licenses/by/2.5"
+      "fuente": [
+        "Jericoacoara National Park",
+        "Jericoacoara"
+      ],
+      "nombreArchivo": "2010._Jijoca_de_Jericoacoara_(CE)_(3).JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:2010._Jijoca_de_Jericoacoara_(CE)_(3).JPG",
+      "mime": "image/jpeg",
+      "ancho": 1024,
+      "alto": 768,
+      "autor": "Allan Ferreira",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "jordania-y-petra": {
       "archivo": "img/destinos/jordania-y-petra.webp",
@@ -1093,39 +1150,64 @@
     },
     "kuala-lumpur": {
       "archivo": "img/destinos/kuala-lumpur.webp",
-      "fuente": "Petronas Towers",
-      "nombreArchivo": "Petronas_Towers_Logo.svg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Petronas_Towers_Logo.svg",
-      "mime": "image/svg+xml",
-      "ancho": 512,
-      "alto": 292,
-      "autor": "Unknown author Unknown author",
-      "licencia": "Public domain",
-      "licenciaUrl": ""
+      "fuente": [
+        "Batu Caves",
+        "Sultan Abdul Samad Building"
+      ],
+      "nombreArchivo": "Batu_Caves_stairs_2022-05.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Batu_Caves_stairs_2022-05.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 3024,
+      "autor": "Chainwit.",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     "la-habana": {
       "archivo": "img/destinos/la-habana.webp",
-      "fuente": "Old Havana",
-      "nombreArchivo": "Havana_Map_-_Habana_Vieja.png",
-      "commons": "https://commons.wikimedia.org/wiki/File:Havana_Map_-_Habana_Vieja.png",
-      "mime": "image/png",
-      "ancho": 1298,
-      "alto": 722,
-      "autor": "Dэя-Бøяg",
+      "fuente": [
+        "El Capitolio",
+        "Malecón, Havana"
+      ],
+      "nombreArchivo": "El_Capitolio_Havana_Cuba.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:El_Capitolio_Havana_Cuba.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3256,
+      "alto": 2171,
+      "autor": "Nigel Pacquette",
       "licencia": "CC BY-SA 3.0",
-      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "la-paz-y-titicaca": {
       "archivo": "img/destinos/la-paz-y-titicaca.webp",
-      "fuente": "Lake Titicaca",
-      "nombreArchivo": "Lake_Titicaca_ESA22522896.jpeg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Lake_Titicaca_ESA22522896.jpeg",
+      "fuente": [
+        "Isla del Sol",
+        "Copacabana, Bolivia"
+      ],
+      "nombreArchivo": "Isladelsol.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Isladelsol.jpg",
       "mime": "image/jpeg",
-      "ancho": 2956,
-      "alto": 2956,
-      "autor": "European Space Agency",
-      "licencia": "Attribution",
-      "licenciaUrl": ""
+      "ancho": 1600,
+      "alto": 1200,
+      "autor": "Autor desconocido",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "la-serena-y-valle-de-elqui": {
+      "archivo": "img/destinos/la-serena-y-valle-de-elqui.webp",
+      "fuente": [
+        "Faro Monumental de La Serena",
+        "Vicuña, Chile",
+        "La Serena, Chile"
+      ],
+      "nombreArchivo": "Vicuña_desde_los_cerros.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Vicu%C3%B1a_desde_los_cerros.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1600,
+      "alto": 810,
+      "autor": "Samuel Norero",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "lago-de-como": {
       "archivo": "img/destinos/lago-de-como.webp",
@@ -1273,15 +1355,19 @@
     },
     "madeira": {
       "archivo": "img/destinos/madeira.webp",
-      "fuente": "Madeira",
-      "nombreArchivo": "Flag_of_Madeira.svg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Flag_of_Madeira.svg",
-      "mime": "image/svg+xml",
-      "ancho": 1200,
-      "alto": 800,
-      "autor": "Original: Brian Boru Vector: Nuno Tavares",
-      "licencia": "CC BY-SA 1.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/1.0"
+      "fuente": [
+        "Ponta de São Lourenço",
+        "Cabo Girão",
+        "Pico Ruivo"
+      ],
+      "nombreArchivo": "Ponta_de_São_Lourenço_north_north_east.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Ponta_de_S%C3%A3o_Louren%C3%A7o_north_north_east.jpg",
+      "mime": "image/jpeg",
+      "ancho": 10000,
+      "alto": 4571,
+      "autor": "Richard Bartz",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "madrid": {
       "archivo": "img/destinos/madrid.webp",
@@ -1294,6 +1380,22 @@
       "autor": "Jorge Franganillo",
       "licencia": "CC BY 2.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "maldivas": {
+      "archivo": "img/destinos/maldivas.webp",
+      "fuente": [
+        "Malé",
+        "Maldives",
+        "Baa Atoll"
+      ],
+      "nombreArchivo": "Malé.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Mal%C3%A9.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5451,
+      "alto": 2790,
+      "autor": "Shahee Ilyas",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "mallorca": {
       "archivo": "img/destinos/mallorca.webp",
@@ -1405,15 +1507,18 @@
     },
     "mendoza": {
       "archivo": "img/destinos/mendoza.webp",
-      "fuente": "Mendoza wine",
-      "nombreArchivo": "Argentina_Mendoza_location_map.svg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Argentina_Mendoza_location_map.svg",
-      "mime": "image/svg+xml",
-      "ancho": 750,
-      "alto": 1062,
-      "autor": "Argentina_location_map.svg : NordNordWest Map_of_Mendoza_Province.svg : Pertile derivative work: Milenioscuro",
-      "licencia": "CC BY-SA 3.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      "fuente": [
+        "Aconcagua",
+        "Uco Valley"
+      ],
+      "nombreArchivo": "Aconcagua2016.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Aconcagua2016.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4994,
+      "alto": 2758,
+      "autor": "Bjørn Christian Tørrissen",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     "merida-y-yucatan": {
       "archivo": "img/destinos/merida-y-yucatan.webp",
@@ -1438,6 +1543,21 @@
       "autor": "chensiyuan",
       "licencia": "CC BY-SA 4.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "mongolia": {
+      "archivo": "img/destinos/mongolia.webp",
+      "fuente": [
+        "Gobi Desert",
+        "Khongoryn Els"
+      ],
+      "nombreArchivo": "Gobi_Desert.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Gobi_Desert.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1600,
+      "alto": 1200,
+      "autor": "Autor desconocido",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
     },
     "montanita": {
       "archivo": "img/destinos/montanita.webp",
@@ -1501,15 +1621,18 @@
     },
     "nueva-orleans": {
       "archivo": "img/destinos/nueva-orleans.webp",
-      "fuente": "French Quarter",
-      "nombreArchivo": "French_Quarter,_looking_north_with_Mississippi_River_to_the_right_2011.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:French_Quarter,_looking_north_with_Mississippi_River_to_the_right_2011.jpg",
+      "fuente": [
+        "St. Louis Cathedral (New Orleans)",
+        "Jackson Square"
+      ],
+      "nombreArchivo": "Cathedral_new_orleans.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Cathedral_new_orleans.jpg",
       "mime": "image/jpeg",
-      "ancho": 1280,
-      "alto": 799,
-      "autor": "Chris Litherland",
+      "ancho": 1712,
+      "alto": 2050,
+      "autor": "No machine-readable author provided. Krakers assumed (based on copyright claims). (Corrected by User:StAn )",
       "licencia": "CC BY-SA 3.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
     },
     "nueva-york": {
       "archivo": "img/destinos/nueva-york.webp",
@@ -1534,6 +1657,22 @@
       "autor": "nsaum75 !Dígame¡ ‎",
       "licencia": "CC BY-SA 3.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "oman": {
+      "archivo": "img/destinos/oman.webp",
+      "fuente": [
+        "Nizwa Fort",
+        "Muttrah",
+        "Wahiba Sands"
+      ],
+      "nombreArchivo": "Nizwa_(5).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Nizwa_(5).jpg",
+      "mime": "image/jpeg",
+      "ancho": 4368,
+      "alto": 2912,
+      "autor": "Andries Oudshoorn",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
     },
     "oporto": {
       "archivo": "img/destinos/oporto.webp",
@@ -1669,13 +1808,16 @@
     },
     "peninsula-valdes": {
       "archivo": "img/destinos/peninsula-valdes.webp",
-      "fuente": "Valdes Peninsula",
-      "nombreArchivo": "Peninsula_Valdés_STS-68.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Peninsula_Vald%C3%A9s_STS-68.jpg",
+      "fuente": [
+        "Puerto Pirámides",
+        "Southern right whale"
+      ],
+      "nombreArchivo": "Puerto_Pirámides_y_Golfo_Nuevo.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Puerto_Pir%C3%A1mides_y_Golfo_Nuevo.jpg",
       "mime": "image/jpeg",
-      "ancho": 432,
-      "alto": 341,
-      "autor": "Autor desconocido",
+      "ancho": 2048,
+      "alto": 1536,
+      "autor": "No machine-readable author provided. Raulhoracio assumed (based on copyright claims).",
       "licencia": "Public domain",
       "licenciaUrl": ""
     },
@@ -1717,15 +1859,18 @@
     },
     "providencia": {
       "archivo": "img/destinos/providencia.webp",
-      "fuente": "Providencia Island",
-      "nombreArchivo": "Divine_Providencia_(cropped).jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Divine_Providencia_(cropped).jpg",
+      "fuente": [
+        "Old Providence McBean Lagoon National Natural Park",
+        "Santa Catalina Island (Colombia)"
+      ],
+      "nombreArchivo": "Isla_Santa_Catalina_island,_Colombia.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Isla_Santa_Catalina_island,_Colombia.JPG",
       "mime": "image/jpeg",
-      "ancho": 837,
-      "alto": 992,
-      "autor": "NASA Earth Observatory image by Joshua Stevens, using Landsat data from the U.S. Geological Survey.",
-      "licencia": "Public domain",
-      "licenciaUrl": ""
+      "ancho": 937,
+      "alto": 545,
+      "autor": "Roberto San Andrés",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
     },
     "pucon": {
       "archivo": "img/destinos/pucon.webp",
@@ -1741,13 +1886,16 @@
     },
     "puerto-vallarta": {
       "archivo": "img/destinos/puerto-vallarta.webp",
-      "fuente": "Puerto Vallarta",
-      "nombreArchivo": "Collage_Puerto_Vallarta.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Collage_Puerto_Vallarta.jpg",
+      "fuente": [
+        "Banderas Bay",
+        "Malecón (Puerto Vallarta)"
+      ],
+      "nombreArchivo": "VeleroBanderas.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:VeleroBanderas.JPG",
       "mime": "image/jpeg",
-      "ancho": 1163,
-      "alto": 1767,
-      "autor": "Microstar",
+      "ancho": 2816,
+      "alto": 2112,
+      "autor": "Oescalona",
       "licencia": "CC BY-SA 4.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
@@ -1777,15 +1925,18 @@
     },
     "punta-arenas": {
       "archivo": "img/destinos/punta-arenas.webp",
-      "fuente": "Punta Arenas",
-      "nombreArchivo": "Montaje_Punta_Arenas.png",
-      "commons": "https://commons.wikimedia.org/wiki/File:Montaje_Punta_Arenas.png",
-      "mime": "image/png",
-      "ancho": 1026,
-      "alto": 1821,
-      "autor": "Montaje realizado por Oscaroyarzo .",
-      "licencia": "CC BY-SA 4.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      "fuente": [
+        "Magdalena Island (Chile)",
+        "Strait of Magellan"
+      ],
+      "nombreArchivo": "StraitOfMagellan.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:StraitOfMagellan.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2000,
+      "alto": 2600,
+      "autor": "Jacques Descloitres, MODIS Rapid Response Team, NASA /GSFC",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
     },
     "punta-cana": {
       "archivo": "img/destinos/punta-cana.webp",
@@ -1837,15 +1988,18 @@
     },
     "quito-y-mitad-del-mundo": {
       "archivo": "img/destinos/quito-y-mitad-del-mundo.webp",
-      "fuente": "Historic Center of Quito",
-      "nombreArchivo": "FACHADA_ASAMBLEA_NACIONAL._QUITO,_20_DE_FEBRERO_2020._01.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:FACHADA_ASAMBLEA_NACIONAL._QUITO,_20_DE_FEBRERO_2020._01.jpg",
+      "fuente": [
+        "Basílica del Voto Nacional",
+        "Ciudad Mitad del Mundo"
+      ],
+      "nombreArchivo": "El_Voto_Nacional_._Quito,_Ecuador.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:El_Voto_Nacional_._Quito,_Ecuador.JPG",
       "mime": "image/jpeg",
-      "ancho": 4000,
-      "alto": 1950,
-      "autor": "Asamblea Nacional del Ecuador",
-      "licencia": "CC BY-SA 2.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      "ancho": 480,
+      "alto": 640,
+      "autor": "Samuelistok",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     "rio-de-janeiro": {
       "archivo": "img/destinos/rio-de-janeiro.webp",
@@ -1969,12 +2123,15 @@
     },
     "san-andres": {
       "archivo": "img/destinos/san-andres.webp",
-      "fuente": "San Andrés (island)",
-      "nombreArchivo": "San_Andres_Island_Montage.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:San_Andres_Island_Montage.jpg",
+      "fuente": [
+        "Johnny Cay",
+        "San Andrés, San Andrés y Providencia"
+      ],
+      "nombreArchivo": "Panorámica_de_San_Andres.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_de_San_Andres.JPG",
       "mime": "image/jpeg",
-      "ancho": 1000,
-      "alto": 1200,
+      "ancho": 2048,
+      "alto": 1536,
       "autor": "Mr.Jhosimar",
       "licencia": "CC BY-SA 3.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
@@ -2029,13 +2186,16 @@
     },
     "sao-paulo": {
       "archivo": "img/destinos/sao-paulo.webp",
-      "fuente": "Paulista Avenue",
-      "nombreArchivo": "Vista_da_Avenida_Paulista_-_Sesc_Avenida_Paulista_por_Rodrigo_Tetsuo_Argenton_(1).jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Vista_da_Avenida_Paulista_-_Sesc_Avenida_Paulista_por_Rodrigo_Tetsuo_Argenton_(1).jpg",
+      "fuente": [
+        "Ibirapuera Park",
+        "São Paulo Museum of Art"
+      ],
+      "nombreArchivo": "Parque_do_ibirapuera_visto_do_céu.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Parque_do_ibirapuera_visto_do_c%C3%A9u.jpg",
       "mime": "image/jpeg",
-      "ancho": 4165,
-      "alto": 6568,
-      "autor": "Rodrigo Tetsuo Argenton",
+      "ancho": 1080,
+      "alto": 720,
+      "autor": "Fernando Stankuns",
       "licencia": "CC BY-SA 4.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
@@ -2113,13 +2273,16 @@
     },
     "sri-lanka": {
       "archivo": "img/destinos/sri-lanka.webp",
-      "fuente": "Nine Arches Bridge",
-      "nombreArchivo": "NineArchesBridge.JPG",
-      "commons": "https://commons.wikimedia.org/wiki/File:NineArchesBridge.JPG",
+      "fuente": [
+        "Sigiriya",
+        "Temple of the Tooth"
+      ],
+      "nombreArchivo": "Sigiriya_(141688197).jpeg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Sigiriya_(141688197).jpeg",
       "mime": "image/jpeg",
-      "ancho": 5184,
-      "alto": 3456,
-      "autor": "Deitel55",
+      "ancho": 2048,
+      "alto": 1365,
+      "autor": "Wrobell",
       "licencia": "CC BY-SA 3.0",
       "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
@@ -2137,27 +2300,33 @@
     },
     "tahiti-y-bora-bora": {
       "archivo": "img/destinos/tahiti-y-bora-bora.webp",
-      "fuente": "Bora Bora",
-      "nombreArchivo": "Bora_Bora_ISS006.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Bora_Bora_ISS006.jpg",
+      "fuente": [
+        "Mount Otemanu",
+        "Teahupoo"
+      ],
+      "nombreArchivo": "Borabora-2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Borabora-2.jpg",
       "mime": "image/jpeg",
-      "ancho": 2000,
-      "alto": 1600,
-      "autor": "NASA Johnson Space Center",
-      "licencia": "Public domain",
-      "licenciaUrl": ""
+      "ancho": 3168,
+      "alto": 2112,
+      "autor": "Borabora.jpg : User:Taka-0905 derivative work: Alvaro qc ( talk )",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "taiwan": {
       "archivo": "img/destinos/taiwan.webp",
-      "fuente": "Taipei 101",
-      "nombreArchivo": "Taipei_101_logo.svg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Taipei_101_logo.svg",
-      "mime": "image/svg+xml",
-      "ancho": 512,
-      "alto": 219,
-      "autor": "Taipei Financial Center Corporation",
-      "licencia": "Public domain",
-      "licenciaUrl": ""
+      "fuente": [
+        "Jiufen",
+        "Chiang Kai-shek Memorial Hall"
+      ],
+      "nombreArchivo": "A-mei_Tea_House.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:A-mei_Tea_House.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5502,
+      "alto": 3668,
+      "autor": "lumoplank",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
     },
     "tallin": {
       "archivo": "img/destinos/tallin.webp",
@@ -2197,15 +2366,18 @@
     },
     "torres-del-paine": {
       "archivo": "img/destinos/torres-del-paine.webp",
-      "fuente": "Torres del Paine National Park",
-      "nombreArchivo": "Torres_del_Paine_y_cuernos_del_Paine,_montaje.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Torres_del_Paine_y_cuernos_del_Paine,_montaje.jpg",
+      "fuente": [
+        "Cuernos del Paine",
+        "Grey Glacier"
+      ],
+      "nombreArchivo": "Los_Cuernos_de_Torres_del_Paine.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Los_Cuernos_de_Torres_del_Paine.jpg",
       "mime": "image/jpeg",
-      "ancho": 1920,
-      "alto": 2430,
-      "autor": "Karen Chan 16 y Miguel.v ( local | logs | global ) (originales), y Jorge Morales Piderit (montaje).",
-      "licencia": "CC BY 4.0",
-      "licenciaUrl": "https://creativecommons.org/licenses/by/4.0"
+      "ancho": 5183,
+      "alto": 3251,
+      "autor": "Natalia Reyes Escobar",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     },
     "toscana-y-florencia": {
       "archivo": "img/destinos/toscana-y-florencia.webp",
@@ -2221,15 +2393,18 @@
     },
     "trujillo-y-huanchaco": {
       "archivo": "img/destinos/trujillo-y-huanchaco.webp",
-      "fuente": "Chan Chan",
-      "nombreArchivo": "Chan_chan_view1.jpg",
-      "commons": "https://commons.wikimedia.org/wiki/File:Chan_chan_view1.jpg",
+      "fuente": [
+        "Huanchaco",
+        "Caballito de totora"
+      ],
+      "nombreArchivo": "PhotomontageHuanchaco.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:PhotomontageHuanchaco.jpg",
       "mime": "image/jpeg",
-      "ancho": 1766,
-      "alto": 1181,
-      "autor": "Håkan Svensson",
+      "ancho": 500,
+      "alto": 899,
+      "autor": "Enjoyatom21",
       "licencia": "CC BY-SA 3.0",
-      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
     },
     "tulum": {
       "archivo": "img/destinos/tulum.webp",

@@ -8,4 +8,5 @@ _site/
 *.png
 !docs/capturas/*.png
 !docs/afiche/*.png
+!docs/presentacion/img/*.png
 datos.csv

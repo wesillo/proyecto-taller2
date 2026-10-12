@@ -1,8 +1,11 @@
 {
   "fuente": "Wikimedia Commons",
   "fechaCaptura": "2026-10-12",
-  "total": 200,
-  "errores": [],
+  "total": 398,
+  "errores": [
+    "punta-arenas-2: Fuerte Bulnes: image/svg+xml | no existe el artículo \"Plaza Muñoz Gamero\" | no existe el artículo \"Magdalena Island (Chile)\"",
+    "maldivas-2: Baa Atoll: image/png | el artículo \"Vaadhoo\" no tiene imagen libre | no existe el artículo \"Kuda Huraa\""
+  ],
   "fotos": {
     "alaska": {
       "archivo": "img/destinos/alaska.webp",
@@ -2515,6 +2518,3158 @@
       "autor": "No machine-readable author provided. Mbz1 assumed (based on copyright claims).",
       "licencia": "CC BY-SA 3.0",
       "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    }
+  },
+  "fotos2": {
+    "alaska": {
+      "archivo": "img/destinos/alaska-2.webp",
+      "fuente": [
+        "Denali",
+        "Mendenhall Glacier",
+        "Portage Glacier"
+      ],
+      "nombreArchivo": "Wonder_Lake_and_Denali.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Wonder_Lake_and_Denali.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2824,
+      "alto": 2176,
+      "autor": "Denali National Park and Preserve",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "alpes-suizos": {
+      "archivo": "img/destinos/alpes-suizos-2.webp",
+      "fuente": [
+        "Lauterbrunnen",
+        "Lake Lucerne",
+        "Jungfrau"
+      ],
+      "nombreArchivo": "1_lauterbrunnen_valley_wengen_2022.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:1_lauterbrunnen_valley_wengen_2022.jpg",
+      "mime": "image/jpeg",
+      "ancho": 14077,
+      "alto": 9464,
+      "autor": "Chensiyuan",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "amazonia-peruana": {
+      "archivo": "img/destinos/amazonia-peruana-2.webp",
+      "fuente": [
+        "Tambopata National Reserve",
+        "Manú National Park",
+        "Iquitos",
+        "Pacaya-Samiria National Reserve"
+      ],
+      "nombreArchivo": "PuertoMaldonado_LagoSandoval3.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:PuertoMaldonado_LagoSandoval3.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2013,
+      "alto": 1537,
+      "autor": "No machine-readable author provided. Xauxa assumed (based on copyright claims).",
+      "licencia": "CC BY 2.5",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.5"
+    },
+    "amsterdam": {
+      "archivo": "img/destinos/amsterdam-2.webp",
+      "fuente": [
+        "Zaanse Schans",
+        "Rijksmuseum",
+        "Keukenhof"
+      ],
+      "nombreArchivo": "Zaanstad_Zaanse_Schans_22.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Zaanstad_Zaanse_Schans_22.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4592,
+      "alto": 2301,
+      "autor": "Zairon",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "angkor": {
+      "archivo": "img/destinos/angkor-2.webp",
+      "fuente": [
+        "Bayon",
+        "Ta Prohm",
+        "Banteay Srei"
+      ],
+      "nombreArchivo": "Bayon,_Angkor_Thom,_Camboya,_2013-08-17,_DD_37.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Bayon,_Angkor_Thom,_Camboya,_2013-08-17,_DD_37.JPG",
+      "mime": "image/jpeg",
+      "ancho": 5533,
+      "alto": 2499,
+      "autor": "Diego Delso",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "antartica": {
+      "archivo": "img/destinos/antartica-2.webp",
+      "fuente": [
+        "Lemaire Channel",
+        "Gentoo penguin",
+        "Deception Island"
+      ],
+      "nombreArchivo": "Deception_island.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Deception_island.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2082,
+      "alto": 2288,
+      "autor": "European Union, Copernicus Sentinel-2 imagery",
+      "licencia": "Attribution",
+      "licenciaUrl": ""
+    },
+    "antigua-guatemala": {
+      "archivo": "img/destinos/antigua-guatemala-2.webp",
+      "fuente": [
+        "Volcán de Agua",
+        "Lake Atitlán",
+        "Volcán de Fuego"
+      ],
+      "nombreArchivo": "VolcanAguaPascuas.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:VolcanAguaPascuas.jpg",
+      "mime": "image/jpeg",
+      "ancho": 669,
+      "alto": 504,
+      "autor": "Photo by Infrogmation , 1980.",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "arequipa-y-colca": {
+      "archivo": "img/destinos/arequipa-y-colca-2.webp",
+      "fuente": [
+        "Santa Catalina Monastery",
+        "Misti",
+        "Basilica Cathedral of Arequipa"
+      ],
+      "nombreArchivo": "Santa_Catalina_Monastery,_Arequipa_-_53032077180.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Santa_Catalina_Monastery,_Arequipa_-_53032077180.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3456,
+      "alto": 2304,
+      "autor": "Hans Brian Brandsberg Berg",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "arica": {
+      "archivo": "img/destinos/arica-2.webp",
+      "fuente": [
+        "Lake Chungará",
+        "Lauca National Park",
+        "Parinacota (volcano)"
+      ],
+      "nombreArchivo": "20120623_Chile_2759_Volcano_Parinacota_(7704192574).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:20120623_Chile_2759_Volcano_Parinacota_(7704192574).jpg",
+      "mime": "image/jpeg",
+      "ancho": 3648,
+      "alto": 2736,
+      "autor": "Dan Lundberg",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "aruba": {
+      "archivo": "img/destinos/aruba-2.webp",
+      "fuente": [
+        "California Lighthouse",
+        "Arikok National Park",
+        "Oranjestad, Aruba"
+      ],
+      "nombreArchivo": "California_Lighthouse_by_Day.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:California_Lighthouse_by_Day.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3648,
+      "alto": 5472,
+      "autor": "Aruba Paradise Photos",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "asuncion": {
+      "archivo": "img/destinos/asuncion-2.webp",
+      "fuente": [
+        "Cathedral of Asunción",
+        "Panteón Nacional de los Héroes",
+        "Jesuit Missions of La Santísima Trinidad de Paraná and Jesús de Tavarangue"
+      ],
+      "nombreArchivo": "ASUNCION_PANTEON_NACIONAL_DE_LOS_HÉROES.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:ASUNCION_PANTEON_NACIONAL_DE_LOS_H%C3%89ROES.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2448,
+      "alto": 3264,
+      "autor": "Felipe Antonio",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "atenas": {
+      "archivo": "img/destinos/atenas-2.webp",
+      "fuente": [
+        "Temple of Olympian Zeus, Athens",
+        "Plaka",
+        "Erechtheion"
+      ],
+      "nombreArchivo": "L'Olympieion_(Athènes)_(30776483926).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:L%27Olympieion_(Ath%C3%A8nes)_(30776483926).jpg",
+      "mime": "image/jpeg",
+      "ancho": 1800,
+      "alto": 1200,
+      "autor": "Jean-Pierre Dalbéra from Paris, France",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "auckland": {
+      "archivo": "img/destinos/auckland-2.webp",
+      "fuente": [
+        "Hobbiton Movie Set",
+        "Waitomo Glowworm Caves",
+        "Pōhutu Geyser"
+      ],
+      "nombreArchivo": "Waterhouse_Lake_Front.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Waterhouse_Lake_Front.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3264,
+      "alto": 2448,
+      "autor": "Harsh.gavhane",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "azores": {
+      "archivo": "img/destinos/azores-2.webp",
+      "fuente": [
+        "Lagoa do Fogo",
+        "Furnas",
+        "Pico Island"
+      ],
+      "nombreArchivo": "Vale_das_Furnas,_Povoação,_ilha_de_São_Miguel,_Açores.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Vale_das_Furnas,_Povoa%C3%A7%C3%A3o,_ilha_de_S%C3%A3o_Miguel,_A%C3%A7ores.JPG",
+      "mime": "image/jpeg",
+      "ancho": 3872,
+      "alto": 2592,
+      "autor": "José Luís Ávila Silveira/Pedro Noronha e Costa",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "bahia-inglesa": {
+      "archivo": "img/destinos/bahia-inglesa-2.webp",
+      "fuente": [
+        "Pan de Azúcar National Park",
+        "Caldera, Chile"
+      ],
+      "nombreArchivo": "Pan_de_Azucar_National_Park.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Pan_de_Azucar_National_Park.jpg",
+      "mime": "image/jpeg",
+      "ancho": 800,
+      "alto": 600,
+      "autor": "Aaron Bornstein",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "bali": {
+      "archivo": "img/destinos/bali-2.webp",
+      "fuente": [
+        "Tanah Lot",
+        "Uluwatu Temple",
+        "Jatiluwih"
+      ],
+      "nombreArchivo": "TanahLot_2014.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:TanahLot_2014.JPG",
+      "mime": "image/jpeg",
+      "ancho": 5184,
+      "alto": 3456,
+      "autor": "Grayswoodsurrey",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "bangkok": {
+      "archivo": "img/destinos/bangkok-2.webp",
+      "fuente": [
+        "Grand Palace",
+        "Wat Pho",
+        "Damnoen Saduak Floating Market"
+      ],
+      "nombreArchivo": "0005574_-_Wat_Phra_Kaew_006.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:0005574_-_Wat_Phra_Kaew_006.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4256,
+      "alto": 2832,
+      "autor": "Preecha.MJ",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "barcelona": {
+      "archivo": "img/destinos/barcelona-2.webp",
+      "fuente": [
+        "Casa Batlló",
+        "Casa Milà",
+        "Barceloneta beach"
+      ],
+      "nombreArchivo": "Casa_Batllo_Overview_Barcelona_Spain_cut.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Casa_Batllo_Overview_Barcelona_Spain_cut.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2244,
+      "alto": 2765,
+      "autor": "ChristianSchd",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "bariloche": {
+      "archivo": "img/destinos/bariloche-2.webp",
+      "fuente": [
+        "Cerro Catedral",
+        "Llao Llao Hotel",
+        "Cerro Otto"
+      ],
+      "nombreArchivo": "Basecat.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Basecat.JPG",
+      "mime": "image/jpeg",
+      "ancho": 788,
+      "alto": 539,
+      "autor": "http://en.wikipedia.org/wiki/User:Boscos",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "belice": {
+      "archivo": "img/destinos/belice-2.webp",
+      "fuente": [
+        "Great Blue Hole",
+        "Belize Barrier Reef",
+        "Ambergris Caye"
+      ],
+      "nombreArchivo": "Great_Blue_Hole.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Great_Blue_Hole.jpg",
+      "mime": "image/jpeg",
+      "ancho": 662,
+      "alto": 515,
+      "autor": "U.S. Geological Survey (USGS)",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "berlin": {
+      "archivo": "img/destinos/berlin-2.webp",
+      "fuente": [
+        "Reichstag building",
+        "Berlin Cathedral",
+        "East Side Gallery"
+      ],
+      "nombreArchivo": "Berlin_reichstag_west_panorama_2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Berlin_reichstag_west_panorama_2.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5980,
+      "alto": 2664,
+      "autor": "Mfield , Matthew Field, http://www.photography.mattfield.com ; edit by Waugsberg (rotation 0,4°)",
+      "licencia": "GFDL 1.2",
+      "licenciaUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+    },
+    "bogota": {
+      "archivo": "img/destinos/bogota-2.webp",
+      "fuente": [
+        "Salt Cathedral of Zipaquirá",
+        "Bolívar Square",
+        "La Candelaria, Bogotá"
+      ],
+      "nombreArchivo": "The_creation_of_man_-_Zipaquira.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:The_creation_of_man_-_Zipaquira.JPG",
+      "mime": "image/jpeg",
+      "ancho": 2736,
+      "alto": 3648,
+      "autor": "Novoaparra",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "bonito": {
+      "archivo": "img/destinos/bonito-2.webp",
+      "fuente": [
+        "Gruta do Lago Azul",
+        "Serra da Bodoquena National Park",
+        "Rio da Prata (Mato Grosso do Sul)"
+      ],
+      "nombreArchivo": "Serra_da_bodoquena_2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Serra_da_bodoquena_2.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3648,
+      "alto": 2736,
+      "autor": "Everton Alvarenga",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "brujas-y-bruselas": {
+      "archivo": "img/destinos/brujas-y-bruselas-2.webp",
+      "fuente": [
+        "Grand-Place",
+        "Atomium"
+      ],
+      "nombreArchivo": "Grand-Place,_Brussels_-_panorama,_June_2018.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Grand-Place,_Brussels_-_panorama,_June_2018.jpg",
+      "mime": "image/jpeg",
+      "ancho": 10946,
+      "alto": 6226,
+      "autor": "Celuici",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "budapest": {
+      "archivo": "img/destinos/budapest-2.webp",
+      "fuente": [
+        "Széchenyi thermal bath",
+        "Fisherman's Bastion",
+        "Buda Castle"
+      ],
+      "nombreArchivo": "Budapest_Széchenyi_Baths_R02.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Budapest_Sz%C3%A9chenyi_Baths_R02.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3216,
+      "alto": 2136,
+      "autor": "Marc Ryckaert ( MJJR )",
+      "licencia": "CC BY 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    "buenos-aires": {
+      "archivo": "img/destinos/buenos-aires-2.webp",
+      "fuente": [
+        "Caminito",
+        "Teatro Colón",
+        "Puerto Madero"
+      ],
+      "nombreArchivo": "Caminito_-_Entrada.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Caminito_-_Entrada.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3773,
+      "alto": 2135,
+      "autor": "Hernán Piñera",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "burdeos": {
+      "archivo": "img/destinos/burdeos-2.webp",
+      "fuente": [
+        "Saint-Émilion",
+        "Dune of Pilat",
+        "Bordeaux Cathedral"
+      ],
+      "nombreArchivo": "1_Saint-Émilion_aerial_pano_2016.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:1_Saint-%C3%89milion_aerial_pano_2016.jpg",
+      "mime": "image/jpeg",
+      "ancho": 6772,
+      "alto": 3616,
+      "autor": "Chensiyuan",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "butan": {
+      "archivo": "img/destinos/butan-2.webp",
+      "fuente": [
+        "Punakha Dzong",
+        "Tashichho Dzong",
+        "Buddha Dordenma statue"
+      ],
+      "nombreArchivo": "Punakha_Dzong,_Bhutan_02.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Punakha_Dzong,_Bhutan_02.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3488,
+      "alto": 1759,
+      "autor": "Bernard Gagnon",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "buzios": {
+      "archivo": "img/destinos/buzios-2.webp",
+      "fuente": [
+        "Arraial do Cabo",
+        "Cabo Frio"
+      ],
+      "nombreArchivo": "Oven_S_Beach_Arraial_Do_Cabo_(247765557).jpeg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Oven_S_Beach_Arraial_Do_Cabo_(247765557).jpeg",
+      "mime": "image/jpeg",
+      "ancho": 2048,
+      "alto": 1365,
+      "autor": "Barão Mochileiro",
+      "licencia": "CC BY 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    "cabo-polonio": {
+      "archivo": "img/destinos/cabo-polonio-2.webp",
+      "fuente": [
+        "Punta del Diablo",
+        "South American fur seal",
+        "Cabo Polonio National Park"
+      ],
+      "nombreArchivo": "Punta_del_Diablo_-_Uruguay.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Punta_del_Diablo_-_Uruguay.jpg",
+      "mime": "image/jpeg",
+      "ancho": 750,
+      "alto": 495,
+      "autor": "Libertinus",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "cabo-verde": {
+      "archivo": "img/destinos/cabo-verde-2.webp",
+      "fuente": [
+        "Pedra de Lume",
+        "Fogo, Cape Verde",
+        "Santo Antão, Cape Verde"
+      ],
+      "nombreArchivo": "Pedra_Lume_CV.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Pedra_Lume_CV.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2592,
+      "alto": 1944,
+      "autor": "Ingo Wölbern",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "cali": {
+      "archivo": "img/destinos/cali-2.webp",
+      "fuente": [
+        "Cristo Rey (Cali)",
+        "Iglesia de La Ermita",
+        "Farallones de Cali National Natural Park"
+      ],
+      "nombreArchivo": "Pico_de_Loro_2.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Pico_de_Loro_2.JPG",
+      "mime": "image/jpeg",
+      "ancho": 2288,
+      "alto": 1712,
+      "autor": "Carlos A. Arango",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "cancun-y-riviera-maya": {
+      "archivo": "img/destinos/cancun-y-riviera-maya-2.webp",
+      "fuente": [
+        "Isla Mujeres",
+        "Xcaret Park",
+        "Cozumel"
+      ],
+      "nombreArchivo": "Birds_eye_view_of_Isla_Mujeres_(4257542920).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Birds_eye_view_of_Isla_Mujeres_(4257542920).jpg",
+      "mime": "image/jpeg",
+      "ancho": 1024,
+      "alto": 770,
+      "autor": "Šarūnas Burdulis from USA",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "capadocia": {
+      "archivo": "img/destinos/capadocia-2.webp",
+      "fuente": [
+        "Fairy chimney",
+        "Uçhisar",
+        "Göreme National Park"
+      ],
+      "nombreArchivo": "USA_10654_Bryce_Canyon_Luca_Galuzzi_2007.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:USA_10654_Bryce_Canyon_Luca_Galuzzi_2007.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2000,
+      "alto": 1333,
+      "autor": "Luca Galuzzi ( Lucag )",
+      "licencia": "CC BY-SA 2.5",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+    },
+    "carretera-austral": {
+      "archivo": "img/destinos/carretera-austral-2.webp",
+      "fuente": [
+        "Marble Caves",
+        "Queulat National Park",
+        "Cerro Castillo National Park"
+      ],
+      "nombreArchivo": "Ventisquero_Queulat.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Ventisquero_Queulat.jpg",
+      "mime": "image/jpeg",
+      "ancho": 576,
+      "alto": 768,
+      "autor": "betoscopio",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "cartagena": {
+      "archivo": "img/destinos/cartagena-2.webp",
+      "fuente": [
+        "Rosario Islands",
+        "Getsemaní",
+        "Clock Tower (Cartagena)"
+      ],
+      "nombreArchivo": "Karibiska_havet_i_Colombia.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Karibiska_havet_i_Colombia.jpg",
+      "mime": "image/jpeg",
+      "ancho": 604,
+      "alto": 400,
+      "autor": "Segab",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "cataratas-del-iguazu": {
+      "archivo": "img/destinos/cataratas-del-iguazu-2.webp",
+      "fuente": [
+        "Iguazú National Park",
+        "Iguaçu National Park"
+      ],
+      "nombreArchivo": "Parque_Nacional_Iguazú.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_Iguaz%C3%BA.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2000,
+      "alto": 2000,
+      "autor": "Autor desconocido",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "chapada-dos-veadeiros": {
+      "archivo": "img/destinos/chapada-dos-veadeiros-2.webp",
+      "fuente": [
+        "Cathedral of Brasília",
+        "National Congress Palace"
+      ],
+      "nombreArchivo": "Catedral_Metropolitana_de_Brasilia.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Catedral_Metropolitana_de_Brasilia.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3000,
+      "alto": 2800,
+      "autor": "Tissiana de A. de Souza",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "chiloe": {
+      "archivo": "img/destinos/chiloe-2.webp",
+      "fuente": [
+        "Church of Castro",
+        "Churches of Chiloé",
+        "Chiloé National Park"
+      ],
+      "nombreArchivo": "Iglesia_de_Achao-fachada.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Iglesia_de_Achao-fachada.jpg",
+      "mime": "image/jpeg",
+      "ancho": 510,
+      "alto": 680,
+      "autor": "Rodrigo Basaure",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "china-pekin": {
+      "archivo": "img/destinos/china-pekin-2.webp",
+      "fuente": [
+        "Mutianyu",
+        "Forbidden City",
+        "Summer Palace"
+      ],
+      "nombreArchivo": "Great_Wall_of_China_July_2006.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_July_2006.JPG",
+      "mime": "image/jpeg",
+      "ancho": 2288,
+      "alto": 1712,
+      "autor": "Velatrix",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "ciudad-de-mexico": {
+      "archivo": "img/destinos/ciudad-de-mexico-2.webp",
+      "fuente": [
+        "Teotihuacan",
+        "Chapultepec Castle",
+        "Zócalo"
+      ],
+      "nombreArchivo": "ZA77_Teotihuacán_edo_de_mex_Herberto_de_la_rosa.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3008,
+      "alto": 2000,
+      "autor": "Hdlrosa",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "ciudad-del-cabo": {
+      "archivo": "img/destinos/ciudad-del-cabo-2.webp",
+      "fuente": [
+        "Boulders Beach",
+        "Cape of Good Hope",
+        "Bo-Kaap"
+      ],
+      "nombreArchivo": "Boulders_Beach_Suedafrika.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Boulders_Beach_Suedafrika.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4704,
+      "alto": 3233,
+      "autor": "Olga Ernst",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "copenhague": {
+      "archivo": "img/destinos/copenhague-2.webp",
+      "fuente": [
+        "Tivoli Gardens",
+        "The Little Mermaid (statue)",
+        "Amalienborg"
+      ],
+      "nombreArchivo": "Tivoli_Gardens_4.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Tivoli_Gardens_4.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4482,
+      "alto": 2986,
+      "autor": "European Commission",
+      "licencia": "CC BY 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "cordoba": {
+      "archivo": "img/destinos/cordoba-2.webp",
+      "fuente": [
+        "Córdoba Cathedral, Argentina",
+        "Villa General Belgrano",
+        "Quebrada del Condorito National Park"
+      ],
+      "nombreArchivo": "Catedral_de_Córdoba_(2010_01)_-_panoramio.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Catedral_de_C%C3%B3rdoba_(2010_01)_-_panoramio.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1200,
+      "alto": 839,
+      "autor": "Maula",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "costa-amalfitana": {
+      "archivo": "img/destinos/costa-amalfitana-2.webp",
+      "fuente": [
+        "Amalfi",
+        "Ravello",
+        "Capri"
+      ],
+      "nombreArchivo": "Amalfi_sea_view_Italy.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Amalfi_sea_view_Italy.JPG",
+      "mime": "image/jpeg",
+      "ancho": 3264,
+      "alto": 2448,
+      "autor": "No machine-readable author provided. Sudodana2048 assumed (based on copyright claims).",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "costa-azul": {
+      "archivo": "img/destinos/costa-azul-2.webp",
+      "fuente": [
+        "Èze",
+        "Monte Carlo",
+        "Saint-Tropez"
+      ],
+      "nombreArchivo": "Èze_Alpes_Maritimes_France_(261171069).jpeg",
+      "commons": "https://commons.wikimedia.org/wiki/File:%C3%88ze_Alpes_Maritimes_France_(261171069).jpeg",
+      "mime": "image/jpeg",
+      "ancho": 2048,
+      "alto": 1152,
+      "autor": "Jean Pierre Lozi",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "costa-rica": {
+      "archivo": "img/destinos/costa-rica-2.webp",
+      "fuente": [
+        "Monteverde Cloud Forest Reserve",
+        "La Fortuna Waterfall",
+        "Resplendent quetzal"
+      ],
+      "nombreArchivo": "Monteverde_bosque.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Monteverde_bosque.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2400,
+      "alto": 1800,
+      "autor": "Haakon S. Krohn",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "cracovia": {
+      "archivo": "img/destinos/cracovia-2.webp",
+      "fuente": [
+        "Wawel Castle",
+        "Wieliczka Salt Mine",
+        "St. Mary's Basilica, Kraków"
+      ],
+      "nombreArchivo": "Wawel_(4).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Wawel_(4).jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 3024,
+      "autor": "Monika Towiańska",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "curazao": {
+      "archivo": "img/destinos/curazao-2.webp",
+      "fuente": [
+        "Queen Emma Bridge",
+        "Handelskade",
+        "Christoffel National Park"
+      ],
+      "nombreArchivo": "Curacao-Queen-Emma-Bridge.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Curacao-Queen-Emma-Bridge.JPG",
+      "mime": "image/jpeg",
+      "ancho": 4371,
+      "alto": 3388,
+      "autor": "Bjørn Christian Tørrissen",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "curitiba": {
+      "archivo": "img/destinos/curitiba-2.webp",
+      "fuente": [
+        "Wire Opera House",
+        "Oscar Niemeyer Museum",
+        "Serra Verde Express"
+      ],
+      "nombreArchivo": "OperaDeArame.WireOperaHouse.CuritibaBrasil.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:OperaDeArame.WireOperaHouse.CuritibaBrasil.jpg",
+      "mime": "image/jpeg",
+      "ancho": 640,
+      "alto": 480,
+      "autor": "KikoCorreia",
+      "licencia": "CC BY-SA 2.5 br",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.5/br/deed.en"
+    },
+    "cusco-y-machu-picchu": {
+      "archivo": "img/destinos/cusco-y-machu-picchu-2.webp",
+      "fuente": [
+        "Vinicunca",
+        "Sacsayhuamán",
+        "Cusco Cathedral"
+      ],
+      "nombreArchivo": "Montañaarcoirisperuabanto.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Monta%C3%B1aarcoirisperuabanto.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5184,
+      "alto": 3456,
+      "autor": "Diego Aldrin Abanto Ricce",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "delta-del-okavango": {
+      "archivo": "img/destinos/delta-del-okavango-2.webp",
+      "fuente": [
+        "Chobe National Park",
+        "Moremi Game Reserve",
+        "African bush elephant"
+      ],
+      "nombreArchivo": "Gnus_zebras_chobe_national_park.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Gnus_zebras_chobe_national_park.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2816,
+      "alto": 2112,
+      "autor": "Gorgo",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "desierto-florido": {
+      "archivo": "img/destinos/desierto-florido-2.webp",
+      "fuente": [
+        "Atacama Desert",
+        "Cistanthe grandiflora",
+        "Copiapó"
+      ],
+      "nombreArchivo": "Paseo_dia_Plaza_de_Armas_de_Copiapó.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Paseo_dia_Plaza_de_Armas_de_Copiap%C3%B3.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3500,
+      "alto": 2333,
+      "autor": "Layon Art",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "dubai": {
+      "archivo": "img/destinos/dubai-2.webp",
+      "fuente": [
+        "Burj Khalifa",
+        "Burj Al Arab",
+        "Dubai Creek"
+      ],
+      "nombreArchivo": "Burj_Khalifa_(worlds_tallest_building)_and_the_Dubai_skyline_(25781049892).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Burj_Khalifa_(worlds_tallest_building)_and_the_Dubai_skyline_(25781049892).jpg",
+      "mime": "image/jpeg",
+      "ancho": 5496,
+      "alto": 3670,
+      "autor": "imran shahabuddin",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "dubrovnik-y-costa-croata": {
+      "archivo": "img/destinos/dubrovnik-y-costa-croata-2.webp",
+      "fuente": [
+        "Plitvice Lakes National Park",
+        "Diocletian's Palace",
+        "Hvar"
+      ],
+      "nombreArchivo": "View_in_Plitvice_Lakes_National_Park.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:View_in_Plitvice_Lakes_National_Park.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2437,
+      "alto": 3459,
+      "autor": "Zysko serhii",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "egipto": {
+      "archivo": "img/destinos/egipto-2.webp",
+      "fuente": [
+        "Karnak",
+        "Abu Simbel temples",
+        "Luxor Temple"
+      ],
+      "nombreArchivo": "Temple_de_Louxor_68.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Temple_de_Louxor_68.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2816,
+      "alto": 2112,
+      "autor": "René Hourdry",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "eje-cafetero": {
+      "archivo": "img/destinos/eje-cafetero-2.webp",
+      "fuente": [
+        "Coffee Cultural Landscape of Colombia",
+        "Filandia, Quindío",
+        "Ceroxylon quindiuense"
+      ],
+      "nombreArchivo": "Filandia.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Filandia.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1000,
+      "alto": 768,
+      "autor": "Hdhdhdyboot",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "el-calafate": {
+      "archivo": "img/destinos/el-calafate-2.webp",
+      "fuente": [
+        "Fitz Roy",
+        "El Chaltén",
+        "Lake Argentino"
+      ],
+      "nombreArchivo": "1952-01-31_-_Lionel_Terray,_Fitzroy,_dédicace_-_NB.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:1952-01-31_-_Lionel_Terray,_Fitzroy,_d%C3%A9dicace_-_NB.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3072,
+      "alto": 4096,
+      "autor": "Lionel Terray",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "escocia": {
+      "archivo": "img/destinos/escocia-2.webp",
+      "fuente": [
+        "Eilean Donan",
+        "Old Man of Storr",
+        "Glen Coe"
+      ],
+      "nombreArchivo": "Eilean_Donan_Castle,_Scotland_-_Jan_2011.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Eilean_Donan_Castle,_Scotland_-_Jan_2011.jpg",
+      "mime": "image/jpeg",
+      "ancho": 6980,
+      "alto": 4108,
+      "autor": "Diliff",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "eslovenia": {
+      "archivo": "img/destinos/eslovenia-2.webp",
+      "fuente": [
+        "Triple Bridge",
+        "Lake Bohinj",
+        "Predjama Castle"
+      ],
+      "nombreArchivo": "Le_triple_pont_(Ljubljana)_(9380933958).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Le_triple_pont_(Ljubljana)_(9380933958).jpg",
+      "mime": "image/jpeg",
+      "ancho": 1332,
+      "alto": 998,
+      "autor": "Jean-Pierre Dalbéra from Paris, France",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "estambul": {
+      "archivo": "img/destinos/estambul-2.webp",
+      "fuente": [
+        "Sultan Ahmed Mosque",
+        "Galata Tower",
+        "Grand Bazaar, Istanbul"
+      ],
+      "nombreArchivo": "Istanbul_(34223582516)_(cropped).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Istanbul_(34223582516)_(cropped).jpg",
+      "mime": "image/jpeg",
+      "ancho": 3000,
+      "alto": 2528,
+      "autor": "Pedro Szekely from Los Angeles, USA",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "estocolmo": {
+      "archivo": "img/destinos/estocolmo-2.webp",
+      "fuente": [
+        "Stockholm City Hall",
+        "Vasa (ship)",
+        "Drottningholm Palace"
+      ],
+      "nombreArchivo": "Stockholms_stadshus_February_2026_02.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Stockholms_stadshus_February_2026_02.jpg",
+      "mime": "image/jpeg",
+      "ancho": 7503,
+      "alto": 4689,
+      "autor": "ArildV",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "fernando-de-noronha": {
+      "archivo": "img/destinos/fernando-de-noronha-2.webp",
+      "fuente": [
+        "Baía do Sancho",
+        "Morro Dois Irmãos",
+        "Fernando de Noronha Marine National Park"
+      ],
+      "nombreArchivo": "Baía_dos_Porcos_-_Fernando_de_Noronha_(32811749914).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Ba%C3%ADa_dos_Porcos_-_Fernando_de_Noronha_(32811749914).jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 3024,
+      "autor": "Tiago Scharfy",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "fiordos-de-noruega": {
+      "archivo": "img/destinos/fiordos-de-noruega-2.webp",
+      "fuente": [
+        "Preikestolen",
+        "Trolltunga",
+        "Bryggen"
+      ],
+      "nombreArchivo": "Lyse_Fjord_et_Preikestolen.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Lyse_Fjord_et_Preikestolen.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5205,
+      "alto": 2809,
+      "autor": "Clementp.fr",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "fiyi": {
+      "archivo": "img/destinos/fiyi-2.webp",
+      "fuente": [
+        "Yasawa Islands",
+        "Monuriki",
+        "Denarau Island"
+      ],
+      "nombreArchivo": "Viti_Levu_Islands.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Viti_Levu_Islands.jpg",
+      "mime": "image/jpeg",
+      "ancho": 568,
+      "alto": 480,
+      "autor": "United States",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "florianopolis": {
+      "archivo": "img/destinos/florianopolis-2.webp",
+      "fuente": [
+        "Lagoa da Conceição",
+        "Hercílio Luz Bridge",
+        "Joaquina Beach"
+      ],
+      "nombreArchivo": "Vista_da_Lagoa_da_Conceição_-_panoramio.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Vista_da_Lagoa_da_Concei%C3%A7%C3%A3o_-_panoramio.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3008,
+      "alto": 2000,
+      "autor": "Cleison Cipriani",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "fortaleza": {
+      "archivo": "img/destinos/fortaleza-2.webp",
+      "fuente": [
+        "Canoa Quebrada",
+        "Iracema Beach",
+        "Beach Park"
+      ],
+      "nombreArchivo": "Canoa_Quebrada,_Ceará,_Brazil.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Canoa_Quebrada,_Cear%C3%A1,_Brazil.jpg",
+      "mime": "image/jpeg",
+      "ancho": 478,
+      "alto": 638,
+      "autor": "Flaviohmg",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "futaleufu": {
+      "archivo": "img/destinos/futaleufu-2.webp",
+      "fuente": [
+        "Futaleufú",
+        "Lake Yelcho",
+        "Corcovado National Park (Chile)"
+      ],
+      "nombreArchivo": "Lago_yelcho_wikipedia.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Lago_yelcho_wikipedia.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1024,
+      "alto": 768,
+      "autor": "An American in Chile",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "georgia": {
+      "archivo": "img/destinos/georgia-2.webp",
+      "fuente": [
+        "Narikala",
+        "Ushguli",
+        "Mtskheta"
+      ],
+      "nombreArchivo": "Tbilisi_IMG_8846_1920.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Tbilisi_IMG_8846_1920.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3421,
+      "alto": 1920,
+      "autor": "Alexxx1979",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "gramado": {
+      "archivo": "img/destinos/gramado-2.webp",
+      "fuente": [
+        "Canela, Rio Grande do Sul",
+        "Aparados da Serra National Park"
+      ],
+      "nombreArchivo": "Catedral_Nossa_Senhora_de_Lourdes.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Catedral_Nossa_Senhora_de_Lourdes.JPG",
+      "mime": "image/jpeg",
+      "ancho": 3678,
+      "alto": 2462,
+      "autor": "Tiago Fioreze",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "gran-barrera-de-coral": {
+      "archivo": "img/destinos/gran-barrera-de-coral-2.webp",
+      "fuente": [
+        "Heart Reef",
+        "Green Island (Queensland)",
+        "Ocellaris clownfish"
+      ],
+      "nombreArchivo": "Green_Island_QLD.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Green_Island_QLD.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3264,
+      "alto": 2448,
+      "autor": "Roadrunnerz45",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "hawai": {
+      "archivo": "img/destinos/hawai-2.webp",
+      "fuente": [
+        "Waikiki",
+        "Hanauma Bay",
+        "Kualoa Ranch"
+      ],
+      "nombreArchivo": "City_of_Waikiki_view.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:City_of_Waikiki_view.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 1960,
+      "autor": "Pickle the cool",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "hokkaido": {
+      "archivo": "img/destinos/hokkaido-2.webp",
+      "fuente": [
+        "Shiretoko National Park",
+        "Otaru Canal",
+        "Sapporo Snow Festival"
+      ],
+      "nombreArchivo": "140829_Track_Near_Furepe_Falls_Shiretoko_Hokkaido_Japan00s3.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:140829_Track_Near_Furepe_Falls_Shiretoko_Hokkaido_Japan00s3.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5550,
+      "alto": 3700,
+      "autor": "663highland",
+      "licencia": "CC BY 2.5",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.5"
+    },
+    "hong-kong": {
+      "archivo": "img/destinos/hong-kong-2.webp",
+      "fuente": [
+        "Tian Tan Buddha",
+        "Star Ferry",
+        "Avenue of Stars, Hong Kong"
+      ],
+      "nombreArchivo": "Tian_Tan_Buddha_2023081302.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Tian_Tan_Buddha_2023081302.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 2268,
+      "autor": "Huangdan2060",
+      "licencia": "CC BY 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "huaraz": {
+      "archivo": "img/destinos/huaraz-2.webp",
+      "fuente": [
+        "Pastoruri Glacier",
+        "Llanganuco Lakes",
+        "Chavín de Huántar"
+      ],
+      "nombreArchivo": "Pastoruri_Glacier.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Pastoruri_Glacier.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1024,
+      "alto": 768,
+      "autor": "Edubucher",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "huilo-huilo": {
+      "archivo": "img/destinos/huilo-huilo-2.webp",
+      "fuente": [
+        "Mocho-Choshuenco",
+        "Neltume"
+      ],
+      "nombreArchivo": "MochoChoshuenco2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:MochoChoshuenco2.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2048,
+      "alto": 1536,
+      "autor": "Avodrocc",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "india-rajastan": {
+      "archivo": "img/destinos/india-rajastan-2.webp",
+      "fuente": [
+        "Taj Mahal",
+        "Amber Fort",
+        "Mehrangarh"
+      ],
+      "nombreArchivo": "Taj_Mahal_(Edited).jpeg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Taj_Mahal_(Edited).jpeg",
+      "mime": "image/jpeg",
+      "ancho": 3840,
+      "alto": 2525,
+      "autor": "Yann ; edited by Jim Carter",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "iquique": {
+      "archivo": "img/destinos/iquique-2.webp",
+      "fuente": [
+        "Cerro Dragón",
+        "Pica, Chile",
+        "Iquique"
+      ],
+      "nombreArchivo": "Pica,_Chili.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Pica,_Chili.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3046,
+      "alto": 1484,
+      "autor": "Bachelot Pierre J-P",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "irlanda": {
+      "archivo": "img/destinos/irlanda-2.webp",
+      "fuente": [
+        "Ring of Kerry",
+        "Temple Bar, Dublin",
+        "Trinity College Dublin"
+      ],
+      "nombreArchivo": "Atlantic_Ocean,_Ring_of_Kerry_(506559)_(27964189752).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Atlantic_Ocean,_Ring_of_Kerry_(506559)_(27964189752).jpg",
+      "mime": "image/jpeg",
+      "ancho": 5443,
+      "alto": 3068,
+      "autor": "Robert Linsdell from St. Andrews, Canada",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "isla-de-pascua": {
+      "archivo": "img/destinos/isla-de-pascua-2.webp",
+      "fuente": [
+        "Rano Raraku",
+        "Anakena",
+        "Orongo"
+      ],
+      "nombreArchivo": "Rano-Raraku-Panorama-2013.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Rano-Raraku-Panorama-2013.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4912,
+      "alto": 1920,
+      "autor": "Bjørn Christian Tørrissen",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "islandia": {
+      "archivo": "img/destinos/islandia-2.webp",
+      "fuente": [
+        "Jökulsárlón",
+        "Seljalandsfoss",
+        "Hallgrímskirkja"
+      ],
+      "nombreArchivo": "Jökulsárlón_lagoon_in_southeastern_Iceland.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:J%C3%B6kuls%C3%A1rl%C3%B3n_lagoon_in_southeastern_Iceland.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2042,
+      "alto": 1276,
+      "autor": "Molechaser",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "islas-canarias": {
+      "archivo": "img/destinos/islas-canarias-2.webp",
+      "fuente": [
+        "Los Gigantes",
+        "Masca",
+        "Anaga Rural Park"
+      ],
+      "nombreArchivo": "Los_Gigantes,_Tenerife,_España,_2012-12-16,_DD_10.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Los_Gigantes,_Tenerife,_Espa%C3%B1a,_2012-12-16,_DD_10.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3887,
+      "alto": 2154,
+      "autor": "Diego Delso",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "islas-feroe": {
+      "archivo": "img/destinos/islas-feroe-2.webp",
+      "fuente": [
+        "Sørvágsvatn",
+        "Kirkjubøur",
+        "Tórshavn"
+      ],
+      "nombreArchivo": "Sørvágsvatn_4.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:S%C3%B8rv%C3%A1gsvatn_4.jpg",
+      "mime": "image/jpeg",
+      "ancho": 8720,
+      "alto": 5000,
+      "autor": "kallerna",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "islas-galapagos": {
+      "archivo": "img/destinos/islas-galapagos-2.webp",
+      "fuente": [
+        "Galápagos tortoise",
+        "Marine iguana",
+        "Bartolomé Island"
+      ],
+      "nombreArchivo": "Galapagos_giant_tortoise_Geochelone_elephantopus.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Galapagos_giant_tortoise_Geochelone_elephantopus.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3504,
+      "alto": 2336,
+      "autor": "Mfield , Matthew Field, http://www.photography.mattfield.com",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "islas-griegas": {
+      "archivo": "img/destinos/islas-griegas-2.webp",
+      "fuente": [
+        "Navagio",
+        "Mykonos",
+        "Fira"
+      ],
+      "nombreArchivo": "Navagio,_Zante_01.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Navagio,_Zante_01.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 3024,
+      "autor": "Wilnel José Verdú Guerrero",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "jamaica": {
+      "archivo": "img/destinos/jamaica-2.webp",
+      "fuente": [
+        "Dunn's River Falls",
+        "Blue Mountains (Jamaica)",
+        "Rick's Café"
+      ],
+      "nombreArchivo": "Dunns_River_Falls_climb.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Dunns_River_Falls_climb.JPG",
+      "mime": "image/jpeg",
+      "ancho": 3872,
+      "alto": 2592,
+      "autor": "Breakyunit at English Wikipedia",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "jericoacoara": {
+      "archivo": "img/destinos/jericoacoara-2.webp",
+      "fuente": [
+        "Pedra Furada",
+        "Jericoacoara National Park",
+        "Jijoca de Jericoacoara"
+      ],
+      "nombreArchivo": "20030924PPedraFurada9.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:20030924PPedraFurada9.jpg",
+      "mime": "image/jpeg",
+      "ancho": 512,
+      "alto": 384,
+      "autor": "Cleude",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "jordania-y-petra": {
+      "archivo": "img/destinos/jordania-y-petra-2.webp",
+      "fuente": [
+        "Wadi Rum",
+        "Dead Sea",
+        "Jerash"
+      ],
+      "nombreArchivo": "Dead_Sea_beach_00.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Dead_Sea_beach_00.JPG",
+      "mime": "image/jpeg",
+      "ancho": 2048,
+      "alto": 1536,
+      "autor": "لا روسا",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "kerala": {
+      "archivo": "img/destinos/kerala-2.webp",
+      "fuente": [
+        "Chinese fishing nets",
+        "Munnar"
+      ],
+      "nombreArchivo": "Chinese_Fishing_Net_Raising_Birds_Sunrise_Ashtamudi_Kollam_Mar22_A7C_01784.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Chinese_Fishing_Net_Raising_Birds_Sunrise_Ashtamudi_Kollam_Mar22_A7C_01784.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5908,
+      "alto": 3939,
+      "autor": "This Photo was taken by Timothy A. Gonsalves . Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page , for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved. Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract .",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "kilimanjaro-y-serengeti": {
+      "archivo": "img/destinos/kilimanjaro-y-serengeti-2.webp",
+      "fuente": [
+        "Serengeti",
+        "Ngorongoro Crater"
+      ],
+      "nombreArchivo": "Ngorongoro-1001-2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Ngorongoro-1001-2.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2981,
+      "alto": 1677,
+      "autor": "Grahampurse",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "kioto": {
+      "archivo": "img/destinos/kioto-2.webp",
+      "fuente": [
+        "Kinkaku-ji",
+        "Kiyomizu-dera",
+        "Arashiyama"
+      ],
+      "nombreArchivo": "Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Golden_Pavilion_Kinkaku-ji_water_mirror_2024.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4000,
+      "alto": 6000,
+      "autor": "Nacaru",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "kotor-y-montenegro": {
+      "archivo": "img/destinos/kotor-y-montenegro-2.webp",
+      "fuente": [
+        "Perast",
+        "Sveti Stefan",
+        "Our Lady of the Rocks"
+      ],
+      "nombreArchivo": "Perast_100.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Perast_100.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3888,
+      "alto": 2592,
+      "autor": "FrDr",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "kuala-lumpur": {
+      "archivo": "img/destinos/kuala-lumpur-2.webp",
+      "fuente": [
+        "Sultan Abdul Samad Building",
+        "Thean Hou Temple",
+        "Merdeka Square, Kuala Lumpur"
+      ],
+      "nombreArchivo": "Kuala_Lumpur_Sultan_Abdul_Building.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Kuala_Lumpur_Sultan_Abdul_Building.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2048,
+      "alto": 1536,
+      "autor": "Gerold Kogler",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "la-habana": {
+      "archivo": "img/destinos/la-habana-2.webp",
+      "fuente": [
+        "Malecón, Havana",
+        "Cathedral of Havana",
+        "Viñales Valley"
+      ],
+      "nombreArchivo": "Havana_malecon_(cropped).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Havana_malecon_(cropped).jpg",
+      "mime": "image/jpeg",
+      "ancho": 1280,
+      "alto": 546,
+      "autor": "Lukas Mathis",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "la-paz-y-titicaca": {
+      "archivo": "img/destinos/la-paz-y-titicaca-2.webp",
+      "fuente": [
+        "Mi Teleférico",
+        "Illimani",
+        "Valle de la Luna (Bolivia)"
+      ],
+      "nombreArchivo": "Illimani2.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Illimani2.JPG",
+      "mime": "image/jpeg",
+      "ancho": 640,
+      "alto": 480,
+      "autor": "No machine-readable author provided. Inti-sol~commonswiki assumed (based on copyright claims).",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "la-serena-y-valle-de-elqui": {
+      "archivo": "img/destinos/la-serena-y-valle-de-elqui-2.webp",
+      "fuente": [
+        "Faro Monumental de La Serena",
+        "Cerro Tololo Inter-American Observatory",
+        "Mamalluca Observatory"
+      ],
+      "nombreArchivo": "Blanco's_Open_Dome_(Cerro-Tololo-Drone-Pic_15-CC)_-_edit1.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Blanco%27s_Open_Dome_(Cerro-Tololo-Drone-Pic_15-CC)_-_edit1.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4000,
+      "alto": 3000,
+      "autor": "CTIO/NOIRLab/NSF/AURA/T. Matsopoulos",
+      "licencia": "CC BY 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "lago-de-como": {
+      "archivo": "img/destinos/lago-de-como-2.webp",
+      "fuente": [
+        "Milan Cathedral",
+        "Bellagio, Lombardy",
+        "Galleria Vittorio Emanuele II"
+      ],
+      "nombreArchivo": "Milan_Cathedral_from_Piazza_del_Duomo.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Milan_Cathedral_from_Piazza_del_Duomo.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4164,
+      "alto": 3129,
+      "autor": "Jiuguang Wang",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "laponia": {
+      "archivo": "img/destinos/laponia-2.webp",
+      "fuente": [
+        "Aurora",
+        "Pyhä-Luosto National Park",
+        "Arktikum"
+      ],
+      "nombreArchivo": "Aurora_borealis_over_Eielson_Air_Force_Base,_Alaska.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Aurora_borealis_over_Eielson_Air_Force_Base,_Alaska.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3008,
+      "alto": 1960,
+      "autor": "United States Air Force photo by Senior Airman Joshua Strang",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "las-vegas-y-gran-canon": {
+      "archivo": "img/destinos/las-vegas-y-gran-canon-2.webp",
+      "fuente": [
+        "Las Vegas Strip",
+        "Antelope Canyon",
+        "Hoover Dam"
+      ],
+      "nombreArchivo": "Las_Vegas_Strip_09_2017_4897.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Las_Vegas_Strip_09_2017_4897.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1912,
+      "alto": 1000,
+      "autor": "Mariordo (Mario Roberto Durán Ortiz)",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "lencois-maranhenses": {
+      "archivo": "img/destinos/lencois-maranhenses-2.webp",
+      "fuente": [
+        "Barreirinhas",
+        "Santo Amaro do Maranhão",
+        "Lençóis Maranhenses"
+      ],
+      "nombreArchivo": "Mar2024._Barreirinhas,_Maranhão,_Brazil._03.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Mar2024._Barreirinhas,_Maranh%C3%A3o,_Brazil._03.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4608,
+      "alto": 2592,
+      "autor": "Ridiculopathy",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "lima": {
+      "archivo": "img/destinos/lima-2.webp",
+      "fuente": [
+        "Basilica and Convent of San Francisco, Lima",
+        "Plaza Mayor, Lima",
+        "Huaca Pucllana"
+      ],
+      "nombreArchivo": "Lima_convento_san_francisco_de_asis.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Lima_convento_san_francisco_de_asis.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3200,
+      "alto": 1484,
+      "autor": "Velvet",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "lisboa": {
+      "archivo": "img/destinos/lisboa-2.webp",
+      "fuente": [
+        "Pena Palace",
+        "Praça do Comércio",
+        "Jerónimos Monastery"
+      ],
+      "nombreArchivo": "Sintra_Portugal_Palácio_da_Pena-01.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Sintra_Portugal_Pal%C3%A1cio_da_Pena-01.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3500,
+      "alto": 2333,
+      "autor": "CEphoto, Uwe Aranas",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "londres": {
+      "archivo": "img/destinos/londres-2.webp",
+      "fuente": [
+        "Big Ben",
+        "Buckingham Palace",
+        "London Eye"
+      ],
+      "nombreArchivo": "Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4347,
+      "alto": 7728,
+      "autor": "Christian David",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "los-angeles": {
+      "archivo": "img/destinos/los-angeles-2.webp",
+      "fuente": [
+        "Santa Monica Pier",
+        "Griffith Observatory",
+        "Venice Beach"
+      ],
+      "nombreArchivo": "Santa_monica_pier_entrance_evening.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Santa_monica_pier_entrance_evening.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2827,
+      "alto": 2199,
+      "autor": "web4camguy",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "los-cabos": {
+      "archivo": "img/destinos/los-cabos-2.webp",
+      "fuente": [
+        "Cabo San Lucas",
+        "Medano Beach",
+        "San José del Cabo"
+      ],
+      "nombreArchivo": "Collage_Cabo_San_Lucas.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Collage_Cabo_San_Lucas.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1200,
+      "alto": 1800,
+      "autor": "Microstar",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "luang-prabang": {
+      "archivo": "img/destinos/luang-prabang-2.webp",
+      "fuente": [
+        "Kuang Si Falls",
+        "Wat Xieng Thong"
+      ],
+      "nombreArchivo": "The_river_of_Kuang_si_waterfalls.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:The_river_of_Kuang_si_waterfalls.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1264,
+      "alto": 606,
+      "autor": "NruasPaoYPP",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "maceio": {
+      "archivo": "img/destinos/maceio-2.webp",
+      "fuente": [
+        "Pajuçara",
+        "São Miguel dos Milagres",
+        "Maragogi"
+      ],
+      "nombreArchivo": "Maceio02.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Maceio02.jpg",
+      "mime": "image/jpeg",
+      "ancho": 600,
+      "alto": 450,
+      "autor": "Adriano Ribeiro",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "madagascar": {
+      "archivo": "img/destinos/madagascar-2.webp",
+      "fuente": [
+        "Ring-tailed lemur",
+        "Tsingy de Bemaraha Strict Nature Reserve",
+        "Isalo National Park"
+      ],
+      "nombreArchivo": "Ring-tailed_lemur_(Lemur_catta).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Ring-tailed_lemur_(Lemur_catta).jpg",
+      "mime": "image/jpeg",
+      "ancho": 1916,
+      "alto": 2872,
+      "autor": "Charles J. Sharp",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "madeira": {
+      "archivo": "img/destinos/madeira-2.webp",
+      "fuente": [
+        "Cabo Girão",
+        "Pico Ruivo",
+        "Funchal"
+      ],
+      "nombreArchivo": "Base_of_Cabo_Girao_from_viewpoint_2013.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Base_of_Cabo_Girao_from_viewpoint_2013.JPG",
+      "mime": "image/jpeg",
+      "ancho": 4608,
+      "alto": 3239,
+      "autor": "Bjørn Christian Tørrissen",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "madrid": {
+      "archivo": "img/destinos/madrid-2.webp",
+      "fuente": [
+        "Royal Palace of Madrid",
+        "Retiro Park",
+        "Puerta de Alcalá"
+      ],
+      "nombreArchivo": "Palacio_Real_de_Madrid_Julio_2016_(cropped).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Madrid_Julio_2016_(cropped).jpg",
+      "mime": "image/jpeg",
+      "ancho": 2784,
+      "alto": 2104,
+      "autor": "Tim Adams",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "mallorca": {
+      "archivo": "img/destinos/mallorca-2.webp",
+      "fuente": [
+        "Serra de Tramuntana",
+        "Valldemossa",
+        "Cap de Formentor"
+      ],
+      "nombreArchivo": "SerraTramuntana2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:SerraTramuntana2.jpg",
+      "mime": "image/jpeg",
+      "ancho": 400,
+      "alto": 265,
+      "autor": "No machine-readable author provided. Cybertoni assumed (based on copyright claims).",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "malta": {
+      "archivo": "img/destinos/malta-2.webp",
+      "fuente": [
+        "Mdina",
+        "Blue Lagoon (Malta)",
+        "Gozo"
+      ],
+      "nombreArchivo": "Malta_-_Mdina_(Triq_San_Oswald)_02_ies.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Malta_-_Mdina_(Triq_San_Oswald)_02_ies.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5616,
+      "alto": 3744,
+      "autor": "Frank Vincentz",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "manaos-y-amazonas": {
+      "archivo": "img/destinos/manaos-y-amazonas-2.webp",
+      "fuente": [
+        "Meeting of Waters",
+        "Rio Negro (Amazon)",
+        "Amazon River"
+      ],
+      "nombreArchivo": "Encontro_das_Águas_-_Manaus.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Encontro_das_%C3%81guas_-_Manaus.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2500,
+      "alto": 1667,
+      "autor": "Portal da Copa",
+      "licencia": "CC BY 3.0 br",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/3.0/br/deed.en"
+    },
+    "mancora": {
+      "archivo": "img/destinos/mancora-2.webp",
+      "fuente": [
+        "Punta Sal District",
+        "Los Órganos District",
+        "Green sea turtle"
+      ],
+      "nombreArchivo": "Green_sea_turtle_(Chelonia_mydas)_Moorea.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Green_sea_turtle_(Chelonia_mydas)_Moorea.jpg",
+      "mime": "image/jpeg",
+      "ancho": 6671,
+      "alto": 4448,
+      "autor": "Charles J. Sharp",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "mar-del-plata": {
+      "archivo": "img/destinos/mar-del-plata-2.webp",
+      "fuente": [
+        "Torreón del Monje",
+        "South American sea lion",
+        "Playa Grande (Mar del Plata)"
+      ],
+      "nombreArchivo": "Southern_Sea_Lions.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Southern_Sea_Lions.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1956,
+      "alto": 1956,
+      "autor": "Vince Smith",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "marrakech": {
+      "archivo": "img/destinos/marrakech-2.webp",
+      "fuente": [
+        "Majorelle Garden",
+        "Koutoubia Mosque",
+        "Ait Benhaddou"
+      ],
+      "nombreArchivo": "Le_jardin_des_majorelle_40.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Le_jardin_des_majorelle_40.JPG",
+      "mime": "image/jpeg",
+      "ancho": 3216,
+      "alto": 2136,
+      "autor": "Viault",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "mauricio": {
+      "archivo": "img/destinos/mauricio-2.webp",
+      "fuente": [
+        "Seven Coloured Earths",
+        "Chamarel Waterfall",
+        "Pamplemousses Botanical Garden"
+      ],
+      "nombreArchivo": "Seven_Coloured_Earths_Geopark_in_Chamarel,_Mauritius_(53697998768).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Seven_Coloured_Earths_Geopark_in_Chamarel,_Mauritius_(53697998768).jpg",
+      "mime": "image/jpeg",
+      "ancho": 6240,
+      "alto": 4160,
+      "autor": "\"dronepicr\"",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "medellin": {
+      "archivo": "img/destinos/medellin-2.webp",
+      "fuente": [
+        "El Peñol",
+        "Guatapé",
+        "Plaza Botero"
+      ],
+      "nombreArchivo": "Guatape_-_Antioquia_-_camilogaleano(.)com.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Guatape_-_Antioquia_-_camilogaleano(.)com.jpg",
+      "mime": "image/jpeg",
+      "ancho": 720,
+      "alto": 1080,
+      "autor": "camilogaleano.com",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "melbourne": {
+      "archivo": "img/destinos/melbourne-2.webp",
+      "fuente": [
+        "Twelve Apostles (Victoria)",
+        "Hosier Lane"
+      ],
+      "nombreArchivo": "The_Twelve_Apostles_2011.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:The_Twelve_Apostles_2011.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2042,
+      "alto": 1360,
+      "autor": "Michael J Fromholtz",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "mendoza": {
+      "archivo": "img/destinos/mendoza-2.webp",
+      "fuente": [
+        "Puente del Inca",
+        "Uco Valley",
+        "Potrerillos Dam"
+      ],
+      "nombreArchivo": "Puente_del_Inca_and_spa.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Puente_del_Inca_and_spa.jpg",
+      "mime": "image/jpeg",
+      "ancho": 850,
+      "alto": 538,
+      "autor": "Murgatroyd49",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "merida-y-yucatan": {
+      "archivo": "img/destinos/merida-y-yucatan-2.webp",
+      "fuente": [
+        "Uxmal",
+        "Ik Kil",
+        "Mérida Cathedral (Yucatán)"
+      ],
+      "nombreArchivo": "Uxmal_Pyramid_of_the_Magician.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Uxmal_Pyramid_of_the_Magician.jpg",
+      "mime": "image/jpeg",
+      "ancho": 800,
+      "alto": 600,
+      "autor": "Sybz",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "miami": {
+      "archivo": "img/destinos/miami-2.webp",
+      "fuente": [
+        "Wynwood Walls",
+        "Everglades National Park",
+        "Ocean Drive"
+      ],
+      "nombreArchivo": "Sunset_over_the_River_of_Grass,_NPSphoto,_G.Gardner_(9255157507).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Sunset_over_the_River_of_Grass,_NPSphoto,_G.Gardner_(9255157507).jpg",
+      "mime": "image/jpeg",
+      "ancho": 4896,
+      "alto": 3264,
+      "autor": "Everglades NPS from Homestead, Florida, United States",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "mongolia": {
+      "archivo": "img/destinos/mongolia-2.webp",
+      "fuente": [
+        "Genghis Khan Equestrian Statue",
+        "Khongoryn Els",
+        "Gandan Monastery"
+      ],
+      "nombreArchivo": "Genghis_Khan_Equestrian_Statue,_photo_by_Vaiz_Ha.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Genghis_Khan_Equestrian_Statue,_photo_by_Vaiz_Ha.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4912,
+      "alto": 3264,
+      "autor": "Vaiz Ha",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "montanita": {
+      "archivo": "img/destinos/montanita-2.webp",
+      "fuente": [
+        "Machalilla National Park",
+        "Isla de la Plata",
+        "Ayampe"
+      ],
+      "nombreArchivo": "Ecuador_aguablanca_sulfur_laguna.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Ecuador_aguablanca_sulfur_laguna.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1756,
+      "alto": 1140,
+      "autor": "Autor desconocido",
+      "licencia": "CC BY-SA 2.0 fr",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en"
+    },
+    "montevideo-y-colonia": {
+      "archivo": "img/destinos/montevideo-y-colonia-2.webp",
+      "fuente": [
+        "Palacio Salvo",
+        "Rambla of Montevideo",
+        "Montevideo"
+      ],
+      "nombreArchivo": "Palacio_Salvo_Logo.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Palacio_Salvo_Logo.jpg",
+      "mime": "image/jpeg",
+      "ancho": 198,
+      "alto": 141,
+      "autor": "Coquimbo58",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "montreal-y-quebec": {
+      "archivo": "img/destinos/montreal-y-quebec-2.webp",
+      "fuente": [
+        "Notre-Dame Basilica (Montreal)",
+        "Old Quebec",
+        "Mount Royal"
+      ],
+      "nombreArchivo": "Basílica_de_Notre-Dame,_Montreal,_Canadá,_2017-08-11,_DD_26-28_HDR.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_Notre-Dame,_Montreal,_Canad%C3%A1,_2017-08-11,_DD_26-28_HDR.jpg",
+      "mime": "image/jpeg",
+      "ancho": 6577,
+      "alto": 4978,
+      "autor": "Diego Delso",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "namibia": {
+      "archivo": "img/destinos/namibia-2.webp",
+      "fuente": [
+        "Deadvlei",
+        "Etosha National Park",
+        "Fish River Canyon"
+      ],
+      "nombreArchivo": "Dead_Vlei_4.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Dead_Vlei_4.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3787,
+      "alto": 2525,
+      "autor": "Ikiwaner",
+      "licencia": "GFDL 1.2",
+      "licenciaUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html"
+    },
+    "nepal": {
+      "archivo": "img/destinos/nepal-2.webp",
+      "fuente": [
+        "Boudhanath",
+        "Annapurna Massif",
+        "Swayambhunath"
+      ],
+      "nombreArchivo": "Boudhanath_stupa_,_Kathmandu,_Nepal.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Boudhanath_stupa_,_Kathmandu,_Nepal.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 3024,
+      "autor": "Sumitbhatt222",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "nueva-orleans": {
+      "archivo": "img/destinos/nueva-orleans-2.webp",
+      "fuente": [
+        "Steamboat Natchez",
+        "Garden District, New Orleans",
+        "Bourbon Street"
+      ],
+      "nombreArchivo": "20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG",
+      "mime": "image/jpeg",
+      "ancho": 3072,
+      "alto": 2304,
+      "autor": "( t / c / bio / en:WP:CHICAGO / en:WP:LOTM )",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "nueva-york": {
+      "archivo": "img/destinos/nueva-york-2.webp",
+      "fuente": [
+        "Times Square",
+        "Brooklyn Bridge",
+        "Central Park",
+        "Statue of Liberty"
+      ],
+      "nombreArchivo": "New_york_times_square-terabass.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:New_york_times_square-terabass.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3904,
+      "alto": 2602,
+      "autor": "Terabass",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "oaxaca": {
+      "archivo": "img/destinos/oaxaca-2.webp",
+      "fuente": [
+        "Hierve el Agua",
+        "Church of Santo Domingo de Guzmán (Oaxaca)",
+        "Mitla"
+      ],
+      "nombreArchivo": "HierveElAguaMexico1.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:HierveElAguaMexico1.jpg",
+      "mime": "image/jpeg",
+      "ancho": 800,
+      "alto": 600,
+      "autor": "The original uploader was Lavintzin at English Wikipedia .",
+      "licencia": "CC BY-SA 2.5",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+    },
+    "oman": {
+      "archivo": "img/destinos/oman-2.webp",
+      "fuente": [
+        "Wahiba Sands",
+        "Wadi Shab",
+        "Muttrah"
+      ],
+      "nombreArchivo": "Aerial_view_of_the_coastline_of_Muttrah.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_coastline_of_Muttrah.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5184,
+      "alto": 3888,
+      "autor": "Izeberg007",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "oporto": {
+      "archivo": "img/destinos/oporto-2.webp",
+      "fuente": [
+        "Alto Douro Wine Region",
+        "Livraria Lello",
+        "Porto Cathedral"
+      ],
+      "nombreArchivo": "Alto_Douro_Vinhateiro_visto_de_um_comboio.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Alto_Douro_Vinhateiro_visto_de_um_comboio.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1920,
+      "alto": 2560,
+      "autor": "Fimartinho",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "orlando": {
+      "archivo": "img/destinos/orlando-2.webp",
+      "fuente": [
+        "Kennedy Space Center",
+        "Epcot",
+        "Universal Studios Florida"
+      ],
+      "nombreArchivo": "Spaceship_Earth,_EPCOT.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Spaceship_Earth,_EPCOT.jpg",
+      "mime": "image/jpeg",
+      "ancho": 6240,
+      "alto": 4160,
+      "autor": "Jedi94",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "ouro-preto": {
+      "archivo": "img/destinos/ouro-preto-2.webp",
+      "fuente": [
+        "Inhotim",
+        "Pampulha Modern Ensemble",
+        "Church of St. Francis of Assisi (Ouro Preto)"
+      ],
+      "nombreArchivo": "Instituto_Inhotim_(7).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Instituto_Inhotim_(7).jpg",
+      "mime": "image/jpeg",
+      "ancho": 900,
+      "alto": 600,
+      "autor": "Jmarciocruz",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "pais-vasco": {
+      "archivo": "img/destinos/pais-vasco-2.webp",
+      "fuente": [
+        "Gaztelugatxe",
+        "La Concha (beach)",
+        "San Sebastián"
+      ],
+      "nombreArchivo": "Gaztelugatxe_en_espagne.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Gaztelugatxe_en_espagne.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3804,
+      "alto": 2849,
+      "autor": "Clementp.fr",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "palawan": {
+      "archivo": "img/destinos/palawan-2.webp",
+      "fuente": [
+        "Kayangan Lake",
+        "Puerto Princesa Subterranean River National Park",
+        "Coron, Palawan"
+      ],
+      "nombreArchivo": "Cayangan_Lake,_Coron_Islands,_Philippines_-_panoramio.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Cayangan_Lake,_Coron_Islands,_Philippines_-_panoramio.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3216,
+      "alto": 2136,
+      "autor": "Monette Nyem",
+      "licencia": "CC BY 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/3.0"
+    },
+    "panama-y-san-blas": {
+      "archivo": "img/destinos/panama-y-san-blas-2.webp",
+      "fuente": [
+        "Panama Canal",
+        "Casco Viejo, Panama",
+        "Miraflores Locks"
+      ],
+      "nombreArchivo": "Casco_Antiguo_(San_Felipe)_-_Pamama.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Casco_Antiguo_(San_Felipe)_-_Pamama.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3968,
+      "alto": 2976,
+      "autor": "Garcia.dennis",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "paracas-y-huacachina": {
+      "archivo": "img/destinos/paracas-y-huacachina-2.webp",
+      "fuente": [
+        "Ballestas Islands",
+        "Paracas National Reserve",
+        "Nazca lines"
+      ],
+      "nombreArchivo": "Islas_Ballestas_-_panoramio_(3).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Islas_Ballestas_-_panoramio_(3).jpg",
+      "mime": "image/jpeg",
+      "ancho": 1280,
+      "alto": 960,
+      "autor": "Patrick Nouhailler's…",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "paris": {
+      "archivo": "img/destinos/paris-2.webp",
+      "fuente": [
+        "Arc de Triomphe",
+        "Louvre Pyramid",
+        "Sacré-Cœur, Paris"
+      ],
+      "nombreArchivo": "Arc_de_Triomphe_-_Août_2026.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe_-_Ao%C3%BBt_2026.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4802,
+      "alto": 3203,
+      "autor": "ZeusUpsistos",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "parque-pumalin": {
+      "archivo": "img/destinos/parque-pumalin-2.webp",
+      "fuente": [
+        "Chaitén (volcano)",
+        "Michinmahuida",
+        "Fitzroya"
+      ],
+      "nombreArchivo": "Chaiten_Volcano_NASA.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Chaiten_Volcano_NASA.jpg",
+      "mime": "image/jpeg",
+      "ancho": 613,
+      "alto": 798,
+      "autor": "NASA",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "parque-tayrona": {
+      "archivo": "img/destinos/parque-tayrona-2.webp",
+      "fuente": [
+        "Ciudad Perdida",
+        "Sierra Nevada de Santa Marta"
+      ],
+      "nombreArchivo": "CIUDAD_PERDIDA_2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:CIUDAD_PERDIDA_2.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3264,
+      "alto": 4928,
+      "autor": "Giancarlos1234",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "parques-de-california": {
+      "archivo": "img/destinos/parques-de-california-2.webp",
+      "fuente": [
+        "Yosemite Valley",
+        "Half Dome",
+        "El Capitan"
+      ],
+      "nombreArchivo": "Tunnel_View,_Yosemite_Valley,_Yosemite_NP_-_Diliff.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Tunnel_View,_Yosemite_Valley,_Yosemite_NP_-_Diliff.jpg",
+      "mime": "image/jpeg",
+      "ancho": 6000,
+      "alto": 3916,
+      "autor": "Diliff",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "peninsula-valdes": {
+      "archivo": "img/destinos/peninsula-valdes-2.webp",
+      "fuente": [
+        "Southern right whale",
+        "Southern elephant seal",
+        "Punta Tombo"
+      ],
+      "nombreArchivo": "Southern_right_whale6.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Southern_right_whale6.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1024,
+      "alto": 683,
+      "autor": "Michaël CATANZARITI",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "phuket-e-islas-tailandesas": {
+      "archivo": "img/destinos/phuket-e-islas-tailandesas-2.webp",
+      "fuente": [
+        "Railay Beach",
+        "Khao Phing Kan",
+        "Maya Bay"
+      ],
+      "nombreArchivo": "Railay_Beach_5.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Railay_Beach_5.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4160,
+      "alto": 2490,
+      "autor": "kallerna",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "porto-de-galinhas": {
+      "archivo": "img/destinos/porto-de-galinhas-2.webp",
+      "fuente": [
+        "Olinda",
+        "Tamandaré",
+        "Recife"
+      ],
+      "nombreArchivo": "Convento_de_São_Francisco_-_Olinda_-_Pernambuco_-_Brasil.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Convento_de_S%C3%A3o_Francisco_-_Olinda_-_Pernambuco_-_Brasil.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3888,
+      "alto": 2592,
+      "autor": "Valdiney Pimenta",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "praga": {
+      "archivo": "img/destinos/praga-2.webp",
+      "fuente": [
+        "Prague Castle",
+        "Old Town Square",
+        "Prague astronomical clock"
+      ],
+      "nombreArchivo": "Karlův_most_Praha,_Staré_Město_20170810_007.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Karl%C5%AFv_most_Praha,_Star%C3%A9_M%C4%9Bsto_20170810_007.jpg",
+      "mime": "image/jpeg",
+      "ancho": 6016,
+      "alto": 4016,
+      "autor": "Tilman2007",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "providencia": {
+      "archivo": "img/destinos/providencia-2.webp",
+      "fuente": [
+        "Old Providence McBean Lagoon National Natural Park",
+        "Providencia Island",
+        "Crab Cay"
+      ],
+      "nombreArchivo": "Divine_Providencia_(cropped).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Divine_Providencia_(cropped).jpg",
+      "mime": "image/jpeg",
+      "ancho": 837,
+      "alto": 992,
+      "autor": "NASA Earth Observatory image by Joshua Stevens, using Landsat data from the U.S. Geological Survey.",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "pucon": {
+      "archivo": "img/destinos/pucon-2.webp",
+      "fuente": [
+        "Huerquehue National Park",
+        "Caburgua Lake",
+        "Villarrica Lake"
+      ],
+      "nombreArchivo": "Parque_Nacional_Heurquehue_4.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_Heurquehue_4.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2592,
+      "alto": 1944,
+      "autor": "Brian Dell",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "puerto-vallarta": {
+      "archivo": "img/destinos/puerto-vallarta-2.webp",
+      "fuente": [
+        "Sayulita",
+        "Banderas Bay"
+      ],
+      "nombreArchivo": "Entrada_a_Sayulita_02.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Entrada_a_Sayulita_02.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4592,
+      "alto": 3448,
+      "autor": "Luisalvaz",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "puerto-varas": {
+      "archivo": "img/destinos/puerto-varas-2.webp",
+      "fuente": [
+        "Petrohué Waterfalls",
+        "Llanquihue Lake"
+      ],
+      "nombreArchivo": "Saltos_del_Petrohué_y_Volcán_Osorno.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Saltos_del_Petrohu%C3%A9_y_Volc%C3%A1n_Osorno.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1920,
+      "alto": 1371,
+      "autor": "Alexmrz",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "puerto-williams": {
+      "archivo": "img/destinos/puerto-williams-2.webp",
+      "fuente": [
+        "Dientes de Navarino",
+        "Cape Horn",
+        "Navarino Island"
+      ],
+      "nombreArchivo": "CapeHorn.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:CapeHorn.jpg",
+      "mime": "image/jpeg",
+      "ancho": 798,
+      "alto": 596,
+      "autor": "Autor desconocido",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "punta-cana": {
+      "archivo": "img/destinos/punta-cana-2.webp",
+      "fuente": [
+        "Saona Island",
+        "Bávaro",
+        "Higüey"
+      ],
+      "nombreArchivo": "Saona_Island_December_2020.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Saona_Island_December_2020.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3456,
+      "alto": 2304,
+      "autor": "Danu Widjajanto",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "punta-del-este": {
+      "archivo": "img/destinos/punta-del-este-2.webp",
+      "fuente": [
+        "La Mano de Punta del Este",
+        "Casapueblo",
+        "José Ignacio, Uruguay"
+      ],
+      "nombreArchivo": "Thehandofpuntadeleste.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Thehandofpuntadeleste.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3648,
+      "alto": 2736,
+      "autor": "Coolcaesar",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "puyehue": {
+      "archivo": "img/destinos/puyehue-2.webp",
+      "fuente": [
+        "Puyehue-Cordón Caulle",
+        "Lake Rupanco",
+        "Puyehue Lake"
+      ],
+      "nombreArchivo": "Puyehue_Cordon_Calle_2_Puyehue_NP_Chile.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Puyehue_Cordon_Calle_2_Puyehue_NP_Chile.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 1960,
+      "autor": "Pi3.124",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "queenstown": {
+      "archivo": "img/destinos/queenstown-2.webp",
+      "fuente": [
+        "Milford Sound",
+        "The Remarkables",
+        "Shotover River"
+      ],
+      "nombreArchivo": "Milford_Sound_(New_Zealand).JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Milford_Sound_(New_Zealand).JPG",
+      "mime": "image/jpeg",
+      "ancho": 4878,
+      "alto": 1766,
+      "autor": "Maros M r a z ( Maros )",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "quito-y-mitad-del-mundo": {
+      "archivo": "img/destinos/quito-y-mitad-del-mundo-2.webp",
+      "fuente": [
+        "Cotopaxi",
+        "Ciudad Mitad del Mundo",
+        "TelefériQo"
+      ],
+      "nombreArchivo": "Cotopaxi_volcano_2008-06-27T1322.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Cotopaxi_volcano_2008-06-27T1322.jpg",
+      "mime": "image/jpeg",
+      "ancho": 900,
+      "alto": 462,
+      "autor": "Gerard Prins",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "rio-de-janeiro": {
+      "archivo": "img/destinos/rio-de-janeiro-2.webp",
+      "fuente": [
+        "Sugarloaf Mountain",
+        "Selarón Steps",
+        "Copacabana, Rio de Janeiro"
+      ],
+      "nombreArchivo": "Pão_de_Açucar_-_Sugarloaf_Mountain_-_Zuckerhut_-_2022.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:P%C3%A3o_de_A%C3%A7ucar_-_Sugarloaf_Mountain_-_Zuckerhut_-_2022.jpg",
+      "mime": "image/jpeg",
+      "ancho": 5690,
+      "alto": 3201,
+      "autor": "Arne Müseler",
+      "licencia": "CC BY-SA 3.0 de",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en"
+    },
+    "riviera-albanesa": {
+      "archivo": "img/destinos/riviera-albanesa-2.webp",
+      "fuente": [
+        "Blue Eye (Albania)",
+        "Butrint",
+        "Gjirokastër"
+      ],
+      "nombreArchivo": "Amphitheatre_of_Butrint_2009.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Amphitheatre_of_Butrint_2009.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3872,
+      "alto": 2592,
+      "autor": "Geoff Wong",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "roatan": {
+      "archivo": "img/destinos/roatan-2.webp",
+      "fuente": [
+        "Utila",
+        "Cayos Cochinos",
+        "Bay Islands Department"
+      ],
+      "nombreArchivo": "Road_Near_Munchies,_Utila,_Honduras.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Road_Near_Munchies,_Utila,_Honduras.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2048,
+      "alto": 1536,
+      "autor": "Hoffryan at English Wikipedia",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "roma": {
+      "archivo": "img/destinos/roma-2.webp",
+      "fuente": [
+        "Trevi Fountain",
+        "St. Peter's Basilica",
+        "Pantheon, Rome"
+      ],
+      "nombreArchivo": "Trevi_Fountain_-_Roma.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg",
+      "mime": "image/jpeg",
+      "ancho": 8734,
+      "alto": 4738,
+      "autor": "NikonZ7II",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "ruanda": {
+      "archivo": "img/destinos/ruanda-2.webp",
+      "fuente": [
+        "Mountain gorilla",
+        "Lake Kivu"
+      ],
+      "nombreArchivo": "Susa_group,_mountain_gorilla.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Susa_group,_mountain_gorilla.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1552,
+      "alto": 1632,
+      "autor": "https://www.flickr.com/photos/deepphoto/ d_proffer",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "safari-en-kenia": {
+      "archivo": "img/destinos/safari-en-kenia-2.webp",
+      "fuente": [
+        "Amboseli National Park",
+        "Lake Nakuru",
+        "Maasai people"
+      ],
+      "nombreArchivo": "Lake-Nakuru-Baboon-Hill-View.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Lake-Nakuru-Baboon-Hill-View.JPG",
+      "mime": "image/jpeg",
+      "ancho": 4607,
+      "alto": 2837,
+      "autor": "Bjørn Christian Tørrissen",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "salar-de-uyuni": {
+      "archivo": "img/destinos/salar-de-uyuni-2.webp",
+      "fuente": [
+        "Laguna Colorada",
+        "Incahuasi Island"
+      ],
+      "nombreArchivo": "Laguna_Colorada_(15764090609).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Laguna_Colorada_(15764090609).jpg",
+      "mime": "image/jpeg",
+      "ancho": 4766,
+      "alto": 3177,
+      "autor": "madras91",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "salta-y-jujuy": {
+      "archivo": "img/destinos/salta-y-jujuy-2.webp",
+      "fuente": [
+        "Cerro de los Siete Colores",
+        "Salinas Grandes",
+        "Purmamarca"
+      ],
+      "nombreArchivo": "Cerro_de_los_siete_colores.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Cerro_de_los_siete_colores.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1600,
+      "alto": 1200,
+      "autor": "Augusto Sarita",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "salvador-de-bahia": {
+      "archivo": "img/destinos/salvador-de-bahia-2.webp",
+      "fuente": [
+        "Lacerda Elevator",
+        "Farol da Barra",
+        "Church and Convent of São Francisco (Salvador)"
+      ],
+      "nombreArchivo": "Elevador_Lacerda_7610.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Elevador_Lacerda_7610.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3311,
+      "alto": 4967,
+      "autor": "Paul R. Burley",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "samarcanda": {
+      "archivo": "img/destinos/samarcanda-2.webp",
+      "fuente": [
+        "Gur-e-Amir",
+        "Shah-i-Zinda",
+        "Bibi-Khanym Mosque"
+      ],
+      "nombreArchivo": "ShrineofAmirTimur.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:ShrineofAmirTimur.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4272,
+      "alto": 2848,
+      "autor": "Willard84",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "san-andres": {
+      "archivo": "img/destinos/san-andres-2.webp",
+      "fuente": [
+        "Johnny Cay",
+        "San Andrés (island)"
+      ],
+      "nombreArchivo": "San_Andres_Island_Montage.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:San_Andres_Island_Montage.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1000,
+      "alto": 1200,
+      "autor": "Mr.Jhosimar",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "san-juan": {
+      "archivo": "img/destinos/san-juan-2.webp",
+      "fuente": [
+        "Old San Juan",
+        "El Yunque National Forest",
+        "Mosquito Bay"
+      ],
+      "nombreArchivo": "Castillo_San_Felipe_del_Morro_aerial,_May_2024_-_01.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Castillo_San_Felipe_del_Morro_aerial,_May_2024_-_01.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4032,
+      "alto": 2268,
+      "autor": "Nils Huenerfuerst",
+      "licencia": "CC BY 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "san-martin-de-los-andes": {
+      "archivo": "img/destinos/san-martin-de-los-andes-2.webp",
+      "fuente": [
+        "Lácar Lake",
+        "Lanín Volcano",
+        "Seven Lakes Road"
+      ],
+      "nombreArchivo": "Lacar_desde_bandurrias.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Lacar_desde_bandurrias.JPG",
+      "mime": "image/jpeg",
+      "ancho": 2048,
+      "alto": 1536,
+      "autor": "Albasmalko",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "san-pedro-de-atacama": {
+      "archivo": "img/destinos/san-pedro-de-atacama-2.webp",
+      "fuente": [
+        "El Tatio",
+        "Laguna Miscanti",
+        "Licancabur"
+      ],
+      "nombreArchivo": "Géiseres_del_Tatio,_Atacama,_Chile,_2016-02-01,_DD_01-02_HDR.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:G%C3%A9iseres_del_Tatio,_Atacama,_Chile,_2016-02-01,_DD_01-02_HDR.JPG",
+      "mime": "image/jpeg",
+      "ancho": 8686,
+      "alto": 5791,
+      "autor": "Diego Delso",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "santa-cruz-de-la-sierra": {
+      "archivo": "img/destinos/santa-cruz-de-la-sierra-2.webp",
+      "fuente": [
+        "Amboró National Park",
+        "Samaipata",
+        "Jesuit Missions of Chiquitos"
+      ],
+      "nombreArchivo": "Bolivia,_Amboró_National_Park,_2009.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Bolivia,_Ambor%C3%B3_National_Park,_2009.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2507,
+      "alto": 1256,
+      "autor": "Ángel M. Felicísimo",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "sao-paulo": {
+      "archivo": "img/destinos/sao-paulo-2.webp",
+      "fuente": [
+        "São Paulo Museum of Art",
+        "Liberdade, São Paulo",
+        "Paulista Avenue"
+      ],
+      "nombreArchivo": "Vista_aérea_de_la_Avenida_Paulista_de_São_Paulo_05.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Vista_a%C3%A9rea_de_la_Avenida_Paulista_de_S%C3%A3o_Paulo_05.jpg",
+      "mime": "image/jpeg",
+      "ancho": 8064,
+      "alto": 4536,
+      "autor": "ProtoplasmaKid",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "seul": {
+      "archivo": "img/destinos/seul-2.webp",
+      "fuente": [
+        "N Seoul Tower",
+        "Bukchon Hanok Village",
+        "Changdeokgung"
+      ],
+      "nombreArchivo": "Bukchon_Hanok_Village_01.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Bukchon_Hanok_Village_01.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4898,
+      "alto": 3265,
+      "autor": "Bgag",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "sevilla-y-andalucia": {
+      "archivo": "img/destinos/sevilla-y-andalucia-2.webp",
+      "fuente": [
+        "Alhambra",
+        "Seville Cathedral",
+        "Real Alcázar of Seville"
+      ],
+      "nombreArchivo": "Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4592,
+      "alto": 3056,
+      "autor": "Jebulon",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "seychelles": {
+      "archivo": "img/destinos/seychelles-2.webp",
+      "fuente": [
+        "Vallée de Mai",
+        "La Digue",
+        "Praslin"
+      ],
+      "nombreArchivo": "Valleé_de_mai2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Valle%C3%A9_de_mai2.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2560,
+      "alto": 1920,
+      "autor": "Autor desconocido",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "sicilia": {
+      "archivo": "img/destinos/sicilia-2.webp",
+      "fuente": [
+        "Valley of the Temples",
+        "Mount Etna",
+        "Cefalù"
+      ],
+      "nombreArchivo": "Mt_Etna_and_Catania1.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Mt_Etna_and_Catania1.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3008,
+      "alto": 1225,
+      "autor": "BenAveling",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "sidney": {
+      "archivo": "img/destinos/sidney-2.webp",
+      "fuente": [
+        "Sydney Harbour Bridge",
+        "Bondi Beach",
+        "Blue Mountains (Australia)"
+      ],
+      "nombreArchivo": "Sydney_Harbour_Bridge-16_October_2025.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Sydney_Harbour_Bridge-16_October_2025.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3907,
+      "alto": 2197,
+      "autor": "Servite et contribuere",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "singapur": {
+      "archivo": "img/destinos/singapur-2.webp",
+      "fuente": [
+        "Marina Bay Sands",
+        "Merlion"
+      ],
+      "nombreArchivo": "Marina_Bay_Sands_(I).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Marina_Bay_Sands_(I).jpg",
+      "mime": "image/jpeg",
+      "ancho": 6366,
+      "alto": 4244,
+      "autor": "This Photo was taken by Supanut Arunoprayote . Feel free to use any of my images, but please mention me as the author and may send me a message. (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เครดิตผู้ถ่ายและอาจส่ง ข้อความบอกกล่าวด้วย ) Please do not upload an updated image here without consultation with the Author. The author would like to make corrections only at his own source. This ensures that the changes are preserved. Please if you think that any changes should be required, please inform the author. Otherwise you can upload a new image with a new name. Please use one of the templates derivative or extract .",
+      "licencia": "CC BY 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/4.0"
+    },
+    "sri-lanka": {
+      "archivo": "img/destinos/sri-lanka-2.webp",
+      "fuente": [
+        "Temple of the Tooth",
+        "Adam's Peak",
+        "Nine Arches Bridge"
+      ],
+      "nombreArchivo": "SL_Kandy_asv2020-01_img33_Sacred_Tooth_Temple.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:SL_Kandy_asv2020-01_img33_Sacred_Tooth_Temple.jpg",
+      "mime": "image/jpeg",
+      "ancho": 7228,
+      "alto": 3614,
+      "autor": "A.Savin",
+      "licencia": "FAL",
+      "licenciaUrl": "http://artlibre.org/licence/lal/en"
+    },
+    "sucre-y-potosi": {
+      "archivo": "img/destinos/sucre-y-potosi-2.webp",
+      "fuente": [
+        "Sucre",
+        "Casa de la Libertad",
+        "Potosí"
+      ],
+      "nombreArchivo": "Sucre,_Capital_de_Bolivia.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Sucre,_Capital_de_Bolivia.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4096,
+      "alto": 2304,
+      "autor": "Parallelepiped09",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "tahiti-y-bora-bora": {
+      "archivo": "img/destinos/tahiti-y-bora-bora-2.webp",
+      "fuente": [
+        "Teahupoo",
+        "Moorea",
+        "Papeete"
+      ],
+      "nombreArchivo": "Teahupoo_pk.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Teahupoo_pk.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2848,
+      "alto": 4005,
+      "autor": "Saga70",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "taiwan": {
+      "archivo": "img/destinos/taiwan-2.webp",
+      "fuente": [
+        "Chiang Kai-shek Memorial Hall",
+        "Taroko National Park",
+        "Sun Moon Lake"
+      ],
+      "nombreArchivo": "Chiang_Kai-shek_memorial_amk.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Chiang_Kai-shek_memorial_amk.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2900,
+      "alto": 1933,
+      "autor": "AngMoKio",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "tallin": {
+      "archivo": "img/destinos/tallin-2.webp",
+      "fuente": [
+        "Toompea",
+        "Alexander Nevsky Cathedral, Tallinn",
+        "Kadriorg Palace"
+      ],
+      "nombreArchivo": "Tallinn_Toompea_Upper_Old_Town_2013.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Tallinn_Toompea_Upper_Old_Town_2013.jpg",
+      "mime": "image/jpeg",
+      "ancho": 11346,
+      "alto": 3678,
+      "autor": "Ivar Leidus",
+      "licencia": "CC BY-SA 3.0 ee",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0/ee/deed.en"
+    },
+    "tokio": {
+      "archivo": "img/destinos/tokio-2.webp",
+      "fuente": [
+        "Sensō-ji",
+        "Mount Fuji",
+        "Tokyo Tower"
+      ],
+      "nombreArchivo": "Sensoji_2023.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Sensoji_2023.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3466,
+      "alto": 2476,
+      "autor": "Akonnchiroll",
+      "licencia": "CC0",
+      "licenciaUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    },
+    "toronto-y-niagara": {
+      "archivo": "img/destinos/toronto-y-niagara-2.webp",
+      "fuente": [
+        "CN Tower",
+        "Casa Loma"
+      ],
+      "nombreArchivo": "Exterior_of_Casa_Loma,_June_2012.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Exterior_of_Casa_Loma,_June_2012.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4000,
+      "alto": 3000,
+      "autor": "Priscilla Jordão from São Paulo, Brasil",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "torres-del-paine": {
+      "archivo": "img/destinos/torres-del-paine-2.webp",
+      "fuente": [
+        "Torres del Paine",
+        "Grey Glacier",
+        "Lake Pehoé"
+      ],
+      "nombreArchivo": "Torres_del_Paine,_Chile_by_Karen_Chan_16.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Torres_del_Paine,_Chile_by_Karen_Chan_16.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1740,
+      "alto": 1109,
+      "autor": "Karen Chan 16",
+      "licencia": "CC BY 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by/2.0"
+    },
+    "toscana-y-florencia": {
+      "archivo": "img/destinos/toscana-y-florencia-2.webp",
+      "fuente": [
+        "Val d'Orcia",
+        "Piazza del Campo",
+        "Leaning Tower of Pisa"
+      ],
+      "nombreArchivo": "I_cipressi_della_Val_D'Orcia.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:I_cipressi_della_Val_D%27Orcia.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4608,
+      "alto": 2592,
+      "autor": "Carlo cattaneo fotografie",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "trujillo-y-huanchaco": {
+      "archivo": "img/destinos/trujillo-y-huanchaco-2.webp",
+      "fuente": [
+        "Chan Chan",
+        "Huaca de la Luna"
+      ],
+      "nombreArchivo": "Chan_chan_view1.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Chan_chan_view1.jpg",
+      "mime": "image/jpeg",
+      "ancho": 1766,
+      "alto": 1181,
+      "autor": "Håkan Svensson",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    "tulum": {
+      "archivo": "img/destinos/tulum-2.webp",
+      "fuente": [
+        "Sian Ka'an",
+        "Coba",
+        "Akumal"
+      ],
+      "nombreArchivo": "Biósfera_de_Sian_Kaan_Quintana_Roo.JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Bi%C3%B3sfera_de_Sian_Kaan_Quintana_Roo.JPG",
+      "mime": "image/jpeg",
+      "ancho": 1395,
+      "alto": 629,
+      "autor": "Martha xucunostli",
+      "licencia": "CC BY-SA 3.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "uluru": {
+      "archivo": "img/destinos/uluru-2.webp",
+      "fuente": [
+        "Kata Tjuta",
+        "Kings Canyon (Northern Territory)",
+        "Uluṟu-Kata Tjuṯa National Park"
+      ],
+      "nombreArchivo": "Aerial_Kata_Tjuta_olgas4799.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Aerial_Kata_Tjuta_olgas4799.jpg",
+      "mime": "image/jpeg",
+      "ancho": 500,
+      "alto": 324,
+      "autor": "Tourism NT",
+      "licencia": "Attribution",
+      "licenciaUrl": ""
+    },
+    "ushuaia": {
+      "archivo": "img/destinos/ushuaia-2.webp",
+      "fuente": [
+        "Tierra del Fuego National Park",
+        "Beagle Channel",
+        "Martial Glacier"
+      ],
+      "nombreArchivo": "Emblema_Parque_Nacional_Tierra_del_Fuego.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Emblema_Parque_Nacional_Tierra_del_Fuego.jpg",
+      "mime": "image/jpeg",
+      "ancho": 2000,
+      "alto": 2000,
+      "autor": "Autor desconocido",
+      "licencia": "CC BY-SA 2.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+    },
+    "valdivia": {
+      "archivo": "img/destinos/valdivia-2.webp",
+      "fuente": [
+        "Niebla, Chile",
+        "Torreón Los Canelos",
+        "Valdivia"
+      ],
+      "nombreArchivo": "Niebla,_Valdivia,_2019_(06).jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Niebla,_Valdivia,_2019_(06).jpg",
+      "mime": "image/jpeg",
+      "ancho": 4272,
+      "alto": 2848,
+      "autor": "Draceane",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "vancouver-y-banff": {
+      "archivo": "img/destinos/vancouver-y-banff-2.webp",
+      "fuente": [
+        "Lake Louise",
+        "Stanley Park",
+        "Capilano Suspension Bridge"
+      ],
+      "nombreArchivo": "Capilano_Suspension_Bridge,_Vancouver,_Canada_(July_2016)_1.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Capilano_Suspension_Bridge,_Vancouver,_Canada_(July_2016)_1.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4000,
+      "alto": 2248,
+      "autor": "Markus Säynevirta",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "venecia": {
+      "archivo": "img/destinos/venecia-2.webp",
+      "fuente": [
+        "St Mark's Basilica",
+        "Rialto Bridge",
+        "Burano"
+      ],
+      "nombreArchivo": "Venezia_Basilica_di_San_Marco_Fassade_2.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Venezia_Basilica_di_San_Marco_Fassade_2.jpg",
+      "mime": "image/jpeg",
+      "ancho": 4574,
+      "alto": 3066,
+      "autor": "Zairon",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "viena": {
+      "archivo": "img/destinos/viena-2.webp",
+      "fuente": [
+        "St. Stephen's Cathedral, Vienna",
+        "Belvedere, Vienna",
+        "Hofburg"
+      ],
+      "nombreArchivo": "Wien_-_Stephansdom_(1).JPG",
+      "commons": "https://commons.wikimedia.org/wiki/File:Wien_-_Stephansdom_(1).JPG",
+      "mime": "image/jpeg",
+      "ancho": 2625,
+      "alto": 3937,
+      "autor": "C.Stadler/Bwag",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+    },
+    "vietnam": {
+      "archivo": "img/destinos/vietnam-2.webp",
+      "fuente": [
+        "Tràng An",
+        "Hoan Kiem Lake",
+        "Hội An"
+      ],
+      "nombreArchivo": "Muaxuantamcoc.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Muaxuantamcoc.jpg",
+      "mime": "image/jpeg",
+      "ancho": 760,
+      "alto": 496,
+      "autor": "Kien1980v ( thảo luận )",
+      "licencia": "Public domain",
+      "licenciaUrl": ""
+    },
+    "zanzibar": {
+      "archivo": "img/destinos/zanzibar-2.webp",
+      "fuente": [
+        "Nungwi",
+        "Prison Island",
+        "Jozani Chwaka Bay National Park"
+      ],
+      "nombreArchivo": "Original_4b713299-08fb-4d32-9299-6844e8a97a78_IMG_20211201_154556.jpg",
+      "commons": "https://commons.wikimedia.org/wiki/File:Original_4b713299-08fb-4d32-9299-6844e8a97a78_IMG_20211201_154556.jpg",
+      "mime": "image/jpeg",
+      "ancho": 3632,
+      "alto": 1846,
+      "autor": "Sansibar-freundeskreis.de",
+      "licencia": "CC BY-SA 4.0",
+      "licenciaUrl": "https://creativecommons.org/licenses/by-sa/4.0"
     }
   }
 }

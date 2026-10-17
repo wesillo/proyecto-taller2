@@ -155,7 +155,7 @@ function renderInicio() {
     <p class="note-small">Preguntas cortas, sin registrarte.</p>
     <details class="privacy">
       <summary>Guardamos tus respuestas de forma anónima para mejorar las recomendaciones.</summary>
-      <p>No pedimos nombre, correo ni teléfono. Guardamos lo que respondes, el destino que te mostramos, si irías o no y cuánto tardaste en decidir. Lo usa solo el equipo de Fly4ward (proyecto universitario, FCFM, Universidad de Chile) para mejorar el sistema de recomendación.</p>
+      <p>No pedimos nombre, correo ni teléfono. Guardamos lo que respondes, el destino que te mostramos, si irías o no y cuánto tardaste en decidir. Lo usa solo el equipo de Fly4ward (proyecto universitario, FCFM, Universidad de Chile) para mejorar el sistema de recomendación. Además usamos Google Analytics para contar visitas en total (cuántas personas entran, desde qué país y con qué dispositivo), sin datos que te identifiquen.</p>
     </details>
     <div class="board" aria-label="Algunos de los ${DESTINOS.length} destinos posibles">
       <div class="row head" aria-hidden="true"><span>Código</span><span>Destino</span><span>País</span></div>

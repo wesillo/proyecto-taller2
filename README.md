@@ -24,7 +24,7 @@ Investigamos el transporte aéreo en Chile con entrevistas a pasajeros y operari
 2. Un sistema de **matching por atributos** cruza esas respuestas con 200 destinos y elige el que mejor calza.
 3. Muestra **una recomendación** con las razones, pros y contras concretos.
 4. Le pregunta **"¿Irías a este destino?"** y, si no, por qué. Esa respuesta es la etiqueta con la que se entrenará el Machine Learning.
-5. Si el usuario quiere avanzar, lo lleva a Google Flights o Skyscanner con la ruta cargada.
+5. Si el usuario quiere avanzar, lo lleva a Skyscanner con la ruta cargada (Skyscanner tiene programa de afiliados; Google Flights no paga comisión).
 
 **¿Por qué no Machine Learning todavía?** Sin datos reales de uso, un modelo no tiene de qué aprender. Partimos con reglas ponderadas y evolucionamos a ML cuando tengamos volumen de decisiones reales.
 

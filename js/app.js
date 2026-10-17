@@ -947,22 +947,23 @@ function abrirCompra(d) {
 
   const dibujar = (origen) => {
     const mismo = !!origen && origen === d.aeropuerto;
-    const consulta = (origen ? `Vuelos de ${origen} a ${d.aeropuerto}` : `Vuelos a ${d.aeropuerto}`) + (mesesDe(r).length ? ` en ${MESES[mesesDe(r)[0] - 1]}` : "");
-    const googleFlights = "https://www.google.com/travel/flights?q=" + encodeURIComponent(consulta);
-    const skyscanner = origen ? `https://www.skyscanner.cl/transporte/vuelos/${origen.toLowerCase()}/${d.aeropuerto.toLowerCase()}/` : "";
+    // Solo Skyscanner: tiene programa de afiliados (paga por cada persona que llega a comprar). Google Flights no paga comisión.
+    const pasajeros = `?adultsv2=${personasDe(r)}&rtn=1`;
+    const skyscanner = origen
+      ? `https://www.skyscanner.cl/transporte/vuelos/${origen.toLowerCase()}/${d.aeropuerto.toLowerCase()}/${pasajeros}`
+      : `https://www.skyscanner.cl/transporte/vuelos-a/${d.aeropuerto.toLowerCase()}/`;
     raiz.innerHTML = `
     <div class="overlay" id="ov">
       <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
         <h2 id="sheetTitle" tabindex="-1">Pasajes a ${esc(d.nombre)}</h2>
-        <p style="margin:0;color:var(--suave)">Te llevamos a un buscador de vuelos con la ruta ya cargada${mesesDe(r).length ? ` para ${MESES[mesesDe(r)[0] - 1]}${mesesDe(r).length > 1 ? " (puedes cambiar la fecha ahí)" : ""}` : ""}. La compra la haces directo con la aerolínea o agencia. Aeropuerto de llegada: ${d.aeropuerto}.</p>
+        <p style="margin:0;color:var(--suave)">Te llevamos a Skyscanner con la ruta ya cargada${personasDe(r) > 1 ? ` para ${personasDe(r)} personas` : ""}${mesesDe(r).length ? `; ahí eliges las fechas (te recomendamos ${MESES[mesesDe(r)[0] - 1]})` : ""}. Skyscanner compara aerolíneas y agencias, y la compra la haces directo con la que elijas. Aeropuerto de llegada: ${d.aeropuerto}.</p>
         ${origenes.length ? `<label for="orig">¿Desde dónde sales?</label>
         <select id="orig">${origenes.map(([c, nombre]) => `<option value="${c}" ${c === origen ? "selected" : ""}>${nombre} (${c})</option>`).join("")}</select>` : ""}
         ${mismo ? `<p class="warnbox">Ya estás en ${esc(d.nombre)}. Elige otra ciudad de origen.</p>` : ""}
         <div class="links">
-          <a class="btn btn-primary btn-block" ${mismo ? deshabilitado : ""} href="${googleFlights}" target="_blank" rel="noopener">Abrir en Google Flights</a>
-          ${skyscanner ? `<a class="btn btn-ghost btn-block" ${mismo ? deshabilitado : ""} href="${skyscanner}" target="_blank" rel="noopener">Abrir en Skyscanner</a>` : ""}
+          <a class="btn btn-primary btn-block" ${mismo ? deshabilitado : ""} href="${skyscanner}" target="_blank" rel="noopener">Abrir en Skyscanner</a>
         </div>
-        <p class="fine">Prototipo: en la versión final, Fly4ward recibiría una comisión solo si compras por este enlace. Eso ocurre después de recomendarte el destino y nunca cambia qué destino te sugerimos.</p>
+        <p class="fine">Prototipo: en la versión final, Fly4ward recibiría una comisión de Skyscanner solo si llegas a comprar por este enlace, sin costo extra para ti. Eso ocurre después de recomendarte el destino y nunca cambia qué destino te sugerimos.</p>
         <button class="btn-link" id="closeSheet">Cerrar</button>
       </div>
     </div>`;

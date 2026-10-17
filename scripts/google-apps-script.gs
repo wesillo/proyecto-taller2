@@ -11,7 +11,7 @@
  */
 
 const NOMBRE_HOJA = "respuestas";
-const COLUMNAS = ["id", "sesion", "fecha", "opcion", "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo", "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje", "iria", "motivo", "abrio_compra", "segundos_decidir", "segundos_respuesta", "dispositivo", "version", "personas", "continentes"];
+const COLUMNAS = ["id", "sesion", "fecha", "opcion", "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo", "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje", "iria", "motivo", "abrio_compra", "segundos_decidir", "segundos_respuesta", "dispositivo", "version", "personas", "continentes", "pagaria"];
 
 function doPost(e) {
   const lock = LockService.getScriptLock();

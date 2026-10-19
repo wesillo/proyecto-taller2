@@ -55,6 +55,7 @@ la misma fila se actualiza; no se duplica.
 | `iria`, `motivo` | La respuesta de satisfacción y, si no fue "Sí", el motivo. |
 | `abrio_compra` | 1 si apretó "Buscar pasajes". |
 | `pagaria` | Respuesta a "¿Pagarías por un servicio de este tipo teniendo en cuenta que capta tu perfil real?": `si`, `tal_vez` o `no`. Se pregunta una vez por persona, después de "¿Irías?", y queda en la fila de la opción donde respondió. Desde la versión `fly4ward-2026-10e`. |
+| `idioma` | Idioma en que la persona usó la app: `es` o `en`. Desde la versión `fly4ward-2026-10f`. |
 | `dispositivo` | `movil` o `escritorio` (según el ancho de pantalla). |
 | `personas` | Cuántos viajan: 1 solo, 2 en pareja, o lo que indiquen en familia o con amigos. |
 | `presupuesto` | Monto en pesos para el pasaje ida y vuelta por persona (desde la versión `fly4ward-2026-10b`). |
@@ -71,7 +72,7 @@ El `id` es un código al azar que cambia cada vez que alguien responde.
 
 ## Actualizar el script cuando la app agrega columnas
 
-Si la app suma una columna nueva (como `personas`, `continentes` o `pagaria`), pega otra vez el contenido de `scripts/google-apps-script.gs` en el editor y publica con **Implementar > Gestionar implementaciones > Editar > Nueva versión**. La URL no cambia y el script agrega solo el título que falta en la hoja. Mientras no lo actualices, todo sigue funcionando: la columna nueva simplemente no se guarda.
+Si la app suma una columna nueva (como `personas`, `continentes`, `pagaria` o `idioma`), pega otra vez el contenido de `scripts/google-apps-script.gs` en el editor y publica con **Implementar > Gestionar implementaciones > Editar > Nueva versión**. La URL no cambia y el script agrega solo el título que falta en la hoja. Mientras no lo actualices, todo sigue funcionando: la columna nueva simplemente no se guarda.
 
 ## Notas
 

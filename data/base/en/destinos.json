@@ -1,0 +1,2123 @@
+{
+ "san-pedro-de-atacama": {
+  "pros": [
+   "Salt flats, geysers and high-altitude lagoons",
+   "One of the best skies in the world for stargazing"
+  ],
+  "contras": [
+   "Very cold at night and hot during the day",
+   "2,400 m altitude and excursions above 4,000 m"
+  ]
+ },
+ "torres-del-paine": {
+  "pros": [
+   "World-class W and O trekking circuits",
+   "Glaciers, turquoise lakes and native wildlife"
+  ],
+  "contras": [
+   "Refuges and campsites sell out months in advance",
+   "Strong wind and weather that changes in minutes"
+  ]
+ },
+ "puerto-varas": {
+  "pros": [
+   "Lake Llanquihue with the Osorno and Calbuco volcanoes",
+   "Comfortable base for Petrohué and Chiloé"
+  ],
+  "contras": [
+   "It rains often outside summer",
+   "Renting a car is the best way to get around"
+  ]
+ },
+ "isla-de-pascua": {
+  "nombre": "Easter Island",
+  "pros": [
+   "Moai and Rapa Nui culture, unique in the world",
+   "Anakena's white-sand beach"
+  ],
+  "contras": [
+   "Expensive flights with few frequencies",
+   "You have to pay to enter the national park"
+  ]
+ },
+ "chiloe": {
+  "pros": [
+   "Wooden churches that are UNESCO World Heritage",
+   "Curanto, stilt houses and its own mythology"
+  ],
+  "contras": [
+   "It rains almost all year",
+   "Long distances between towns"
+  ]
+ },
+ "pucon": {
+  "pros": [
+   "Villarrica volcano, rafting and hot springs",
+   "Snow in winter and the lake in summer"
+  ],
+  "contras": [
+   "Very crowded in January and February",
+   "Adventure activities are paid separately"
+  ]
+ },
+ "punta-arenas": {
+  "pros": [
+   "Penguins on Magdalena Island",
+   "Gateway to the Strait of Magellan and Tierra del Fuego"
+  ],
+  "contras": [
+   "Very strong wind",
+   "Very short days in winter"
+  ]
+ },
+ "la-serena-y-valle-de-elqui": {
+  "nombre": "La Serena and Elqui Valley",
+  "pros": [
+   "Beaches and astronomical observatories in one trip",
+   "Pisco and quiet valley towns"
+  ],
+  "contras": [
+   "Morning fog on the coast",
+   "Crowds in high season"
+  ]
+ },
+ "iquique": {
+  "pros": [
+   "Cavancha beach with good weather all year",
+   "Paragliding and the Duty-Free Zone"
+  ],
+  "contras": [
+   "Arid landscape with few green areas",
+   "Strong wind in the afternoons"
+  ]
+ },
+ "arica": {
+  "pros": [
+   "Pleasant weather all year",
+   "Chinchorro mummies and Lauca National Park"
+  ],
+  "contras": [
+   "Extreme altitude if you go up to Putre or Lauca",
+   "Less developed tourist offer"
+  ]
+ },
+ "carretera-austral": {
+  "pros": [
+   "Marble Caves and almost untouched landscapes",
+   "Very uncrowded"
+  ],
+  "contras": [
+   "Limited phone signal and connectivity",
+   "Requires a car and planning"
+  ]
+ },
+ "bariloche": {
+  "pros": [
+   "Lakes and mountains in any season",
+   "Close and easy to plan from Chile"
+  ],
+  "contras": [
+   "High prices in ski season",
+   "Changeable weather, you need to pack for everything"
+  ]
+ },
+ "buenos-aires": {
+  "pros": [
+   "Very intense cultural and food scene",
+   "Short flight with many frequencies"
+  ],
+  "contras": [
+   "Some areas are unsafe at night",
+   "Prices change quickly due to inflation"
+  ]
+ },
+ "mendoza": {
+  "pros": [
+   "Wineries and wine routes",
+   "One of the shortest flights from Santiago"
+  ],
+  "contras": [
+   "Not very appealing if you're not into wine",
+   "Very hot in summer"
+  ]
+ },
+ "el-calafate": {
+  "pros": [
+   "Perito Moreno Glacier",
+   "Trekking in El Chaltén a few hours away"
+  ],
+  "contras": [
+   "Usually requires a stopover in Buenos Aires",
+   "Short and expensive season"
+  ]
+ },
+ "ushuaia": {
+  "pros": [
+   "The southernmost city in the world",
+   "Beagle Channel and Tierra del Fuego National Park"
+  ],
+  "contras": [
+   "Expensive flights with stopovers",
+   "Cold even in summer"
+  ]
+ },
+ "salta-y-jujuy": {
+  "nombre": "Salta and Jujuy",
+  "pros": [
+   "Colorful hills and gorges",
+   "Very affordable regional food"
+  ],
+  "contras": [
+   "Long road distances",
+   "High-altitude areas"
+  ]
+ },
+ "cataratas-del-iguazu": {
+  "nombre": "Iguazú Falls",
+  "pros": [
+   "One of the most impressive waterfalls on the planet",
+   "Can be visited from Argentina and Brazil"
+  ],
+  "contras": [
+   "Intense heat and humidity",
+   "Very crowded in high season"
+  ]
+ },
+ "rio-de-janeiro": {
+  "nombre": "Rio de Janeiro",
+  "pros": [
+   "Iconic beaches between mountains",
+   "Vibrant atmosphere all year"
+  ],
+  "contras": [
+   "You need to be careful in some areas",
+   "Very hot in summer"
+  ]
+ },
+ "florianopolis": {
+  "pros": [
+   "More than 40 beaches on one island",
+   "Direct flights from Santiago"
+  ],
+  "contras": [
+   "Packed with people in January",
+   "Slow traffic between beaches"
+  ]
+ },
+ "salvador-de-bahia": {
+  "nombre": "Salvador da Bahia",
+  "pros": [
+   "Colorful historic center and Afro-Brazilian culture",
+   "Warm beaches nearby"
+  ],
+  "contras": [
+   "Flight with a stopover",
+   "Watch your belongings in tourist areas"
+  ]
+ },
+ "fernando-de-noronha": {
+  "pros": [
+   "Some of the best beaches in the world and diving with turtles",
+   "Limited visitors, not crowded"
+  ],
+  "contras": [
+   "High daily environmental fee",
+   "Requires several stopovers"
+  ]
+ },
+ "jericoacoara": {
+  "pros": [
+   "Dunes, lagoons and kitesurfing",
+   "Relaxed town with no paved roads"
+  ],
+  "contras": [
+   "Getting there takes stopovers and a long transfer",
+   "Very windy if you're not into kitesurfing"
+  ]
+ },
+ "lencois-maranhenses": {
+  "pros": [
+   "Freshwater lagoons between white dunes",
+   "A landscape almost unknown to Chileans"
+  ],
+  "contras": [
+   "The lagoons only have water mid-year",
+   "Long transfers from the airport"
+  ]
+ },
+ "bonito": {
+  "pros": [
+   "Crystal-clear rivers to float among fish",
+   "Very well organized ecotourism"
+  ],
+  "contras": [
+   "Activities must be booked and have limited spots",
+   "Limited air connections"
+  ]
+ },
+ "cusco-y-machu-picchu": {
+  "nombre": "Cusco and Machu Picchu",
+  "pros": [
+   "Machu Picchu and the Sacred Valley",
+   "Outstanding Andean cuisine"
+  ],
+  "contras": [
+   "The altitude can cause altitude sickness",
+   "Machu Picchu tickets have limited spots"
+  ]
+ },
+ "lima": {
+  "pros": [
+   "One of the food capitals of the world",
+   "Short flight with many options"
+  ],
+  "contras": [
+   "Gray skies most of the year",
+   "Very heavy traffic"
+  ]
+ },
+ "arequipa-y-colca": {
+  "nombre": "Arequipa and Colca",
+  "pros": [
+   "White city with volcanoes in the background",
+   "Colca Canyon and condors"
+  ],
+  "contras": [
+   "High-altitude excursions",
+   "Fewer direct flights"
+  ]
+ },
+ "amazonia-peruana": {
+  "nombre": "Peruvian Amazon",
+  "pros": [
+   "Lodges deep in the Amazon rainforest",
+   "Wildlife that's hard to see anywhere else"
+  ],
+  "contras": [
+   "Recommended vaccines (yellow fever)",
+   "Heat, humidity and insects"
+  ]
+ },
+ "mancora": {
+  "pros": [
+   "Warm-water beaches and surfing",
+   "Young, affordable atmosphere"
+  ],
+  "contras": [
+   "Long transfer from the airport",
+   "Somewhat messy urban beach"
+  ]
+ },
+ "salar-de-uyuni": {
+  "nombre": "Uyuni Salt Flat",
+  "pros": [
+   "The mirror effect of the world's largest salt flat",
+   "Colorful lagoons and flamingos"
+  ],
+  "contras": [
+   "Altitude above 3,600 m and very cold nights",
+   "Basic lodging along the route"
+  ]
+ },
+ "la-paz-y-titicaca": {
+  "nombre": "La Paz and Titicaca",
+  "pros": [
+   "Urban cable cars and Lake Titicaca",
+   "One of the most affordable destinations on the list"
+  ],
+  "contras": [
+   "Altitude sickness almost certain on arrival",
+   "Very cold nights"
+  ]
+ },
+ "cartagena": {
+  "pros": [
+   "Walled city, a UNESCO World Heritage Site",
+   "Rosario Islands nearby"
+  ],
+  "contras": [
+   "Very high heat and humidity",
+   "Inflated prices in tourist areas"
+  ]
+ },
+ "medellin": {
+  "pros": [
+   "Mild weather 12 months a year",
+   "Guatapé and nearby towns"
+  ],
+  "contras": [
+   "It's worth checking which neighborhoods are safe",
+   "Rush-hour traffic"
+  ]
+ },
+ "san-andres": {
+  "pros": [
+   "Sea of seven colors",
+   "Small island that's easy to get around"
+  ],
+  "contras": [
+   "Mandatory tourist card on entry",
+   "Very busy in high season"
+  ]
+ },
+ "eje-cafetero": {
+  "nombre": "Coffee Region",
+  "pros": [
+   "Coffee farms and the Cocora Valley",
+   "Uncrowded with Chilean tourists"
+  ],
+  "contras": [
+   "It rains a lot in the wet season",
+   "Transfers on mountain roads"
+  ]
+ },
+ "parque-tayrona": {
+  "nombre": "Tayrona Park",
+  "pros": [
+   "Wild beaches inside a national park",
+   "Hikes between jungle and sea"
+  ],
+  "contras": [
+   "Closes a few weeks a year",
+   "Several beaches can only be reached on foot"
+  ]
+ },
+ "islas-galapagos": {
+  "nombre": "Galápagos Islands",
+  "pros": [
+   "Unique wildlife that isn't afraid of people",
+   "Snorkeling with sea lions and turtles"
+  ],
+  "contras": [
+   "High entry fee",
+   "Expensive activities and cruises"
+  ]
+ },
+ "punta-del-este": {
+  "pros": [
+   "Beaches and a very lively summer scene",
+   "Short flight"
+  ],
+  "contras": [
+   "Very expensive in high season",
+   "Little going on outside summer"
+  ]
+ },
+ "cancun-y-riviera-maya": {
+  "nombre": "Cancún and Riviera Maya",
+  "pros": [
+   "Turquoise sea and cenotes",
+   "Lots of all-inclusive hotels"
+  ],
+  "contras": [
+   "Very commercial hotel zone",
+   "Hurricane season from June to November"
+  ]
+ },
+ "ciudad-de-mexico": {
+  "nombre": "Mexico City",
+  "pros": [
+   "Museums, architecture and exceptional street food",
+   "Direct flights from Santiago"
+  ],
+  "contras": [
+   "Huge city with heavy traffic",
+   "2,240 m altitude"
+  ]
+ },
+ "oaxaca": {
+  "pros": [
+   "Traditional cuisine and mezcal",
+   "Very lively towns and traditions"
+  ],
+  "contras": [
+   "Requires a stopover in Mexico City",
+   "Less tourist infrastructure"
+  ]
+ },
+ "los-cabos": {
+  "pros": [
+   "Whale watching in season",
+   "Desert that meets the sea"
+  ],
+  "contras": [
+   "Expensive resorts",
+   "Some beaches aren't safe for swimming"
+  ]
+ },
+ "punta-cana": {
+  "pros": [
+   "White-sand beaches",
+   "All-inclusive makes planning easy"
+  ],
+  "contras": [
+   "Little culture outside the resorts",
+   "Flight with a stopover"
+  ]
+ },
+ "la-habana": {
+  "nombre": "Havana",
+  "pros": [
+   "Colonial architecture and live music",
+   "Varadero's beaches a few hours away"
+  ],
+  "contras": [
+   "Limited internet and problems with cards",
+   "Shortages of some products"
+  ]
+ },
+ "costa-rica": {
+  "nombre": "Arenal and Monteverde",
+  "pros": [
+   "Volcanoes, rainforest and two oceans",
+   "Very well organized for ecotourism"
+  ],
+  "contras": [
+   "More expensive than its neighbors",
+   "Rainy season from May to November"
+  ]
+ },
+ "panama-y-san-blas": {
+  "nombre": "Panama and San Blas",
+  "pros": [
+   "Almost uninhabited San Blas Islands",
+   "Panama Canal and good shopping"
+  ],
+  "contras": [
+   "San Blas trip with a long transfer",
+   "Heat and humidity"
+  ]
+ },
+ "aruba": {
+  "pros": [
+   "Outside the hurricane belt",
+   "Calm beaches all year"
+  ],
+  "contras": [
+   "Expensive island",
+   "Flights with stopovers"
+  ]
+ },
+ "antigua-guatemala": {
+  "pros": [
+   "Colonial city surrounded by volcanoes",
+   "Lake Atitlán nearby"
+  ],
+  "contras": [
+   "Few connections from Chile",
+   "Rainy season from May to October"
+  ]
+ },
+ "roatan": {
+  "pros": [
+   "Diving on the world's second-largest barrier reef",
+   "Little known and quiet"
+  ],
+  "contras": [
+   "Several stopovers to get there",
+   "Simple infrastructure"
+  ]
+ },
+ "nueva-york": {
+  "nombre": "New York",
+  "pros": [
+   "Endless museums, neighborhoods and theater",
+   "Direct flights from Santiago"
+  ],
+  "contras": [
+   "Very high cost",
+   "You need to apply for an ESTA in advance"
+  ]
+ },
+ "miami": {
+  "pros": [
+   "Direct flight with many frequencies",
+   "Beach and shopping in one place"
+  ],
+  "contras": [
+   "You need to apply for an ESTA in advance",
+   "Little historic heritage"
+  ]
+ },
+ "orlando": {
+  "pros": [
+   "Theme parks for all ages",
+   "Ideal for traveling with kids"
+  ],
+  "contras": [
+   "Very expensive park tickets",
+   "Intense heat in summer"
+  ]
+ },
+ "los-angeles": {
+  "nombre": "Los Angeles",
+  "pros": [
+   "Pleasant weather all year",
+   "Beaches, Hollywood and road trips"
+  ],
+  "contras": [
+   "Sprawling city, renting a car is almost a must",
+   "Expensive accommodation"
+  ]
+ },
+ "parques-de-california": {
+  "nombre": "San Francisco and Yosemite",
+  "pros": [
+   "Yosemite and San Francisco in one trip",
+   "Scenic coastal routes"
+  ],
+  "contras": [
+   "Park bookings needed in advance",
+   "Very expensive overall"
+  ]
+ },
+ "las-vegas-y-gran-canon": {
+  "nombre": "Las Vegas and Grand Canyon",
+  "pros": [
+   "Shows and the Grand Canyon nearby",
+   "Lots of entertainment"
+  ],
+  "contras": [
+   "Extreme heat in summer",
+   "Easy to spend more than planned"
+  ]
+ },
+ "hawai": {
+  "nombre": "Honolulu and Oahu",
+  "pros": [
+   "Volcanoes, beaches and surfing",
+   "Warm weather all year"
+  ],
+  "contras": [
+   "Very long flight with stopovers",
+   "One of the most expensive destinations"
+  ]
+ },
+ "vancouver-y-banff": {
+  "nombre": "Vancouver and Banff",
+  "pros": [
+   "Rocky Mountains and turquoise lakes",
+   "Modern city next to nature"
+  ],
+  "contras": [
+   "You need to apply for an eTA in advance",
+   "High cost"
+  ]
+ },
+ "madrid": {
+  "pros": [
+   "Museums and neighborhood life",
+   "Direct flights and good connections to Europe"
+  ],
+  "contras": [
+   "Flight of more than 12 hours",
+   "Very hot summer"
+  ]
+ },
+ "barcelona": {
+  "pros": [
+   "Beach and Gaudí's architecture",
+   "Walkable city"
+  ],
+  "contras": [
+   "Very crowded areas",
+   "Expensive accommodation in high season"
+  ]
+ },
+ "sevilla-y-andalucia": {
+  "nombre": "Seville and Andalusia",
+  "pros": [
+   "Flamenco, tapas and Moorish heritage",
+   "White villages nearby"
+  ],
+  "contras": [
+   "Extreme heat in July and August",
+   "Requires a stopover"
+  ]
+ },
+ "islas-canarias": {
+  "pros": [
+   "Mild weather all year",
+   "Teide volcano and volcanic beaches"
+  ],
+  "contras": [
+   "Requires a stopover in Madrid",
+   "Some very resort-heavy areas"
+  ]
+ },
+ "lisboa": {
+  "nombre": "Lisbon",
+  "pros": [
+   "Neighborhoods with viewpoints and trams",
+   "Cheaper than other European capitals"
+  ],
+  "contras": [
+   "Lots of steep hills",
+   "Very busy in summer"
+  ]
+ },
+ "azores": {
+  "pros": [
+   "Crater lakes and whale watching",
+   "Very uncrowded"
+  ],
+  "contras": [
+   "Changeable, rainy weather",
+   "Several stopovers from Chile"
+  ]
+ },
+ "paris": {
+  "nombre": "Paris",
+  "pros": [
+   "Iconic cultural heritage",
+   "Direct flights from Santiago"
+  ],
+  "contras": [
+   "Very expensive accommodation",
+   "Gray, cold winters"
+  ]
+ },
+ "roma": {
+  "nombre": "Rome",
+  "pros": [
+   "Ancient history on every corner",
+   "Excellent food at good prices"
+  ],
+  "contras": [
+   "Very crowded in high season",
+   "Requires a stopover"
+  ]
+ },
+ "costa-amalfitana": {
+  "nombre": "Amalfi Coast",
+  "pros": [
+   "Villages perched over the sea",
+   "Postcard scenery"
+  ],
+  "contras": [
+   "Narrow, congested roads",
+   "Very expensive in summer"
+  ]
+ },
+ "toscana-y-florencia": {
+  "nombre": "Tuscany and Florence",
+  "pros": [
+   "Renaissance art and vineyards",
+   "Medieval villages nearby"
+  ],
+  "contras": [
+   "Long lines at museums",
+   "A car is best for the countryside"
+  ]
+ },
+ "londres": {
+  "nombre": "London",
+  "pros": [
+   "World-class free museums",
+   "Very diverse city"
+  ],
+  "contras": [
+   "You need to apply for an ETA in advance",
+   "One of the most expensive destinations"
+  ]
+ },
+ "escocia": {
+  "nombre": "Edinburgh and the Highlands",
+  "pros": [
+   "Castles and the Highlands",
+   "Edinburgh Festival in August"
+  ],
+  "contras": [
+   "Rainy, cool weather",
+   "You need to apply for an ETA in advance"
+  ]
+ },
+ "amsterdam": {
+  "nombre": "Amsterdam",
+  "pros": [
+   "Canals and a city to explore by bike",
+   "Good connections to the rest of Europe"
+  ],
+  "contras": [
+   "Expensive, scarce accommodation",
+   "It rains often"
+  ]
+ },
+ "praga": {
+  "nombre": "Prague",
+  "pros": [
+   "Very well preserved medieval old town",
+   "Cheaper than Western Europe"
+  ],
+  "contras": [
+   "Very busy in the center",
+   "Requires a stopover"
+  ]
+ },
+ "budapest": {
+  "pros": [
+   "Historic thermal baths",
+   "Good value for money"
+  ],
+  "contras": [
+   "Requires a stopover",
+   "Cold winter"
+  ]
+ },
+ "dubrovnik-y-costa-croata": {
+  "nombre": "Dubrovnik and the Croatian coast",
+  "pros": [
+   "Walled city facing the Adriatic",
+   "Islands to explore by ferry"
+  ],
+  "contras": [
+   "Very crowded in July and August",
+   "Several stopovers"
+  ]
+ },
+ "islas-griegas": {
+  "pros": [
+   "Sunsets and white villages",
+   "Island hopping by ferry"
+  ],
+  "contras": [
+   "Santorini is very crowded",
+   "Several stopovers"
+  ]
+ },
+ "alpes-suizos": {
+  "nombre": "Swiss Alps",
+  "pros": [
+   "Scenic trains and mountains",
+   "Excellent organization and safety"
+  ],
+  "contras": [
+   "One of the most expensive countries in the world",
+   "Requires a stopover"
+  ]
+ },
+ "islandia": {
+  "nombre": "Reykjavík and the South Coast",
+  "pros": [
+   "Northern lights, waterfalls and volcanoes",
+   "Landscapes that exist nowhere else"
+  ],
+  "contras": [
+   "Very expensive",
+   "Unpredictable weather"
+  ]
+ },
+ "fiordos-de-noruega": {
+  "nombre": "Norwegian Fjords",
+  "pros": [
+   "Fjords and scenic routes",
+   "Extremely long days in summer"
+  ],
+  "contras": [
+   "Very expensive",
+   "It rains often"
+  ]
+ },
+ "laponia": {
+  "pros": [
+   "Northern lights and sleigh rides",
+   "Magical for traveling with kids"
+  ],
+  "contras": [
+   "Extreme cold",
+   "Few hours of daylight"
+  ]
+ },
+ "estambul": {
+  "nombre": "Istanbul",
+  "pros": [
+   "A city between Europe and Asia",
+   "Bazaars and good-value food"
+  ],
+  "contras": [
+   "Very large, chaotic city",
+   "Heavy traffic"
+  ]
+ },
+ "capadocia": {
+  "nombre": "Cappadocia",
+  "pros": [
+   "Hot-air balloon rides at sunrise",
+   "Cave hotels"
+  ],
+  "contras": [
+   "Balloons are canceled when it's windy",
+   "Requires a stopover in Istanbul"
+  ]
+ },
+ "georgia": {
+  "nombre": "Tbilisi and the Caucasus",
+  "pros": [
+   "Ancient wine and the Caucasus mountains",
+   "Very affordable and little known"
+  ],
+  "contras": [
+   "Several stopovers",
+   "Little information in Spanish"
+  ]
+ },
+ "eslovenia": {
+  "nombre": "Ljubljana and Lake Bled",
+  "pros": [
+   "Lake Bled and the Julian Alps",
+   "Quiet and uncrowded"
+  ],
+  "contras": [
+   "Several stopovers",
+   "Limited public transport"
+  ]
+ },
+ "marrakech": {
+  "pros": [
+   "Souks, riads and the Sahara desert nearby",
+   "Unlike anything you know"
+  ],
+  "contras": [
+   "Haggling is part of everything",
+   "Extreme heat in summer"
+  ]
+ },
+ "egipto": {
+  "nombre": "Cairo and Luxor",
+  "pros": [
+   "Ancient pyramids and temples",
+   "Nile cruise"
+  ],
+  "contras": [
+   "Very pushy vendors",
+   "Extreme heat in summer"
+  ]
+ },
+ "ciudad-del-cabo": {
+  "nombre": "Cape Town",
+  "pros": [
+   "Table Mountain and wine routes",
+   "Penguins and safaris a few hours away"
+  ],
+  "contras": [
+   "It's worth checking which areas are safe",
+   "Flight with a stopover"
+  ]
+ },
+ "safari-en-kenia": {
+  "nombre": "Kenya safari",
+  "pros": [
+   "The Great Migration in the Maasai Mara",
+   "Wildlife in its natural habitat"
+  ],
+  "contras": [
+   "Expensive safaris",
+   "Recommended vaccines"
+  ]
+ },
+ "zanzibar": {
+  "nombre": "Zanzibar",
+  "pros": [
+   "White-sand beaches on the Indian Ocean",
+   "Stone Town, a UNESCO World Heritage Site"
+  ],
+  "contras": [
+   "Very long flight",
+   "Recommended vaccines"
+  ]
+ },
+ "dubai": {
+  "nombre": "Dubai",
+  "pros": [
+   "Futuristic architecture and desert safaris",
+   "Good stopover on the way to Asia"
+  ],
+  "contras": [
+   "Extreme heat from May to September",
+   "Very expensive"
+  ]
+ },
+ "jordania-y-petra": {
+  "nombre": "Jordan and Petra",
+  "pros": [
+   "Petra and the Wadi Rum desert",
+   "Floating in the Dead Sea"
+  ],
+  "contras": [
+   "Several stopovers",
+   "Intense heat in summer"
+  ]
+ },
+ "tokio": {
+  "nombre": "Tokyo",
+  "pros": [
+   "Tradition and technology in one city",
+   "Very safe and orderly"
+  ],
+  "contras": [
+   "Flight of more than 24 hours",
+   "Language barrier outside the center"
+  ]
+ },
+ "kioto": {
+  "nombre": "Kyoto",
+  "pros": [
+   "Temples, gardens and teahouses",
+   "Cherry blossoms in spring and red leaves in autumn"
+  ],
+  "contras": [
+   "Very crowded in blossom season",
+   "Very long flight"
+  ]
+ },
+ "seul": {
+  "nombre": "Seoul",
+  "pros": [
+   "Pop culture, palaces and street food",
+   "Excellent public transport"
+  ],
+  "contras": [
+   "Very long flight",
+   "You need to apply for a K-ETA in advance"
+  ]
+ },
+ "bangkok": {
+  "pros": [
+   "Street food and golden temples",
+   "Very affordable once there"
+  ],
+  "contras": [
+   "Intense heat and humidity",
+   "Very long flight"
+  ]
+ },
+ "phuket-e-islas-tailandesas": {
+  "nombre": "Phuket and the Thai islands",
+  "pros": [
+   "Postcard beaches and islands",
+   "Cheap accommodation for its quality"
+  ],
+  "contras": [
+   "Monsoon from May to October",
+   "Flight with several stopovers"
+  ]
+ },
+ "bali": {
+  "pros": [
+   "Temples, rice terraces and beaches",
+   "Excellent value for money"
+  ],
+  "contras": [
+   "Difficult traffic",
+   "Flight with several stopovers"
+  ]
+ },
+ "vietnam": {
+  "nombre": "Hanoi and Ha Long",
+  "pros": [
+   "Ha Long Bay and excellent food",
+   "Very affordable"
+  ],
+  "contras": [
+   "Motorbikes and chaotic traffic",
+   "The weather varies a lot from north to south"
+  ]
+ },
+ "palawan": {
+  "pros": [
+   "Lagoons and beaches between cliffs",
+   "Little known among Chileans"
+  ],
+  "contras": [
+   "One of the longest flights on the list",
+   "Typhoons from July to October"
+  ]
+ },
+ "maldivas": {
+  "nombre": "Maldives atolls",
+  "pros": [
+   "Overwater bungalows",
+   "Reefs for snorkeling"
+  ],
+  "contras": [
+   "One of the most expensive destinations",
+   "Little to do outside the hotel"
+  ]
+ },
+ "sri-lanka": {
+  "nombre": "Kandy and Ella",
+  "pros": [
+   "Trains through tea plantations",
+   "Safaris, temples and beaches in a small country"
+  ],
+  "contras": [
+   "Very long flight",
+   "Monsoons depending on the area"
+  ]
+ },
+ "nepal": {
+  "nombre": "Kathmandu and Pokhara",
+  "pros": [
+   "Trekking with views of the Himalayas",
+   "Very affordable"
+  ],
+  "contras": [
+   "Physically demanding",
+   "Basic infrastructure"
+  ]
+ },
+ "india-rajastan": {
+  "nombre": "Delhi and Rajasthan",
+  "pros": [
+   "Palaces, forts and the Taj Mahal",
+   "An intense cultural experience"
+  ],
+  "contras": [
+   "It can be overwhelming the first time",
+   "Be careful with water and food"
+  ]
+ },
+ "singapur": {
+  "nombre": "Singapore",
+  "pros": [
+   "Modern, clean and safe city",
+   "Food from all over Asia in one place"
+  ],
+  "contras": [
+   "Expensive for the region",
+   "Humid heat all year"
+  ]
+ },
+ "china-pekin": {
+  "nombre": "Beijing",
+  "pros": [
+   "Great Wall and Forbidden City",
+   "Thousands of years of history"
+  ],
+  "contras": [
+   "Apps and payments differ from the West",
+   "Strong language barrier"
+  ]
+ },
+ "sidney": {
+  "nombre": "Sydney",
+  "pros": [
+   "Opera House, harbor and city beaches",
+   "Direct flight from Santiago"
+  ],
+  "contras": [
+   "You need to apply for an electronic visa",
+   "High cost of living"
+  ]
+ },
+ "queenstown": {
+  "pros": [
+   "Adventure capital of the world",
+   "Spectacular fjords and lakes"
+  ],
+  "contras": [
+   "Very expensive",
+   "You need to apply for an NZeTA"
+  ]
+ },
+ "tahiti-y-bora-bora": {
+  "nombre": "Tahiti and Bora Bora",
+  "pros": [
+   "Turquoise lagoons and overwater bungalows",
+   "Route via Easter Island"
+  ],
+  "contras": [
+   "One of the most expensive destinations in the world",
+   "Few frequencies"
+  ]
+ },
+ "valdivia": {
+  "pros": [
+   "River, Spanish forts and craft beer",
+   "Valdivian rainforest and coast a few minutes away"
+  ],
+  "contras": [
+   "It rains a lot outside summer",
+   "Few direct flights"
+  ]
+ },
+ "bahia-inglesa": {
+  "pros": [
+   "Calm turquoise waters",
+   "Close to Pan de Azúcar National Park"
+  ],
+  "contras": [
+   "The sea is cold for some",
+   "Little nightlife"
+  ]
+ },
+ "futaleufu": {
+  "pros": [
+   "One of the best rivers in the world for rafting",
+   "Small town surrounded by mountains"
+  ],
+  "contras": [
+   "Getting there takes several legs by road or ferry",
+   "Expensive adventure activities"
+  ]
+ },
+ "antartica": {
+  "nombre": "Antarctic Peninsula",
+  "pros": [
+   "Penguins, glaciers and ice to the horizon",
+   "An experience almost nobody gets to have"
+  ],
+  "contras": [
+   "Very expensive and only with authorized operators",
+   "Weather can cancel or delay flights"
+  ]
+ },
+ "cordoba": {
+  "pros": [
+   "Lively university city",
+   "Nearby hills for getaways"
+  ],
+  "contras": [
+   "Very hot in summer",
+   "Fewer iconic attractions"
+  ]
+ },
+ "peninsula-valdes": {
+  "nombre": "Valdés Peninsula",
+  "pros": [
+   "Southern right whales very close to the shore",
+   "Sea lions, elephant seals and penguins"
+  ],
+  "contras": [
+   "Long distances within the peninsula",
+   "Strong wind"
+  ]
+ },
+ "san-martin-de-los-andes": {
+  "pros": [
+   "Seven Lakes Route",
+   "Quieter than Bariloche"
+  ],
+  "contras": [
+   "High prices in season",
+   "Few flight frequencies"
+  ]
+ },
+ "mar-del-plata": {
+  "pros": [
+   "Wide beaches and a summer atmosphere",
+   "Affordable for Argentina"
+  ],
+  "contras": [
+   "Very crowded in January",
+   "Cold water"
+  ]
+ },
+ "sao-paulo": {
+  "pros": [
+   "Huge and diverse food scene",
+   "Museums, music and nightlife"
+  ],
+  "contras": [
+   "Giant city with heavy traffic",
+   "Not a beach destination"
+  ]
+ },
+ "buzios": {
+  "pros": [
+   "Many beaches on a small peninsula",
+   "Elegant, relaxed atmosphere"
+  ],
+  "contras": [
+   "3-hour transfer from Rio",
+   "Expensive in high season"
+  ]
+ },
+ "porto-de-galinhas": {
+  "pros": [
+   "Natural pools between reefs",
+   "Warm water all year"
+  ],
+  "contras": [
+   "Flight with a stopover",
+   "The pools depend on the tide"
+  ]
+ },
+ "manaos-y-amazonas": {
+  "nombre": "Manaus and the Amazon",
+  "pros": [
+   "Meeting of the Waters and jungle lodges",
+   "Historic theater in the middle of the Amazon"
+  ],
+  "contras": [
+   "Heat, humidity and insects",
+   "Yellow fever vaccine recommended"
+  ]
+ },
+ "paracas-y-huacachina": {
+  "nombre": "Paracas and Huacachina",
+  "pros": [
+   "Ballestas Islands and dunes for sandboarding",
+   "Easy to combine with Lima"
+  ],
+  "contras": [
+   "Overland transfer from Lima",
+   "Very arid landscape"
+  ]
+ },
+ "huaraz": {
+  "pros": [
+   "Laguna 69 and the Cordillera Blanca",
+   "World-class trekking at a low cost"
+  ],
+  "contras": [
+   "Demanding altitude, requires acclimatization",
+   "Long bus ride from Lima"
+  ]
+ },
+ "sucre-y-potosi": {
+  "nombre": "Sucre and Potosí",
+  "pros": [
+   "Very well preserved white colonial city",
+   "Historic mines of Potosí"
+  ],
+  "contras": [
+   "Altitude in Potosí",
+   "Few air connections"
+  ]
+ },
+ "quito-y-mitad-del-mundo": {
+  "nombre": "Quito and Middle of the World",
+  "pros": [
+   "One of the best preserved historic centers in the Americas",
+   "Volcanoes and cloud forest nearby"
+  ],
+  "contras": [
+   "2,800 m altitude",
+   "Frequent afternoon rain"
+  ]
+ },
+ "montanita": {
+  "pros": [
+   "Surfing and a backpacker vibe",
+   "Very affordable"
+  ],
+  "contras": [
+   "Long transfer from Guayaquil",
+   "Lots of noise at night"
+  ]
+ },
+ "bogota": {
+  "pros": [
+   "Gold Museum and La Candelaria neighborhood",
+   "Base to explore the rest of Colombia"
+  ],
+  "contras": [
+   "Cool, rainy weather",
+   "Heavy traffic"
+  ]
+ },
+ "providencia": {
+  "pros": [
+   "Almost untouched island with reefs",
+   "Very quiet and not touristy"
+  ],
+  "contras": [
+   "Getting there takes several connections",
+   "Few accommodation options"
+  ]
+ },
+ "montevideo-y-colonia": {
+  "nombre": "Montevideo and Colonia",
+  "pros": [
+   "The Rambla, asado and Colonia del Sacramento",
+   "Quiet and safe"
+  ],
+  "contras": [
+   "High prices for the region",
+   "Little nightlife out of season"
+  ]
+ },
+ "cabo-polonio": {
+  "pros": [
+   "Off-grid village among the dunes",
+   "Sea lions and starry skies"
+  ],
+  "contras": [
+   "Very basic services",
+   "Only reachable in 4x4 vehicles"
+  ]
+ },
+ "merida-y-yucatan": {
+  "nombre": "Mérida and Yucatán",
+  "pros": [
+   "Chichén Itzá, cenotes and haciendas",
+   "Safe, quiet city"
+  ],
+  "contras": [
+   "Very intense heat in spring",
+   "Requires a stopover"
+  ]
+ },
+ "tulum": {
+  "pros": [
+   "Mayan ruins facing the sea",
+   "Cenotes for swimming"
+  ],
+  "contras": [
+   "Very high prices",
+   "Sargassum in some seasons"
+  ]
+ },
+ "san-juan": {
+  "pros": [
+   "Colorful Old San Juan and beaches",
+   "Bioluminescent bay nearby"
+  ],
+  "contras": [
+   "Requires an ESTA, just like the US",
+   "Hurricane season"
+  ]
+ },
+ "belice": {
+  "nombre": "Caye Caulker",
+  "pros": [
+   "Great Blue Hole and barrier reef",
+   "Relaxed cayes and Mayan ruins"
+  ],
+  "contras": [
+   "Several stopovers",
+   "More expensive than expected"
+  ]
+ },
+ "curazao": {
+  "nombre": "Curaçao",
+  "pros": [
+   "Colorful houses of Willemstad",
+   "Diving and small beaches"
+  ],
+  "contras": [
+   "Flights with stopovers",
+   "Windy island"
+  ]
+ },
+ "jamaica": {
+  "nombre": "Montego Bay and Negril",
+  "pros": [
+   "Music, beaches and waterfalls",
+   "All-inclusive resorts"
+  ],
+  "contras": [
+   "It's worth checking which areas are safe",
+   "Hurricane season"
+  ]
+ },
+ "nueva-orleans": {
+  "nombre": "New Orleans",
+  "pros": [
+   "Live jazz and Creole cuisine",
+   "Mardi Gras in February"
+  ],
+  "contras": [
+   "Humid heat in summer",
+   "Requires an ESTA"
+  ]
+ },
+ "alaska": {
+  "nombre": "Anchorage and Kenai",
+  "pros": [
+   "Glaciers, bears and fjords",
+   "Almost untouched nature"
+  ],
+  "contras": [
+   "Very short season",
+   "Very expensive and far away"
+  ]
+ },
+ "toronto-y-niagara": {
+  "nombre": "Toronto and Niagara",
+  "pros": [
+   "Niagara Falls",
+   "Multicultural, safe city"
+  ],
+  "contras": [
+   "Very cold winters",
+   "Requires an eTA"
+  ]
+ },
+ "montreal-y-quebec": {
+  "nombre": "Montreal and Quebec City",
+  "pros": [
+   "A European feel in America",
+   "Quebec Winter Carnival"
+  ],
+  "contras": [
+   "Extreme cold in winter",
+   "Requires an eTA"
+  ]
+ },
+ "berlin": {
+  "nombre": "Berlin",
+  "pros": [
+   "Recent history very much present",
+   "Famous nightlife"
+  ],
+  "contras": [
+   "Gray winters",
+   "Requires a stopover"
+  ]
+ },
+ "viena": {
+  "nombre": "Vienna",
+  "pros": [
+   "Palaces, classical music and cafés",
+   "Christmas markets in December"
+  ],
+  "contras": [
+   "Expensive",
+   "Requires a stopover"
+  ]
+ },
+ "oporto": {
+  "nombre": "Porto",
+  "pros": [
+   "Douro riverside and port wine",
+   "Good value for money"
+  ],
+  "contras": [
+   "Lots of hills",
+   "Rainy in winter"
+  ]
+ },
+ "madeira": {
+  "pros": [
+   "Trails over cliffs and forests",
+   "Mild weather all year"
+  ],
+  "contras": [
+   "Several stopovers",
+   "Tricky landing in windy weather"
+  ]
+ },
+ "mallorca": {
+  "pros": [
+   "Coves with crystal-clear water",
+   "Mountain villages"
+  ],
+  "contras": [
+   "Very crowded in summer",
+   "Requires a stopover"
+  ]
+ },
+ "pais-vasco": {
+  "nombre": "Basque Country",
+  "pros": [
+   "Pintxos and the best food in Spain",
+   "The Guggenheim and San Sebastián"
+  ],
+  "contras": [
+   "It rains often",
+   "Expensive"
+  ]
+ },
+ "venecia": {
+  "nombre": "Venice",
+  "pros": [
+   "A unique city on the water",
+   "Murano and Burano islands"
+  ],
+  "contras": [
+   "Very crowded and expensive",
+   "Entry fee on peak days"
+  ]
+ },
+ "sicilia": {
+  "nombre": "Sicily",
+  "pros": [
+   "Mount Etna, Greek temples and beaches",
+   "Excellent, affordable food"
+  ],
+  "contras": [
+   "A car is best",
+   "Very hot in summer"
+  ]
+ },
+ "costa-azul": {
+  "nombre": "French Riviera",
+  "pros": [
+   "Nice, Monaco and medieval villages",
+   "Sea and mountains together"
+  ],
+  "contras": [
+   "Very expensive",
+   "Pebble beaches"
+  ]
+ },
+ "brujas-y-bruselas": {
+  "nombre": "Bruges and Brussels",
+  "pros": [
+   "Chocolate, beer and medieval canals",
+   "Compact cities"
+  ],
+  "contras": [
+   "It rains often",
+   "Requires a stopover"
+  ]
+ },
+ "copenhague": {
+  "nombre": "Copenhagen",
+  "pros": [
+   "Design, bikes and cutting-edge food",
+   "Very safe city"
+  ],
+  "contras": [
+   "Very expensive",
+   "Dark winters"
+  ]
+ },
+ "estocolmo": {
+  "nombre": "Stockholm",
+  "pros": [
+   "A city on 14 islands",
+   "Archipelago to sail"
+  ],
+  "contras": [
+   "Very expensive",
+   "Very short days in winter"
+  ]
+ },
+ "irlanda": {
+  "nombre": "Dublin and Galway",
+  "pros": [
+   "Cliffs of Moher and pubs with live music",
+   "Very welcoming people"
+  ],
+  "contras": [
+   "Frequent rain",
+   "Expensive"
+  ]
+ },
+ "cracovia": {
+  "nombre": "Kraków",
+  "pros": [
+   "Beautiful medieval old town",
+   "Very affordable for Europe"
+  ],
+  "contras": [
+   "Cold winters",
+   "Several stopovers"
+  ]
+ },
+ "malta": {
+  "pros": [
+   "History of knights and a blue sea",
+   "Small island that's easy to get around"
+  ],
+  "contras": [
+   "Very hot in August",
+   "Several stopovers"
+  ]
+ },
+ "kotor-y-montenegro": {
+  "nombre": "Kotor and Montenegro",
+  "pros": [
+   "A bay between mountains and a walled town",
+   "Little known and cheaper than Croatia"
+  ],
+  "contras": [
+   "Several stopovers",
+   "Cruise ships fill the town in summer"
+  ]
+ },
+ "riviera-albanesa": {
+  "nombre": "Albanian Riviera",
+  "pros": [
+   "Ionian beaches at low prices",
+   "Very little known to Chileans"
+  ],
+  "contras": [
+   "Basic infrastructure",
+   "Several stopovers"
+  ]
+ },
+ "islas-feroe": {
+  "nombre": "Faroe Islands",
+  "pros": [
+   "Cliffs and waterfalls dropping into the sea",
+   "Almost no tourists"
+  ],
+  "contras": [
+   "Very changeable weather",
+   "Very expensive and remote"
+  ]
+ },
+ "tallin": {
+  "nombre": "Tallinn",
+  "pros": [
+   "Intact medieval city",
+   "Very digital and safe country"
+  ],
+  "contras": [
+   "Cold most of the year",
+   "Several stopovers"
+  ]
+ },
+ "hong-kong": {
+  "pros": [
+   "Skyscrapers, mountains and incredible food",
+   "Very efficient transport"
+  ],
+  "contras": [
+   "Expensive",
+   "Humidity and typhoons in summer"
+  ]
+ },
+ "taiwan": {
+  "nombre": "Taipei",
+  "pros": [
+   "Night markets and mountains",
+   "Very safe and friendly"
+  ],
+  "contras": [
+   "Very long flight",
+   "Typhoons in summer"
+  ]
+ },
+ "hokkaido": {
+  "pros": [
+   "The best powder snow in the world",
+   "Flower fields in summer"
+  ],
+  "contras": [
+   "Very long flight",
+   "Extreme cold in winter"
+  ]
+ },
+ "angkor": {
+  "pros": [
+   "The temples of Angkor Wat",
+   "Very affordable"
+  ],
+  "contras": [
+   "Extreme heat in April and May",
+   "Very long flight"
+  ]
+ },
+ "luang-prabang": {
+  "pros": [
+   "Monks, temples and turquoise waterfalls",
+   "Very relaxed pace"
+  ],
+  "contras": [
+   "One of the longest flights on the list",
+   "Simple infrastructure"
+  ]
+ },
+ "oman": {
+  "nombre": "Muscat and Nizwa",
+  "pros": [
+   "Deserts, fjords and wadis",
+   "Very safe and hospitable"
+  ],
+  "contras": [
+   "Extreme heat in summer",
+   "Few tourists, little information"
+  ]
+ },
+ "samarcanda": {
+  "nombre": "Samarkand",
+  "pros": [
+   "Silk Road mosques",
+   "Very little known and affordable"
+  ],
+  "contras": [
+   "Several stopovers",
+   "Little English or Spanish spoken"
+  ]
+ },
+ "mongolia": {
+  "nombre": "Ulaanbaatar and the Gobi",
+  "pros": [
+   "Steppes, nomads and the Gobi Desert",
+   "A real adventure"
+  ],
+  "contras": [
+   "Very short season",
+   "Long trips on dirt roads"
+  ]
+ },
+ "butan": {
+  "nombre": "Paro and Thimphu",
+  "pros": [
+   "Monasteries in the Himalayas",
+   "Controlled tourism, no crowds"
+  ],
+  "contras": [
+   "Very high daily tourism fee",
+   "Very far away with few flights"
+  ]
+ },
+ "kerala": {
+  "nombre": "Kochi and Alleppey",
+  "pros": [
+   "Houseboat canals and tea plantations",
+   "Ayurveda and spiced cuisine"
+  ],
+  "contras": [
+   "Very long flight",
+   "Monsoon from June to September"
+  ]
+ },
+ "namibia": {
+  "nombre": "Windhoek and Sossusvlei",
+  "pros": [
+   "Sossusvlei's red dunes and safaris",
+   "Almost empty road trips"
+  ],
+  "contras": [
+   "Huge distances",
+   "Several stopovers"
+  ]
+ },
+ "kilimanjaro-y-serengeti": {
+  "nombre": "Kilimanjaro and Serengeti",
+  "pros": [
+   "Climb Kilimanjaro or see the migration",
+   "World-class safaris"
+  ],
+  "contras": [
+   "Very expensive",
+   "Recommended vaccines"
+  ]
+ },
+ "mauricio": {
+  "nombre": "Mauritius",
+  "pros": [
+   "Turquoise lagoons and green mountains",
+   "Very safe"
+  ],
+  "contras": [
+   "Very long flight",
+   "Expensive"
+  ]
+ },
+ "seychelles": {
+  "nombre": "Mahé and Praslin",
+  "pros": [
+   "Beaches with unique granite boulders",
+   "Giant tortoises"
+  ],
+  "contras": [
+   "One of the most expensive destinations",
+   "Very long flight"
+  ]
+ },
+ "madagascar": {
+  "nombre": "Antananarivo and Morondava",
+  "pros": [
+   "Lemurs and the Avenue of the Baobabs",
+   "Wildlife that only exists there"
+  ],
+  "contras": [
+   "Roads in poor condition",
+   "Basic infrastructure"
+  ]
+ },
+ "cabo-verde": {
+  "nombre": "Sal Island",
+  "pros": [
+   "Beaches and morna music",
+   "One of the African destinations closest to South America"
+  ],
+  "contras": [
+   "Strong wind",
+   "Limited connections"
+  ]
+ },
+ "ruanda": {
+  "nombre": "Kigali and the Volcanoes",
+  "pros": [
+   "See mountain gorillas in the wild",
+   "Clean, safe country"
+  ],
+  "contras": [
+   "Very expensive gorilla permit",
+   "Demanding jungle hikes"
+  ]
+ },
+ "delta-del-okavango": {
+  "nombre": "Okavango Delta",
+  "pros": [
+   "Canoe safari among elephants",
+   "Very exclusive and uncrowded"
+  ],
+  "contras": [
+   "Very expensive",
+   "Access by light aircraft"
+  ]
+ },
+ "melbourne": {
+  "pros": [
+   "Cafés, street art and the Great Ocean Road",
+   "Very livable city"
+  ],
+  "contras": [
+   "Weather changes during the day",
+   "You need to apply for an electronic visa"
+  ]
+ },
+ "gran-barrera-de-coral": {
+  "nombre": "Great Barrier Reef",
+  "pros": [
+   "The largest coral reef in the world",
+   "Rainforest right next to it"
+  ],
+  "contras": [
+   "Very expensive",
+   "Jellyfish in summer"
+  ]
+ },
+ "fiyi": {
+  "nombre": "Nadi and the Mamanuca Islands",
+  "pros": [
+   "Postcard islands and very welcoming people",
+   "Diving with sharks and manta rays"
+  ],
+  "contras": [
+   "Long flight with stopovers",
+   "Expensive resorts"
+  ]
+ },
+ "puerto-williams": {
+  "nombre": "Puerto Williams and Navarino",
+  "pros": [
+   "The southernmost town in the world and the Dientes de Navarino circuit",
+   "Beagle Channel, forests and almost no tourists"
+  ],
+  "contras": [
+   "Few flights and limited seats from Punta Arenas",
+   "Cold, changeable weather even in summer"
+  ]
+ },
+ "huilo-huilo": {
+  "pros": [
+   "Valdivian rainforest, waterfalls and the Mocho-Choshuenco volcano",
+   "Unique themed hotels, ideal for families"
+  ],
+  "contras": [
+   "It rains a lot outside summer",
+   "It's more than 2 h from the airport"
+  ]
+ },
+ "desierto-florido": {
+  "nombre": "Flowering Desert",
+  "pros": [
+   "The driest desert in the world covered in flowers",
+   "Can be combined with beaches like Bahía Inglesa"
+  ],
+  "contras": [
+   "It only happens in years with winter rain: check beforehand",
+   "Long distances on desert roads"
+  ]
+ },
+ "puyehue": {
+  "nombre": "Puyehue and Osorno",
+  "pros": [
+   "Hot springs, native forest and lakes",
+   "Skiing at Antillanca in winter"
+  ],
+  "contras": [
+   "It rains a lot outside summer",
+   "A car is best for getting around"
+  ]
+ },
+ "parque-pumalin": {
+  "nombre": "Pumalín Park",
+  "pros": [
+   "Ancient alerce trees, fjords and the Chaitén volcano",
+   "Well-kept trails and campsites on the Route of Parks"
+  ],
+  "contras": [
+   "Getting there takes time: light aircraft or ferry from Puerto Montt",
+   "It rains almost all year"
+  ]
+ },
+ "auckland": {
+  "nombre": "Auckland and Rotorua",
+  "pros": [
+   "Direct flight from Santiago to New Zealand",
+   "Geysers and Māori culture in Rotorua"
+  ],
+  "contras": [
+   "Expensive",
+   "You need to apply for an NZeTA"
+  ]
+ },
+ "asuncion": {
+  "pros": [
+   "Very affordable with a direct flight",
+   "Jesuit ruins and Guaraní culture a few hours away"
+  ],
+  "contras": [
+   "Extreme heat in summer",
+   "Few tourist attractions in the city itself"
+  ]
+ },
+ "santa-cruz-de-la-sierra": {
+  "pros": [
+   "Jesuit missions of Chiquitos, a UNESCO World Heritage Site",
+   "Very affordable with a direct flight"
+  ],
+  "contras": [
+   "Heat and humidity much of the year",
+   "Long distances to reach the missions"
+  ]
+ },
+ "cali": {
+  "pros": [
+   "World capital of salsa",
+   "Direct flight and low prices"
+  ],
+  "contras": [
+   "It's worth checking which neighborhoods are safe",
+   "Hot all year"
+  ]
+ },
+ "trujillo-y-huanchaco": {
+  "nombre": "Trujillo and Huanchaco",
+  "pros": [
+   "Chan Chan, the largest adobe city in the Americas",
+   "Surfing, reed boats and ceviche in Huanchaco"
+  ],
+  "contras": [
+   "Cold sea",
+   "Fog in winter"
+  ]
+ },
+ "ouro-preto": {
+  "nombre": "Belo Horizonte and Ouro Preto",
+  "pros": [
+   "Baroque colonial mining towns, a UNESCO World Heritage Site",
+   "Mineira food, among the best in Brazil"
+  ],
+  "contras": [
+   "Steep cobblestone streets",
+   "Heavy rain from November to March"
+  ]
+ },
+ "curitiba": {
+  "pros": [
+   "Green, orderly city, with the train to Morretes through the Serra do Mar",
+   "Direct flight and less touristy than other Brazilian cities"
+  ],
+  "contras": [
+   "Changeable weather and cool in winter",
+   "No beach in the city"
+  ]
+ },
+ "gramado": {
+  "nombre": "Gramado and Canela",
+  "pros": [
+   "Alpine-style towns, chocolate and a famous Christmas",
+   "Waterfalls and viewpoints in the Serra Gaúcha"
+  ],
+  "contras": [
+   "Very crowded in July and December",
+   "It's ~2 h from Porto Alegre airport"
+  ]
+ },
+ "chapada-dos-veadeiros": {
+  "nombre": "Brasília and Chapada dos Veadeiros",
+  "pros": [
+   "Canyons, waterfalls and cerrado in a little-known national park",
+   "Niemeyer's modern architecture in Brasília"
+  ],
+  "contras": [
+   "You have to drive ~3.5 h from Brasília",
+   "Heavy rain from November to March"
+  ]
+ },
+ "fortaleza": {
+  "pros": [
+   "Warm beaches all year and nearby dunes",
+   "Gateway to Canoa Quebrada and Jericoacoara"
+  ],
+  "contras": [
+   "Long flight",
+   "Rain from March to May"
+  ]
+ },
+ "atenas": {
+  "nombre": "Athens",
+  "pros": [
+   "The Acropolis and centuries of history on foot",
+   "Gateway to the Greek islands by ferry"
+  ],
+  "contras": [
+   "Very hot in July and August",
+   "Long flight with a stopover"
+  ]
+ },
+ "lago-de-como": {
+  "nombre": "Milan and Lake Como",
+  "pros": [
+   "Lakeside villages with views of the Alps",
+   "Fashion and shopping in Milan"
+  ],
+  "contras": [
+   "One of the most expensive destinations in Italy",
+   "Very crowded in July and August"
+  ]
+ },
+ "kuala-lumpur": {
+  "pros": [
+   "Cheap and very varied street food",
+   "Petronas Towers and temples in one city"
+  ],
+  "contras": [
+   "Extremely long flight with stopovers",
+   "Humid heat and rain almost all year"
+  ]
+ },
+ "puerto-vallarta": {
+  "pros": [
+   "Pacific beaches and a lively boardwalk",
+   "Humpback whales from December to March"
+  ],
+  "contras": [
+   "Rain and hurricane risk from June to October",
+   "Requires a stopover, almost always in Mexico City"
+  ]
+ },
+ "uluru": {
+  "pros": [
+   "The sacred monolith at sunrise and sunset",
+   "Starry skies with no light pollution"
+  ],
+  "contras": [
+   "Very expensive and isolated",
+   "Extreme heat from December to February"
+  ]
+ },
+ "burdeos": {
+  "nombre": "Bordeaux",
+  "pros": [
+   "The most famous wine routes in the world",
+   "Heritage city to explore on foot"
+  ],
+  "contras": [
+   "Visiting châteaux requires booking or a tour",
+   "It rains often in winter"
+  ]
+ },
+ "maceio": {
+  "pros": [
+   "Turquoise waters and natural pools",
+   "Cheaper flights than the Caribbean"
+  ],
+  "contras": [
+   "Rain from April to July",
+   "Flight with a stopover in São Paulo"
+  ]
+ }
+}

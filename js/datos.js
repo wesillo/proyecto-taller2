@@ -23,9 +23,9 @@ const COLUMNAS = [
   "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo",
   "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje",
   "iria", "motivo", "abrio_compra",
-  "segundos_decidir", "segundos_respuesta", "dispositivo", "version", "personas", "continentes", "pagaria",
+  "segundos_decidir", "segundos_respuesta", "dispositivo", "version", "personas", "continentes", "pagaria", "idioma",
 ];
-const VERSION_APP = "fly4ward-2026-10e"; // "b": presupuesto en pesos (antes escala 1,5 a 5); "c": columna personas; "d": continentes en vez de horas de vuelo; "e": pregunta "¿Pagarías?"
+const VERSION_APP = "fly4ward-2026-10f"; // "b": presupuesto en pesos (antes escala 1,5 a 5); "c": columna personas; "d": continentes en vez de horas de vuelo; "e": pregunta "¿Pagarías?"; "f": versión en inglés (columna idioma)
 
 let SESION = "";
 // Cada vez que alguien responde el cuestionario completo es una sesión nueva
@@ -59,6 +59,7 @@ function registrarRecomendacion(r, x, opcion, segundos) {
     version: VERSION_APP,
     personas: r.personas || (r.conQuien === "P" ? 2 : 1),
     continentes: (r.continentes || []).join("|"),
+    idioma: typeof IDIOMA === "string" ? IDIOMA : "es",
   };
   filas.push(fila);
   escribirDatos(filas);

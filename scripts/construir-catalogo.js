@@ -11,6 +11,8 @@
  *   data/fuentes/jac-rutas.json          pasajeros por ruta directa desde Santiago (JAC, últimos 12 meses)
  *   data/fuentes/corte.json              fecha del corte de datos y vigencia de cada tipo de dato
  *   data/fuentes/fotos.json              dos fotos por destino (Wikimedia Commons) con autor y licencia
+ *   data/base/en/destinos.json           versión en inglés de nombre, pros y contras de cada destino
+ *   data/base/en/traducciones.json       inglés de países, climas, lugares, tramos y requisitos de ingreso
  *
  * Uso:  npm run catalogo
  *
@@ -280,6 +282,48 @@ const DESTINOS = filas.map(({ d, ap, req, cl, ind, km }, i) => {
   };
 });
 
+/*
+ * Versión en inglés: cada destino lleva un objeto "en" con los textos traducidos.
+ * Si falta una traducción se usa el texto en español y queda en la lista para completar.
+ */
+const enDestinos = leer("data/base/en/destinos.json");
+const enT = leer("data/base/en/traducciones.json");
+const faltaIngles = new Set();
+const enDe = (mapa, texto) => {
+  if (texto == null || texto === "") return texto;
+  const v = enT[mapa] && enT[mapa][texto];
+  if (v == null) { faltaIngles.add(`${mapa}: ${texto}`); return texto; }
+  return v;
+};
+// Nombres de lugares: solo se traducen los que cambian en inglés (el resto queda igual)
+const lugarEn = (texto) => (texto && enT.lugares[texto]) || texto;
+for (const x of DESTINOS) {
+  const e = enDestinos[x.id] || {};
+  if (!enDestinos[x.id]) faltaIngles.add(`destino: ${x.id}`);
+  x.en = {
+    nombre: e.nombre || x.nombre,
+    pais: enDe("paises", x.pais),
+    region: enDe("regiones", x.region),
+    clima: enDe("climas", x.clima),
+    pros: e.pros || x.pros,
+    contras: e.contras || x.contras,
+    visaTexto: enDe("requisitoTexto", x.visaTexto),
+    ingreso: { texto: enDe("requisitoTexto", x.ingreso.texto), notas: enDe("requisitoNotas", x.ingreso.notas) },
+    llegada: {
+      ciudadAeropuerto: lugarEn(x.llegada.ciudadAeropuerto),
+      base: lugarEn(x.llegada.base),
+      otra: x.llegada.otra ? enDe("otra", x.llegada.otra) : null,
+      tramos: x.llegada.tramos.map((t) => ({
+        desde: lugarEn(t.desde),
+        hasta: lugarEn(t.hasta),
+        nota: t.nota ? enDe("notas", t.nota) : t.nota,
+        grupo: t.grupo ? enDe("grupos", t.grupo) : t.grupo,
+      })),
+    },
+    ciudadJac: x.directoJac ? lugarEn(x.directoJac.ciudad) : null,
+  };
+}
+
 const CORTE_DATOS = {
   fechaCorte: corte.fechaCorte,
   vigenciaDias: corte.vigenciaDias,
@@ -320,6 +364,8 @@ fs.writeFileSync(path.join(raiz, "data/destinos.js"), js);
 const conteo = (lista) => lista.reduce((m, x) => ((m[x] = (m[x] || 0) + 1), m), {});
 const diferenciasCosto = DESTINOS.filter((x) => x.costoCalculado != null && Math.abs(x.costo - x.costoCalculado) >= 2);
 console.log(`Catálogo generado: ${DESTINOS.length} destinos, corte ${corte.fechaCorte}`);
+console.log(`Textos sin traducción al inglés: ${faltaIngles.size}`);
+for (const x of faltaIngles) console.log(`  ${x}`);
 console.log("Confianza requisitos de ingreso:", conteo(DESTINOS.map((x) => x.ingreso.confianza)));
 console.log("Confianza clima:", conteo(DESTINOS.map((x) => x.climaMensual.confianza)));
 console.log(`Horas ajustadas al mínimo físico: ${filas.filter((f) => f.d.horasVuelo < horasMinimas(f.km)).map((f) => f.d.nombre).join(", ") || "ninguna"}`);

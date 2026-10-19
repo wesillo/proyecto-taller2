@@ -51,6 +51,7 @@ a{color:inherit}
 .brand .mark{width:32px;height:32px;border-radius:3px;background:var(--amarillo);color:var(--sobre-amarillo);display:grid;place-items:center}
 .theme-btn{border:2px solid var(--linea);background:transparent;border-radius:2px;padding:5px 10px;font-size:14px;font-weight:500;cursor:pointer}
 .theme-btn:hover{border-color:var(--texto)}
+.top-actions{display:flex;gap:8px;align-items:center}
 
 /* Inicio */
 .hero{padding:20px 0 8px}

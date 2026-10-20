@@ -1006,6 +1006,11 @@ function abrirCompra(d) {
       </div>
     </div>`;
     const selector = document.getElementById("orig");
+const enlaceSky = raiz.querySelector(".links a");
+if (enlaceSky) enlaceSky.addEventListener("click", () => {
+  if (mismo) return;
+  if (window.gtag) gtag("event", "buscar_vuelo", { destino: d.aeropuerto, origen: origen || "sin_origen" });
+});
     if (selector) selector.onchange = (e) => dibujar(e.target.value);
     document.getElementById("closeSheet").onclick = cerrar;
     document.getElementById("ov").onclick = (e) => { if (e.target.id === "ov") cerrar(); };
@@ -1020,6 +1025,7 @@ function abrirCompra(d) {
 
   let inicial = "";
   if (origenes.length) inicial = origenes[0][0] === d.aeropuerto && origenes[1] ? origenes[1][0] : origenes[0][0];
+  if (window.gtag) gtag("event", "ver_pasajes", { destino: d.aeropuerto });
   dibujar(inicial);
 }
 

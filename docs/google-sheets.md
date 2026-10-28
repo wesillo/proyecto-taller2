@@ -56,6 +56,8 @@ la misma fila se actualiza; no se duplica.
 | `abrio_compra` | 1 si apretó "Buscar pasajes". |
 | `pagaria` | Respuesta a "¿Pagarías por un servicio de este tipo teniendo en cuenta que capta tu perfil real?": `si`, `tal_vez` o `no`. Se pregunta una vez por persona, después de "¿Irías?", y queda en la fila de la opción donde respondió. Desde la versión `fly4ward-2026-10e`. |
 | `idioma` | Idioma en que la persona usó la app: `es` o `en`. Desde la versión `fly4ward-2026-10f`. |
+| `cupon` | Código único que la app le entregó para ese destino (`FLY-XXXXXX`). Une la fila con las pestañas `correos` y `canjes`. Desde la versión `fly4ward-2026-10g`. |
+| `pidio_correo` | `1` si pidió que le enviáramos ese destino por correo. |
 | `dispositivo` | `movil` o `escritorio` (según el ancho de pantalla). |
 | `personas` | Cuántos viajan: 1 solo, 2 en pareja, o lo que indiquen en familia o con amigos. |
 | `presupuesto` | Monto en pesos para el pasaje ida y vuelta por persona (desde la versión `fly4ward-2026-10b`). |
@@ -65,14 +67,44 @@ la misma fila se actualiza; no se duplica.
 Para el promedio en la hoja, filtra `opcion = 1` (una vez por persona):
 `=PROMEDIO.SI(D:D;1;Y:Y)` (D = opcion, Y = segundos_decidir).
 
+## Cupones, correos y canjes (modelo de negocio, etapa 1)
+
+Desde la versión `fly4ward-2026-10g` el script crea tres pestañas más:
+
+| Pestaña | Qué guarda | Quién la llena |
+|---|---|---|
+| `correos` | Las personas que pidieron su destino por correo: correo, cupón, destino, si se envió el seguimiento, si compró (`si`, `aun_no`, `no`) y dónde. | La app y los correos de seguimiento |
+| `agencias` | Las agencias asociadas: nombre, PIN (6 dígitos o más) y `activa` (escribe `no` para desactivarla). | **Ustedes**, a mano, cuando una agencia acepta el piloto |
+| `canjes` | Cada cupón que una agencia canjeó: fecha, cupón, agencia, destino y monto de la venta. | La página `canje.html` |
+
+**Para activar los correos** (una sola vez):
+
+1. Pega el script nuevo y publica una nueva versión (ver más abajo). Google va a pedir permiso para **enviar correos como tú**: acéptalo. Los correos salen desde la cuenta dueña de la hoja, con el nombre "Fly4ward".
+2. En el editor de Apps Script, elige la función `instalarSeguimiento` arriba y aprieta **▶ Ejecutar**. Eso crea las pestañas y un activador que todos los días a las 10:00 envía el correo de "¿Compraste?" a quienes pidieron su destino hace 14 días.
+
+**Para sumar una agencia:**
+
+1. Agrega una fila en la pestaña `agencias` con su nombre y un PIN.
+2. En `js/negocio.js`, agrega la agencia a `NEGOCIO.cupon.agencias` (por ejemplo `{ nombre: "Viajes X", url: "https://viajesx.cl" }`). Desde ese momento la app muestra el descuento y dónde usarlo.
+3. Mándale a la agencia el link `https://wesillo.github.io/proyecto-taller2/canje.html` y su PIN. Ahí escriben el código del cliente, ven si es válido y lo canjean.
+
+**Los números que importan para el modelo:**
+
+- Conversión a compra: en `correos`, filas con `compro = si` sobre las que respondieron.
+- Ventas atribuidas a Fly4ward: filas de `canjes` (y la suma de `monto`).
+- Para unir con las respuestas del cuestionario, busca el `cupon` en la pestaña `respuestas`.
+
+Límites de Google: una cuenta Gmail gratis puede enviar unos 100 correos al día. El script envía como máximo 50 seguimientos diarios y 5 correos al día a una misma dirección.
+
 ## Privacidad
 
-La app no pide nombre, correo ni teléfono, y lo avisa en la pantalla de inicio.
+En la pestaña `respuestas` no hay nombre, correo ni teléfono, y la pantalla de inicio lo avisa.
 El `id` es un código al azar que cambia cada vez que alguien responde.
+El correo solo existe si la persona lo pide y marca la casilla de consentimiento. Queda en la pestaña `correos`, se usa solo para enviarle su destino y un seguimiento, y cada correo trae un enlace para no recibir más.
 
 ## Actualizar el script cuando la app agrega columnas
 
-Si la app suma una columna nueva (como `personas`, `continentes`, `pagaria` o `idioma`), pega otra vez el contenido de `scripts/google-apps-script.gs` en el editor y publica con **Implementar > Gestionar implementaciones > Editar > Nueva versión**. La URL no cambia y el script agrega solo el título que falta en la hoja. Mientras no lo actualices, todo sigue funcionando: la columna nueva simplemente no se guarda.
+Si la app suma una columna nueva (como `personas`, `continentes`, `pagaria`, `idioma` o `cupon`), pega otra vez el contenido de `scripts/google-apps-script.gs` en el editor y publica con **Implementar > Gestionar implementaciones > Editar > Nueva versión**. La URL no cambia y el script agrega solo el título que falta en la hoja. Mientras no lo actualices, todo sigue funcionando: la columna nueva simplemente no se guarda.
 
 ## Notas
 

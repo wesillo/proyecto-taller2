@@ -11,7 +11,9 @@
  * está configurada, también se envía a una Google Sheet compartida por el equipo.
  * Cómo crear la hoja y obtener la URL: docs/google-sheets.md
  *
- * No se guarda nombre, correo ni ningún dato que identifique a la persona.
+ * En esta hoja no se guarda nombre, correo ni ningún dato que identifique a la persona.
+ * El correo solo existe si la persona lo pide para recibir su destino y su cupón, y va a una
+ * pestaña aparte ("correos"), unida a la recomendación solo por el código del cupón.
  */
 
 // URL de la aplicación web de Google Apps Script (termina en /exec). Vacía = solo se guarda en este navegador.
@@ -23,9 +25,9 @@ const COLUMNAS = [
   "pais", "alcance", "tags", "presupuesto", "ritmo", "con_quien", "edad", "meses", "horas", "docs", "visa", "estilo",
   "destino", "pais_destino", "aeropuerto", "puntaje", "porcentaje",
   "iria", "motivo", "abrio_compra",
-  "segundos_decidir", "segundos_respuesta", "dispositivo", "version", "personas", "continentes", "pagaria", "idioma",
+  "segundos_decidir", "segundos_respuesta", "dispositivo", "version", "personas", "continentes", "pagaria", "idioma", "cupon", "pidio_correo",
 ];
-const VERSION_APP = "fly4ward-2026-10f"; // "b": presupuesto en pesos (antes escala 1,5 a 5); "c": columna personas; "d": continentes en vez de horas de vuelo; "e": pregunta "¿Pagarías?"; "f": versión en inglés (columna idioma)
+const VERSION_APP = "fly4ward-2026-10g"; // "b": presupuesto en pesos (antes escala 1,5 a 5); "c": columna personas; "d": continentes en vez de horas de vuelo; "e": pregunta "¿Pagarías?"; "f": versión en inglés (columna idioma); "g": cupón y correo de seguimiento
 
 let SESION = "";
 // Cada vez que alguien responde el cuestionario completo es una sesión nueva
@@ -60,6 +62,8 @@ function registrarRecomendacion(r, x, opcion, segundos) {
     personas: r.personas || (r.conQuien === "P" ? 2 : 1),
     continentes: (r.continentes || []).join("|"),
     idioma: typeof IDIOMA === "string" ? IDIOMA : "es",
+    cupon: typeof nuevoCupon === "function" ? nuevoCupon() : "",
+    pidio_correo: 0,
   };
   filas.push(fila);
   escribirDatos(filas);
@@ -92,6 +96,21 @@ function enviarAHoja(fila) {
     }).catch(() => {});
   } catch (e) {}
 }
+
+// Pide a la hoja que le envíe a la persona su destino y su cupón (y, en 2 semanas, el seguimiento)
+function enviarCorreo(datos) {
+  if (!URL_HOJA || typeof fetch !== "function") return false;
+  try {
+    fetch(URL_HOJA, {
+      method: "POST", mode: "no-cors", keepalive: true,
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({ accion: "correo", ...datos }),
+    }).catch(() => {});
+    return true;
+  } catch (e) { return false; }
+}
+
+const leerRegistro = (id) => leerDatos().find((f) => f.id === id);
 
 // Promedio y mediana (en segundos) del tiempo hasta ver el destino, una vez por sesión
 function tiemposDecision(filas = leerDatos()) {

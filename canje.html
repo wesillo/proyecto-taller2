@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Canjear cupón · Fly4ward</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='3' fill='%23FFCC00'/%3E%3Cpath fill='none' stroke='%23000' stroke-width='3' d='M5 12h13M12 6l6 6-6 6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  h1{font-family:var(--display);font-weight:800;font-size:34px;line-height:1.05;margin:0 0 8px}
+  .lead{color:var(--suave);margin:0 0 22px}
+  .caja{background:var(--panel);border:2px solid var(--linea);border-radius:4px;padding:16px}
+  .caja label{display:block;font-weight:700;margin:0 0 8px}
+  .caja label.sec{margin-top:16px}
+  .fila{display:flex;gap:8px}
+  .caja input{flex:1;min-width:0;padding:12px;border-radius:3px;border:2px solid var(--linea);background:var(--piso);color:var(--texto);font:inherit;font-size:18px}
+  #codigo{text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+  .fila .btn{padding:12px 18px;font-size:17px}
+  .estado{margin-top:16px;padding:14px 16px;border-left:6px solid var(--linea);background:var(--piso)}
+  .estado h2{font-family:var(--display);font-size:22px;margin:0 0 6px}
+  .estado p{margin:4px 0}
+  .ok{border-left-color:var(--verde)} .ok h2{color:var(--verde)}
+  .mal{border-left-color:var(--rojo)} .mal h2{color:var(--rojo)}
+  .fine{font-size:14px;color:var(--suave);margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="./" style="color:inherit;text-decoration:none"><span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M4 12h14M12 5l7 7-7 7"/></svg></span>Fly4ward</a>
+  </div>
+  <main>
+    <h1>Canjear cupón</h1>
+    <p class="lead">Para agencias asociadas. Revisa si el código del cliente es válido y regístralo al aplicar el descuento.</p>
+    <form class="caja" id="fRevisar" novalidate>
+      <label for="codigo">Código del cliente</label>
+      <div class="fila">
+        <input id="codigo" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="FLY-XXXXXX" maxlength="10">
+        <button class="btn btn-primary" type="submit">Revisar</button>
+      </div>
+    </form>
+    <div id="resultado" aria-live="polite"></div>
+    <p class="fine">Cada canje queda registrado con el nombre de tu agencia. El PIN te lo entrega el equipo de Fly4ward; no lo compartas. ¿Dudas? Escríbenos.</p>
+  </main>
+</div>
+<script src="js/negocio.js"></script>
+<script src="js/datos.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+const fecha = (iso) => { if (!iso) return ""; const [a, m, d] = String(iso).slice(0, 10).split("-").map(Number); return `${d} ${MESES[m - 1]} ${a}`; };
+const normal = (c) => { c = String(c || "").toUpperCase().replace(/\s/g, ""); if (/^FLY[23456789A-Z]{6}$/.test(c)) c = "FLY-" + c.slice(3); return c; };
+
+async function consultar(params) {
+  const r = await fetch(URL_HOJA + "?" + new URLSearchParams(params), { redirect: "follow" });
+  return r.json();
+}
+
+function pintar(html, clase) { $("resultado").innerHTML = `<div class="estado ${clase || ""}">${html}</div>`; }
+
+async function revisar(codigo) {
+  codigo = normal(codigo);
+  $("codigo").value = codigo;
+  if (!esCupon(codigo)) return pintar("<h2>Código incompleto</h2><p>Los códigos tienen la forma FLY-XXXXXX (6 letras o números).</p>", "mal");
+  pintar("<p>Revisando…</p>");
+  let r;
+  try { r = await consultar({ accion: "validar", cupon: codigo }); }
+  catch (e) { return pintar("<h2>No pudimos revisar el código</h2><p>Revisa tu conexión e inténtalo de nuevo.</p>", "mal"); }
+  const info = r.destino ? `<p>Destino recomendado: <b>${esc(r.destino)}</b> (${esc(r.aeropuerto)})</p><p>Emitido el ${fecha(r.emitido)} · válido hasta el ${fecha(r.vence)}</p>` : "";
+  if (r.estado === "valido") {
+    pintar(`<h2>Cupón válido ✓</h2>${info}
+      <form id="fCanje" novalidate>
+        <label class="sec" for="pin">PIN de tu agencia</label>
+        <input id="pin" type="password" inputmode="numeric" autocomplete="off" style="width:100%">
+        <label class="sec" for="monto">Monto de la venta en pesos (opcional)</label>
+        <div class="fila"><input id="monto" inputmode="numeric" placeholder="1.500.000"><button class="btn btn-primary" type="submit">Canjear</button></div>
+      </form>`, "ok");
+    $("fCanje").onsubmit = (e) => { e.preventDefault(); canjear(codigo); };
+    $("pin").focus();
+  } else if (r.estado === "canjeado") {
+    pintar(`<h2>Este cupón ya se usó</h2>${info}<p>Lo canjeó ${esc(r.canje.agencia)} el ${fecha(r.canje.fecha)}.</p>`, "mal");
+  } else if (r.estado === "vencido") {
+    pintar(`<h2>Cupón vencido</h2>${info}`, "mal");
+  } else {
+    pintar("<h2>No encontramos este código</h2><p>Revisa que esté bien escrito. Los códigos los entrega la app de Fly4ward al recomendar un destino.</p>", "mal");
+  }
+}
+
+async function canjear(codigo) {
+  const pin = $("pin").value.trim();
+  if (pin.length < 6) { $("pin").focus(); return; }
+  const boton = document.querySelector("#fCanje button"); boton.disabled = true; boton.textContent = "Canjeando…";
+  let r;
+  try { r = await consultar({ accion: "canjear", cupon: codigo, pin, monto: $("monto").value }); }
+  catch (e) { boton.disabled = false; boton.textContent = "Canjear"; return alertaDentro("No pudimos conectarnos. Inténtalo de nuevo."); }
+  if (r.estado === "canjeado_ahora") {
+    pintar(`<h2>¡Listo, cupón canjeado!</h2><p>${esc(r.cupon)} · ${esc(r.destino)}</p><p>Aplica el descuento acordado${NEGOCIO.cupon.descuento ? ` (${esc(NEGOCIO.cupon.descuento)})` : ""}. Quedó registrado a nombre de <b>${esc(r.agencia)}</b>.</p>`, "ok");
+  } else if (r.estado === "pin") {
+    boton.disabled = false; boton.textContent = "Canjear"; alertaDentro("PIN incorrecto.");
+  } else if (r.estado === "bloqueado") {
+    pintar("<h2>Demasiados intentos</h2><p>Por seguridad, espera una hora antes de volver a intentar con este código.</p>", "mal");
+  } else {
+    revisar(codigo);
+  }
+}
+
+function alertaDentro(t) {
+  let p = $("errCanje");
+  if (!p) { p = document.createElement("p"); p.id = "errCanje"; p.setAttribute("role", "alert"); p.style.cssText = "color:var(--rojo);font-weight:600;margin:8px 0 0"; $("fCanje").appendChild(p); }
+  p.textContent = t;
+}
+
+$("fRevisar").onsubmit = (e) => { e.preventDefault(); revisar($("codigo").value); };
+const inicial = new URLSearchParams(location.search).get("c");
+if (inicial) revisar(inicial); else $("codigo").focus();
+</script>
+</body>
+</html>

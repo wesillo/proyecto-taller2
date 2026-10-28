@@ -165,7 +165,7 @@ function renderInicio() {
     <p class="note-small">${L("Preguntas cortas, sin registrarte.", "Short questions, no sign-up.")}</p>
     <details class="privacy">
       <summary>${L("Guardamos tus respuestas de forma anónima para mejorar las recomendaciones.", "We store your answers anonymously to improve the recommendations.")}</summary>
-      <p>${L("No pedimos nombre, correo ni teléfono. Guardamos lo que respondes, el destino que te mostramos, si irías o no y cuánto tardaste en decidir. Lo usa solo el equipo de Fly4ward (proyecto universitario, FCFM, Universidad de Chile) para mejorar el sistema de recomendación. Además usamos Google Analytics para contar visitas en total (cuántas personas entran, desde qué país y con qué dispositivo), sin datos que te identifiquen.", "We don't ask for your name, email or phone number. We store your answers, the destination we showed you, whether you'd go and how long you took to decide. Only the Fly4ward team (a university project at FCFM, Universidad de Chile) uses it, to improve the recommendation system. We also use Google Analytics to count total visits (how many people come in, from which country and on which device), with no data that identifies you.")}</p>
+      <p>${L("No pedimos nombre ni teléfono, y el correo solo si tú quieres recibir tu destino. Guardamos lo que respondes, el destino que te mostramos, si irías o no y cuánto tardaste en decidir. Lo usa solo el equipo de Fly4ward (proyecto universitario, FCFM, Universidad de Chile) para mejorar el sistema de recomendación. Además usamos Google Analytics para contar visitas en total (cuántas personas entran, desde qué país y con qué dispositivo), sin datos que te identifiquen.", "We don't ask for your name or phone number, and only ask for your email if you want your destination sent to you. We store your answers, the destination we showed you, whether you'd go and how long you took to decide. Only the Fly4ward team (a university project at FCFM, Universidad de Chile) uses it, to improve the recommendation system. We also use Google Analytics to count total visits (how many people come in, from which country and on which device), with no data that identifies you.")}</p>
     </details>
     <div class="board" aria-label="${L(`Algunos de los ${DESTINOS.length} destinos posibles`, `Some of the ${DESTINOS.length} possible destinations`)}">
       <div class="row head" aria-hidden="true"><span>${L("Código", "Code")}</span><span>${L("Destino", "Destination")}</span><span>${L("País", "Country")}</span></div>
@@ -842,6 +842,8 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">${L("Pasaje ida y vuel
 
   <div class="section feedback" id="fb"></div>
 
+  <div class="section cupon" id="cupon"></div>
+
   <div class="actions">
     <button class="btn btn-primary btn-go btn-block" id="buy">${L(`Buscar pasajes a ${esc(nombre)}`, `Search flights to ${esc(nombre)}`)}</button>
     <button class="btn-link" id="restart">${L("Responder de nuevo", "Start over")}</button>
@@ -850,6 +852,7 @@ ${r.pais === "CL" ? `    <div class="field"><dt class="k">${L("Pasaje ida y vuel
   <p class="why-one">${L("Te recomendamos un destino y solo dos alternativas a propósito: comparar muchas opciones cansa y no ayuda a decidir. Ninguna aerolínea paga por aparecer aquí.", "We recommend one destination and only two alternatives on purpose: comparing lots of options is tiring and doesn't help you decide. No airline pays to appear here.")}</p>`;
 
   pintarFeedback();
+  pintarCupon(d);
   activarPestanas();
   mostrarFoto(d);
   document.getElementById("buy").onclick = () => {
@@ -937,6 +940,85 @@ function pintarFeedback() {
   }));
 }
 
+/* ---------- Cupón y correo (modelo de negocio, ver js/negocio.js) ---------- */
+const ocultarCorreo = (c) => c.replace(/^(.)[^@]*(@.*)$/, (m, a, b) => a + "•••" + b);
+
+function pintarCupon(d) {
+  const caja = document.getElementById("cupon");
+  if (!caja) return;
+  const fila = leerRegistro(estado.registro) || {};
+  if (!fila.cupon && typeof nuevoCupon === "function") {
+    fila.cupon = nuevoCupon();
+    actualizarRegistro(estado.registro, { cupon: fila.cupon });
+  }
+  if (!fila.cupon) { caja.remove(); return; }
+  const nombre = tx(d, "nombre");
+  const vence = venceCupon(fila.fecha);
+  const agencias = NEGOCIO.cupon.agencias;
+  const enviado = estado.correosEnviados && estado.correosEnviados[estado.registro];
+  const sinEnvio = !URL_HOJA || window.claude;
+
+  const oferta = hayAgencias()
+    ? L(`Muéstralo en ${listaTxt(agencias.map((a) => a.url ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.nombre)}</a>` : esc(a.nombre)))} y obtén <b>${esc(NEGOCIO.cupon.descuento)} de descuento</b> en tu viaje.`,
+        `Show it at ${listaTxt(agencias.map((a) => a.url ? `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.nombre)}</a>` : esc(a.nombre)))} and get <b>${esc(NEGOCIO.cupon.descuento)} off</b> your trip.`)
+    : L("Estamos sumando agencias de viaje asociadas que darán un descuento con este código. Déjanos tu correo y te avisamos dónde usarlo.",
+        "We're adding partner travel agencies that will give a discount with this code. Leave us your email and we'll let you know where to use it.");
+
+  caja.innerHTML = `
+    <h3>${L("Tu código Fly4ward", "Your Fly4ward code")}</h3>
+    <div class="ticket">
+      <div class="ticket-main">
+        <span class="ticket-code" id="cuponCod">${esc(fila.cupon)}</span>
+        <span class="ticket-sub">${L(`Para tu viaje a ${esc(nombre)} · válido hasta el ${fechaTxt(vence.toISOString().slice(0, 10))}`, `For your trip to ${esc(nombre)} · valid until ${fechaTxt(vence.toISOString().slice(0, 10))}`)}</span>
+      </div>
+      <button class="btn btn-ghost ticket-copy" id="copiarCupon" type="button">${L("Copiar", "Copy")}</button>
+    </div>
+    <p class="cupon-oferta">${oferta}</p>
+    ${enviado
+      ? `<p class="fb-thanks" role="status">${L(`Listo, te lo enviamos a ${esc(ocultarCorreo(enviado))}. Si no lo ves, revisa la carpeta de spam.`, `Done, we sent it to ${esc(ocultarCorreo(enviado))}. If you don't see it, check your spam folder.`)}</p>`
+      : sinEnvio
+        ? `<p class="fine">${L("En esta copia de prueba no se envían correos. Usa el link de GitHub Pages para recibir tu destino por correo.", "This test copy can't send emails. Use the GitHub Pages link to get your destination by email.")}</p>`
+        : `<form class="cupon-form" id="cuponForm" novalidate>
+      <label for="cuponMail">${L("Recibe tu destino y tu código por correo", "Get your destination and code by email")}</label>
+      <div class="cupon-fila">
+        <input id="cuponMail" type="email" autocomplete="email" inputmode="email" required placeholder="${L("tu@correo.com", "you@email.com")}" value="${esc(estado.correo || "")}">
+        <button class="btn btn-primary" type="submit">${L("Enviar", "Send")}</button>
+      </div>
+      <label class="cupon-ok"><input type="checkbox" id="cuponOk" ${estado.correo ? "checked" : ""}> <span>${L("Acepto que Fly4ward me envíe este correo y uno más en 2 semanas para preguntarme por mi viaje. Mi correo no se comparte con nadie.", "I agree that Fly4ward may send me this email and one more in 2 weeks to ask about my trip. My email isn't shared with anyone.")}</span></label>
+      <p class="cupon-err" id="cuponErr" role="alert"></p>
+    </form>`}`;
+
+  document.getElementById("copiarCupon").onclick = async (e) => {
+    try { await navigator.clipboard.writeText(fila.cupon); } catch (err) {
+      const rango = document.createRange(); rango.selectNodeContents(document.getElementById("cuponCod"));
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(rango);
+    }
+    e.target.textContent = L("¡Copiado!", "Copied!");
+    if (window.gtag) gtag("event", "copiar_cupon", { destino: d.aeropuerto });
+  };
+
+  const form = document.getElementById("cuponForm");
+  if (form) form.onsubmit = (e) => {
+    e.preventDefault();
+    const correo = document.getElementById("cuponMail").value.trim();
+    const err = document.getElementById("cuponErr");
+    if (!correoValido(correo)) { err.textContent = L("Revisa tu correo, parece que le falta algo.", "Check your email, something seems to be missing."); return; }
+    if (!document.getElementById("cuponOk").checked) { err.textContent = L("Para enviarte el correo necesitamos que marques la casilla.", "To send you the email we need you to tick the box."); return; }
+    const ok = enviarCorreo({
+      id: estado.registro, sesion: SESION, cupon: fila.cupon, correo, idioma: IDIOMA,
+      destino: nombre, pais: tx(d, "pais"), aeropuerto: d.aeropuerto,
+      vence: vence.toISOString().slice(0, 10), descuento: hayAgencias() ? NEGOCIO.cupon.descuento : "",
+      agencias: agencias.map((a) => a.nombre).join(", "),
+    });
+    if (!ok) { err.textContent = L("No pudimos enviarlo. Inténtalo de nuevo en un rato.", "We couldn't send it. Please try again later."); return; }
+    estado.correo = correo;
+    (estado.correosEnviados ||= {})[estado.registro] = correo;
+    actualizarRegistro(estado.registro, { pidio_correo: 1 });
+    if (window.gtag) gtag("event", "pedir_correo", { destino: d.aeropuerto });
+    pintarCupon(d);
+  };
+}
+
 /* ---------- Datos para el equipo ---------- */
 function abrirPanelDatos() {
   const raiz = document.getElementById("sheetRoot");
@@ -985,9 +1067,10 @@ function abrirCompra(d) {
     const mismo = !!origen && origen === d.aeropuerto;
     // Solo Skyscanner: tiene programa de afiliados (paga por cada persona que llega a comprar). Google Flights no paga comisión.
     const pasajeros = `?adultsv2=${personasDe(r)}&rtn=1`;
-    const skyscanner = origen
+    const skyscanner = conAfiliado(NEGOCIO.afiliados.skyscanner, origen
       ? (EN() ? `https://www.skyscanner.net/transport/flights/${origen.toLowerCase()}/${d.aeropuerto.toLowerCase()}/${pasajeros}` : `https://www.skyscanner.cl/transporte/vuelos/${origen.toLowerCase()}/${d.aeropuerto.toLowerCase()}/${pasajeros}`)
-      : (EN() ? `https://www.skyscanner.net/transport/flights-to/${d.aeropuerto.toLowerCase()}/` : `https://www.skyscanner.cl/transporte/vuelos-a/${d.aeropuerto.toLowerCase()}/`);
+      : (EN() ? `https://www.skyscanner.net/transport/flights-to/${d.aeropuerto.toLowerCase()}/` : `https://www.skyscanner.cl/transporte/vuelos-a/${d.aeropuerto.toLowerCase()}/`));
+    const cupon = (leerRegistro(estado.registro) || {}).cupon;
     raiz.innerHTML = `
     <div class="overlay" id="ov">
       <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
@@ -1000,8 +1083,12 @@ function abrirCompra(d) {
         ${mismo ? `<p class="warnbox">${L(`Ya estás en ${esc(tx(d, "nombre"))}. Elige otra ciudad de origen.`, `You're already in ${esc(tx(d, "nombre"))}. Choose another departure city.`)}</p>` : ""}
         <div class="links">
           <a class="btn btn-primary btn-block" ${mismo ? deshabilitado : ""} href="${skyscanner}" target="_blank" rel="noopener">${L("Abrir en Skyscanner", "Open in Skyscanner")}</a>
+          ${NEGOCIO.afiliados.despegar ? `<a class="btn btn-ghost btn-block" id="despegar" href="${esc(NEGOCIO.afiliados.despegar)}" target="_blank" rel="noopener">${L("Ver paquetes con hotel en Despegar", "See hotel packages on Despegar")}</a>` : ""}
         </div>
-        <p class="fine">${L("Prototipo: en la versión final, Fly4ward recibiría una comisión de Skyscanner solo si llegas a comprar por este enlace, sin costo extra para ti. Eso ocurre después de recomendarte el destino y nunca cambia qué destino te sugerimos.", "Prototype: in the final version, Fly4ward would receive a commission from Skyscanner only if you end up buying through this link, at no extra cost to you. That happens after we recommend the destination and never changes which destination we suggest.")}</p>
+        ${cupon && hayAgencias() ? `<p class="warnbox">${L(`Si compras en una agencia asociada, no olvides tu código <b>${esc(cupon)}</b> para el ${esc(NEGOCIO.cupon.descuento)} de descuento.`, `If you buy at a partner agency, don't forget your code <b>${esc(cupon)}</b> for ${esc(NEGOCIO.cupon.descuento)} off.`)}</p>` : ""}
+        <p class="fine">${NEGOCIO.afiliados.skyscanner || NEGOCIO.afiliados.despegar
+          ? L("Fly4ward recibe una comisión si compras por estos enlaces, sin costo extra para ti. Eso ocurre después de recomendarte el destino y nunca cambia qué destino te sugerimos.", "Fly4ward receives a commission if you buy through these links, at no extra cost to you. That happens after we recommend the destination and never changes which destination we suggest.")
+          : L("Prototipo: en la versión final, Fly4ward recibiría una comisión de Skyscanner solo si llegas a comprar por este enlace, sin costo extra para ti. Eso ocurre después de recomendarte el destino y nunca cambia qué destino te sugerimos.", "Prototype: in the final version, Fly4ward would receive a commission from Skyscanner only if you end up buying through this link, at no extra cost to you. That happens after we recommend the destination and never changes which destination we suggest.")}</p>
         <button class="btn-link" id="closeSheet">${L("Cerrar", "Close")}</button>
       </div>
     </div>`;
@@ -1011,6 +1098,8 @@ if (enlaceSky) enlaceSky.addEventListener("click", () => {
   if (mismo) return;
   if (window.gtag) gtag("event", "buscar_vuelo", { destino: d.aeropuerto, origen: origen || "sin_origen" });
 });
+    const enlaceDespegar = document.getElementById("despegar");
+    if (enlaceDespegar) enlaceDespegar.addEventListener("click", () => { if (window.gtag) gtag("event", "ver_despegar", { destino: d.aeropuerto }); });
     if (selector) selector.onchange = (e) => dibujar(e.target.value);
     document.getElementById("closeSheet").onclick = cerrar;
     document.getElementById("ov").onclick = (e) => { if (e.target.id === "ov") cerrar(); };
